@@ -347,6 +347,13 @@ test('the admin explains it needs the API on a static build', async ({ page }) =
   await expect(page.getByText(/runs without a server, so there are no accounts/)).toBeVisible();
 });
 
+test('institutes explain they need the API on a static build', async ({ page }) => {
+  await page.goto('/#/institutes');
+  await expect(page.getByText('Institutes and classes need the openpte API.')).toBeVisible();
+  await page.goto('/#/join/ABCD2345');
+  await expect(page.getByText('Institutes and classes need the openpte API.')).toBeVisible();
+});
+
 test('unknown pages show a not-found message', async ({ page }) => {
   await page.goto('/#/practice/not_a_type');
   await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();

@@ -38,7 +38,10 @@ export class ApiError extends Error {
   }
 }
 
-async function call<T>(path: string, init?: { method?: string; body?: unknown }): Promise<T> {
+export async function call<T>(
+  path: string,
+  init?: { method?: string; body?: unknown },
+): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, {
     method: init?.method ?? 'GET',
     credentials: 'include',

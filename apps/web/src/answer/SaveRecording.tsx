@@ -5,6 +5,7 @@ import {
   useAccount,
   type SpeakingScore,
 } from '../practice/account.ts';
+import { recordAttempt } from '../practice/history.ts';
 import type { Recording } from './Recorder.tsx';
 import { SpeakingResult } from './SpeakingResult.tsx';
 
@@ -47,7 +48,17 @@ export function SaveRecording({
       const { id } = await saveRecording(recording.blob, questionId, type);
       if (!scoring) return setState('saved');
       setState('scoring');
-      setResult(await scoreRecording(id));
+      const scored = await scoreRecording(id);
+      setResult(scored);
+      // A server score counts in history like any other answer, so Speaking shows on Progress.
+      recordAttempt({
+        questionId,
+        type,
+        skill: 'speaking',
+        score: scored.score,
+        max: scored.max,
+        at: Date.now(),
+      });
     } catch (e) {
       setError((e as Error).message);
       setState('error');

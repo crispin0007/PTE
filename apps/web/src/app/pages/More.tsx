@@ -96,6 +96,13 @@ export function More() {
         </button>
       </section>
       <ul className="flex flex-col divide-y divide-line rounded-token border border-line bg-surface">
+        {account.status !== 'off' && (
+          <li>
+            <Link to="/institutes" className="flex min-h-12 items-center px-5 font-semibold">
+              Institutes and classes
+            </Link>
+          </li>
+        )}
         {staff && (
           <li>
             <Link to="/admin" className="flex min-h-12 items-center px-5 font-semibold">

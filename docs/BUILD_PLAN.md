@@ -12,20 +12,34 @@ Agreed on 2026-10-21.
 Updated 2026-10-21 (overnight build). Each step was tested (lint, unit tests, content check, build,
 browser tests on phone and desktop with accessibility checks) and pushed to `main`.
 
-| Step                     | State       | Notes                                                                                               |
-| ------------------------ | ----------- | --------------------------------------------------------------------------------------------------- |
-| 1.1 Monorepo             | Done        |                                                                                                     |
-| 1.2 Look and app shell   | Done        | `good` and `bad` colours one shade darker than the UI plan, for 4.5:1 text contrast                 |
-| 1.3 Practice hub         | Done        |                                                                                                     |
-| 1.4 Reading              | Done        | All 5 types                                                                                         |
-| 1.5 Listening            | Done        | All 8 types (SST with Writing). Device text-to-speech plays until recordings exist                  |
-| 1.6 Writing              | Done        | Form and spelling scored; content, grammar and vocabulary wait for 2.6                              |
-| 1.7 Today and Progress   | Done        | History in localStorage rather than IndexedDB: it is small, and accounts sync it                    |
-| 1.8 Backend              | Done        | Tests run on PGlite; checked by hand on PostgreSQL 16. Docker files not run here (no Docker daemon) |
-| 1.9 Accounts             | Done        | Email link and Google; checked end to end with two browsers                                         |
-| 1.10 Question bank admin | Done        | YAML editor with live preview rather than 22 forms; checked end to end with three accounts          |
-| 2.1 Recorder             | Done        | Recordings saved to local disk behind a Storage interface; R2 or MinIO later                        |
-| 2.2 onward               | Not started |                                                                                                     |
+| Step                       | State       | Notes                                                                                                                                           |
+| -------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.1 Monorepo               | Done        |                                                                                                                                                 |
+| 1.2 Look and app shell     | Done        | `good` and `bad` colours one shade darker than the UI plan, for 4.5:1 text contrast                                                             |
+| 1.3 Practice hub           | Done        |                                                                                                                                                 |
+| 1.4 Reading                | Done        | All 5 types                                                                                                                                     |
+| 1.5 Listening              | Done        | All 8 types (SST with Writing). Device text-to-speech plays until recordings exist                                                              |
+| 1.6 Writing                | Done        | Form and spelling scored; content, grammar and vocabulary wait for 2.6                                                                          |
+| 1.7 Today and Progress     | Done        | History in localStorage rather than IndexedDB: it is small, and accounts sync it                                                                |
+| 1.8 Backend                | Done        | Tests run on PGlite; checked by hand on PostgreSQL 16. Docker files not run here (no Docker daemon)                                             |
+| 1.9 Accounts               | Done        | Email link and Google; checked end to end with two browsers                                                                                     |
+| 1.10 Question bank admin   | Done        | YAML editor with live preview rather than 22 forms; checked end to end with three accounts                                                      |
+| 2.1 Recorder               | Done        | Recordings saved to local disk behind a Storage interface; R2 or MinIO later                                                                    |
+| 2.2 Speech service         | Done        | FastAPI around faster-whisper with word times; tested with a fake engine (model downloads blocked here). No queue yet: scoring runs per request |
+| 2.3 Content and fluency    | Done        | Word alignment, key points, pace, pauses and fillers in `packages/scoring`                                                                      |
+| 2.4 Pronunciation          | Not started | Needs the wav2vec2 model; whisper word confidence stands in for now                                                                             |
+| 2.5 Speaking results       | Done        | Traits, coloured words, key points, pace; all 7 Speaking types                                                                                  |
+| 2.6 Writing scoring        | Not started | Needs a LanguageTool server                                                                                                                     |
+| 2.7 Listening audio        | Not started | Waits for the voice licence decision; the device voice reads until then                                                                         |
+| 2.8 Limits and fallback    | Partly      | Daily limit, 30-day retention and delete done; on-device fallback is the self-check                                                             |
+| 3.1 Mock model             | Done        | Full, mini, three sectional and custom mocks                                                                                                    |
+| 3.2 Exam player            | Done        | Section and per-question clocks, no going back, pause and resume, time-outs skip the rest                                                       |
+| 3.3 Score report           | Done        | Skills on the 10-90 scale, by type, practise-next; print or save as PDF from the browser                                                        |
+| 3.4 Builder and re-marking | Partly      | Custom builder done; teacher re-marking moves to 4.4 with the marking queue                                                                     |
+| 4.1 Tenancy                | Done        | Membership check on every institute route, 404 to outsiders; isolation tests; `SINGLE_INSTITUTE_NAME` for self-host                             |
+| 4.2 Classes and students   | Done        | Invite codes and links, CSV roster import; checked end to end on PostgreSQL                                                                     |
+| 4.4 Teacher dashboard      | Partly      | Class table by skill with 'who needs help'; marking queue not yet                                                                               |
+| 4.3, 4.5, 4.6              | Not started |                                                                                                                                                 |
 
 ## Scope: only what PTE preparation needs
 

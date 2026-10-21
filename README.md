@@ -8,10 +8,18 @@ processed on your own device.
 
 ## Status
 
-Phase 1 is under way. Working today: Reading (5 types), Listening (8 types) and Writing (3 types) can be
-answered and scored with the rule and arithmetic shown; Today and Progress pages built from your history on
-this device; and an API with PostgreSQL that serves the question bank. Speaking (audio scoring) and accounts come
-next. The step-by-step plan and progress are in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
+Working today:
+
+- **Practice** for all 22 question types. Reading, Listening and Writing are scored with the rule and
+  arithmetic shown; Speaking is recorded with exam timing, then self-checked or scored by the speech service.
+- **Mock tests**: full, mini, sectional or custom, timed in test order with no going back, and a printable
+  score report.
+- **Today and Progress** from your history on the device, synced to an account when you sign in.
+- **Accounts** by email link or Google, a **question bank admin** with two-reviewer publishing, and
+  **institutes** with classes, invite codes, CSV rosters and a class progress table.
+
+Next: pronunciation scoring, grammar checking, generated listening audio, assignments and institute branding.
+The step-by-step plan and progress are in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
 
 ## Run it locally
 
@@ -50,8 +58,9 @@ There are two ways to run openpte.
   (GitHub Pages, Cloudflare Pages, Netlify, or a plain web server). Questions are bundled into the site. Set
   `OPENPTE_INCLUDE_UNREVIEWED=1` when building if you also want questions that are still in review.
 - **With the API.** `docker compose up --build` runs PostgreSQL, the API and the web app on one machine. Build the
-  web app with `VITE_API_URL` pointing at the API and it reads questions from there. Accounts, teachers and
-  institutes will need this mode.
+  web app with `VITE_API_URL` pointing at the API and it reads questions from there. Accounts, the admin,
+  speaking scores and institutes need this mode. For one coaching centre, set `SINGLE_INSTITUTE_NAME` and
+  everyone who signs in joins it.
 
 This repo deploys the static site to GitHub Pages on every push to `main` (see `.github/workflows/deploy.yml`).
 Turn it on once under Settings, Pages, Source: GitHub Actions.

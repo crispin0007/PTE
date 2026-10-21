@@ -51,6 +51,22 @@ export const router = createHashRouter([
         path: '/mock/report/:id',
         lazy: async () => ({ Component: (await import('../mock/MockReport.tsx')).MockReport }),
       },
+      {
+        path: '/institutes',
+        lazy: async () => ({ Component: (await import('../institute/pages.tsx')).InstitutesHome }),
+      },
+      {
+        path: '/institutes/:id',
+        lazy: async () => ({ Component: (await import('../institute/pages.tsx')).InstitutePage }),
+      },
+      {
+        path: '/institutes/:id/classes/:classId',
+        lazy: async () => ({ Component: (await import('../institute/pages.tsx')).ClassPage }),
+      },
+      {
+        path: '/join/:code',
+        lazy: async () => ({ Component: (await import('../institute/pages.tsx')).JoinPage }),
+      },
       { path: '*', element: <NotFound /> },
     ],
   },

@@ -51,6 +51,16 @@ describe('institutes', () => {
     expect(
       (await call(ownerB, 'POST', '/v1/institutes', { name: 'x', slug: a.slug })).statusCode,
     ).toBe(409);
+    // The same name again gets a numbered slug instead of an error.
+    const again = (
+      await call(ownerB, 'POST', '/v1/institutes', { name: 'Kathmandu English Centre' })
+    ).json();
+    expect(again.slug).toBe('kathmandu-english-centre-2');
+    await call(
+      ownerB,
+      'DELETE',
+      `/v1/institutes/${again.id}/members/${(await call(ownerB, 'GET', '/v1/me')).json().id}`,
+    );
 
     const cls = await call(ownerA, 'POST', `/v1/institutes/${a.id}/classes`, {
       name: 'Morning batch',

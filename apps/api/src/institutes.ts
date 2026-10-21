@@ -175,16 +175,23 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
         return reply.code(403).send({ error: 'only platform admins can create institutes' });
       const name = req.body?.name?.trim();
       if (!name || name.length > 120) return reply.code(400).send({ error: 'name is required' });
-      const slug = req.body?.slug?.trim() || slugify(name);
-      if (!SLUG.test(slug))
+      const asked = req.body?.slug?.trim();
+      const base = asked || slugify(name).slice(0, 34).replace(/-+$/, '');
+      if (!SLUG.test(base))
         return reply.code(400).send({ error: 'slug: 3-40 lowercase letters, digits or dashes' });
       const id = randomUUID();
-      const created = await db
-        .insert(institutes)
-        .values({ id, slug, name })
-        .onConflictDoNothing()
-        .returning();
-      if (!created.length) return reply.code(409).send({ error: 'that slug is taken' });
+      // A chosen slug must be free; one made from the name gets a number when it is taken.
+      let slug = base;
+      for (let n = 2; ; n++) {
+        const created = await db
+          .insert(institutes)
+          .values({ id, slug, name })
+          .onConflictDoNothing()
+          .returning();
+        if (created.length) break;
+        if (asked || n > 50) return reply.code(409).send({ error: 'that slug is taken' });
+        slug = `${base}-${n}`;
+      }
       await db.insert(memberships).values({ instituteId: id, userId: u.id, role: 'owner' });
       return reply.code(201).send({ id, slug, name, role: 'owner' });
     });
