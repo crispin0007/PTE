@@ -4,4 +4,4 @@ playwright-report
 test-results
 *.tsbuildinfo
 .DS_Store
-schema
+/schema
