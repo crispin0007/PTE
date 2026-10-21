@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router';
 import { Footer } from '../components/Footer.tsx';
 import { Icon, type IconName } from '../components/Icon.tsx';
 import { ThemeToggle } from '../components/ThemeToggle.tsx';
+import { useBranding } from '../practice/branding.ts';
 
 const TABS: { to: string; label: string; icon: IconName }[] = [
   { to: '/', label: 'Today', icon: 'today' },
@@ -11,15 +12,27 @@ const TABS: { to: string; label: string; icon: IconName }[] = [
 ];
 
 function Logo() {
+  const brand = useBranding();
   return (
-    <NavLink to="/" className="flex items-center gap-2 font-display text-lg font-bold">
-      <span
-        aria-hidden="true"
-        className="grid size-8 place-items-center rounded-lg bg-brand text-brand-ink"
-      >
-        P
-      </span>
-      openpte
+    <NavLink to="/" className="flex min-w-0 items-center gap-2 font-display text-lg font-bold">
+      {brand?.logoUrl ? (
+        <img src={brand.logoUrl} alt="" className="size-8 shrink-0 rounded-lg object-contain" />
+      ) : (
+        <span
+          aria-hidden="true"
+          className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand text-brand-ink"
+        >
+          {brand ? brand.name.charAt(0).toUpperCase() : 'P'}
+        </span>
+      )}
+      {brand ? (
+        <span className="flex min-w-0 flex-col leading-tight">
+          <span className="truncate">{brand.name}</span>
+          <span className="text-xs font-normal text-muted">on openpte</span>
+        </span>
+      ) : (
+        'openpte'
+      )}
     </NavLink>
   );
 }

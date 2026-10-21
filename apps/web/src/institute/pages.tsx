@@ -2,6 +2,7 @@ import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'reac
 import { Link, useNavigate, useParams } from 'react-router';
 import { SKILL_META } from '../content/guide.ts';
 import { Assignments } from './Assignments.tsx';
+import { BrandingPanel, ShowThisLook } from './Branding.tsx';
 import { useAccount } from '../practice/account.ts';
 import { useNow } from '../practice/history.ts';
 import {
@@ -252,6 +253,8 @@ function InstituteScreen() {
       </section>
 
       {inst.data.role === 'owner' && <Members id={id} />}
+      {inst.data.role === 'owner' && <BrandingPanel inst={inst.data} onChange={inst.reload} />}
+      <ShowThisLook inst={inst.data} />
 
       {!staff && (
         <p className="text-sm text-muted">

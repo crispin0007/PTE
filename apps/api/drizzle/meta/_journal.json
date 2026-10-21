@@ -50,6 +50,13 @@
       "when": 1792617078329,
       "tag": "0006_assignments",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792617596790,
+      "tag": "0007_branding",
+      "breakpoints": true
     }
   ]
 }

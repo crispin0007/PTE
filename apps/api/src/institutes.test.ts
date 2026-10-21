@@ -131,7 +131,14 @@ describe('institutes', () => {
 
     // Lists only ever show the caller's own institutes.
     expect((await call(ownerB, 'GET', '/v1/me/institutes')).json().institutes).toEqual([
-      { id: b.id, slug: 'pokhara-pte', name: 'Pokhara PTE', role: 'owner' },
+      {
+        id: b.id,
+        slug: 'pokhara-pte',
+        name: 'Pokhara PTE',
+        role: 'owner',
+        brandColor: null,
+        logoVersion: null,
+      },
     ]);
   });
 
@@ -214,6 +221,49 @@ describe('institutes', () => {
       });
     expect((await post(await signIn('anyone@example.com'))).statusCode).toBe(403);
     expect((await post(await signIn('boss@example.com'))).statusCode).toBe(201);
+  });
+});
+
+describe('branding', () => {
+  it('owners set a readable colour and a logo; members see them', async () => {
+    const { app, signIn } = await appWithAuth(db);
+    const owner = await signIn('brand-owner@example.com');
+    const json = (cookie: string, method: string, url: string, payload: unknown) =>
+      app.inject({
+        method: method as 'PUT',
+        url,
+        headers: { cookie, origin: WEB, 'content-type': 'application/json' },
+        payload: JSON.stringify(payload),
+      });
+    const inst = (await json(owner, 'POST', '/v1/institutes', { name: 'Brand Test' })).json();
+    const url = `/v1/institutes/${inst.id}`;
+    expect((await json(owner, 'PUT', url, { brandColor: '#ffee00' })).json().error).toMatch(
+      /too light/,
+    );
+    expect((await json(owner, 'PUT', url, { brandColor: '#1F6F5C' })).statusCode).toBe(200);
+
+    const png = Buffer.from('89504e470d0a1a0a0000000d49484452', 'hex');
+    const upload = (type: string, body: Buffer) =>
+      app.inject({
+        method: 'PUT',
+        url: `${url}/logo`,
+        headers: { cookie: owner, origin: WEB, 'content-type': type },
+        payload: body,
+      });
+    expect((await upload('image/svg+xml', png)).statusCode).toBe(415);
+    expect((await upload('image/png', Buffer.alloc(300 * 1024))).statusCode).toBe(413);
+    expect((await upload('image/png', png)).statusCode).toBe(200);
+
+    const got = (await app.inject({ url, headers: { cookie: owner } })).json();
+    expect(got).toMatchObject({ brandColor: '#1f6f5c', name: 'Brand Test' });
+    expect(got.logoVersion).toEqual(expect.any(Number));
+    expect(Object.keys(got)).not.toContain('logo');
+    const logo = await app.inject(`${url}/logo`);
+    expect(logo.headers['content-type']).toBe('image/png');
+    expect(logo.rawPayload.equals(png)).toBe(true);
+
+    const stranger = await signIn('brand-stranger@example.com');
+    expect((await json(stranger, 'PUT', url, { brandColor: '#000000' })).statusCode).toBe(404);
   });
 });
 

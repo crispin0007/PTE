@@ -1,6 +1,7 @@
 import { sql } from 'drizzle-orm';
 import {
   boolean,
+  customType,
   index,
   integer,
   jsonb,
@@ -201,10 +202,17 @@ export const recordings = pgTable(
  * Institutes are the tenants. A hosted openpte serves many; a self-hosted install usually has one.
  * Every institute-scoped row carries `instituteId`, and every query on it filters by that id.
  */
+const bytea = customType<{ data: Buffer }>({ dataType: () => 'bytea' });
+
 export const institutes = pgTable('institutes', {
   id: text('id').primaryKey(),
   slug: text('slug').notNull().unique(),
   name: text('name').notNull(),
+  /** Branding: a #rrggbb colour checked for contrast, and a small logo image. */
+  brandColor: text('brand_color'),
+  logo: bytea('logo'),
+  logoMime: text('logo_mime'),
+  logoUpdatedAt: timestamp('logo_updated_at', { withTimezone: true }),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 });
 

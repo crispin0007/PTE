@@ -5,6 +5,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
 import { MEMBER_ROLES, type MemberRole, type Role } from './db/schema.ts';
+import { brandColorProblem } from '@openpte/schema/brand';
 
 export type InstituteOptions = {
   /** Who may create an institute on a hosted, multi-tenant install. */
@@ -21,6 +22,20 @@ const EMAIL = /^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]+$/;
 // No 0/O or 1/I/L, so codes read out in class are not misheard.
 const CODE_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
 export const MAX_IMPORT_ROWS = 500;
+export const MAX_LOGO_BYTES = 200 * 1024;
+// No SVG: it can carry scripts.
+const LOGO_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
+
+/** What the app needs to brand itself: the colour and a logo URL version, if any. */
+const brandView = <T extends { brandColor: string | null; logoAt: Date | null }>({
+  brandColor,
+  logoAt,
+  ...rest
+}: T) => ({
+  ...rest,
+  brandColor,
+  logoVersion: logoAt ? logoAt.getTime() : null,
+});
 
 export const inviteCode = () =>
   Array.from({ length: 8 }, () => CODE_ALPHABET[randomInt(CODE_ALPHABET.length)]).join('');
@@ -148,6 +163,11 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
 
   return async (app: FastifyInstance) => {
     if (single) await single;
+    app.addContentTypeParser(
+      /^image\//,
+      { parseAs: 'buffer', bodyLimit: MAX_LOGO_BYTES },
+      (_req, body, done) => done(null, body),
+    );
 
     app.get('/v1/institutes/config', async () => ({
       single: !!single,
@@ -167,12 +187,14 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
           slug: institutes.slug,
           name: institutes.name,
           role: memberships.role,
+          brandColor: institutes.brandColor,
+          logoAt: institutes.logoUpdatedAt,
         })
         .from(memberships)
         .innerJoin(institutes, eq(institutes.id, memberships.instituteId))
         .where(eq(memberships.userId, u.id))
         .orderBy(asc(institutes.name));
-      return { institutes: rows };
+      return { institutes: rows.map(brandView) };
     });
 
     app.post<{ Body: { name?: string; slug?: string } }>('/v1/institutes', async (req, reply) => {
@@ -208,19 +230,73 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
       const m = await guard(req, reply, 'student');
       if (!m) return;
       const [inst] = await db.select().from(institutes).where(eq(institutes.id, req.params.id));
-      return { id: inst!.id, slug: inst!.slug, name: inst!.name, role: m.role };
+      return brandView({
+        id: inst!.id,
+        slug: inst!.slug,
+        name: inst!.name,
+        role: m.role,
+        brandColor: inst!.brandColor,
+        logoAt: inst!.logoUpdatedAt,
+      });
     });
 
-    app.put<{ Params: { id: string }; Body: { name?: string } }>(
+    app.put<{ Params: { id: string }; Body: { name?: string; brandColor?: string | null } }>(
       '/v1/institutes/:id',
       async (req, reply) => {
         if (!(await guard(req, reply, 'owner'))) return;
-        const name = req.body?.name?.trim();
-        if (!name || name.length > 120) return reply.code(400).send({ error: 'name is required' });
-        await db.update(institutes).set({ name }).where(eq(institutes.id, req.params.id));
+        const patch: { name?: string; brandColor?: string | null } = {};
+        if (req.body?.name !== undefined) {
+          const name = req.body.name.trim();
+          if (!name || name.length > 120)
+            return reply.code(400).send({ error: 'name is required' });
+          patch.name = name;
+        }
+        if (req.body?.brandColor !== undefined) {
+          const color = req.body.brandColor?.toLowerCase() ?? null;
+          const problem = color && brandColorProblem(color);
+          if (problem) return reply.code(400).send({ error: problem });
+          patch.brandColor = color;
+        }
+        if (!Object.keys(patch).length) return reply.code(400).send({ error: 'nothing to change' });
+        await db.update(institutes).set(patch).where(eq(institutes.id, req.params.id));
         return { ok: true };
       },
     );
+
+    app.put<{ Params: { id: string } }>('/v1/institutes/:id/logo', async (req, reply) => {
+      if (!(await guard(req, reply, 'owner'))) return;
+      const mime = req.headers['content-type']?.split(';')[0]?.trim() ?? '';
+      if (!LOGO_TYPES.includes(mime))
+        return reply.code(415).send({ error: 'use a PNG, JPEG or WebP image' });
+      await db
+        .update(institutes)
+        .set({ logo: req.body as Buffer, logoMime: mime, logoUpdatedAt: new Date() })
+        .where(eq(institutes.id, req.params.id));
+      return { ok: true };
+    });
+
+    app.delete<{ Params: { id: string } }>('/v1/institutes/:id/logo', async (req, reply) => {
+      if (!(await guard(req, reply, 'owner'))) return;
+      await db
+        .update(institutes)
+        .set({ logo: null, logoMime: null, logoUpdatedAt: null })
+        .where(eq(institutes.id, req.params.id));
+      return { ok: true };
+    });
+
+    /** Logos are public, like any brand mark; the institute id in the URL is not guessable. */
+    app.get<{ Params: { id: string } }>('/v1/institutes/:id/logo', async (req, reply) => {
+      const [row] = await db
+        .select({ logo: institutes.logo, mime: institutes.logoMime })
+        .from(institutes)
+        .where(eq(institutes.id, req.params.id));
+      if (!row?.logo || !row.mime) return reply.code(404).send({ error: 'no logo' });
+      return reply
+        .header('content-type', row.mime)
+        .header('cache-control', 'public, max-age=86400')
+        .header('x-content-type-options', 'nosniff')
+        .send(Buffer.from(row.logo));
+    });
 
     app.get<{ Params: { id: string } }>('/v1/institutes/:id/members', async (req, reply) => {
       if (!(await guard(req, reply, 'teacher'))) return;

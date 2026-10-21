@@ -1,8 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { call } from '../admin/api.ts';
+import { API_URL } from '../content/catalog.ts';
 
 export type MemberRole = 'student' | 'teacher' | 'owner';
-export type Institute = { id: string; slug: string; name: string; role: MemberRole };
+export type Institute = {
+  id: string;
+  slug: string;
+  name: string;
+  role: MemberRole;
+  brandColor: string | null;
+  logoVersion: number | null;
+};
 export type ClassSummary = { id: string; name: string; inviteCode?: string; students?: number };
 export type Member = { id: string; name: string; email: string; role: MemberRole };
 export type SkillStat = { answered: number; score: number; max: number };
@@ -51,6 +59,22 @@ export const instituteApi = {
     }),
   get: (id: string) => call<Institute>(base(id)),
   rename: (id: string, name: string) => call(base(id), { method: 'PUT', body: { name } }),
+  setColor: (id: string, brandColor: string | null) =>
+    call(base(id), { method: 'PUT', body: { brandColor } }),
+  uploadLogo: async (id: string, file: File) => {
+    const res = await fetch(`${API_URL}${base(id)}/logo`, {
+      method: 'PUT',
+      credentials: 'include',
+      headers: { 'content-type': file.type },
+      body: file,
+    });
+    if (!res.ok)
+      throw new Error(
+        ((await res.json().catch(() => ({}))) as { error?: string }).error ??
+          (res.status === 413 ? 'The image is over 200 KB.' : `Upload failed (${res.status})`),
+      );
+  },
+  removeLogo: (id: string) => call(`${base(id)}/logo`, { method: 'DELETE' }),
   members: (id: string) => call<{ members: Member[] }>(`${base(id)}/members`),
   setRole: (id: string, userId: string, role: MemberRole) =>
     call(`${base(id)}/members/${userId}`, { method: 'PUT', body: { role } }),

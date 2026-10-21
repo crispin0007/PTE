@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from 'react';
 import { API_URL } from '../content/catalog.ts';
+import { applyBranding, refreshBranding } from './branding.ts';
 import { clientIdOf, mergeRemote, onHistoryChange, snapshot, type Attempt } from './history.ts';
 
 export type User = { id: string; name: string; email: string; role: string };
@@ -97,6 +98,7 @@ export type SpeakingScore = import('@openpte/scoring').SpeakingResult & {
 export async function signOut(): Promise<void> {
   await api('/api/auth/sign-out', { method: 'POST', body: '{}' });
   if (account.status === 'signed-in') set({ status: 'guest', google: account.google });
+  applyBranding([]);
 }
 
 /** Attempts the server is known to have, so each sync only uploads what is new. */
@@ -182,6 +184,7 @@ export async function startAccount() {
       speechScoring: !!config.speechScoring,
       syncedAt: null,
     });
+    void refreshBranding();
     await syncNow();
   } catch {
     set({ status: 'off' });

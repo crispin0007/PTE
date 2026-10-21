@@ -41,7 +41,7 @@ export function Today() {
           {firstVisit
             ? `${total} questions across ${itemTypes.length} question types${
                 includesUnreviewed ? ', including questions still waiting for human review' : ''
-              }. No account needed; your progress stays on this device.`
+              }. ${signedIn ? 'Your progress is saved to your account.' : 'No account needed; your progress stays on this device.'}`
             : 'Pick up where you left off.'}
         </p>
       </div>
