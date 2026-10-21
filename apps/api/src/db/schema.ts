@@ -260,3 +260,42 @@ export const classMembers = pgTable(
     index('class_members_user_idx').on(t.userId),
   ],
 );
+
+export type AssignmentSpec =
+  { kind: 'practice'; types: string[]; count: number } | { kind: 'mock'; mockId: string };
+
+/** Work a teacher sets for a class: a practice set or a mock test, with a due date. */
+export const assignments = pgTable(
+  'assignments',
+  {
+    id: text('id').primaryKey(),
+    instituteId: text('institute_id')
+      .notNull()
+      .references(() => institutes.id, { onDelete: 'cascade' }),
+    classId: text('class_id')
+      .notNull()
+      .references(() => classes.id, { onDelete: 'cascade' }),
+    title: text('title').notNull(),
+    spec: jsonb('spec').$type<AssignmentSpec>().notNull(),
+    dueAt: timestamp('due_at', { withTimezone: true }).notNull(),
+    createdBy: text('created_by').references(() => user.id, { onDelete: 'set null' }),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('assignments_class_idx').on(t.classId)],
+);
+
+/** A finished mock assignment, with the report summary the student's device worked out. */
+export const submissions = pgTable(
+  'assignment_submissions',
+  {
+    assignmentId: text('assignment_id')
+      .notNull()
+      .references(() => assignments.id, { onDelete: 'cascade' }),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    result: jsonb('result').$type<Record<string, unknown>>().notNull(),
+    submittedAt: timestamp('submitted_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.assignmentId, t.userId] })],
+);

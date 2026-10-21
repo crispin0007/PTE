@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate, useSearchParams } from 'react-router';
 import type { QuestionType } from '@openpte/schema';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
 import { getType, loadQuestions } from '../content/catalog.ts';
@@ -20,13 +20,14 @@ const itemCount = (def: MockDef) =>
   def.sections.reduce((n, s) => n + s.items.reduce((m, i) => m + i.count, 0), 0);
 
 /** Loads every type the mock uses and picks this sitting's questions. */
-async function preparePaper(def: MockDef) {
+async function preparePaper(def: MockDef, assignmentId?: string) {
   const types = paperTypes(def);
   const lists = await Promise.all(types.map((t) => loadQuestions(t)));
   const pool: Partial<Record<QuestionType, string[]>> = {};
   types.forEach((t, i) => (pool[t] = lists[i]!.map((q) => q.id)));
   const answered = new Set(snapshot().attempts.map((a) => a.questionId));
-  return buildPaper(def, pool, answered, newId(), Date.now());
+  const paper = buildPaper(def, pool, answered, newId(), Date.now());
+  return assignmentId ? { ...paper, assignmentId } : paper;
 }
 
 export function MockHome() {
@@ -37,11 +38,15 @@ export function MockHome() {
   const open = sittings.filter((s) => !s.report);
   const finished = sittings.filter((s) => s.report);
 
-  const start = async (def: MockDef) => {
+  const [params] = useSearchParams();
+  const assigned = MOCKS.find((m) => m.id === params.get('mock'));
+  const assignmentId = params.get('assignment') ?? undefined;
+
+  const start = async (def: MockDef, forAssignment?: string) => {
     setStarting(def.id);
     setError('');
     try {
-      const paper = await preparePaper(def);
+      const paper = await preparePaper(def, forAssignment);
       startSitting(paper);
       navigate(`/mock/run/${paper.id}`);
     } catch {
@@ -59,6 +64,28 @@ export function MockHome() {
           back, then get a score report for each skill.
         </p>
       </div>
+
+      {assigned && assignmentId && (
+        <section
+          aria-labelledby="assigned-heading"
+          className="flex flex-col gap-2 rounded-token border-2 border-brand bg-surface p-4"
+        >
+          <h2 id="assigned-heading" className="text-lg font-semibold">
+            Set by your teacher: {assigned.label}
+          </h2>
+          <p className="text-sm text-muted">
+            {assigned.description} When you finish, your score report is sent to your class.
+          </p>
+          <button
+            type="button"
+            onClick={() => void start(assigned, assignmentId)}
+            disabled={starting !== null}
+            className="min-h-11 self-start rounded-token bg-brand px-5 font-semibold text-brand-ink disabled:opacity-60"
+          >
+            Start the assigned mock
+          </button>
+        </section>
+      )}
 
       {open.length > 0 && (
         <section aria-labelledby="open-heading" className="flex flex-col gap-3">

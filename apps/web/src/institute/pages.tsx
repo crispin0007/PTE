@@ -1,6 +1,7 @@
 import { useEffect, useId, useState, type FormEvent, type ReactNode } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { SKILL_META } from '../content/guide.ts';
+import { Assignments } from './Assignments.tsx';
 import { useAccount } from '../practice/account.ts';
 import { useNow } from '../practice/history.ts';
 import {
@@ -397,6 +398,8 @@ function ClassScreen() {
         </div>
         <Roster id={id} classId={classId} onDone={data.reload} />
       </section>
+
+      <Assignments id={id} classId={classId} students={students} />
 
       {flagged.length > 0 && (
         <section aria-labelledby="help-heading" className={card} data-testid="needs-help">

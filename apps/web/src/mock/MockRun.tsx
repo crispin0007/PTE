@@ -6,13 +6,26 @@ import { ANSWERABLE } from '../answer/registry.ts';
 import { getType, loadQuestions } from '../content/catalog.ts';
 import { recordAttempt } from '../practice/history.ts';
 import { advance, restOfSection } from './flow.ts';
-import { buildReport, type ItemResult } from './report.ts';
+import { buildReport, type ItemResult, type Report } from './report.ts';
 import { getSitting, paperItems, updateSitting, useSittings, type Sitting } from './store.ts';
 
 const clock = (s: number) => {
   const t = Math.max(0, Math.ceil(s));
   return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
 };
+
+/** Sends an assignment's report summary to the class; the report page says if it failed. */
+export async function sendToTeacher(paperId: string, assignmentId: string, report: Report) {
+  const { instituteApi } = await import('../institute/api.ts');
+  const skills = Object.fromEntries(report.skills.map((s) => [s.skill, s.score]));
+  const sent = await instituteApi
+    .submitMock(assignmentId, { overall: report.overall, skills, questions: report.results.length })
+    .then(
+      () => 'yes' as const,
+      () => 'failed' as const,
+    );
+  updateSitting(paperId, { sent });
+}
 
 function useTick(running: boolean) {
   const [now, setNow] = useState(() => Date.now());
@@ -72,6 +85,7 @@ function Runner({ sitting }: { sitting: Sitting }) {
       recordAttempt({ ...r, skill: def.skill, at: now });
     }
     updateSitting(paper.id, { report });
+    if (paper.assignmentId) void sendToTeacher(paper.id, paper.assignmentId, report);
   }, [done, paper, sitting.results]);
 
   if (byId === null) return <p role="alert">The questions could not be loaded. Try again later.</p>;

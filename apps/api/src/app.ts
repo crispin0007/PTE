@@ -4,6 +4,7 @@ import { and, asc, count, eq, inArray } from 'drizzle-orm';
 import Fastify, { type FastifyInstance, type FastifyRequest } from 'fastify';
 import { z } from 'zod';
 import { adminRoutes } from './admin.ts';
+import { assignmentRoutes } from './assignments.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
 import { instituteRoutes, type InstituteOptions } from './institutes.ts';
@@ -167,6 +168,7 @@ export async function buildApp({
     await app.register(authRoutes(auth));
     await app.register(adminRoutes(db, auth));
     await app.register(instituteRoutes(db, auth, institutes));
+    await app.register(assignmentRoutes(db, auth));
     if (storage) await app.register(recordingRoutes(db, auth, storage, scoring));
     const { attempts, userState } = schema;
 

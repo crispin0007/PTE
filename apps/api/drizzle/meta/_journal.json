@@ -43,6 +43,13 @@
       "when": 1792615998820,
       "tag": "0005_institutes",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792617078329,
+      "tag": "0006_assignments",
+      "breakpoints": true
     }
   ]
 }

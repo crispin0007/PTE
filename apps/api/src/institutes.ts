@@ -72,13 +72,9 @@ export async function ensureSingleInstitute(db: Db, name: string) {
   return row!;
 }
 
-/**
- * Institutes, their members and classes. Isolation rule: every query on institute data filters by
- * the institute in the URL, and the caller must be a member of it. Non-members get 404, so they
- * cannot even tell whether an institute or class exists.
- */
-export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
-  const { institutes, memberships, classes, classMembers, user, attempts } = schema;
+/** Session and membership checks shared by the institute and assignment routes. */
+export function instituteAccess(db: Db, auth: Auth) {
+  const { memberships, classes } = schema;
 
   const userOf = async (req: FastifyRequest, reply: FastifyReply) => {
     const s = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) });
@@ -121,6 +117,18 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
       .where(and(eq(classes.id, classId), eq(classes.instituteId, instituteId)));
     return c;
   };
+
+  return { userOf, roleIn, guard, classIn };
+}
+
+/**
+ * Institutes, their members and classes. Isolation rule: every query on institute data filters by
+ * the institute in the URL, and the caller must be a member of it. Non-members get 404, so they
+ * cannot even tell whether an institute or class exists.
+ */
+export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
+  const { institutes, memberships, classes, classMembers, user, attempts } = schema;
+  const { userOf, roleIn, guard, classIn } = instituteAccess(db, auth);
 
   /** Adds a membership, never lowering an existing role. */
   const join = async (instituteId: string, userId: string, role: MemberRole) => {

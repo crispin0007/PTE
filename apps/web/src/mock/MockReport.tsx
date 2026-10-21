@@ -4,6 +4,7 @@ import { Meter } from '../components/Meter.tsx';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
 import { getType } from '../content/catalog.ts';
 import { SKILL_META, TYPE_GUIDE } from '../content/guide.ts';
+import { sendToTeacher } from './MockRun.tsx';
 import { useSittings } from './store.ts';
 
 const pct = (score: number, max: number) => (max ? Math.round((score / max) * 100) : 0);
@@ -11,8 +12,8 @@ const pct = (score: number, max: number) => (max ? Math.round((score / max) * 10
 export function MockReport() {
   const { id = '' } = useParams();
   const sitting = useSittings().find((s) => s.paper.id === id);
-  const report = sitting?.report;
-  if (!report) return <NotFound />;
+  if (!sitting?.report) return <NotFound />;
+  const report = sitting.report;
   const skipped = report.results.filter((r) => r.skipped).length;
 
   return (
@@ -33,6 +34,30 @@ export function MockReport() {
           Print or save as PDF
         </button>
       </div>
+
+      {sitting.paper.assignmentId && (
+        <p
+          role="status"
+          className={`rounded-token px-3 py-2 text-sm ${sitting.sent === 'failed' ? 'bg-bad-soft' : 'bg-good-soft'}`}
+        >
+          {sitting.sent === 'yes'
+            ? 'Sent to your teacher.'
+            : sitting.sent === 'failed'
+              ? 'Could not reach your teacher’s class. '
+              : 'Sending to your teacher…'}
+          {sitting.sent === 'failed' && (
+            <button
+              type="button"
+              className="underline print:hidden"
+              onClick={() =>
+                void sendToTeacher(sitting.paper.id, sitting.paper.assignmentId!, report)
+              }
+            >
+              Try again
+            </button>
+          )}
+        </p>
+      )}
 
       <section
         aria-labelledby="overall-heading"

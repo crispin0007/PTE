@@ -15,6 +15,28 @@ export type Student = {
   skills: Partial<Record<'speaking' | 'writing' | 'reading' | 'listening', SkillStat>>;
 };
 
+export type AssignmentSpec =
+  { kind: 'practice'; types: string[]; count: number } | { kind: 'mock'; mockId: string };
+type Progress = { done: number; target: number; result?: MockSummary };
+export type MockSummary = {
+  overall: number | null;
+  skills: Record<string, number | null>;
+  questions: number;
+};
+export type Assignment = {
+  id: string;
+  classId: string;
+  title: string;
+  spec: AssignmentSpec;
+  dueAt: number;
+  createdAt: number;
+};
+export type ClassAssignment = Assignment & {
+  students: ({ userId: string } & Progress)[];
+  complete: number;
+};
+export type MyAssignment = Assignment & Progress & { className: string; instituteName: string };
+
 const base = (id: string) => `/v1/institutes/${id}`;
 
 export const instituteApi = {
@@ -55,6 +77,18 @@ export const instituteApi = {
       `${base(id)}/classes/${classId}/import`,
       { method: 'POST', body: { csv } },
     ),
+  assignments: (id: string, classId: string) =>
+    call<{ assignments: ClassAssignment[] }>(`${base(id)}/classes/${classId}/assignments`),
+  assign: (
+    id: string,
+    classId: string,
+    body: { title: string; dueAt: number; spec: AssignmentSpec },
+  ) => call<Assignment>(`${base(id)}/classes/${classId}/assignments`, { method: 'POST', body }),
+  unassign: (id: string, classId: string, aid: string) =>
+    call(`${base(id)}/classes/${classId}/assignments/${aid}`, { method: 'DELETE' }),
+  myAssignments: () => call<{ assignments: MyAssignment[] }>('/v1/me/assignments'),
+  submitMock: (aid: string, result: MockSummary) =>
+    call(`/v1/me/assignments/${aid}/submit`, { method: 'POST', body: { result } }),
 };
 
 /** Loads on mount and whenever `key` changes (or on `reload`), keeping any error for display. */

@@ -16,6 +16,8 @@ export type Sitting = {
   itemStartedAt: number | null;
   results: ItemResult[];
   report?: Report;
+  /** For an assignment: whether the report reached the teacher. */
+  sent?: 'yes' | 'failed';
 };
 
 type State = { version: 1; sittings: Sitting[] };

@@ -1,10 +1,17 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router';
 import { isScored } from '../../answer/registry.ts';
 import { includesUnreviewed, itemTypes, questionCount } from '../../content/catalog.ts';
 import { SKILL_META, TYPE_GUIDE } from '../../content/guide.ts';
 import { questionLabel, typeLabel } from '../../content/labels.ts';
 import { answeredOn, mistakeQueue, suggestTypes } from '../../practice/analytics.ts';
+import { useAccount } from '../../practice/account.ts';
 import { useHistory, useNow } from '../../practice/history.ts';
+
+// Only signed-in class members need it, so it loads on demand.
+const DueThisWeek = lazy(async () => ({
+  default: (await import('../../institute/Due.tsx')).DueThisWeek,
+}));
 
 const card = 'flex flex-col gap-3 rounded-token border border-line bg-surface p-5';
 
@@ -22,6 +29,7 @@ export function Today() {
   );
   const mistakes = mistakeQueue(attempts).slice(0, 5);
   const firstVisit = attempts.length === 0;
+  const signedIn = useAccount().status === 'signed-in';
 
   return (
     <div className="flex flex-col gap-6">
@@ -37,6 +45,12 @@ export function Today() {
             : 'Pick up where you left off.'}
         </p>
       </div>
+
+      {signedIn && (
+        <Suspense fallback={null}>
+          <DueThisWeek />
+        </Suspense>
+      )}
 
       <section aria-labelledby="goal-heading" className={card} data-testid="daily-goal">
         <div className="flex items-baseline justify-between gap-3">

@@ -152,6 +152,8 @@ export type Paper = {
   mockId: string;
   label: string;
   createdAt: number;
+  /** Set when the sitting is a teacher's assignment; the report is sent to the class. */
+  assignmentId?: string;
   sections: { id: SectionDef['id']; label: string; sharedTimeS: number; items: PaperItem[] }[];
 };
 
