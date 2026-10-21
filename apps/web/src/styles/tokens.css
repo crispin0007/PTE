@@ -1,6 +1,7 @@
 /*
  * Design tokens from the UI plan. Every colour, radius and font used by the app comes from here,
  * so dark mode and institute branding are a matter of redefining these variables.
+ * good and bad are a shade darker than the UI plan so small text passes 4.5:1 on every surface.
  * Skill colours are for bars, borders and icons. Text always uses ink or muted for contrast.
  */
 :root {
@@ -17,9 +18,9 @@
   --write: #7c4ddb;
   --read: #0b9480;
   --listen: #d4930f;
-  --good: #16884a;
+  --good: #12703c;
   --good-soft: #dff3e7;
-  --bad: #c43d3d;
+  --bad: #b3302f;
   --bad-soft: #fbe3e3;
   --warn-bg: #fff3d1;
   --warn-ink: #5c4300;
