@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0003
+type: listening_highlight_correct_summary
+tags:
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Pollinator_decline
+attribution: Facts drawn from the Wikipedia article "Pollinator decline" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0003.mp3
+transcript: Honey bees get most of the attention, but they're only part of the pollination story. There
+  are around twenty thousand species of bees worldwide, most of them solitary, plus flies, beetles, butterflies,
+  birds and bats. For some crops, wild pollinators are actually more effective than honey bees. So protecting
+  pollination isn't just about keeping beehives healthy; it means protecting the habitats that wild species
+  depend on. Farmers can help by planting flowers along field edges and leaving some areas undisturbed.
+options:
+- Beehives should be placed in every natural habitat.
+- Solitary bees are harmful to crops.
+- Wild pollinators play a major role, so protecting their habitats matters as much as caring for honey
+  bees.
+- Honey bees are the most effective pollinators of all crops.
+answer: 2

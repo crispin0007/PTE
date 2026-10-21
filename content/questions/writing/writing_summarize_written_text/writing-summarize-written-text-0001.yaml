@@ -1,0 +1,32 @@
+id: writing-summarize-written-text-0001
+type: writing_summarize_written_text
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Antimicrobial resistance occurs when bacteria, viruses, fungi and parasites change over time
+  so that the medicines once used to treat them no longer work. It is a natural evolutionary process:
+  whenever a population of microbes is exposed to a drug, the individuals that happen to survive pass
+  on their advantage. Yet human activity has made the process much faster. Antibiotics are frequently
+  prescribed for illnesses they cannot treat, such as viral colds, and patients often stop a course early
+  or obtain medicines without a prescription. In agriculture, antibiotics have been given routinely to
+  healthy animals to promote growth, and livestock now account for most antimicrobial sales worldwide.
+  The consequences are already severe. Estimates suggest that bacterial resistance was directly responsible
+  for more than a million deaths in 2019 and contributed to several million more. Without action, common
+  procedures such as caesarean sections, hip replacements and cancer chemotherapy could become far more
+  dangerous, because they depend on effective antibiotics to prevent infection. International bodies have
+  responded with action plans that encourage careful prescribing, better surveillance and investment in
+  new drugs, and in 2024 world leaders committed to cutting deaths linked to resistance by a tenth by
+  2030.'
+sample_answer: Antimicrobial resistance is a natural process that human misuse of antibiotics in medicine
+  and farming has accelerated, already causing over a million deaths a year and threatening routine medical
+  procedures, which has prompted international plans to improve prescribing, surveillance and drug development.

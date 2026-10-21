@@ -1,0 +1,18 @@
+id: speaking-read-aloud-0009
+type: speaking_read_aloud
+tags:
+- psychology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: Sleep is not simply a period of rest for the brain. While we sleep, recently learned information
+  is replayed and connected to what we already know, which helps explain why students often remember more
+  after a good night's sleep.

@@ -1,0 +1,25 @@
+id: speaking-describe-image-0005
+type: speaking_describe_image
+tags:
+- bar-chart
+- society
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0005.svg
+alt_text: 'Grouped bar chart of weekly hours. Ages 18–24: study/work 32, screens 28, exercise 5, social
+  12. Ages 25–34: 42, 20, 4, 8. Illustrative data.'
+key_points:
+- Study/work takes most time in both groups
+- Older group works 10 hours more
+- Younger group spends more time on screens and socialising
+- Exercise lowest for both
+sample_answer: This bar chart compares how two age groups spend their week. Study or work takes the most
+  time in both groups, but people aged twenty-five to thirty-four spend forty-two hours, ten more than
+  the younger group. In contrast, eighteen to twenty-four year olds spend more time on screens and socialising.
+  Exercise is the smallest category for both, at around four to five hours.

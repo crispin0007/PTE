@@ -1,0 +1,25 @@
+id: speaking-describe-image-0007
+type: speaking_describe_image
+tags:
+- pie-chart
+- environment
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0007.svg
+alt_text: 'Pie chart of household waste: food 35%, paper 25%, plastic 18%, glass 12%, other 10%. Illustrative
+  data.'
+key_points:
+- Food waste is largest at 35%
+- Paper second at 25%
+- Plastic 18%, glass 12%
+- Other materials smallest at 10%
+sample_answer: This pie chart breaks down household waste by type. Food is the largest category, making
+  up thirty-five percent, followed by paper at a quarter of the total. Plastic accounts for eighteen percent
+  and glass for twelve percent, while other materials make up the remaining ten percent. This suggests
+  that reducing food waste would have the biggest impact.

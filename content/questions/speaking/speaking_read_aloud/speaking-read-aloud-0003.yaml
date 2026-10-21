@@ -1,0 +1,18 @@
+id: speaking-read-aloud-0003
+type: speaking_read_aloud
+tags:
+- biology
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: Almost every cell in the body follows a daily rhythm. Hormone levels, body temperature and alertness
+  all rise and fall on a roughly twenty-four-hour cycle, which is kept in time mainly by the light that
+  enters our eyes each morning.

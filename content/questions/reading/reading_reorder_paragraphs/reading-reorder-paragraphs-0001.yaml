@@ -1,0 +1,21 @@
+id: reading-reorder-paragraphs-0001
+type: reading_reorder_paragraphs
+tags:
+- medicine
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- In 1928, Alexander Fleming returned from holiday to find mould growing on one of his bacterial cultures.
+- Around the mould, the bacteria had died, and Fleming named the substance responsible penicillin.
+- However, he was unable to purify it in useful amounts, and interest in the discovery faded.
+- A decade later, a team in Oxford led by Howard Florey and Ernst Chain succeeded in concentrating it.
+- Their work led to mass production during the Second World War and a shared Nobel Prize in 1945.

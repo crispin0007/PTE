@@ -1,0 +1,25 @@
+id: speaking-describe-image-0006
+type: speaking_describe_image
+tags:
+- line-chart
+- economy
+difficulty: 4
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0006.svg
+alt_text: 'Line chart of monthly park visitors: January 12, March 18, May 35, July 62, September 40, November
+  15 thousand. Illustrative data.'
+key_points:
+- Strong seasonal pattern
+- Peak of 62,000 in July
+- Lowest in January at 12,000
+- Sharp decline after summer
+sample_answer: This line graph shows the number of visitors to a national park across the year. Numbers
+  are lowest in January at about twelve thousand, then rise steadily through spring to a peak of sixty-two
+  thousand in July. After the summer, visitor numbers fall sharply, reaching fifteen thousand by November.
+  Overall, the park is far busier in summer than in winter.

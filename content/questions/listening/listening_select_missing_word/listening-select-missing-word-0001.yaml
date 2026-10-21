@@ -1,0 +1,26 @@
+id: listening-select-missing-word-0001
+type: listening_select_missing_word
+tags:
+- psychology
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0001.mp3
+transcript: Many students believe that staying up late to study gives them an advantage, but the research
+  suggests otherwise. Studies consistently show that people who sleep after learning remember more than
+  those who stay awake. So, if you have an important exam tomorrow, the best thing you can do tonight
+  is
+options:
+- get a good night's sleep
+- study until morning
+- skip breakfast
+- drink more coffee
+answer: 0

@@ -1,0 +1,29 @@
+id: reading-fib-drag-drop-0005
+type: reading_fib_drag_drop
+tags:
+- economics
+- psychology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: A nudge changes how a choice is presented without {{b1}} any option. Placing fruit at eye level
+  in a canteen is a classic example. Defaults are especially {{b2}}, because many people simply {{b3}}
+  whatever happens if they do nothing.
+blanks:
+- id: b1
+  answer: forbidding
+- id: b2
+  answer: powerful
+- id: b3
+  answer: accept
+distractors:
+- banned
+- taxed
+- expensive

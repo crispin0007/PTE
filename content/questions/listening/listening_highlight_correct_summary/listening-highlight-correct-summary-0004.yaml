@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0004
+type: listening_highlight_correct_summary
+tags:
+- urban
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0004.mp3
+transcript: The urban heat island effect was first studied by Luke Howard in London in the early nineteenth
+  century. He noticed that the city centre was noticeably warmer than the surrounding countryside, especially
+  at night. Two hundred years later, the effect is more important than ever, because more than half the
+  world's population lives in cities and heatwaves are becoming more frequent. Today, city planners use
+  trees, reflective roofs and green spaces to try to reduce the problem.
+options:
+- Luke Howard invented a method to cool cities in the nineteenth century.
+- Heatwaves have become less common since Howard's time.
+- The heat island effect, first noticed in nineteenth-century London, matters more today because of urbanisation
+  and more frequent heatwaves.
+- Cities are cooler than the countryside at night.
+answer: 2

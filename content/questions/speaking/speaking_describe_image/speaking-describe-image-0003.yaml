@@ -1,0 +1,25 @@
+id: speaking-describe-image-0003
+type: speaking_describe_image
+tags:
+- pie-chart
+- energy
+difficulty: 2
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0003.svg
+alt_text: 'Pie chart of electricity sources: gas 38%, wind 24%, solar 16%, hydro 12%, coal 10%. Illustrative
+  data.'
+key_points:
+- Gas is the largest source at 38%
+- Wind is second at 24%
+- Renewables together make up 52%
+- Coal is smallest at 10%
+sample_answer: This pie chart shows the sources of electricity in a region. Gas is the largest single
+  source, at thirty-eight percent. Wind provides twenty-four percent, solar sixteen percent and hydro
+  twelve percent, so renewables together supply just over half of the total. Coal is the smallest contributor
+  at only ten percent.

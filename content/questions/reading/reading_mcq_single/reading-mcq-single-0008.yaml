@@ -1,0 +1,29 @@
+id: reading-mcq-single-0008
+type: reading_mcq_single
+tags:
+- medicine
+- psychology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Placebo
+attribution: Facts drawn from the Wikipedia article "Placebo" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Doctors have long assumed that a placebo works only if the patient believes it is a real medicine.
+  A series of small studies has challenged this assumption. In so-called open-label trials, patients are
+  told honestly that they are receiving inactive pills, yet some still report less pain or fewer symptoms
+  than patients who receive nothing. Researchers are cautious about these results: the trials have been
+  small, and the outcomes measured are often subjective. Still, if the findings hold, they would allow
+  doctors to harness the placebo effect without deceiving their patients, which has always been the main
+  ethical objection to its use.'
+question: Why might open-label placebos be attractive to doctors?
+options:
+- They are cheaper than conventional medicines.
+- They have been proven effective in large trials.
+- They avoid the need to mislead patients.
+- They work better for objective outcomes than subjective ones.
+answer: 2

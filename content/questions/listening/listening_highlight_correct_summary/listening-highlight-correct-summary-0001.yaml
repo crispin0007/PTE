@@ -1,0 +1,29 @@
+id: listening-highlight-correct-summary-0001
+type: listening_highlight_correct_summary
+tags:
+- linguistics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Cognitive_advantages_of_multilingualism
+attribution: Facts drawn from the Wikipedia article "Cognitive advantages of multilingualism" (CC BY-SA
+  4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0001.mp3
+transcript: For years, we heard that bilingual people have better attention and self-control because they're
+  constantly switching between languages. Early studies seemed to confirm this. But as researchers ran
+  larger and more careful experiments, the advantage often disappeared. Part of the problem may be that
+  studies with exciting results were more likely to be published. That doesn't mean bilingualism has no
+  benefits; it clearly does, socially and professionally. But the claim that it boosts general thinking
+  skills is much less certain than it once seemed.
+options:
+- Bilingual people have been proven to have better attention and self-control than monolinguals.
+- Researchers have stopped studying bilingualism because results were too exciting.
+- Bilingualism has no benefits, and early studies were deliberately misleading.
+- Larger, more careful studies have cast doubt on the claim that bilingualism improves general thinking
+  skills, though it has other clear benefits.
+answer: 3

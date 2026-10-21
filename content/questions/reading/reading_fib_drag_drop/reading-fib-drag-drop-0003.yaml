@@ -1,0 +1,30 @@
+id: reading-fib-drag-drop-0003
+type: reading_fib_drag_drop
+tags:
+- history
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Before the electrical telegraph, news could travel no {{b1}} than a horse or a ship. After a
+  cable {{b2}} the Atlantic in 1866, messages between Europe and North America took minutes rather than
+  weeks, and newspapers began to {{b3}} distant events on the day they happened.
+blanks:
+- id: b1
+  answer: faster
+- id: b2
+  answer: crossed
+- id: b3
+  answer: report
+distractors:
+- slower
+- printed
+- ignored

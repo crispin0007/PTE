@@ -1,0 +1,25 @@
+id: listening-select-missing-word-0008
+type: listening_select_missing_word
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Placebo
+attribution: Facts drawn from the Wikipedia article "Placebo" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0008.mp3
+transcript: When a new medicine is tested, researchers need to make sure that any improvement is caused
+  by the drug itself, not by what patients or doctors expect. In a well-designed trial, neither the patients
+  nor the doctors know who is receiving the real drug. This is known as a double-blind design, and its
+  purpose is to
+options:
+- save money on medicine
+- make trials shorter
+- increase side effects
+- reduce the influence of expectations
+answer: 3

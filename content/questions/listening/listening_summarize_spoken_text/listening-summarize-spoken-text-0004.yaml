@@ -1,0 +1,29 @@
+id: listening-summarize-spoken-text-0004
+type: listening_summarize_spoken_text
+tags:
+- pollution
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Microplastics
+attribution: Facts drawn from the Wikipedia article "Microplastics" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0004.mp3
+transcript: 'Microplastics are pieces of plastic smaller than five millimetres, and they are now found
+  almost everywhere, in the deep sea, in Antarctic sea ice, in the air above mountains, and in our food
+  and water. Some are made deliberately small, like the microbeads that used to be added to face scrubs.
+  Many countries have banned those. But the majority come from larger plastic breaking apart, or from
+  everyday wear: synthetic clothes shed fibres in the wash, and car tyres shed particles on the road.
+  What we don''t yet know is how harmful they are to human health. We know we''re swallowing them, and
+  the smallest particles can enter cells, but the long-term effects are still being studied. In the meantime,
+  researchers recommend some sensible precautions, such as reducing single-use plastics, fitting filters
+  to washing machines, and improving waste collection, so that less plastic reaches rivers and the sea
+  in the first place.'
+sample_answer: The lecture explained that microplastics, particles under five millimetres, are found throughout
+  the environment and in our food. Although microbeads have been banned in many countries, most come from
+  larger plastics breaking down, from synthetic clothing fibres released in washing and from tyre wear,
+  and although we are swallowing them, their long-term health effects remain uncertain.

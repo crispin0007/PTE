@@ -1,0 +1,34 @@
+id: listening-mcq-multiple-0005
+type: listening_mcq_multiple
+tags:
+- africa
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0005.mp3
+transcript: 'The Great Green Wall was launched with enormous ambition: to restore land across the whole
+  width of Africa, just south of the Sahara. Nearly twenty years later, progress has been real but slow,
+  and it''s worth asking why. The Great Green Wall has faced a number of obstacles. Money is one: countries
+  and donors pledged billions, but much of it has been slow to arrive. Coordination is another, with more
+  than twenty countries involved, each with its own priorities. In parts of the Sahel, armed groups make
+  it unsafe to work. And there have been natural setbacks too: swarms of locusts have destroyed young
+  plants in some projects.'
+question: Which obstacles to the Great Green Wall are mentioned?
+options:
+- Slow delivery of funding
+- Coordination between many countries
+- Flooding from heavy rains
+- Insecurity caused by armed groups
+- Opposition from local farmers
+answers:
+- 0
+- 1
+- 3

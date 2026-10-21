@@ -1,0 +1,31 @@
+id: speaking-retell-lecture-0003
+type: speaking_retell_lecture
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Placebo
+attribution: Facts drawn from the Wikipedia article "Placebo" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-retell-lecture-0003.mp3
+transcript: Let's turn to the placebo effect. In a drug trial, one group gets the real medicine and another
+  gets an identical-looking pill with nothing active in it. Any improvement in that second group is called
+  the placebo response. What's interesting is that placebos seem to work mostly on subjective symptoms,
+  things like pain or nausea, rather than on, say, the size of a tumour. There's also a flip side, the
+  nocebo effect, where people who expect side effects actually report them, even from a sugar pill. And
+  more recently, researchers have tried giving placebos openly, telling patients the pills are inactive.
+  Some small studies report benefits, but the evidence so far is limited, so we should be cautious.
+key_points:
+- Placebo groups in trials show a placebo response
+- Effects mainly on subjective symptoms like pain
+- 'Nocebo: negative expectations cause reported side effects'
+- 'Open-label placebos: promising but limited evidence'
+sample_answer: The lecture described the placebo effect in drug trials, where people given an inactive
+  pill often improve. These effects mainly concern subjective symptoms such as pain and nausea. The speaker
+  also mentioned the nocebo effect, where negative expectations cause reported side effects, and open-label
+  placebos, which some small studies suggest may help, although the evidence is still limited.

@@ -1,0 +1,24 @@
+id: speaking-respond-to-situation-0002
+type: speaking_respond_to_situation
+tags:
+- everyday
+- functional
+difficulty: 2
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+situation_text: You are sick and cannot attend a group project meeting this afternoon. Your group is expecting
+  you to present your section. Call your group leader and explain.
+audio: audio/speaking-respond-to-situation-0002.mp3
+key_points:
+- Explain you are ill
+- Apologise for the short notice
+- Offer to send your section
+- Suggest a way to catch up
+sample_answer: Hi Priya, it's me. I'm sorry, but I've come down with a fever and I won't be able to make
+  it to the meeting this afternoon. I've finished my section, so I'll email the slides to everyone in
+  the next hour. Could someone present them for me? I'll call later to hear what was decided.

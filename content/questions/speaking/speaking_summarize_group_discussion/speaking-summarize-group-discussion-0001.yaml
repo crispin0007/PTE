@@ -1,0 +1,38 @@
+id: speaking-summarize-group-discussion-0001
+type: speaking_summarize_group_discussion
+tags:
+- economics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0001.mp3
+transcript: |-
+  Maya: I think nudges are a great tool for governments. Making pension saving the default, for example, costs almost nothing and helps people.
+  Daniel: But isn't that a bit manipulative? People end up doing something because they didn't notice the choice, not because they agreed to it.
+  Professor Li: That's the central ethical debate. Supporters say every choice has to be presented somehow, so there's no neutral option. Critics, like Daniel, worry about autonomy.
+  Maya: People can still opt out, though. Nothing is forbidden.
+  Professor Li: True, and that's what distinguishes a nudge from a ban. But I'd add that the evidence is mixed. Some reviews suggest the effects shrink once you account for unpublished studies.
+  Daniel: Even so, I'd want people to be told clearly when a default has been set for them.
+  Maya: I agree with that. Transparency would answer most of the ethical worries.
+  Professor Li: Many researchers would support that position. A nudge that still works when people know about it is much easier to defend than one that depends on people not noticing.
+speakers:
+- Maya
+- Daniel
+- Professor Li
+key_points:
+- 'Maya: nudges like default pensions are cheap and helpful'
+- 'Daniel: concern that nudges are manipulative'
+- 'Professor Li: no neutral way to present choices; autonomy is the key debate'
+- Opt-out remains possible; evidence on effectiveness is mixed
+sample_answer: The group discussed whether governments should use nudges. Maya argued that nudges, such
+  as making pension saving the default, are cheap and helpful. Daniel worried that they are manipulative
+  because people may not notice the choice. Professor Li explained that there is no neutral way to present
+  choices, so the real debate is about autonomy, and noted that people can still opt out, although evidence
+  of effectiveness is mixed.

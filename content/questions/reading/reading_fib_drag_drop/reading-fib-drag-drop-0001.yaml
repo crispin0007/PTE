@@ -1,0 +1,30 @@
+id: reading-fib-drag-drop-0001
+type: reading_fib_drag_drop
+tags:
+- geology
+- science
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: In 1912 Alfred Wegener argued that the continents had once been joined and had slowly {{b1}}
+  apart. Most geologists {{b2}} the idea because he could not explain what force moved them. Decades later,
+  evidence of seafloor {{b3}} provided the missing mechanism.
+blanks:
+- id: b1
+  answer: drifted
+- id: b2
+  answer: rejected
+- id: b3
+  answer: spreading
+distractors:
+- melted
+- reversed
+- colder

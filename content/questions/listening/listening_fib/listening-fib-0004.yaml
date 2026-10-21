@@ -1,0 +1,29 @@
+id: listening-fib-0004
+type: listening_fib
+tags:
+- pollution
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Microplastics
+attribution: Facts drawn from the Wikipedia article "Microplastics" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0004.mp3
+transcript: Plastic pollution is not only a problem of bottles and bags floating in the sea. Microplastics
+  are tiny {{b1}} of plastic. Many come from synthetic clothing, which releases fibres every time it is
+  {{b2}}. Others come from car {{b3}}. Scientists are still trying to understand their {{b4}} on human
+  health. Some countries have already banned tiny plastic beads in cosmetics, but that is only a small
+  part of the problem.
+blanks:
+- id: b1
+  answer: fragments
+- id: b2
+  answer: washed
+- id: b3
+  answer: tyres
+- id: b4
+  answer: effects

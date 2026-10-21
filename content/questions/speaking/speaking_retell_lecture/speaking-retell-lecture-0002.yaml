@@ -1,0 +1,34 @@
+id: speaking-retell-lecture-0002
+type: speaking_retell_lecture
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-retell-lecture-0002.mp3
+transcript: When we think about technologies that shrank the world, we tend to think of the internet or
+  aeroplanes. But I'd argue the electrical telegraph was just as revolutionary. Before the eighteen-forties,
+  information travelled at the speed of a horse or a sailing ship. A message from London to New York could
+  take weeks. Once the transatlantic cable was finally working in eighteen sixty-six, that same message
+  took minutes. And the consequences went well beyond business. Railways used it to run trains safely.
+  Newspapers began reporting foreign events the next morning. Astronomers used telegraphed time signals
+  to measure longitude more accurately. In a sense, it was the first time people experienced distant events
+  almost as they happened.
+key_points:
+- Before the telegraph, news moved at the speed of horses or ships
+- Transatlantic cable in 1866 cut weeks to minutes
+- 'Uses: railways, newspapers, measuring longitude'
+- First near-real-time awareness of distant events
+sample_answer: The speaker argued that the electrical telegraph was as revolutionary as the internet.
+  Before the 1840s, news travelled only as fast as horses or ships, but after the transatlantic cable
+  began working in 1866, messages took minutes instead of weeks. It helped railways run safely, allowed
+  newspapers to report foreign news the next day, and improved the measurement of longitude, giving people
+  their first near-real-time view of distant events.

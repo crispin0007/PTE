@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0003
+type: reading_mcq_multiple
+tags:
+- environment
+- pollution
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Microplastics
+attribution: Facts drawn from the Wikipedia article "Microplastics" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Researchers divide microplastics into two groups. Primary microplastics are manufactured at a
+  small size, such as the microbeads once common in face scrubs and the pellets used as raw material by
+  plastic factories. Secondary microplastics are fragments of larger objects, created as bottles, bags
+  and fishing nets are broken up by sunlight and waves. Washing synthetic clothes releases fibres, and
+  car tyres shed particles as they wear. Several countries have banned microbeads in rinse-off cosmetics,
+  but such bans address only a small part of the problem, since most microplastics come from the breakdown
+  of larger items and from everyday wear.
+question: Which of the following are given as sources of microplastics?
+options:
+- Washing clothes made from synthetic fibres.
+- The wear of car tyres.
+- Burning plastic waste in incinerators.
+- Larger plastic items breaking apart.
+- Recycling plastic bottles into new bottles.
+answers:
+- 0
+- 1
+- 3

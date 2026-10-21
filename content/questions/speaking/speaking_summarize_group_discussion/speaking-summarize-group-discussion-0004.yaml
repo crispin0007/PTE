@@ -1,0 +1,38 @@
+id: speaking-summarize-group-discussion-0004
+type: speaking_summarize_group_discussion
+tags:
+- urban
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0004.mp3
+transcript: |-
+  Nadia: Our neighbourhood gets unbearably hot in summer. Could the council plant more trees?
+  Chris: Trees take years to grow. Painting roofs white would work immediately.
+  Dr Okafor: You're both right. Cool roofs reflect sunlight straight away, while trees add shade and cooling through evaporation over time.
+  Nadia: Which is cheaper?
+  Dr Okafor: Cool roof coatings are cheaper per building, but trees bring other benefits like cleaner air. The best plans combine them and target the hottest streets first.
+  Chris: What about older people? They're the ones most at risk in heatwaves.
+  Nadia: True. My grandmother can't sleep when it's that hot.
+  Dr Okafor: That's a very good point. Cities often prioritise streets near care homes, schools and hospitals, and some open cooling centres during heatwaves. Long-term planning and short-term emergency measures both have a role.
+speakers:
+- Nadia
+- Chris
+- Dr Okafor
+key_points:
+- Nadia wants more trees for a hot neighbourhood
+- Chris prefers cool roofs because they act immediately
+- 'Dr Okafor: roofs act fast, trees take time but add more benefits'
+- Best approach combines both, starting with the hottest areas
+sample_answer: 'The group discussed how to cool a hot neighbourhood. Nadia wanted more trees, while Chris
+  preferred white roofs because they work immediately. Dr Okafor said both are useful: cool roofs act
+  quickly and cost less, while trees take time but bring extra benefits such as cleaner air. She recommended
+  combining them and starting with the hottest streets.'

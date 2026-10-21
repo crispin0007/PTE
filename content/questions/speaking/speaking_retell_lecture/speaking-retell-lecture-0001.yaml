@@ -1,0 +1,34 @@
+id: speaking-retell-lecture-0001
+type: speaking_retell_lecture
+tags:
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Pollinator_decline
+attribution: Facts drawn from the Wikipedia article "Pollinator decline" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-retell-lecture-0001.mp3
+transcript: 'Today I want to talk about pollinators, and particularly about why their decline matters.
+  Now, you''ve probably heard that bees are responsible for a third of everything we eat. That''s an oversimplification.
+  Most of our staple calories, wheat, rice, maize, come from crops that are pollinated by the wind. But
+  if you look at fruit, nuts, many vegetables, the picture changes completely. These crops depend heavily
+  on insects, and they provide a large share of the vitamins in our diet. So the real risk isn''t that
+  we''d run out of food, it''s that our diets would become poorer and more expensive. And the causes of
+  decline are several: pesticides, especially a group called neonicotinoids, parasites like the varroa
+  mite, and simply the loss of the wild flowers and habitats these insects need.'
+key_points:
+- Staple crops are mostly wind-pollinated
+- Fruit, nuts and vegetables depend on insects
+- Main risk is poorer, costlier diets, not famine
+- 'Causes: pesticides, parasites, habitat loss'
+sample_answer: The lecturer explained that the claim that bees produce a third of our food is an oversimplification,
+  because staple crops like wheat, rice and maize are pollinated by wind. However, fruits, nuts and many
+  vegetables depend on insects and supply many of our vitamins, so pollinator decline would make diets
+  poorer and more expensive rather than cause famine. The main causes are pesticides such as neonicotinoids,
+  parasites like the varroa mite, and habitat loss.

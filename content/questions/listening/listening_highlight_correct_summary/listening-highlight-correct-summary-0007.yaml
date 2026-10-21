@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0007
+type: listening_highlight_correct_summary
+tags:
+- oceans
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Ocean_acidification
+attribution: Facts drawn from the Wikipedia article "Ocean acidification" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0007.mp3
+transcript: The ocean has been a great help in slowing climate change. It has taken up roughly a quarter
+  of the carbon dioxide humans have released. Without that, warming would be considerably worse. But the
+  benefit has a price. The absorbed carbon dioxide is changing seawater chemistry, making it harder for
+  many marine organisms to build shells and skeletons. Scientists are now studying how quickly these organisms
+  might be able to adapt.
+options:
+- The ocean has stopped absorbing carbon dioxide.
+- Marine organisms benefit from higher carbon dioxide levels.
+- Carbon dioxide in the ocean has no effect on climate.
+- By absorbing much of our carbon dioxide, the ocean has slowed warming but at the cost of chemistry changes
+  that harm shell-building life.
+answer: 3

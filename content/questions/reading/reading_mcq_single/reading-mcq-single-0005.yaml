@@ -1,0 +1,28 @@
+id: reading-mcq-single-0005
+type: reading_mcq_single
+tags:
+- economics
+- psychology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Behavioural economists have shown that the way a choice is presented can change what people choose,
+  even when the options themselves stay the same. In one study, more households ended up on a renewable
+  electricity tariff simply because it was the default, the option they received if they did nothing.
+  Governments took notice. In 2010 the United Kingdom set up a small team in the Cabinet Office to apply
+  such insights to public policy. Critics, however, argue that the evidence for nudging is weaker than
+  its supporters claim once studies that found no effect, and were never published, are taken into account.
+question: What concern do critics raise, according to the passage?
+options:
+- Nudges are too expensive for governments to use.
+- Defaults remove people's freedom to choose.
+- Published studies may overstate how well nudges work.
+- Renewable electricity tariffs are unpopular with households.
+answer: 2

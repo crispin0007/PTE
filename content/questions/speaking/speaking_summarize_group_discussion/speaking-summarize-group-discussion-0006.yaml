@@ -1,0 +1,39 @@
+id: speaking-summarize-group-discussion-0006
+type: speaking_summarize_group_discussion
+tags:
+- health
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0006.mp3
+transcript: |-
+  Ravi: I always ask my doctor for antibiotics when I have a bad cold.
+  Grace: But colds are caused by viruses. Antibiotics don't work on them.
+  Dr Moreno: Exactly, and unnecessary use helps resistant bacteria spread. Studies suggest a large share of outpatient prescriptions aren't needed.
+  Ravi: Is it really such a big problem?
+  Dr Moreno: Yes. Resistant infections already cause over a million deaths a year. Farming is a major factor too, since much of the world's antibiotic use is in livestock.
+  Grace: What about farming? I didn't know animals were given antibiotics.
+  Dr Moreno: In many countries they were used for decades to make animals grow faster. Some regions have now banned that, which is an important step.
+  Ravi: So what should I do next time I have a cold?
+  Dr Moreno: Rest, drink fluids, and only take antibiotics if a doctor finds a bacterial infection.
+speakers:
+- Ravi
+- Grace
+- Dr Moreno
+key_points:
+- Ravi asks for antibiotics for colds
+- 'Grace: colds are viral, antibiotics don''t help'
+- 'Dr Moreno: overuse drives resistance; many prescriptions unnecessary'
+- Over a million deaths a year; livestock use is a major factor
+sample_answer: The discussion focused on antibiotic use. Ravi said he asks for antibiotics for colds,
+  but Grace explained that colds are viral. Dr Moreno agreed and said unnecessary prescriptions help resistant
+  bacteria spread, adding that resistant infections already cause over a million deaths a year and that
+  livestock farming is a major factor.

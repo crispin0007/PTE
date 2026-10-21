@@ -1,0 +1,25 @@
+id: speaking-describe-image-0009
+type: speaking_describe_image
+tags:
+- bar-chart
+- health
+difficulty: 4
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0009.svg
+alt_text: 'Bar chart of average nightly sleep by age: teens 7.2, 20s 6.9, 30s 6.6, 40s 6.5, 50s 6.8, 60+
+  7.1 hours. Illustrative data.'
+key_points:
+- U-shaped pattern
+- Teens sleep most at 7.2 hours
+- Lowest in 40s at 6.5 hours
+- Rises again for older adults
+sample_answer: This bar chart shows average nightly sleep across age groups. Teenagers sleep the most,
+  at about seven point two hours. Sleep then declines steadily to a low of six and a half hours for people
+  in their forties, before rising again to seven point one hours for those over sixty. The overall pattern
+  is U-shaped.

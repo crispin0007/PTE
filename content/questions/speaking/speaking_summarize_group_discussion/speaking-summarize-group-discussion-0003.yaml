@@ -1,0 +1,39 @@
+id: speaking-summarize-group-discussion-0003
+type: speaking_summarize_group_discussion
+tags:
+- education
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0003.mp3
+transcript: |-
+  Leo: I always study late the night before an exam. It's when I concentrate best.
+  Amina: But don't you feel tired during the test? I've read that sleep helps you remember things.
+  Ms Chen: Amina's right. Research shows people recall more after sleeping than after staying awake for the same time. The brain seems to replay and store what you learned.
+  Leo: So should I study earlier?
+  Ms Chen: Ideally, study across several days and protect your sleep before the exam. Even a short nap can help with some kinds of learning.
+  Leo: But I feel like I forget everything if I study too early.
+  Ms Chen: That's a common worry. Testing yourself on the material over several days actually makes it stick better than rereading it the night before.
+  Amina: That's what I do. I make short quizzes for myself.
+  Ms Chen: Exactly. Combine that with regular sleep and you'll usually remember far more on the day.
+speakers:
+- Leo
+- Amina
+- Ms Chen
+key_points:
+- Leo studies late before exams
+- Amina suggests sleep helps memory
+- 'Ms Chen: recall is better after sleep; brain replays learning'
+- 'Advice: spread study over days and protect sleep'
+sample_answer: The discussion was about studying late before exams. Leo said he concentrates best at night,
+  but Amina suggested sleep helps memory. Ms Chen agreed with Amina, explaining that people recall more
+  after sleeping because the brain replays what they learned, and advised spreading study over several
+  days and protecting sleep before an exam.

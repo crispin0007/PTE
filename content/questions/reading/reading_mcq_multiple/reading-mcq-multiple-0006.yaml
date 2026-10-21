@@ -1,0 +1,32 @@
+id: reading-mcq-multiple-0006
+type: reading_mcq_multiple
+tags:
+- biology
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Small electronic tags weighing only a gram or two have transformed what is known about the Arctic
+  tern. Before tracking, scientists estimated its yearly journey from the straight-line distance between
+  its Arctic breeding colonies and its Antarctic feeding grounds. Tagged birds revealed that they zigzag
+  across the Atlantic, following wind systems that save energy, and that the real round trip can be more
+  than 70,000 kilometres. Because the birds spend the northern summer in the Arctic and the southern summer
+  near Antarctica, they experience more daylight than any other animal. Many live for twenty years or
+  more.
+question: What did tracking studies reveal about Arctic terns?
+options:
+- Their routes are much longer than a straight line.
+- They fly directly against the wind.
+- They follow wind patterns that save energy.
+- They spend winter in the Arctic.
+- They rarely live beyond five years.
+answers:
+- 0
+- 2

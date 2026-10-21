@@ -1,0 +1,27 @@
+id: listening-mcq-single-0010
+type: listening_mcq_single
+tags:
+- africa
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0010.mp3
+transcript: Early tree-planting efforts in the Sahel often failed, because many seedlings died during
+  the long dry season. One of the most successful techniques in the Sahel is surprisingly simple. Farmers
+  protect the stumps and roots of trees already in their fields, allowing them to regrow, instead of planting
+  new seedlings. This approach is cheap, and the regrown trees survive much better than planted ones.
+question: Why is the technique described as successful?
+options:
+- It requires large machines
+- It removes all existing trees
+- It uses imported tree species
+- It is cheap and the trees survive well
+answer: 3

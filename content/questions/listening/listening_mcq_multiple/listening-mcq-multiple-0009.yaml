@@ -1,0 +1,32 @@
+id: listening-mcq-multiple-0009
+type: listening_mcq_multiple
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Placebo
+attribution: Facts drawn from the Wikipedia article "Placebo" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0009.mp3
+transcript: 'Placebos are essential in medical research, where they help scientists find out whether a
+  new treatment really works. Using them in everyday medical care is a different matter, though. Using
+  placebos outside research raises ethical issues. The main one is deception: if a doctor gives a sugar
+  pill and says it''s medicine, the patient hasn''t given informed consent. There''s also a risk of delaying
+  treatment that actually works. And it can damage trust between patients and doctors if the deception
+  is discovered. That''s why there''s interest in open-label placebos, where patients are told the truth.'
+question: What ethical concerns about placebos are mentioned?
+options:
+- Patients being deceived
+- The high cost of placebos
+- Delaying effective treatment
+- Damaging trust in doctors
+- Placebos causing addiction
+answers:
+- 0
+- 2
+- 3

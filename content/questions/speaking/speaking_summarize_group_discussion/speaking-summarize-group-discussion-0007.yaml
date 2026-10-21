@@ -1,0 +1,39 @@
+id: speaking-summarize-group-discussion-0007
+type: speaking_summarize_group_discussion
+tags:
+- africa
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0007.mp3
+transcript: |-
+  Kofi: The Great Green Wall sounds inspiring, but I've heard most of the trees died.
+  Hannah: Isn't that why they changed the approach?
+  Dr Diallo: Yes. Early planting often failed. Now projects work with local farmers, using methods like water-harvesting pits and protecting tree stumps so they regrow naturally.
+  Kofi: Is it working now?
+  Dr Diallo: Progress is real but slow. Roughly thirty percent of the land target has been restored. The biggest obstacles are funding and security.
+  Hannah: Why does security matter so much?
+  Dr Diallo: In some regions, armed groups make it impossible for workers and funders to reach project sites safely.
+  Kofi: So even good ideas can't be carried out there.
+  Dr Diallo: Exactly. Where it's safe, though, communities have seen real improvements in crops and grazing land.
+speakers:
+- Kofi
+- Hannah
+- Dr Diallo
+key_points:
+- 'Kofi: many early trees died'
+- 'Hannah: the approach changed'
+- 'Dr Diallo: projects now involve local farmers and natural regrowth'
+- About 30% restored; funding and security are obstacles
+sample_answer: The group discussed the Great Green Wall. Kofi had heard that most trees died, and Hannah
+  asked whether that was why the approach changed. Dr Diallo confirmed that early planting often failed
+  and that projects now work with local farmers using natural regrowth and water harvesting. Progress
+  is real but slow, with about thirty percent restored, and funding and security remain the main obstacles.

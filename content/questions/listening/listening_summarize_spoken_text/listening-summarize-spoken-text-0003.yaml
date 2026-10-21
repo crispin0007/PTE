@@ -1,0 +1,30 @@
+id: listening-summarize-spoken-text-0003
+type: listening_summarize_spoken_text
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0003.mp3
+transcript: In 1844, Samuel Morse sent a message from Washington to Baltimore using electrical signals
+  along a wire. It wasn't the first telegraph, British inventors had a working system on a railway a few
+  years earlier, but it marked the start of a communications revolution. Within two decades, lines covered
+  much of Europe and North America. The great challenge was crossing the ocean. Several transatlantic
+  cables failed, one after only a few weeks. Success finally came in 1866, when the enormous steamship
+  Great Eastern laid a durable cable. Suddenly, markets in London and New York could react to each other's
+  news on the same day. Some historians call this the Victorian internet. It's worth remembering how physical
+  all this was. Messages were tapped out by hand, received by trained operators, and written down or delivered
+  by messenger boys. Even so, the change in speed was so dramatic that people at the time described it
+  as the annihilation of distance.
+sample_answer: The speaker described how the electrical telegraph, demonstrated by Morse in 1844 after
+  earlier British systems, spread rapidly across Europe and North America, and how a durable transatlantic
+  cable laid in 1866 allowed same-day communication between continents and allowed markets in London and
+  New York to react to each other's news, which is why some historians call it the Victorian internet.

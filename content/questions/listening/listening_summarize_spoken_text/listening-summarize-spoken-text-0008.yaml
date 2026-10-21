@@ -1,0 +1,29 @@
+id: listening-summarize-spoken-text-0008
+type: listening_summarize_spoken_text
+tags:
+- oceans
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Ocean_acidification
+attribution: Facts drawn from the Wikipedia article "Ocean acidification" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0008.mp3
+transcript: When people hear the phrase ocean acidification, they often imagine the sea turning into acid.
+  That's not what's happening. Seawater is still alkaline, with a pH a little above eight. What's changing
+  is the direction. Since the nineteen-fifties, average surface pH has fallen from about eight point one
+  five to eight point oh five. That sounds tiny, but because the scale is logarithmic, it means around
+  twenty-five percent more hydrogen ions. Those extra ions reduce the carbonate that corals, shellfish
+  and some plankton need to build their skeletons. In one experiment on the Great Barrier Reef, conditions
+  expected later this century reduced coral growth by about a third. These organisms matter far beyond
+  the reef. Tiny shell-building plankton are food for fish, and oysters and mussels support coastal fisheries,
+  so changes at the bottom of the food web can ripple upwards in ways that are still hard to predict.
+sample_answer: The lecture clarified that ocean acidification does not mean the sea is becoming acidic;
+  seawater remains alkaline, but its pH has fallen by about 0.1 since the 1950s, a roughly twenty-five
+  percent rise in hydrogen ions that reduces the carbonate shell-building organisms need, with experiments
+  showing much slower coral growth.

@@ -1,0 +1,30 @@
+id: listening-fib-0002
+type: listening_fib
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0002.mp3
+transcript: Today we take printed books for granted, but in the middle of the fifteenth century they were
+  a revolutionary new technology. Before printing, books in Europe were copied by {{b1}}, which made them
+  rare and expensive. Gutenberg's press made it possible to produce identical copies {{b2}}. Within fifty
+  years, millions of books had been printed, and {{b3}} began to rise across the {{b4}}. The new technology
+  also helped scholars share ideas much more widely.
+blanks:
+- id: b1
+  answer: hand
+- id: b2
+  answer: quickly
+- id: b3
+  answer: literacy
+- id: b4
+  answer: continent

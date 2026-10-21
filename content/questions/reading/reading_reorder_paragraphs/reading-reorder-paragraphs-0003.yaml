@@ -1,0 +1,23 @@
+id: reading-reorder-paragraphs-0003
+type: reading_reorder_paragraphs
+tags:
+- history
+- technology
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- In 1837, two inventors in Britain and one in the United States patented electrical telegraphs.
+- The American, Samuel Morse, sent his famous first public message between Washington and Baltimore in
+  1844.
+- Within a few years, telegraph lines ran alongside railways across both countries.
+- The greatest challenge was the Atlantic Ocean, where early cables failed after a short time.
+- Finally, in 1866, a durable cable was laid, connecting the two continents almost instantly.

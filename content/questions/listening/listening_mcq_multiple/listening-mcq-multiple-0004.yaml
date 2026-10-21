@@ -1,0 +1,34 @@
+id: listening-mcq-multiple-0004
+type: listening_mcq_multiple
+tags:
+- health
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0004.mp3
+transcript: Your body clock affects almost everything, from when you feel sleepy to how well you digest
+  food. The good news is that small changes in daily habits can help keep it running smoothly. If you
+  want to keep your body clock healthy, there are a few practical steps. Get outside in daylight early
+  in the day, because morning light is the strongest signal for setting the clock. Try to go to bed and
+  wake up at similar times, even at weekends. Reduce bright screens in the hour before bed, since light
+  in the evening delays melatonin. And be careful with large meals late at night, because eating also
+  sends timing signals to the body.
+question: What advice does the speaker give?
+options:
+- Get daylight in the morning
+- Sleep longer at weekends
+- Keep regular sleep times
+- Limit bright screens before bed
+- Exercise late at night
+answers:
+- 0
+- 2
+- 3

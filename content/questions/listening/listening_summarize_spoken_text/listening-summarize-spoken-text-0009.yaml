@@ -1,0 +1,29 @@
+id: listening-summarize-spoken-text-0009
+type: listening_summarize_spoken_text
+tags:
+- psychology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0009.mp3
+transcript: 'Why do we remember things better after we''ve slept? For a long time the answer was simple:
+  when you''re asleep, nothing new happens to interfere with your memories. But the evidence now suggests
+  sleep is doing something active. Recordings in animals show that patterns of brain activity from learning
+  are replayed during deep sleep, almost like rehearsing. There seem to be different roles for different
+  stages. Deep, slow-wave sleep is linked to remembering facts and events, while REM sleep may matter
+  more for skills. Whatever the details, the practical message is the same: cutting sleep to study more
+  is usually a bad trade. It also matters how you study before you sleep. Spreading revision over several
+  days, with sleep in between, seems to give the brain more chances to strengthen what you''ve learned
+  than cramming everything into a single long session.'
+sample_answer: The speaker explained that sleep improves memory not only by preventing interference but
+  by actively replaying learning, with slow-wave sleep linked to facts and REM sleep possibly to skills,
+  so sacrificing sleep to study more is generally counterproductive and usually a bad trade for any student
+  who is preparing for an important exam.

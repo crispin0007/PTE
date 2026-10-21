@@ -1,0 +1,29 @@
+id: writing-summarize-written-text-0004
+type: writing_summarize_written_text
+tags:
+- environment
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Mangrove
+attribution: Facts drawn from the Wikipedia article "Mangrove" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Mangroves are salt-tolerant trees and shrubs that grow along sheltered coastlines in the tropics
+  and subtropics. They occupy a demanding environment, flooded twice a day by salty tides and rooted in
+  mud that contains little oxygen. To survive, different species have evolved a range of strategies: some
+  exclude most of the salt at their roots, others excrete it through their leaves, and many produce aerial
+  roots that absorb air directly. Their seeds often begin to grow while still attached to the parent tree,
+  so that they can establish themselves quickly when they fall into the water. Mangrove forests provide
+  services out of all proportion to their size. Their roots reduce the energy of waves, protecting coastal
+  communities from storms and erosion, and trap sediment that would otherwise smother nearby coral reefs.
+  They serve as nurseries for many species of fish and crustaceans that are important to local fisheries.
+  They are also exceptional stores of carbon, holding a large share of the carbon found in coastal sediments
+  despite covering a tiny area. Nevertheless, mangroves have been cleared on a large scale for aquaculture,
+  agriculture and development, although the rate of loss has slowed as their value has become better understood.'
+sample_answer: Mangroves have evolved special adaptations to survive salty, oxygen-poor coasts and provide
+  valuable protection from storms, nurseries for fish and large carbon stores, yet they have been widely
+  cleared, although losses have slowed as their value is recognised.

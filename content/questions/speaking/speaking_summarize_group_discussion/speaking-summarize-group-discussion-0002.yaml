@@ -1,0 +1,38 @@
+id: speaking-summarize-group-discussion-0002
+type: speaking_summarize_group_discussion
+tags:
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0002.mp3
+transcript: |-
+  Sara: Our city is running out of water. Building a desalination plant seems like the obvious solution.
+  Tom: It's expensive though, and it uses a lot of energy. Shouldn't we start by fixing leaking pipes and encouraging people to use less?
+  Dr Patel: Both points are fair. Energy use has fallen about tenfold since the 1970s, but it's still higher than for most other sources.
+  Sara: What about the environment?
+  Dr Patel: The main issue is brine. If it's discharged badly, it can harm sea life. Modern diffusers help. Honestly, most cities need both: conservation first, desalination as a backup.
+  Tom: And if we build a plant, we're still paying for the energy for decades.
+  Sara: Maybe solar power could help with that? We get plenty of sunshine.
+  Dr Patel: Several plants already do that. Renewable energy can reduce both costs and emissions, though it adds to the initial investment. Whatever you choose, public support matters, so explaining the costs openly is important.
+speakers:
+- Sara
+- Tom
+- Dr Patel
+key_points:
+- 'Sara: desalination solves the water shortage'
+- 'Tom: costly and energy-intensive; fix leaks and conserve first'
+- 'Dr Patel: energy use much lower than in the 1970s but still high'
+- Brine is the main environmental risk; combine conservation with desalination
+sample_answer: The speakers discussed whether their city should build a desalination plant. Sara supported
+  it as a solution to water shortages, while Tom argued it was expensive and energy-intensive and that
+  fixing leaks and conserving water should come first. Dr Patel said energy use has fallen greatly but
+  is still high, that brine is the main environmental risk, and that most cities need conservation first
+  with desalination as a backup.

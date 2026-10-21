@@ -1,0 +1,24 @@
+id: speaking-respond-to-situation-0009
+type: speaking_respond_to_situation
+tags:
+- everyday
+- functional
+difficulty: 4
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+situation_text: During a team meeting, a colleague presents an idea that you believe has a serious flaw.
+  You want to raise your concern without offending them. What would you say?
+audio: audio/speaking-respond-to-situation-0009.mp3
+key_points:
+- Acknowledge strengths of the idea
+- Explain the concern clearly
+- Suggest a possible solution
+- Invite discussion
+sample_answer: Thanks, Sam, I really like how this would save us time. One thing I'm worried about is
+  the budget, because the extra software licences might cost more than we've planned. Maybe we could run
+  a small trial first to check the costs? I'd be keen to hear what everyone else thinks.

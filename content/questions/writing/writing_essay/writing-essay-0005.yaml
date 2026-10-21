@@ -1,0 +1,25 @@
+id: writing-essay-0005
+type: writing_essay
+tags:
+- technology
+- society
+difficulty: 4
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+prompt: Artificial intelligence is increasingly used to make decisions in areas such as hiring, healthcare
+  and finance. Do the benefits of this development outweigh the risks?
+sample_answer: |-
+  Artificial intelligence now helps decide who is shortlisted for a job, which patients receive urgent attention and who is offered a loan. In my opinion, the benefits can outweigh the risks, but only if these systems are carefully regulated and remain under human oversight.
+
+  The potential benefits are considerable. AI can process far more information than a person, spotting patterns that humans might miss. In healthcare, image-analysis tools can help doctors detect diseases earlier. In finance, automated systems can identify fraud in seconds. Used well, AI can also reduce some forms of human bias, since it applies the same criteria to every case.
+
+  Nevertheless, the risks are serious. AI systems learn from historical data, and if that data reflects past discrimination, the system may reproduce it on a large scale. Some well-known hiring tools, for example, have been found to disadvantage female applicants. Furthermore, many algorithms are difficult to explain, which makes it hard for people to understand or challenge decisions that affect their lives.
+
+  These risks are not reasons to abandon AI, but they demand safeguards. Organisations should test systems for bias, explain decisions clearly and allow appeals to a human reviewer.
+
+  In conclusion, AI can improve important decisions, but its advantages will only outweigh its dangers when transparency and accountability are built in from the start.

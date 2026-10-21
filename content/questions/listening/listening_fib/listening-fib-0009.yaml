@@ -1,0 +1,29 @@
+id: listening-fib-0009
+type: listening_fib
+tags:
+- economics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0009.mp3
+transcript: Behavioural economists study how people actually make decisions, rather than how they ought
+  to. A nudge changes how a choice is {{b1}} without taking any options away. A common example is a {{b2}},
+  the option people get if they do nothing. Critics question whether nudges are {{b3}}, and some argue
+  that the {{b4}} for them is weaker than claimed. Even so, many governments now have teams that use these
+  ideas in public policy.
+blanks:
+- id: b1
+  answer: presented
+- id: b2
+  answer: default
+- id: b3
+  answer: ethical
+- id: b4
+  answer: evidence

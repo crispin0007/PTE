@@ -1,0 +1,38 @@
+id: speaking-summarize-group-discussion-0009
+type: speaking_summarize_group_discussion
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0009.mp3
+transcript: |-
+  Ella: Fleming discovered penicillin by accident, didn't he? It's a great story.
+  Sam: But I read that he couldn't actually produce it.
+  Professor Grant: That's right. Fleming made the observation in 1928, but it was Florey and Chain's team in Oxford who purified it around 1940.
+  Ella: And who made it in large amounts?
+  Professor Grant: Mostly American laboratories and companies during the war, using deep-tank fermentation. It's a good reminder that discoveries usually need teams, not lone geniuses.
+  Sam: So why does everyone remember only Fleming?
+  Professor Grant: Partly because his story was simple and dramatic, and newspapers loved it. Florey's team did slower, less glamorous work.
+  Ella: That seems a bit unfair.
+  Professor Grant: It is, but the Nobel committee recognised all three of them in 1945, which was a fairer reflection.
+speakers:
+- Ella
+- Sam
+- Professor Grant
+key_points:
+- 'Ella: Fleming''s accidental discovery'
+- 'Sam: Fleming could not produce it'
+- 'Professor Grant: Florey and Chain purified it around 1940'
+- US wartime mass production; science depends on teams
+sample_answer: The discussion was about the discovery of penicillin. Ella mentioned Fleming's accidental
+  discovery, and Sam noted he could not produce it. Professor Grant explained that Florey and Chain's
+  team purified it around 1940 and that American laboratories mass-produced it during the war, showing
+  that discoveries depend on teams rather than lone geniuses.

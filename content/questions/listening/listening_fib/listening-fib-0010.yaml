@@ -1,0 +1,28 @@
+id: listening-fib-0010
+type: listening_fib
+tags:
+- medicine
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0010.mp3
+transcript: Penicillin was the first antibiotic to be widely used, and it changed medicine forever. Fleming
+  {{b1}} in 1928 that a mould was killing bacteria. However, it took another team to {{b2}} the drug.
+  During the Second World War, factories produced it in large {{b3}}, and it saved many {{b4}}. Today,
+  however, many bacteria have become resistant to it.
+blanks:
+- id: b1
+  answer: noticed
+- id: b2
+  answer: purify
+- id: b3
+  answer: quantities
+- id: b4
+  answer: soldiers

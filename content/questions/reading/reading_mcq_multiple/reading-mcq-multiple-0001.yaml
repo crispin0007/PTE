@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0001
+type: reading_mcq_multiple
+tags:
+- environment
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Mangrove
+attribution: Facts drawn from the Wikipedia article "Mangrove" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Mangrove forests line sheltered tropical coasts, and they are among the most productive ecosystems
+  on the planet. Their tangled roots slow the movement of water, so sediment settles out and the shoreline
+  is gradually built up rather than worn away. During storms the same roots absorb wave energy, reducing
+  damage to settlements behind them. Below the waterline, the roots provide shelter for young fish and
+  sharks, many of which later move to coral reefs or the open sea. Mangrove soils also lock away large
+  amounts of carbon. Despite these benefits, mangroves continue to be cleared for shrimp farms, rice fields
+  and coastal development.
+question: Which of the following benefits of mangroves are mentioned in the passage?
+options:
+- They protect coastal settlements during storms.
+- They provide timber for building houses.
+- They act as nurseries for young marine animals.
+- They store carbon in their soils.
+- They raise the temperature of nearby water.
+answers:
+- 0
+- 2
+- 3

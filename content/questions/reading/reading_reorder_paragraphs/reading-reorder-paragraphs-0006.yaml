@@ -1,0 +1,21 @@
+id: reading-reorder-paragraphs-0006
+type: reading_reorder_paragraphs
+tags:
+- technology
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- In a reverse osmosis plant, seawater is first filtered to remove sand and larger particles.
+- It is then pumped at high pressure against a semi-permeable membrane.
+- Water molecules pass through the membrane, but most of the dissolved salt cannot.
+- The fresh water on the other side is treated with minerals so that it is safe and pleasant to drink.
+- Meanwhile, the concentrated brine left behind must be returned to the sea with care.

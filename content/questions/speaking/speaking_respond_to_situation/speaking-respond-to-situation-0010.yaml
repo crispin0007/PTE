@@ -1,0 +1,24 @@
+id: speaking-respond-to-situation-0010
+type: speaking_respond_to_situation
+tags:
+- everyday
+- functional
+difficulty: 2
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+situation_text: You arrive at a restaurant where you booked a table for four, but the staff cannot find
+  your reservation. What would you say to the manager?
+audio: audio/speaking-respond-to-situation-0010.mp3
+key_points:
+- Explain the booking details
+- Stay calm and polite
+- Ask what can be done
+- Offer flexibility on time or table
+sample_answer: Good evening. I made a reservation for four people at seven o'clock under the name Kumar.
+  I booked it by phone on Tuesday. I understand mistakes happen. Is there any chance you could fit us
+  in tonight? We don't mind waiting a little or sitting at a different table.

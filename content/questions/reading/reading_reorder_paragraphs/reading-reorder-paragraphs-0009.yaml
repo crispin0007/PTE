@@ -1,0 +1,22 @@
+id: reading-reorder-paragraphs-0009
+type: reading_reorder_paragraphs
+tags:
+- psychology
+- health
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- When we learn something new, the memory is at first fragile and easily disturbed.
+- Over the following hours, it must be stabilised in a process called consolidation.
+- Much of this work seems to happen while we sleep, when the brain replays recent experiences.
+- This is why a night's sleep after studying often improves recall the next day.
+- Conversely, staying awake all night can leave newly learned material poorly stored.

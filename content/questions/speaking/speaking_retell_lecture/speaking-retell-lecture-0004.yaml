@@ -1,0 +1,35 @@
+id: speaking-retell-lecture-0004
+type: speaking_retell_lecture
+tags:
+- oceans
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Ocean_acidification
+attribution: Facts drawn from the Wikipedia article "Ocean acidification" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-retell-lecture-0004.mp3
+transcript: 'We often hear about the ocean as a buffer against climate change, and that''s true. It has
+  absorbed roughly a quarter of the carbon dioxide we''ve emitted since the industrial revolution. But
+  this comes at a cost. When carbon dioxide dissolves in seawater, it forms carbonic acid. The ocean is
+  still alkaline, it hasn''t become acidic, but its pH has dropped by about a tenth of a unit since the
+  mid-twentieth century. Because the scale is logarithmic, that''s roughly a twenty-five percent increase
+  in acidity. The organisms that suffer most are the ones that build shells or skeletons from calcium
+  carbonate: corals, oysters, and tiny plankton at the base of the food web. And because the chemistry
+  of seawater changes slowly, even if emissions stopped tomorrow, these changes would take a very long
+  time to reverse. That''s why many scientists describe acidification as climate change''s equally serious
+  twin.'
+key_points:
+- Ocean absorbs about a quarter of human CO2
+- CO2 forms carbonic acid in seawater
+- pH down about 0.1, roughly 25% more acidic
+- Shell-building organisms are hit hardest
+sample_answer: The speaker explained that the ocean has absorbed about a quarter of human carbon dioxide
+  emissions, which slows climate change but causes acidification. Dissolved carbon dioxide forms carbonic
+  acid, lowering the pH of seawater by about 0.1, which is roughly a twenty-five percent increase in acidity.
+  Organisms that build shells and skeletons, such as corals, oysters and plankton, are most affected.

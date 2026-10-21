@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0009
+type: reading_mcq_multiple
+tags:
+- geography
+- urban
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: City planners now have several tools for cooling neighbourhoods during heatwaves. Street trees
+  provide shade and release water vapour through their leaves, which can lower local air temperatures
+  noticeably. 'Cool roofs' coated in light-coloured materials reflect sunlight instead of absorbing it.
+  Green roofs, covered in plants, insulate buildings and cool the air around them. Permeable paving lets
+  rainwater soak into the ground, where it later evaporates. Each measure works best in combination with
+  the others, and none is cheap, so cities must decide where the benefits will be greatest.
+question: Which measures for reducing urban heat are mentioned?
+options:
+- Planting trees along streets.
+- Using light-coloured roof coatings.
+- Building taller office towers.
+- Installing permeable paving.
+- Banning cars from city centres.
+answers:
+- 0
+- 1
+- 3

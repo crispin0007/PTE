@@ -1,0 +1,33 @@
+id: listening-mcq-multiple-0006
+type: listening_mcq_multiple
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0006.mp3
+transcript: We often say that Gutenberg invented printing, but that's not quite accurate. Printing existed
+  in East Asia centuries earlier, and even in Europe several parts of his system were already known. Gutenberg's
+  genius was combining things. He took the screw press, which already existed for pressing grapes and
+  olives. He invented a hand mould that could cast metal letters quickly and identically. He worked out
+  an alloy of lead, tin and antimony that was durable but melted easily. And he developed an oil-based
+  ink, because the water-based inks used for woodblocks wouldn't stick to metal.
+question: Which elements of Gutenberg's press does the speaker mention?
+options:
+- A screw press adapted from other uses
+- A mould for casting letters
+- Paper made from silk
+- A metal alloy for type
+- A water-based ink
+answers:
+- 0
+- 1
+- 3

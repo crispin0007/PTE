@@ -1,0 +1,25 @@
+id: listening-highlight-incorrect-words-0004
+type: listening_highlight_incorrect_words
+tags:
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0004.mp3
+transcript: Reverse osmosis has become the most common method of desalination. It requires far less energy
+  than boiling seawater. However, the brine it produces can harm marine life if it is not handled carefully.
+  Engineers continue to look for safer ways of returning it to the sea.
+swaps:
+- index: 6
+  shown: costly
+- index: 14
+  shown: water
+- index: 24
+  shown: help

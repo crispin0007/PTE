@@ -1,0 +1,25 @@
+id: listening-highlight-incorrect-words-0010
+type: listening_highlight_incorrect_words
+tags:
+- medicine
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0010.mp3
+transcript: Fleming's discovery was partly a matter of luck. He noticed that a mould had killed the bacteria
+  on a plate. Later, scientists in Oxford showed that the substance could cure infections. This work eventually
+  led to mass production during the Second World War.
+swaps:
+- index: 7
+  shown: skill.
+- index: 12
+  shown: fungus
+- index: 29
+  shown: cause

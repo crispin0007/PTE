@@ -1,0 +1,25 @@
+id: listening-highlight-incorrect-words-0008
+type: listening_highlight_incorrect_words
+tags:
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0008.mp3
+transcript: The Arctic tern is a small seabird that travels between the poles every year. Because it follows
+  the summer, it experiences more daylight than any other animal. Tracking devices have shown that its
+  journey is longer than scientists once thought.
+swaps:
+- index: 5
+  shown: huge
+- index: 18
+  shown: storm,
+- index: 22
+  shown: rainfall

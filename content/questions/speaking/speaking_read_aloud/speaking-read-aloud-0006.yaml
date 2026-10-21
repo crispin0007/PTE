@@ -1,0 +1,18 @@
+id: speaking-read-aloud-0006
+type: speaking_read_aloud
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: Antibiotics transformed modern medicine, making routine surgery and the treatment of common infections
+  safe. However, every time these drugs are used unnecessarily, resistant bacteria gain an advantage,
+  and experts warn that some infections may once again become difficult or impossible to treat.

@@ -1,0 +1,25 @@
+id: writing-essay-0009
+type: writing_essay
+tags:
+- science
+- economy
+difficulty: 5
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+prompt: Some argue that funding for space exploration would be better spent solving problems on Earth.
+  To what extent do you agree or disagree?
+sample_answer: |-
+  Space programmes cost governments billions each year, and critics argue that this money should instead address poverty, disease and climate change. Although these problems are urgent, I disagree that space exploration should be abandoned, because it produces benefits that often help to solve problems on Earth.
+
+  It is true that the sums involved are large and that many people still lack basic necessities. From this point of view, it can seem difficult to justify sending probes to distant planets while hospitals and schools are underfunded.
+
+  However, space budgets are small compared with overall government spending, and they generate considerable practical returns. Satellites are essential for weather forecasting, disaster response, navigation and communication. Much of our understanding of climate change comes from satellite measurements of ice sheets, sea levels and atmospheric gases. Technologies first developed for space, from water purification systems to improved medical imaging, have also found everyday uses.
+
+  Furthermore, space exploration inspires young people to study science and engineering, building the skilled workforce needed to tackle global challenges. International space projects can also encourage cooperation between countries.
+
+  In conclusion, while spending on Earth's problems must remain a priority, space exploration is not simply a luxury. Its scientific, technological and educational benefits make it a worthwhile investment that supports, rather than competes with, efforts to improve life on our own planet.

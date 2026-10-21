@@ -1,0 +1,30 @@
+id: reading-mcq-single-0009
+type: reading_mcq_single
+tags:
+- climate
+- geography
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Retreat_of_glaciers_since_1850
+attribution: Facts drawn from the Wikipedia article "Retreat of glaciers since 1850" (CC BY-SA 4.0); text
+  written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Mountain glaciers act as natural water towers. In winter they store precipitation as ice, and
+  in the dry summer months they release it gradually as meltwater, keeping rivers flowing when rain is
+  scarce. As glaciers shrink, this service changes in two stages. At first, faster melting can actually
+  increase river flows, giving a misleading impression of abundance. Later, once the ice has thinned,
+  the summer supply falls sharply. Communities in the Andes and the Himalayas, where hundreds of millions
+  of people depend on glacier-fed rivers, are therefore being urged to plan for the second stage while
+  they are still in the first.
+question: According to the passage, why might an increase in river flow be misleading?
+options:
+- It is caused by heavier rainfall rather than melting.
+- It happens only in winter, when water is not needed.
+- It is temporary and will be followed by a sharp decline.
+- It is measured inaccurately in mountain regions.
+answer: 2

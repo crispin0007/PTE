@@ -1,0 +1,43 @@
+id: reading-fib-dropdown-0006
+type: reading_fib_dropdown
+tags:
+- biology
+- health
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The body keeps time with an internal clock that runs on a cycle of roughly 24 hours. In mammals,
+  the master clock is {{b1}} in a small region of the brain called the suprachiasmatic nucleus. Light
+  reaching the eyes is the main signal that keeps this clock {{b2}} with day and night. When people work
+  night shifts for many years, the clock and their daily routine can fall out of step, a {{b3}} that has
+  been linked to several health problems.
+blanks:
+- id: b1
+  options:
+  - dissolved
+  - located
+  - ignored
+  - invented
+  answer: 1
+- id: b2
+  options:
+  - stationary
+  - synchronised
+  - separate
+  - silent
+  answer: 1
+- id: b3
+  options:
+  - promise
+  - match
+  - reward
+  - mismatch
+  answer: 3

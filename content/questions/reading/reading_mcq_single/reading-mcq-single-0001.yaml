@@ -1,0 +1,31 @@
+id: reading-mcq-single-0001
+type: reading_mcq_single
+tags:
+- science
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Coral_bleaching
+attribution: Facts drawn from the Wikipedia article "Coral bleaching" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Healthy corals owe their colour and most of their food to algae that live inside their tissues.
+  The relationship benefits both sides: the algae receive shelter and the carbon dioxide they need for
+  photosynthesis, and the coral receives sugars that allow it to thrive in clear tropical waters that
+  are otherwise poor in nutrients. When sea temperatures stay unusually high for several weeks, the partnership
+  collapses and the coral expels its algae. This is known as bleaching. A bleached coral can recover if
+  conditions return to normal quickly enough for the algae to recolonise it, but prolonged heat stress
+  often kills it. Dead reefs are frequently taken over by seaweed, which can prevent young corals from
+  settling and growing.'
+question: According to the passage, why can a bleached reef fail to recover even after temperatures fall?
+options:
+- Seaweed may cover the dead coral and stop new corals from establishing.
+- The algae become poisonous to the coral after being expelled.
+- Clear tropical water contains too much carbon dioxide.
+- Bleached corals stop producing sugars for the algae.
+answer: 0

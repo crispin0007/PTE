@@ -1,0 +1,18 @@
+id: speaking-read-aloud-0004
+type: speaking_read_aloud
+tags:
+- urban
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: On a summer evening, the centre of a large city can be several degrees warmer than the surrounding
+  countryside. Concrete and asphalt store the heat of the day and release it slowly after sunset, while
+  the lack of trees removes a natural source of cooling.

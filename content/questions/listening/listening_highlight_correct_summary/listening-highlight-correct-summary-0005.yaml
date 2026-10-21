@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0005
+type: listening_highlight_correct_summary
+tags:
+- psychology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0005.mp3
+transcript: Many students believe that pulling an all-nighter will help them pass an exam. Research suggests
+  the opposite. In studies where people were kept awake all night, their ability to recall new material
+  dropped significantly. Worse, they were often more confident in wrong answers. So the extra hours of
+  study may be undone by poorer memory and judgement on the day. Teachers often advise students to plan
+  their revision so they can sleep normally before an exam.
+options:
+- Staying awake all night improves exam performance.
+- Exams should be held at night to suit students.
+- Students who sleep well are always more confident.
+- Sleep deprivation reduces recall and can increase confidence in wrong answers, undermining late-night
+  study.
+answer: 3

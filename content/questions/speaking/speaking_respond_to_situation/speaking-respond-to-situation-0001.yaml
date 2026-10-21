@@ -1,0 +1,24 @@
+id: speaking-respond-to-situation-0001
+type: speaking_respond_to_situation
+tags:
+- everyday
+- functional
+difficulty: 2
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+situation_text: You borrowed a textbook from your classmate, Alex, and accidentally spilled coffee on
+  it. Alex needs the book for an exam next week. What would you say to Alex?
+audio: audio/speaking-respond-to-situation-0001.mp3
+key_points:
+- Apologise
+- Explain what happened
+- Offer to replace or pay for the book
+- Suggest a way Alex can study meanwhile
+sample_answer: Hi Alex, I'm really sorry, but I spilled coffee on your textbook this morning. Some of
+  the pages are stained, though most of it is still readable. I know you need it for your exam, so I'll
+  buy you a new copy today. In the meantime, you can use my notes for those chapters.

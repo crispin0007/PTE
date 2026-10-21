@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0010
+type: reading_mcq_multiple
+tags:
+- linguistics
+- psychology
+difficulty: 5
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Cognitive_advantages_of_multilingualism
+attribution: Facts drawn from the Wikipedia article "Cognitive advantages of multilingualism" (CC BY-SA
+  4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The claim that speaking two languages sharpens the mind has been popular for two decades. Early
+  studies reported that bilingual children and adults performed better on tasks requiring them to ignore
+  distracting information. Later, larger studies often failed to find these advantages, and reviews pointed
+  out that experiments with positive results were more likely to be published than those without. Researchers
+  also disagree about who counts as bilingual, which makes studies hard to compare. The debate continues,
+  but most now agree that any general cognitive benefit is smaller than was first believed.
+question: Which reasons for doubting a bilingual advantage are mentioned?
+options:
+- Larger studies often did not find the effect.
+- Bilingual people refused to take part in experiments.
+- Positive results may have been published more often than negative ones.
+- Definitions of bilingualism differ between studies.
+- The tasks used were too difficult for children.
+answers:
+- 0
+- 2
+- 3

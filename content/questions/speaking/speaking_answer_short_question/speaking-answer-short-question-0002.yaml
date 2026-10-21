@@ -1,0 +1,18 @@
+id: speaking-answer-short-question-0002
+type: speaking_answer_short_question
+tags:
+- general-knowledge
+difficulty: 1
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-answer-short-question-0002.mp3
+transcript: How many days are there in a leap year?
+accepted_answers:
+- '366'
+- three hundred and sixty-six
+- three hundred sixty-six

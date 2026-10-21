@@ -1,0 +1,26 @@
+id: listening-highlight-incorrect-words-0009
+type: listening_highlight_incorrect_words
+tags:
+- africa
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0009.mp3
+transcript: The Great Green Wall was approved by African leaders in 2005. Its aim is to restore degraded
+  land across the Sahel, but progress has been slower than originally planned. Today, projects work much
+  more closely with the farmers who use the land.
+swaps:
+- index: 5
+  shown: rejected
+- index: 16
+  shown: damaged
+- index: 25
+  shown: faster

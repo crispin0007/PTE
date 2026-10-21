@@ -1,0 +1,30 @@
+id: reading-mcq-single-0006
+type: reading_mcq_single
+tags:
+- geology
+- science
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The theory of plate tectonics holds that Earth's rigid outer shell is broken into a number of
+  large plates that move slowly over the hotter, more mobile layer beneath. Where plates pull apart, molten
+  rock rises to form new crust, as along the ridge that runs down the middle of the Atlantic Ocean. Where
+  they collide, one plate may sink beneath another, or the crust may crumple upwards into mountains. Where
+  they slide past each other, as in California, stress builds up along faults until it is released suddenly
+  in an earthquake. Most plates move only a few centimetres a year, roughly the rate at which fingernails
+  grow.
+question: What is the comparison with fingernails intended to show?
+options:
+- How slowly plates usually move.
+- How thin the Earth's crust is.
+- How often earthquakes occur.
+- How new crust is formed.
+answer: 0

@@ -1,0 +1,49 @@
+id: reading-fib-dropdown-0003
+type: reading_fib_dropdown
+tags:
+- geography
+- urban
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Cities are usually warmer than the countryside around them, and the difference is often {{b1}}
+  at night. Dark roads and roofs absorb sunlight during the day and {{b2}} that heat after sunset. Because
+  cities have fewer trees, they also lose the cooling {{b3}} of shade and evaporation. Planting trees
+  and using lighter roofing materials are two {{b4}} ways to reduce the problem.
+blanks:
+- id: b1
+  options:
+  - smallest
+  - constant
+  - greatest
+  - absent
+  answer: 2
+- id: b2
+  options:
+  - reflect
+  - destroy
+  - conceal
+  - release
+  answer: 3
+- id: b3
+  options:
+  - cost
+  - claim
+  - reason
+  - effect
+  answer: 3
+- id: b4
+  options:
+  - practical
+  - harmful
+  - outdated
+  - imaginary
+  answer: 0

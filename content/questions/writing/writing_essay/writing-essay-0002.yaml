@@ -1,0 +1,25 @@
+id: writing-essay-0002
+type: writing_essay
+tags:
+- environment
+- society
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+prompt: Governments should spend more money on public transport than on building new roads. Do you agree
+  or disagree? Give reasons and examples to support your view.
+sample_answer: |-
+  As cities grow, governments must decide how to move more people efficiently. In my view, investment in public transport should take priority over new roads, because it reduces congestion, pollution and inequality more effectively.
+
+  The main argument for public transport is efficiency. A single train or bus lane can carry many times more passengers per hour than a lane of private cars. New roads, by contrast, often fill up quickly as more people decide to drive, a pattern transport researchers call induced demand. Cities such as Singapore and Zurich have shown that reliable, frequent public transport can keep traffic moving even with large populations.
+
+  Public transport also brings environmental and social benefits. Buses and trains produce far lower emissions per passenger than cars, helping countries meet climate targets and improving urban air quality. In addition, not everyone can afford a car. Good public transport gives students, older people and low-income workers access to jobs, education and healthcare.
+
+  That said, roads cannot be ignored entirely. Rural areas, freight and emergency services depend on a well-maintained road network, and buses themselves need roads. Therefore, governments should maintain existing roads while directing most new investment towards public transport.
+
+  In conclusion, although roads remain necessary, prioritising public transport is the more sustainable and fairer choice for growing cities.

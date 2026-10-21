@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0007
+type: reading_mcq_multiple
+tags:
+- history
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The electrical telegraph changed more than the speed of communication. Railway companies were
+  among the first customers, using it to signal when lines were clear and so to run more trains safely.
+  Astronomers and surveyors used telegraphed time signals to compare clocks in distant places, which allowed
+  longitude to be measured more accurately. Newspapers, which had relied on letters carried by ship, could
+  now print reports from other continents within a day. Governments, too, found they could direct armies
+  and officials far more closely than before.
+question: According to the passage, which groups made use of the telegraph?
+options:
+- Railway companies.
+- Astronomers and surveyors.
+- Farmers selling crops.
+- Newspapers.
+- Schools teaching geography.
+answers:
+- 0
+- 1
+- 3

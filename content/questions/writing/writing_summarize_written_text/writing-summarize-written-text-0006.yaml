@@ -1,0 +1,29 @@
+id: writing-summarize-written-text-0006
+type: writing_summarize_written_text
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Silk_Road
+attribution: Facts drawn from the Wikipedia article "Silk Road" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The Silk Road was a network of overland trade routes that connected East Asia with Central Asia,
+  the Middle East and the Mediterranean from around the second century BCE until the fifteenth century.
+  Its origins are often linked to the westward expansion of China's Han dynasty, whose envoys opened diplomatic
+  and commercial contacts with distant kingdoms. Very few traders travelled the full length of the routes;
+  instead, goods were passed along a chain of merchants and caravan cities, with prices rising at every
+  stage. Chinese silk was highly prized in Rome and elsewhere, but the routes also carried paper, porcelain,
+  spices, horses, glass and precious metals. Perhaps more significant than the goods was the exchange
+  of knowledge and belief. Buddhism spread from India into China along these paths, while technologies
+  such as papermaking moved westward. Diseases travelled too, and historians believe the Black Death reached
+  Europe partly through these trade networks. The routes declined as sea trade grew and as political changes
+  made overland travel more dangerous. The name 'Silk Road' itself is a nineteenth-century invention,
+  popularised by a German geographer long after the routes had faded.
+sample_answer: The Silk Road, a network of trade routes linking China with the West from about the second
+  century BCE, carried not only silk and other goods through chains of merchants but also religions, technologies
+  and diseases, before declining as sea trade expanded.

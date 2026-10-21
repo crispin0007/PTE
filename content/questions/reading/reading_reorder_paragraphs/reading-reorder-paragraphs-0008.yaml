@@ -1,0 +1,24 @@
+id: reading-reorder-paragraphs-0008
+type: reading_reorder_paragraphs
+tags:
+- economics
+- psychology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- Traditional economics assumed that people weigh their options carefully and choose what is best for
+  them.
+- Behavioural economists, however, observed that real decisions are often shaped by habit and by how options
+  are presented.
+- In their 2008 book, Richard Thaler and Cass Sunstein called these small design changes 'nudges'.
+- The idea quickly attracted governments, and in 2010 the UK created a unit to apply it to policy.
+- Since then, critics have questioned both the strength of the evidence and the ethics of steering people's
+  choices.

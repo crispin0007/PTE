@@ -1,0 +1,39 @@
+id: speaking-summarize-group-discussion-0008
+type: speaking_summarize_group_discussion
+tags:
+- education
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Cognitive_advantages_of_multilingualism
+attribution: Facts drawn from the Wikipedia article "Cognitive advantages of multilingualism" (CC BY-SA
+  4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0008.mp3
+transcript: |-
+  Sofia: I want my children to grow up bilingual. I've heard it makes them smarter.
+  Mark: I've also heard that's been exaggerated.
+  Dr Ahmed: The evidence on general intelligence is mixed. Large studies often find no clear advantage in attention or problem-solving.
+  Sofia: So is there no benefit?
+  Dr Ahmed: There are obvious benefits: communicating with more people, cultural understanding, and job opportunities. Some studies also suggest dementia symptoms appear later. I just wouldn't promise that it raises intelligence.
+  Mark: Won't learning two languages confuse young children?
+  Dr Ahmed: That's a common myth. Children may mix languages at first, but that's a normal stage, and they soon learn to separate them.
+  Sofia: That's reassuring. So the main thing is consistent exposure?
+  Dr Ahmed: Yes. Regular, natural use of both languages at home and in the community makes the biggest difference.
+speakers:
+- Sofia
+- Mark
+- Dr Ahmed
+key_points:
+- Sofia wants bilingual children for cognitive benefits
+- Mark says the claims are exaggerated
+- 'Dr Ahmed: evidence of general cognitive advantage is mixed'
+- Clear social and career benefits; possible delay of dementia
+sample_answer: The speakers discussed raising bilingual children. Sofia believed it makes children smarter,
+  while Mark thought this was exaggerated. Dr Ahmed explained that evidence for a general cognitive advantage
+  is mixed, but bilingualism has clear benefits for communication, culture and careers, and may delay
+  dementia symptoms.

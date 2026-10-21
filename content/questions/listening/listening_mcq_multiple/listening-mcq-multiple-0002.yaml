@@ -1,0 +1,34 @@
+id: listening-mcq-multiple-0002
+type: listening_mcq_multiple
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0002.mp3
+transcript: 'Antimicrobial resistance is one of the most serious threats to modern medicine, because so
+  many routine treatments depend on antibiotics working. To tackle it, we first need to understand why
+  it is spreading. Resistance spreads for a few main reasons. One is overuse in medicine: antibiotics
+  prescribed for viral infections, where they can''t help at all. Another is agriculture. Globally, more
+  antibiotics are sold for animals than for people, often to make livestock grow faster. A third is self-medication,
+  where people buy antibiotics without a prescription, which is common in many countries. And bacteria
+  themselves help, because they can share resistance genes with one another, even across species.'
+question: Which reasons for the spread of resistance does the speaker mention?
+options:
+- Prescribing antibiotics for viral infections
+- Using antibiotics in livestock
+- A lack of new hospitals
+- People taking antibiotics without a prescription
+- Patients stopping their treatment early
+answers:
+- 0
+- 1
+- 3

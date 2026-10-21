@@ -1,0 +1,28 @@
+id: listening-summarize-spoken-text-0007
+type: listening_summarize_spoken_text
+tags:
+- medicine
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0007.mp3
+transcript: The story of penicillin is often told as a lucky accident, and it's partly true. In 1928,
+  Alexander Fleming noticed that mould on a culture plate had killed the bacteria around it. But Fleming
+  couldn't purify the substance, and for about ten years little happened. The real breakthrough came at
+  Oxford around 1940, when Howard Florey, Ernst Chain and their colleagues extracted enough to show it
+  could cure infections in mice. Producing it at scale was another challenge, solved in the United States
+  using deep fermentation tanks. By D-Day in 1944, there were millions of doses available. Fleming, Florey
+  and Chain shared the Nobel Prize in 1945. The story also has a warning attached. As early as 1940, scientists
+  noticed that some bacteria could destroy penicillin, and in his Nobel lecture Fleming himself warned
+  that misuse could make bacteria resistant.
+sample_answer: The speaker explained that although Fleming discovered penicillin by accident in 1928,
+  he could not purify it, and the breakthrough came when Florey and Chain's Oxford team proved its effectiveness
+  around 1940, after which American mass production supplied millions of doses by 1944 and the three men
+  shared a Nobel Prize.

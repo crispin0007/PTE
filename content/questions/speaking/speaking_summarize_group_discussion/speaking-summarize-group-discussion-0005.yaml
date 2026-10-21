@@ -1,0 +1,38 @@
+id: speaking-summarize-group-discussion-0005
+type: speaking_summarize_group_discussion
+tags:
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Microplastics
+attribution: Facts drawn from the Wikipedia article "Microplastics" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/speaking-summarize-group-discussion-0005.mp3
+transcript: |-
+  Jin: Banning microbeads in cosmetics was a big step. Problem solved, right?
+  Elena: Not really. I read that most microplastics come from things breaking down, like bottles and tyres.
+  Professor Hart: That's correct. Microbeads were a small and easy target. Larger sources include synthetic clothing fibres and tyre wear.
+  Jin: So what can we actually do?
+  Professor Hart: Filters on washing machines, better waste collection, and reducing single-use plastics. Local bans on single-use items have shown real results.
+  Elena: What about our clothes? I didn't know washing them released plastic.
+  Professor Hart: Synthetic fabrics like polyester shed fibres every wash. Washing at lower temperatures and full loads helps a little.
+  Jin: So individuals can do something, but the bigger changes need governments and industry?
+  Professor Hart: That's a fair summary. Personal choices help, but design and regulation matter most.
+speakers:
+- Jin
+- Elena
+- Professor Hart
+key_points:
+- Jin thinks the microbead ban solved the problem
+- 'Elena: most come from breakdown of larger items'
+- 'Professor Hart: clothing fibres and tyres are bigger sources'
+- 'Solutions: washing-machine filters, waste collection, cutting single-use plastics'
+sample_answer: The speakers discussed microplastic pollution. Jin thought the microbead ban had solved
+  the problem, but Elena pointed out that most microplastics come from larger items breaking down. Professor
+  Hart agreed, naming clothing fibres and tyre wear as bigger sources, and suggested washing-machine filters,
+  better waste collection and reducing single-use plastics.

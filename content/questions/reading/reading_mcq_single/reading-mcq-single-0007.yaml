@@ -1,0 +1,29 @@
+id: reading-mcq-single-0007
+type: reading_mcq_single
+tags:
+- technology
+- environment
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: For countries with little rainfall and long coastlines, desalination can look like a perfect
+  answer to water shortages. The largest plants now produce well over a million cubic metres of fresh
+  water a day, and improvements in membrane technology have greatly reduced the energy each cubic metre
+  requires. Yet the process has a hidden cost. For every litre of fresh water produced, plants generate
+  a comparable or greater volume of concentrated brine. Discharged carelessly, this heavy, salty liquid
+  sinks to the seabed and can starve local marine life of oxygen. Engineers are testing diffusers that
+  mix the brine more quickly, and systems that aim to discharge no liquid at all.
+question: What is the 'hidden cost' the writer refers to?
+options:
+- The high energy demand of membrane technology.
+- The waste brine that can damage marine environments.
+- The shortage of suitable coastlines for new plants.
+- The cost of building diffusers.
+answer: 1

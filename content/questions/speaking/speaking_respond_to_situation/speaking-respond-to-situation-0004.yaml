@@ -1,0 +1,25 @@
+id: speaking-respond-to-situation-0004
+type: speaking_respond_to_situation
+tags:
+- everyday
+- functional
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+situation_text: You ordered a laptop online, but it arrived with a cracked screen. You call the company's
+  customer service. What would you say?
+audio: audio/speaking-respond-to-situation-0004.mp3
+key_points:
+- State order details
+- Describe the damage
+- Request a replacement or refund
+- Ask about next steps and timing
+sample_answer: Hello, I'm calling about order number four-five-two-one. My laptop arrived yesterday, but
+  the screen was cracked when I opened the box. I'd like to request a replacement, or a full refund if
+  that isn't possible. Could you tell me how to return the damaged one and how long the replacement will
+  take?

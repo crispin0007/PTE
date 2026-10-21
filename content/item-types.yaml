@@ -1,0 +1,275 @@
+- id: speaking_read_aloud
+  label: Read Aloud
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_read_aloud
+  timing:
+    mode: per_item
+    prep_s: 35
+    answer_s: 40
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: speaking_repeat_sentence
+  label: Repeat Sentence
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_repeat_sentence
+  timing:
+    mode: per_item
+    prep_s: 0
+    answer_s: 15
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: speaking_describe_image
+  label: Describe Image
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_open_response
+  timing:
+    mode: per_item
+    prep_s: 25
+    answer_s: 40
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: speaking_retell_lecture
+  label: Re-tell Lecture
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_open_response
+  timing:
+    mode: per_item
+    prep_s: 10
+    answer_s: 40
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: speaking_answer_short_question
+  label: Answer Short Question
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_short_answer
+  timing:
+    mode: per_item
+    prep_s: 0
+    answer_s: 10
+  word_limits: null
+  enabling_skills:
+  - vocabulary
+- id: speaking_summarize_group_discussion
+  label: Summarize Group Discussion
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_open_response
+  timing:
+    mode: per_item
+    prep_s: 10
+    answer_s: 120
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: speaking_respond_to_situation
+  label: Respond to a Situation
+  skill: speaking
+  section: speaking_writing
+  enabled: true
+  scoring_rule: speaking_open_response
+  timing:
+    mode: per_item
+    prep_s: 20
+    answer_s: 40
+  word_limits: null
+  enabling_skills:
+  - oral_fluency
+  - pronunciation
+- id: writing_summarize_written_text
+  label: Summarize Written Text
+  skill: writing
+  section: speaking_writing
+  enabled: true
+  scoring_rule: writing_swt
+  timing:
+    mode: per_item
+    prep_s: 0
+    answer_s: 600
+  word_limits:
+    min: 5
+    max: 75
+  enabling_skills:
+  - grammar
+  - vocabulary
+- id: writing_essay
+  label: Write Essay
+  skill: writing
+  section: speaking_writing
+  enabled: true
+  scoring_rule: writing_essay
+  timing:
+    mode: per_item
+    prep_s: 0
+    answer_s: 1200
+  word_limits:
+    min: 200
+    max: 300
+  enabling_skills:
+  - grammar
+  - spelling
+  - vocabulary
+  - written_discourse
+- id: reading_fib_dropdown
+  label: 'Reading & Writing: Fill in the Blanks'
+  skill: reading
+  section: reading
+  enabled: true
+  scoring_rule: fib_per_blank
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills:
+  - grammar
+  - vocabulary
+- id: reading_mcq_multiple
+  label: 'Reading: Multiple Choice, Multiple Answers'
+  skill: reading
+  section: reading
+  enabled: true
+  scoring_rule: mcq_multiple_negative
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: reading_reorder_paragraphs
+  label: Re-order Paragraphs
+  skill: reading
+  section: reading
+  enabled: true
+  scoring_rule: reorder_adjacent_pairs
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills:
+  - written_discourse
+- id: reading_fib_drag_drop
+  label: 'Reading: Fill in the Blanks'
+  skill: reading
+  section: reading
+  enabled: true
+  scoring_rule: fib_per_blank
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills:
+  - grammar
+  - vocabulary
+- id: reading_mcq_single
+  label: 'Reading: Multiple Choice, Single Answer'
+  skill: reading
+  section: reading
+  enabled: true
+  scoring_rule: mcq_single
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_summarize_spoken_text
+  label: Summarize Spoken Text
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: writing_sst
+  timing:
+    mode: per_item
+    prep_s: 0
+    answer_s: 600
+  word_limits:
+    min: 50
+    max: 70
+  enabling_skills:
+  - grammar
+  - spelling
+  - vocabulary
+- id: listening_mcq_multiple
+  label: 'Listening: Multiple Choice, Multiple Answers'
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: mcq_multiple_negative
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_fib
+  label: 'Listening: Fill in the Blanks'
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: fib_per_blank_spelling
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills:
+  - spelling
+- id: listening_highlight_correct_summary
+  label: Highlight Correct Summary
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: mcq_single
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_mcq_single
+  label: 'Listening: Multiple Choice, Single Answer'
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: mcq_single
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_select_missing_word
+  label: Select Missing Word
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: mcq_single
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_highlight_incorrect_words
+  label: Highlight Incorrect Words
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: hiw_plus_minus
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills: []
+- id: listening_write_from_dictation
+  label: Write from Dictation
+  skill: listening
+  section: listening
+  enabled: true
+  scoring_rule: wfd_per_word
+  timing:
+    mode: section_shared
+  word_limits: null
+  enabling_skills:
+  - spelling

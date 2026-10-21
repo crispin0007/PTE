@@ -1,0 +1,26 @@
+id: listening-highlight-incorrect-words-0002
+type: listening_highlight_incorrect_words
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0002.mp3
+transcript: Gutenberg's press combined several existing technologies. His metal type could be reused many
+  times, which made printing much cheaper. Within a few decades, printing spread across Europe. This helped
+  knowledge circulate far beyond universities and monasteries.
+swaps:
+- index: 4
+  shown: expensive
+- index: 11
+  shown: repaired
+- index: 24
+  shown: stopped

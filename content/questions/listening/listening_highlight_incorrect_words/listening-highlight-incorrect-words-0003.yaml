@@ -1,0 +1,26 @@
+id: listening-highlight-incorrect-words-0003
+type: listening_highlight_incorrect_words
+tags:
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0003.mp3
+transcript: Our internal clock is reset every morning by daylight. When we travel across time zones, the
+  clock takes several days to adjust, which is why travellers often feel tired during the day. Getting
+  outside in the morning light can help speed up this process.
+swaps:
+- index: 6
+  shown: evening
+- index: 21
+  shown: recover,
+- index: 28
+  shown: hungry

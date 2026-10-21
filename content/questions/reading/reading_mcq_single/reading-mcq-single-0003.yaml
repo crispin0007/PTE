@@ -1,0 +1,30 @@
+id: reading-mcq-single-0003
+type: reading_mcq_single
+tags:
+- history
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Movable type was not a European invention. In the eleventh century, the Chinese craftsman Bi
+  Sheng made individual characters from baked clay and arranged them to print pages. Yet the technique
+  never displaced woodblock printing in China, partly because written Chinese requires thousands of different
+  characters. Four centuries later, Johannes Gutenberg worked with an alphabet of a few dozen letters,
+  cast his type from a durable metal alloy, and developed an oil-based ink that would stick to it. Combined
+  with the screw press and a growing supply of paper, these choices made printing in Europe fast and cheap
+  enough to transform the book trade.
+question: Why does the writer mention the number of characters in written Chinese?
+options:
+- To show that Bi Sheng's type was made of the wrong material.
+- To argue that Gutenberg copied his methods from China.
+- To help explain why movable type did not become dominant in China.
+- To suggest that Chinese books were more expensive than European ones.
+answer: 2

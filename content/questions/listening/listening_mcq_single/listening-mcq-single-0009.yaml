@@ -1,0 +1,27 @@
+id: listening-mcq-single-0009
+type: listening_mcq_single
+tags:
+- linguistics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Cognitive_advantages_of_multilingualism
+attribution: Facts drawn from the Wikipedia article "Cognitive advantages of multilingualism" (CC BY-SA
+  4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0009.mp3
+transcript: One of the most discussed claims about bilingualism is that it may delay the symptoms of dementia.
+  A 2012 brain-imaging study compared bilingual and monolingual Alzheimer's patients with similar symptoms.
+  The bilingual patients actually had more physical damage in their brains. The researchers concluded
+  that bilingualism doesn't prevent the disease but may help the brain compensate for longer.
+question: What did the researchers conclude?
+options:
+- Monolingual patients recovered faster
+- Bilingualism prevents Alzheimer's disease
+- Bilingualism may help the brain cope with damage for longer
+- Bilingual patients had less brain damage
+answer: 2

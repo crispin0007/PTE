@@ -1,0 +1,28 @@
+id: listening-summarize-spoken-text-0010
+type: listening_summarize_spoken_text
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Silk_Road
+attribution: Facts drawn from the Wikipedia article "Silk Road" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0010.mp3
+transcript: When we picture the Silk Road, we often imagine a single caravan travelling from China to
+  Rome. In reality, almost no one made that whole journey. The Silk Road was a web of routes, and goods
+  moved in short stages, passed from one merchant to another in oasis towns. Each exchange added to the
+  price, which is why silk was a luxury by the time it reached the Mediterranean. And what travelled furthest
+  was often not goods at all, but ideas. Buddhism spread from India into China this way, and Chinese inventions
+  like papermaking travelled west. Unfortunately, so did disease. The name itself, by the way, only dates
+  from the nineteenth century. The routes eventually declined from the fifteenth century onwards, as sea
+  trade became cheaper and safer and as political changes made overland travel more dangerous. But their
+  influence on culture, religion and technology lasted long after the caravans had stopped.
+sample_answer: The lecture explained that the Silk Road was a web of routes on which goods moved in short
+  stages between merchants, raising prices along the way, and that ideas, religions, technologies and
+  diseases often travelled further than goods; Buddhism spread into China and papermaking moved west,
+  while the name itself dates only from the nineteenth century.

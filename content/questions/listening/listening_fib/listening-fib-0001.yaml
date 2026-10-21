@@ -1,0 +1,30 @@
+id: listening-fib-0001
+type: listening_fib
+tags:
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Coral_bleaching
+attribution: Facts drawn from the Wikipedia article "Coral bleaching" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0001.mp3
+transcript: Coral reefs support around a quarter of all marine species, even though they cover only a
+  small part of the ocean floor. Corals get most of their {{b1}} from algae living inside them. When the
+  water becomes too {{b2}}, the coral expels the algae and turns white. This is called {{b3}}. If conditions
+  improve quickly, the coral can {{b4}}, but long periods of heat often kill it. Scientists now monitor
+  sea temperatures from space to predict where it will happen next.
+blanks:
+- id: b1
+  answer: energy
+- id: b2
+  answer: warm
+- id: b3
+  answer: bleaching
+- id: b4
+  answer: recover

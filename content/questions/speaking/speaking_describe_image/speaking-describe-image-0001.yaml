@@ -1,0 +1,25 @@
+id: speaking-describe-image-0001
+type: speaking_describe_image
+tags:
+- bar-chart
+- education
+difficulty: 2
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0001.svg
+alt_text: 'Bar chart of how students travel to campus: bus 34%, bicycle 22%, walk 18%, car 15%, train
+  11%. Illustrative data.'
+key_points:
+- Bus is most popular at 34%
+- Bicycle second at 22%
+- Train least common at 11%
+- Sustainable modes dominate
+sample_answer: This bar chart shows how students travel to campus. The bus is the most popular option,
+  used by thirty-four percent of students, followed by cycling at twenty-two percent and walking at eighteen
+  percent. Fifteen percent drive, while the train is the least common choice at eleven percent. Overall,
+  most students use public or active transport rather than cars.

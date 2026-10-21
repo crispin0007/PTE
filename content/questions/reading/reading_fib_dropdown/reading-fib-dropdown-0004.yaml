@@ -1,0 +1,49 @@
+id: reading-fib-dropdown-0004
+type: reading_fib_dropdown
+tags:
+- medicine
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: In 1928 Alexander Fleming noticed that a mould growing on one of his bacterial cultures seemed
+  to {{b1}} the bacteria around it. For more than a decade, however, the substance could not be produced
+  in useful {{b2}}. It was only after Howard Florey and Ernst Chain's team in Oxford showed that it worked
+  in living animals that large-scale manufacturing became a {{b3}}, and during the Second World War it
+  was {{b4}} to Allied troops in millions of doses.
+blanks:
+- id: b1
+  options:
+  - feed
+  - kill
+  - copy
+  - protect
+  answer: 1
+- id: b2
+  options:
+  - languages
+  - quantities
+  - colours
+  - directions
+  answer: 1
+- id: b3
+  options:
+  - burden
+  - mystery
+  - luxury
+  - priority
+  answer: 3
+- id: b4
+  options:
+  - denied
+  - hidden
+  - forbidden
+  - supplied
+  answer: 3

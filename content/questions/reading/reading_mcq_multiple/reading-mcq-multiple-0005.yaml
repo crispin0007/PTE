@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0005
+type: reading_mcq_multiple
+tags:
+- medicine
+- health
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Bacteria resist antibiotics in a small number of ways. Some produce enzymes, such as beta-lactamases,
+  that chemically destroy the drug. Others change the structure the drug normally binds to, so it no longer
+  fits. A third group use proteins in their cell walls that pump the drug out faster than it can accumulate.
+  Crucially, bacteria do not have to evolve these defences independently. Genes for resistance can be
+  passed directly from one bacterium to another, sometimes between different species, which is one reason
+  resistance can spread so quickly through hospitals.
+question: Which mechanisms of resistance does the passage describe?
+options:
+- Breaking down the drug with enzymes.
+- Changing the drug's target.
+- Pumping the drug out of the cell.
+- Hiding inside human cells.
+- Producing antibiotics of their own.
+answers:
+- 0
+- 1
+- 2

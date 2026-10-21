@@ -1,0 +1,29 @@
+id: listening-mcq-single-0003
+type: listening_mcq_single
+tags:
+- biology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0003.mp3
+transcript: Scientists have known for centuries that plants and animals follow daily rhythms, but for
+  a long time nobody understood how these rhythms were produced inside cells. In 2017, the Nobel Prize
+  in Physiology or Medicine went to Jeffrey Hall, Michael Rosbash and Michael Young. Working with fruit
+  flies, they identified a gene whose protein builds up in cells at night and breaks down during the day.
+  This rise and fall forms a feedback loop that keeps time, and similar mechanisms were later found in
+  humans.
+question: What did the prize-winning research discover?
+options:
+- A molecular feedback loop that keeps biological time
+- That fruit flies do not sleep
+- How melatonin is made in plants
+- A cure for insomnia
+answer: 0

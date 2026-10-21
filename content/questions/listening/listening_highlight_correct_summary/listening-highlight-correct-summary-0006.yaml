@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0006
+type: listening_highlight_correct_summary
+tags:
+- geology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0006.mp3
+transcript: Most earthquakes happen along the boundaries between tectonic plates. At transform boundaries,
+  like the San Andreas Fault in California, two plates slide past each other. They don't move smoothly;
+  friction locks them together, and stress builds up over decades or centuries. When the rock finally
+  gives way, the plates jump suddenly, releasing that energy as an earthquake. Scientists cannot yet predict
+  exactly when this will happen, but they can map where the risk is highest.
+options:
+- The San Andreas Fault is where two plates move apart.
+- Earthquakes at transform boundaries occur when stress built up by locked, sliding plates is suddenly
+  released.
+- Most earthquakes occur far from plate boundaries.
+- Plates at transform boundaries move smoothly and constantly.
+answer: 1

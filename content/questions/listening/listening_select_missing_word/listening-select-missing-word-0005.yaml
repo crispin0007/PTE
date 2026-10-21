@@ -1,0 +1,25 @@
+id: listening-select-missing-word-0005
+type: listening_select_missing_word
+tags:
+- climate
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Retreat_of_glaciers_since_1850
+attribution: Facts drawn from the Wikipedia article "Retreat of glaciers since 1850" (CC BY-SA 4.0); text
+  written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0005.mp3
+transcript: Glaciers are found on every continent except Australia, and they hold most of the world's
+  fresh water. A glacier grows when snowfall exceeds melting, and shrinks when melting exceeds snowfall.
+  Today, because of rising temperatures, almost every glacier in the world is
+options:
+- losing ice
+- moving uphill
+- growing rapidly
+- staying the same
+answer: 0

@@ -1,0 +1,15 @@
+id: reading-mcq-single-9998
+type: reading_mcq_single
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+originality_confirmed: true
+passage: A short passage about something.
+question: What is it about?
+options:
+  - Something
+  - Nothing
+answer: 0

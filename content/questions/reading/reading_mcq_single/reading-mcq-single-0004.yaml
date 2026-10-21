@@ -1,0 +1,30 @@
+id: reading-mcq-single-0004
+type: reading_mcq_single
+tags:
+- environment
+- africa
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'When African leaders backed the Great Green Wall in the mid-2000s, the plan was easy to picture:
+  a strip of trees fifteen kilometres wide running nearly eight thousand kilometres along the southern
+  edge of the Sahara. Over time the vision changed. Planners recognised that planting trees in dry soil,
+  without the involvement of the farmers and herders who use the land, rarely succeeds. The project became
+  a mosaic of local restoration schemes, from water-harvesting pits to community gardens. Progress has
+  been uneven. A United Nations review in 2020 found that only a small fraction of the target had been
+  met, though later estimates were more encouraging.'
+question: Which statement best describes how the Great Green Wall has changed?
+options:
+- It has been shortened so that it covers fewer countries.
+- It has shifted from a single line of trees to many local land-restoration projects.
+- It has abandoned tree planting completely in favour of irrigation.
+- It has been taken over by the United Nations.
+answer: 1

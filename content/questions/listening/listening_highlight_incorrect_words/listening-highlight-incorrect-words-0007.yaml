@@ -1,0 +1,25 @@
+id: listening-highlight-incorrect-words-0007
+type: listening_highlight_incorrect_words
+tags:
+- economics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0007.mp3
+transcript: A nudge is designed to influence behaviour without restricting choice. For example, placing
+  healthy food at eye level makes people more likely to choose it, while still allowing them to pick something
+  else. Supporters say this respects people's freedom while improving their decisions.
+swaps:
+- index: 5
+  shown: prevent
+- index: 21
+  shown: afraid
+- index: 27
+  shown: forcing

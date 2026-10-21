@@ -1,0 +1,41 @@
+id: reading-fib-dropdown-0007
+type: reading_fib_dropdown
+tags:
+- history
+- trade
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Silk_Road
+attribution: Facts drawn from the Wikipedia article "Silk Road" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'The Silk Road was not a single road but a {{b1}} of trade routes that linked China with Central
+  Asia, the Middle East and Europe for more than 1,500 years. Silk gave the routes their name, but merchants
+  also {{b2}} tea, porcelain, horses and gold. Just as important was the {{b3}} of ideas: religions such
+  as Buddhism travelled along the same paths as the goods.'
+blanks:
+- id: b1
+  options:
+  - network
+  - river
+  - wall
+  - kingdom
+  answer: 0
+- id: b2
+  options:
+  - counted
+  - refused
+  - carried
+  - burned
+  answer: 2
+- id: b3
+  options:
+  - exchange
+  - denial
+  - loss
+  - absence
+  answer: 0

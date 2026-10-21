@@ -1,0 +1,33 @@
+id: reading-mcq-multiple-0008
+type: reading_mcq_multiple
+tags:
+- biology
+- agriculture
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Pollinator_decline
+attribution: Facts drawn from the Wikipedia article "Pollinator decline" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: It is often said that one in every three mouthfuls of food depends on bees, but the picture is
+  more complicated. Most of the world's staple crops by volume, such as wheat, rice and maize, are pollinated
+  by wind or grown from cuttings. Animal pollinators matter far more for fruits, nuts and many vegetables,
+  which supply much of the vitamins and minerals in human diets. A decline in pollinators would therefore
+  be less likely to cause famine than to make diets poorer and more expensive. Wild insects, not only
+  managed honey bees, contribute a large share of this pollination.
+question: Which statements does the writer make?
+options:
+- Wheat, rice and maize do not need animal pollinators.
+- Pollinator decline would most likely cause widespread famine.
+- Fruits and nuts depend heavily on animal pollinators.
+- Only honey bees provide significant pollination.
+- Losing pollinators could make diets less nutritious.
+answers:
+- 0
+- 2
+- 4

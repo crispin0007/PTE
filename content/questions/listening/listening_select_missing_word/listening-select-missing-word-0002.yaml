@@ -1,0 +1,26 @@
+id: listening-select-missing-word-0002
+type: listening_select_missing_word
+tags:
+- geology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0002.mp3
+transcript: In the early twentieth century, Alfred Wegener noticed that the coastlines of South America
+  and Africa seemed to fit together, and he found matching fossils on both continents. Wegener had strong
+  evidence that the continents had once been joined. However, he could not explain what force could move
+  them, and so for decades most geologists
+options:
+- rejected his ideas
+- accepted his theory
+- measured the plates
+- ignored the fossils
+answer: 0

@@ -1,0 +1,17 @@
+# Deliberately broken. tests check that the validator rejects it with readable messages.
+# Problems: answer index out of range, licence not on the allowlist, missing source_url
+# for a non-original source, and no originality confirmation.
+id: reading-mcq-single-9999
+type: reading_mcq_single
+difficulty: 3
+status: in_review
+source: open-licensed
+license: All-Rights-Reserved
+author: openpte-seed
+reviewed_by: []
+passage: A short passage about something.
+question: What is it about?
+options:
+  - Something
+  - Nothing
+answer: 5

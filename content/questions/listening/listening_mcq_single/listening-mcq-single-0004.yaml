@@ -1,0 +1,27 @@
+id: listening-mcq-single-0004
+type: listening_mcq_single
+tags:
+- medicine
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Penicillin
+attribution: Facts drawn from the Wikipedia article "Penicillin" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0004.mp3
+transcript: When penicillin was first shown to cure infections, the problem was that only tiny amounts
+  could be made. During the Second World War, finding a way to produce more became a priority. One reason
+  penicillin production succeeded in the United States was a better strain of mould. Researchers in Peoria,
+  Illinois, searched widely and found a high-yielding strain on a mouldy cantaloupe melon from a local
+  market. Combined with deep-tank fermentation, it allowed output to increase enormously.
+question: Where was the high-yielding mould strain found?
+options:
+- In Fleming's original sample
+- In a hospital laboratory
+- On a melon from a market
+- In soil from a farm
+answer: 2

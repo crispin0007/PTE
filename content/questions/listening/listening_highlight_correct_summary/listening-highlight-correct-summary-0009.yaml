@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0009
+type: listening_highlight_correct_summary
+tags:
+- medicine
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0009.mp3
+transcript: 'In 2024, world leaders at the United Nations agreed to reduce deaths associated with antimicrobial
+  resistance by ten percent by 2030. That might sound modest, but meeting it will require action on several
+  fronts: better prescribing in hospitals and clinics, reduced use in farming, improved sanitation, and
+  new drugs, which have been slow to arrive because they''re not very profitable for companies. Experts
+  agree that progress will depend on cooperation between countries.'
+options:
+- Farming has no connection to antimicrobial resistance.
+- A modest-sounding UN target to cut resistance-related deaths will require action across medicine, farming,
+  sanitation and drug development.
+- World leaders agreed in 2024 to end antimicrobial resistance by 2030.
+- New antibiotics are highly profitable, so many are being developed.
+answer: 1

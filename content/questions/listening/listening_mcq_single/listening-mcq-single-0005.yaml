@@ -1,0 +1,27 @@
+id: listening-mcq-single-0005
+type: listening_mcq_single
+tags:
+- economics
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0005.mp3
+transcript: Researchers who study decision-making have shown that small changes in how options are presented
+  can have large effects on what people choose. One study looked at electricity customers in Germany.
+  When the green, renewable tariff was the default option, most people stayed with it. When the standard
+  tariff was the default, few people chose the green one, even though the options and prices were the
+  same.
+question: What does the study show?
+options:
+- Green tariffs are always more popular
+- Germans dislike renewable energy
+- People prefer cheaper electricity
+- The default option strongly influences choices
+answer: 3

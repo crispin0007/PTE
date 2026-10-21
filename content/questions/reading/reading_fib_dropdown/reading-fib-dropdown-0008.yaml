@@ -1,0 +1,42 @@
+id: reading-fib-dropdown-0008
+type: reading_fib_dropdown
+tags:
+- technology
+- environment
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Desalination turns seawater into drinking water, and it has become far less energy-hungry than
+  it once was. Most new plants rely on reverse osmosis, which forces water through a membrane that {{b1}}
+  the salt. The energy needed per cubic metre has fallen roughly tenfold since 1970. The process still
+  produces a dense, salty brine, and disposing of it without {{b2}} marine life remains a serious {{b3}}
+  for the industry.
+blanks:
+- id: b1
+  options:
+  - dissolves
+  - ignores
+  - creates
+  - traps
+  answer: 3
+- id: b2
+  options:
+  - lighting
+  - feeding
+  - cooling
+  - harming
+  answer: 3
+- id: b3
+  options:
+  - challenge
+  - tradition
+  - accident
+  - benefit
+  answer: 0

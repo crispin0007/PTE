@@ -1,0 +1,29 @@
+id: reading-mcq-single-0010
+type: reading_mcq_single
+tags:
+- psychology
+- health
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'In a classic experiment from 1924, two psychologists asked volunteers to learn lists of nonsense
+  syllables and then tested them after intervals spent either sleeping or awake. The sleepers remembered
+  more. For decades this was explained simply: sleep protected memories from interference by new experiences.
+  More recent research suggests that sleep plays an active role as well. Recordings from animals show
+  that brain cells which fired during learning fire again in the same order during sleep, as if the day''s
+  events were being rehearsed and filed away.'
+question: How does recent research differ from the older explanation?
+options:
+- It suggests sleep actively strengthens memories rather than only protecting them.
+- It shows that the 1924 experiment was flawed.
+- It finds that animals and humans remember in completely different ways.
+- It proves that new experiences do not interfere with memory.
+answer: 0

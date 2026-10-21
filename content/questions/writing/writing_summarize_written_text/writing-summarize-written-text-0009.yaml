@@ -1,0 +1,30 @@
+id: writing-summarize-written-text-0009
+type: writing_summarize_written_text
+tags:
+- geology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Plate tectonics is the scientific theory that Earth''s outer layer, the lithosphere, is divided
+  into a number of large and small plates that move relative to one another. The idea grew out of the
+  earlier hypothesis of continental drift, proposed by Alfred Wegener in 1912, who noticed that the coastlines
+  of South America and Africa fit together and that similar fossils and rocks appeared on both continents.
+  Wegener''s theory was widely rejected because he could not explain what force could move entire continents.
+  The breakthrough came after the Second World War, when surveys of the ocean floor revealed long volcanic
+  ridges and symmetrical bands of magnetised rock on either side of them. These patterns showed that new
+  crust was continuously created at the ridges and spread outward, providing the mechanism Wegener lacked.
+  By the late 1960s the theory of plate tectonics was established. It explains a wide range of phenomena:
+  earthquakes and volcanoes cluster along plate boundaries, mountain ranges such as the Himalayas form
+  where plates collide, and deep ocean trenches mark places where one plate sinks beneath another. Plates
+  typically move a few centimetres each year.'
+sample_answer: Plate tectonics, which developed from Wegener's rejected theory of continental drift once
+  post-war ocean surveys revealed seafloor spreading, explains how slowly moving plates produce earthquakes,
+  volcanoes, mountain ranges and ocean trenches.

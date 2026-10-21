@@ -1,0 +1,30 @@
+id: writing-summarize-written-text-0002
+type: writing_summarize_written_text
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The invention of the movable-type printing press in Europe around 1440 is often described as
+  one of the turning points of human history. Johannes Gutenberg, a goldsmith from Mainz, combined several
+  existing technologies with innovations of his own, including a hand mould that allowed metal letters
+  to be cast quickly and accurately. Before his press, books in Europe were copied by hand, a slow and
+  expensive process that kept them in the hands of churches, universities and the wealthy. Within fifty
+  years of Gutenberg's first books, printers were active in hundreds of towns, and many millions of copies
+  had been produced. The effects reached far beyond the book trade. Cheaper texts encouraged literacy,
+  and the need to sell books to a wider public promoted writing in local languages rather than Latin.
+  Reformers such as Martin Luther used printed pamphlets to spread their ideas at a speed the authorities
+  could not control. Scientists could share identical diagrams and data, making it easier to check and
+  build on one another's work. At the same time, the flood of printed material raised new questions about
+  authorship and ownership, which eventually led to the first copyright laws.
+sample_answer: Gutenberg's printing press, which combined existing technologies with new methods of casting
+  type, made books cheap and plentiful, thereby boosting literacy and local languages, accelerating the
+  spread of religious and scientific ideas, and prompting the first copyright laws.

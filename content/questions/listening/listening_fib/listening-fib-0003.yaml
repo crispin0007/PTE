@@ -1,0 +1,29 @@
+id: listening-fib-0003
+type: listening_fib
+tags:
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0003.mp3
+transcript: Some animals travel remarkable distances every year, but one small seabird travels further
+  than any other. The Arctic tern breeds in the far {{b1}} and spends the rest of the year near Antarctica.
+  Scientists used small tracking {{b2}} to follow the birds and discovered that their journeys were much
+  {{b3}} than expected. Some birds live for more than {{b4}} years. Over a lifetime, the total distance
+  it flies is roughly equal to three return trips to the Moon.
+blanks:
+- id: b1
+  answer: north
+- id: b2
+  answer: devices
+- id: b3
+  answer: longer
+- id: b4
+  answer: thirty

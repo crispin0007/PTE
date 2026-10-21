@@ -1,0 +1,31 @@
+id: reading-mcq-single-0002
+type: reading_mcq_single
+tags:
+- medicine
+- health
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Antimicrobial resistance develops when bacteria and other microbes evolve ways to survive the
+  drugs designed to kill them. Some bacteria produce enzymes that break a drug down; others alter the
+  target the drug attacks, or pump the drug out before it can act. Resistance genes can also pass between
+  different bacteria, spreading a defence far beyond the organism in which it first appeared. Although
+  resistance is a natural process, human behaviour has accelerated it. A large share of antibiotics worldwide
+  is used in livestock rather than in people, and studies in several countries have found that many prescriptions
+  given to outpatients are unnecessary. Every unnecessary dose gives resistant strains an opportunity
+  to outcompete susceptible ones.
+question: What is the main point the writer makes about human behaviour?
+options:
+- It is the original cause of all antimicrobial resistance.
+- It has made a natural process happen faster.
+- It mainly affects resistance in livestock rather than people.
+- It prevents resistance genes from passing between bacteria.
+answer: 1

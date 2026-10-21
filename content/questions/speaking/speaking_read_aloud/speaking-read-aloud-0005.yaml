@@ -1,0 +1,17 @@
+id: speaking-read-aloud-0005
+type: speaking_read_aloud
+tags:
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: Every year, the Arctic tern travels from one end of the planet to the other and back again. Because
+  it follows the summer between the two poles, this small seabird probably sees more daylight than any
+  other creature on Earth.

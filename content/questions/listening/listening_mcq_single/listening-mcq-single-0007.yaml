@@ -1,0 +1,26 @@
+id: listening-mcq-single-0007
+type: listening_mcq_single
+tags:
+- pollution
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Microplastics
+attribution: Facts drawn from the Wikipedia article "Microplastics" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0007.mp3
+transcript: Governments have tried several approaches to reduce plastic pollution, with mixed results.
+  In 2015, the United States passed a law banning plastic microbeads in rinse-off cosmetics such as face
+  washes and toothpaste. It was a popular measure, but some manufacturers simply switched to other small
+  plastic ingredients, like glitter, which the law didn't cover.
+question: What weakness of the 2015 law does the speaker point out?
+options:
+- Manufacturers used other plastic ingredients it did not cover
+- It applied only to toothpaste
+- It was never enforced
+- It banned too many products
+answer: 0

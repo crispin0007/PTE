@@ -1,0 +1,26 @@
+id: listening-select-missing-word-0004
+type: listening_select_missing_word
+tags:
+- medicine
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Antimicrobial_resistance
+attribution: Facts drawn from the Wikipedia article "Antimicrobial resistance" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0004.mp3
+transcript: Doctors are often asked to prescribe antibiotics for coughs and colds, and many patients feel
+  disappointed when they leave without them. Antibiotics only work against bacteria. Colds and flu are
+  caused by viruses, so taking antibiotics for them doesn't help the patient and only gives resistant
+  bacteria
+options:
+- fewer genes
+- less time to grow
+- a chance to spread
+- a weaker defence
+answer: 2

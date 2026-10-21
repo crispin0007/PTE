@@ -1,0 +1,27 @@
+id: listening-mcq-single-0006
+type: listening_mcq_single
+tags:
+- history
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0006.mp3
+transcript: We usually think of the telegraph as a way of sending news, but scientists found other uses
+  for it too. The telegraph also changed how time was measured. Astronomers could send a time signal from
+  one observatory to another and compare local clocks instantly. Because the difference in local time
+  corresponds to a difference in longitude, this gave far more accurate maps.
+question: How did the telegraph improve maps?
+options:
+- It helped measure longitude through time signals
+- It replaced the need for observatories
+- It recorded the height of mountains
+- It allowed photographs to be sent
+answer: 0

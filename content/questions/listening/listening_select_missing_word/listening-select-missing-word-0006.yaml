@@ -1,0 +1,25 @@
+id: listening-select-missing-word-0006
+type: listening_select_missing_word
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0006.mp3
+transcript: Before the printing press, most serious books in Europe were written in Latin, which only
+  educated people could read. Because printers wanted to sell as many copies as possible, they increasingly
+  published in the languages ordinary people spoke. Over time, this weakened the dominance of
+options:
+- Latin
+- the press
+- local dialects
+- paper
+answer: 0

@@ -1,0 +1,35 @@
+id: listening-mcq-multiple-0001
+type: listening_mcq_multiple
+tags:
+- urban
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0001.mp3
+transcript: 'On a hot summer night, the difference between a city centre and the surrounding countryside
+  can be several degrees. Researchers call this the urban heat island effect, and it has been studied
+  for about two hundred years. So why exactly are cities warmer? There are several causes working together.
+  First, materials. Asphalt and concrete absorb a lot of sunlight and hold on to that heat, releasing
+  it at night. Second, there''s simply less vegetation, so we lose the cooling that comes from shade and
+  from plants releasing water. Third, the shape of the city: tall buildings trap heat and block the wind.
+  And finally, there''s waste heat from cars, air conditioners and industry, although that''s usually
+  a smaller factor than the change in surfaces.'
+question: According to the speaker, which factors make cities warmer?
+options:
+- Surfaces that store heat
+- Less vegetation
+- Higher rainfall in cities
+- Tall buildings that block wind
+- Thinner air above cities
+answers:
+- 0
+- 1
+- 3

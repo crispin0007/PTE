@@ -1,0 +1,34 @@
+id: listening-mcq-multiple-0008
+type: listening_mcq_multiple
+tags:
+- climate
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Retreat_of_glaciers_since_1850
+attribution: Facts drawn from the Wikipedia article "Retreat of glaciers since 1850" (CC BY-SA 4.0); text
+  written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0008.mp3
+transcript: 'Since the middle of the nineteenth century, most of the world''s mountain glaciers have been
+  shrinking, and in recent decades the pace has increased. So what does this mean for people? Glacier
+  retreat affects people in several ways. Most obviously, it adds to sea-level rise, which threatens coastal
+  cities. In mountain regions, it changes water supply: rivers that relied on summer meltwater become
+  less reliable. There are also hazards. As glaciers shrink, they can leave behind lakes held back by
+  unstable piles of rock, and if those dams fail, the floods can be devastating. Tourism can suffer too,
+  in places where glaciers are the attraction.'
+question: Which effects of glacier retreat does the speaker mention?
+options:
+- Rising sea levels
+- Less reliable river flows
+- Increased snowfall in valleys
+- Floods from glacial lakes
+- Damage to coral reefs
+answers:
+- 0
+- 1
+- 3

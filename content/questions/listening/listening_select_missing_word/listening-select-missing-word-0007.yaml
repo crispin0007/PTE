@@ -1,0 +1,25 @@
+id: listening-select-missing-word-0007
+type: listening_select_missing_word
+tags:
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Mangrove
+attribution: Facts drawn from the Wikipedia article "Mangrove" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0007.mp3
+transcript: Coastal communities in the tropics have long relied on mangrove forests for fish, firewood
+  and building materials. Recently, scientists have studied another benefit. Mangrove roots slow down
+  waves before they reach the shore. During tropical storms, villages protected by healthy mangrove forests
+  often suffer
+options:
+- more damage
+- colder weather
+- less damage
+- longer droughts
+answer: 2

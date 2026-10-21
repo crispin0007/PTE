@@ -1,0 +1,53 @@
+name: New question
+description: Propose a practice question for people who do not use Git. A maintainer turns it into a YAML file.
+labels: [content]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Question type
+      options:
+        - Read Aloud
+        - Repeat Sentence
+        - Describe Image
+        - Re-tell Lecture
+        - Answer Short Question
+        - Summarize Group Discussion
+        - Respond to a Situation
+        - Summarize Written Text
+        - Write Essay
+        - 'Reading & Writing: Fill in the Blanks'
+        - 'Reading: Multiple Choice, Multiple Answers'
+        - Re-order Paragraphs
+        - 'Reading: Fill in the Blanks'
+        - 'Reading: Multiple Choice, Single Answer'
+        - Summarize Spoken Text
+        - 'Listening: Multiple Choice, Multiple Answers'
+        - 'Listening: Fill in the Blanks'
+        - Highlight Correct Summary
+        - 'Listening: Multiple Choice, Single Answer'
+        - Select Missing Word
+        - Highlight Incorrect Words
+        - Write from Dictation
+    validations: { required: true }
+  - type: textarea
+    id: content
+    attributes:
+      label: Question
+      description: The passage, transcript or prompt, the options, and the correct answer.
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: '"Original" if you wrote it, otherwise the URL of the openly licensed source you used.'
+    validations: { required: true }
+  - type: checkboxes
+    id: originality
+    attributes:
+      label: Originality
+      options:
+        - label: This is not copied from the real test, a prediction file or any practice platform.
+          required: true
+        - label: I agree to license this under CC BY-SA 4.0.
+          required: true

@@ -1,0 +1,49 @@
+id: reading-fib-dropdown-0002
+type: reading_fib_dropdown
+tags:
+- history
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Printing_press
+attribution: Facts drawn from the Wikipedia article "Printing press" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Johannes Gutenberg did not invent every part of his printing press. His achievement was to {{b1}}
+  existing tools, such as the screw press, with new ones, including a hand mould for casting metal type.
+  The result was so {{b2}} that by 1480 printers were working in more than a hundred European towns. Cheaper
+  books helped literacy to {{b3}} and gradually {{b4}} the position of Latin as the language of scholars.
+blanks:
+- id: b1
+  options:
+  - separate
+  - abandon
+  - disguise
+  - combine
+  answer: 3
+- id: b2
+  options:
+  - efficient
+  - fragile
+  - obscure
+  - costly
+  answer: 0
+- id: b3
+  options:
+  - shrink
+  - fade
+  - spread
+  - stall
+  answer: 2
+- id: b4
+  options:
+  - protected
+  - weakened
+  - required
+  - restored
+  answer: 1

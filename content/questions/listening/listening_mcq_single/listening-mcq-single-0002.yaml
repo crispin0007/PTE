@@ -1,0 +1,27 @@
+id: listening-mcq-single-0002
+type: listening_mcq_single
+tags:
+- technology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0002.mp3
+transcript: Desalination, turning seawater into fresh water, is now used in many countries, but a few
+  nations dominate the industry. The world's largest desalination plant is at Ras Al-Khair in Saudi Arabia,
+  producing over a million cubic metres of water a day. Saudi Arabia, the United Arab Emirates and Israel
+  lead the world in desalination, largely because they have very little fresh water but long coastlines
+  and, in some cases, cheap energy.
+question: Why, according to the speaker, do these countries rely heavily on desalination?
+options:
+- They have strict environmental laws
+- They lack fresh water but have coastlines
+- They invented reverse osmosis
+- Their populations are declining
+answer: 1

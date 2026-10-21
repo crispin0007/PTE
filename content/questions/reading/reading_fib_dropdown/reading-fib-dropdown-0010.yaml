@@ -1,0 +1,43 @@
+id: reading-fib-dropdown-0010
+type: reading_fib_dropdown
+tags:
+- psychology
+- health
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Sleep_and_memory
+attribution: Facts drawn from the Wikipedia article "Sleep and memory" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Students who stay up all night before an exam may be working against themselves. Research going
+  back to the 1920s has found that people {{b1}} new information better after a period of sleep than after
+  the same time spent awake. During sleep, the brain appears to {{b2}} recent experiences and link them
+  to existing knowledge. Sleep deprivation, by contrast, reduces recall and can even make people more
+  {{b3}} in answers that are wrong.
+blanks:
+- id: b1
+  options:
+  - invent
+  - resist
+  - forget
+  - retain
+  answer: 3
+- id: b2
+  options:
+  - replay
+  - reject
+  - erase
+  - delay
+  answer: 0
+- id: b3
+  options:
+  - careful
+  - confident
+  - doubtful
+  - honest
+  answer: 1

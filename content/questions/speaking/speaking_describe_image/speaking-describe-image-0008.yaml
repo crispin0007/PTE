@@ -1,0 +1,24 @@
+id: speaking-describe-image-0008
+type: speaking_describe_image
+tags:
+- process
+- science
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0008.svg
+alt_text: 'Process diagram of the water cycle in four steps: evaporation from oceans, condensation into
+  clouds, precipitation as rain, runoff into rivers.'
+key_points:
+- Four-stage cycle
+- Evaporation from oceans
+- Condensation then precipitation
+- Runoff returns water to rivers
+sample_answer: This diagram shows the water cycle in four stages. Water evaporates from the oceans and
+  rises into the atmosphere, where it condenses to form clouds. It then falls back to the ground as rain,
+  and finally flows as runoff into rivers, which carry it back to the sea so the cycle can begin again.

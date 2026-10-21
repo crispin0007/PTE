@@ -1,0 +1,26 @@
+id: listening-highlight-incorrect-words-0005
+type: listening_highlight_incorrect_words
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Electrical_telegraph
+attribution: Facts drawn from the Wikipedia article "Electrical telegraph" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-incorrect-words-0005.mp3
+transcript: The first transatlantic cable failed after just a few weeks. A durable cable was finally laid
+  in 1866, allowing messages to cross the ocean in minutes. It was one of the great engineering achievements
+  of the nineteenth century.
+swaps:
+- index: 4
+  shown: worked
+- index: 11
+  shown: beautiful
+- index: 25
+  shown: months.

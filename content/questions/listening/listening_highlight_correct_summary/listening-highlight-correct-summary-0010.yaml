@@ -1,0 +1,26 @@
+id: listening-highlight-correct-summary-0010
+type: listening_highlight_correct_summary
+tags:
+- environment
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Mangrove
+attribution: Facts drawn from the Wikipedia article "Mangrove" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0010.mp3
+transcript: For decades, mangroves were seen as useless swamps and cleared for shrimp ponds and buildings.
+  Attitudes have changed as scientists showed how much they protect coasts and store carbon. Many countries
+  now protect and replant them, and while losses continue, the global rate of decline has slowed considerably.
+  Restoration projects are now replanting mangroves in many countries, often with the help of local communities
+  who depend on them for fishing.
+options:
+- Mangrove losses have stopped completely.
+- Mangroves are still regarded as useless swamps everywhere.
+- Once dismissed as worthless, mangroves are now increasingly protected, and their rate of loss has slowed.
+- Shrimp ponds help mangroves store carbon.
+answer: 2

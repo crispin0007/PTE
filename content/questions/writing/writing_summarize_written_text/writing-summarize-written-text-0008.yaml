@@ -1,0 +1,30 @@
+id: writing-summarize-written-text-0008
+type: writing_summarize_written_text
+tags:
+- medicine
+difficulty: 5
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Placebo
+attribution: Facts drawn from the Wikipedia article "Placebo" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: A placebo is a substance or procedure that has no specific therapeutic effect, such as a sugar
+  pill or a saline injection, presented in a way that resembles real treatment. Placebos play an essential
+  role in medical research. In a placebo-controlled trial, one group of participants receives the treatment
+  being tested while another receives an identical-looking placebo, and ideally neither the participants
+  nor the researchers know who received which. This design allows scientists to separate the true effect
+  of a drug from improvements caused by expectation, natural recovery or the attention of medical staff.
+  Patients who receive placebos often report improvements, particularly in subjective symptoms such as
+  pain and nausea, though large reviews have questioned how clinically important these effects are. The
+  reverse phenomenon, known as the nocebo effect, occurs when negative expectations lead people to experience
+  side effects from an inactive substance. Using placebos in ordinary clinical practice raises ethical
+  problems, because deceiving patients conflicts with informed consent. For this reason, researchers have
+  become interested in open-label placebos, which are given with full honesty about their contents; some
+  small studies suggest they may still help, but stronger evidence is needed.
+sample_answer: Placebos are inactive treatments vital to controlled trials because they separate a drug's
+  real effect from expectation, and although they can ease subjective symptoms, deceptive use raises ethical
+  concerns, prompting interest in open-label placebos whose benefits still need stronger evidence.

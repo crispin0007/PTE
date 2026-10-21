@@ -1,0 +1,28 @@
+id: listening-fib-0006
+type: listening_fib
+tags:
+- technology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0006.mp3
+transcript: Many dry coastal countries now rely on the sea for their drinking water. In reverse osmosis,
+  seawater is pushed through a {{b1}} under high {{b2}}. Water passes through, but most of the salt is
+  left {{b3}}. The salty waste, called {{b4}}, must be disposed of carefully. Even so, the energy needed
+  for the process has fallen dramatically over the past fifty years.
+blanks:
+- id: b1
+  answer: membrane
+- id: b2
+  answer: pressure
+- id: b3
+  answer: behind
+- id: b4
+  answer: brine

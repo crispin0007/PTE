@@ -1,0 +1,27 @@
+id: listening-mcq-single-0001
+type: listening_mcq_single
+tags:
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-single-0001.mp3
+transcript: The Arctic tern is famous for making the longest migration of any animal, travelling between
+  the Arctic and the Antarctic every year. Earlier estimates of the Arctic tern's migration were based
+  on a straight line between the Arctic and Antarctica. Tracking showed the birds take an S-shaped route
+  over the Atlantic. That seems inefficient, but it lets them ride the prevailing winds, saving energy
+  even though they fly further.
+question: Why do Arctic terns follow an S-shaped route?
+options:
+- To stay close to land
+- To avoid predators
+- To use the prevailing winds
+- To find breeding partners
+answer: 2

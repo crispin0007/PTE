@@ -1,0 +1,26 @@
+id: listening-select-missing-word-0010
+type: listening_select_missing_word
+tags:
+- oceans
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Ocean_acidification
+attribution: Facts drawn from the Wikipedia article "Ocean acidification" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-select-missing-word-0010.mp3
+transcript: The ocean has absorbed around a quarter of the carbon dioxide released by human activity,
+  and this is changing its chemistry. When the ocean absorbs carbon dioxide, there are fewer carbonate
+  ions available in the water. Corals and shellfish need these ions, so lower carbonate levels make it
+  harder for them to
+options:
+- find food
+- build their skeletons
+- move to deeper water
+- reproduce in winter
+answer: 1

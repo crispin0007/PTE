@@ -1,0 +1,30 @@
+id: writing-summarize-written-text-0003
+type: writing_summarize_written_text
+tags:
+- urban
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Urban_heat_island
+attribution: Facts drawn from the Wikipedia article "Urban heat island" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: The urban heat island effect describes the tendency of cities to be warmer than the rural areas
+  that surround them. The difference is usually small during the day but can be considerable at night,
+  when buildings and roads release the heat they have absorbed. Several factors contribute. Dark surfaces
+  such as asphalt absorb more sunlight than fields or forests, and materials like concrete store that
+  heat effectively. Cities also have less vegetation, so they lose the cooling that plants provide through
+  shade and the evaporation of water from their leaves. Tall buildings trap heat between them and reduce
+  the wind that might otherwise carry it away, and vehicles, air conditioners and factories add waste
+  heat of their own. The consequences are more than a matter of comfort. Heatwaves are more dangerous
+  in cities, particularly for elderly people, and higher temperatures increase energy demand for cooling,
+  which in turn can add to emissions. Fortunately, the problem can be reduced. Planting trees, installing
+  reflective or vegetated roofs and using permeable paving can all lower temperatures, although the most
+  effective strategies combine several measures and target the neighbourhoods most at risk.
+sample_answer: Cities are warmer than surrounding areas, especially at night, because of heat-absorbing
+  surfaces, limited vegetation, tall buildings and waste heat, which makes heatwaves more dangerous and
+  raises energy use, but trees, cool or green roofs and permeable paving can reduce the effect.

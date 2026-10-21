@@ -1,0 +1,24 @@
+id: reading-reorder-paragraphs-0002
+type: reading_reorder_paragraphs
+tags:
+- geology
+- science
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Plate_tectonics
+attribution: Facts drawn from the Wikipedia article "Plate tectonics" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+paragraphs:
+- In 1912, Alfred Wegener proposed that the continents had once formed a single landmass.
+- Most of his colleagues dismissed the idea because he could not explain how continents could move.
+- After the Second World War, surveys of the ocean floor revealed strange magnetic stripes on either side
+  of mid-ocean ridges.
+- These stripes showed that new crust was being created at the ridges and pushed outwards.
+- This discovery provided the missing mechanism, and by the late 1960s plate tectonics had become widely
+  accepted.

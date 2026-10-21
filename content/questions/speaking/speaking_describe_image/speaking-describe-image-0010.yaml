@@ -1,0 +1,25 @@
+id: speaking-describe-image-0010
+type: speaking_describe_image
+tags:
+- line-chart
+- environment
+difficulty: 4
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0010.svg
+alt_text: 'Line chart from 2000 to 2020: recycled waste rises from 12% to 46%; landfill falls from 78%
+  to 30%; they cross around 2015 at 40%. Illustrative data.'
+key_points:
+- Recycling rose from 12% to 46%
+- Landfill fell from 78% to 30%
+- Lines met at 40% in 2015
+- Recycling overtook landfill after 2015
+sample_answer: This line graph compares the share of waste recycled and sent to landfill between 2000
+  and 2020. Recycling rose steadily from twelve percent to forty-six percent, while landfill fell from
+  seventy-eight percent to thirty percent. The two lines met at forty percent in 2015, after which recycling
+  became the more common way of handling waste.

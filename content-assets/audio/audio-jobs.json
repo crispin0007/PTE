@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "speaking-repeat-sentence-0001",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0001.mp3",
+    "script": "Please hand in your assignments at the main office before Friday.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0002",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0002.mp3",
+    "script": "The library will be closed on Monday because of the public holiday.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0003",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0003.mp3",
+    "script": "Students should check the noticeboard for changes to the exam timetable.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0004",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0004.mp3",
+    "script": "The lecture on renewable energy has been moved to the larger theatre.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0005",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0005.mp3",
+    "script": "Remember to save your work regularly when using the shared computers.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0006",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0006.mp3",
+    "script": "Most of the research for this project was carried out in the field.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0007",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0007.mp3",
+    "script": "Laboratory coats and safety glasses must be worn at all times.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0008",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0008.mp3",
+    "script": "The committee will review all applications and announce its decision next month.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0009",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0009.mp3",
+    "script": "Group presentations should last no longer than fifteen minutes.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-repeat-sentence-0010",
+    "type": "speaking_repeat_sentence",
+    "audio": "audio/speaking-repeat-sentence-0010.mp3",
+    "script": "Historians disagree about the main causes of the economic collapse.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0001",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0001.mp3",
+    "script": "Today I want to talk about pollinators, and particularly about why their decline matters. Now, you've probably heard that bees are responsible for a third of everything we eat. That's an oversimplification. Most of our staple calories, wheat, rice, maize, come from crops that are pollinated by the wind. But if you look at fruit, nuts, many vegetables, the picture changes completely. These crops depend heavily on insects, and they provide a large share of the vitamins in our diet. So the real risk isn't that we'd run out of food, it's that our diets would become poorer and more expensive. And the causes of decline are several: pesticides, especially a group called neonicotinoids, parasites like the varroa mite, and simply the loss of the wild flowers and habitats these insects need.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0002",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0002.mp3",
+    "script": "When we think about technologies that shrank the world, we tend to think of the internet or aeroplanes. But I'd argue the electrical telegraph was just as revolutionary. Before the eighteen-forties, information travelled at the speed of a horse or a sailing ship. A message from London to New York could take weeks. Once the transatlantic cable was finally working in eighteen sixty-six, that same message took minutes. And the consequences went well beyond business. Railways used it to run trains safely. Newspapers began reporting foreign events the next morning. Astronomers used telegraphed time signals to measure longitude more accurately. In a sense, it was the first time people experienced distant events almost as they happened.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0003",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0003.mp3",
+    "script": "Let's turn to the placebo effect. In a drug trial, one group gets the real medicine and another gets an identical-looking pill with nothing active in it. Any improvement in that second group is called the placebo response. What's interesting is that placebos seem to work mostly on subjective symptoms, things like pain or nausea, rather than on, say, the size of a tumour. There's also a flip side, the nocebo effect, where people who expect side effects actually report them, even from a sugar pill. And more recently, researchers have tried giving placebos openly, telling patients the pills are inactive. Some small studies report benefits, but the evidence so far is limited, so we should be cautious.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0004",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0004.mp3",
+    "script": "We often hear about the ocean as a buffer against climate change, and that's true. It has absorbed roughly a quarter of the carbon dioxide we've emitted since the industrial revolution. But this comes at a cost. When carbon dioxide dissolves in seawater, it forms carbonic acid. The ocean is still alkaline, it hasn't become acidic, but its pH has dropped by about a tenth of a unit since the mid-twentieth century. Because the scale is logarithmic, that's roughly a twenty-five percent increase in acidity. The organisms that suffer most are the ones that build shells or skeletons from calcium carbonate: corals, oysters, and tiny plankton at the base of the food web. And because the chemistry of seawater changes slowly, even if emissions stopped tomorrow, these changes would take a very long time to reverse. That's why many scientists describe acidification as climate change's equally serious twin.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0005",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0005.mp3",
+    "script": "Mangroves are trees that grow in the zone between land and sea in the tropics, and they've developed some remarkable adaptations. Some species exclude salt at the root; others push special breathing roots up out of the mud, because the waterlogged soil has very little oxygen. Many even produce seeds that sprout while still on the parent tree, then drop and float away to colonise new shores. These forests protect coastlines from storms, act as nurseries for fish, and store a great deal of carbon. Unfortunately, large areas have been cleared, often for shrimp farming, although the rate of loss has slowed in recent decades. The good news is that restoration works when it's done carefully, especially when local communities are involved, since they understand the coastline and benefit directly from healthier forests.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0006",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0006.mp3",
+    "script": "Does learning a second language make you smarter? For a while the answer seemed to be yes. Studies in the two-thousands reported that bilingual people were better at ignoring distractions, and one well-known study found that bilingual patients developed dementia symptoms three to four years later than monolinguals. But in the last decade the picture has become more complicated. Larger studies often find no advantage at all in healthy adults, and there's evidence that positive results were more likely to be published. My own view is that the dementia findings are more robust than the claims about everyday thinking, but both need more careful research. Part of the difficulty is that bilingual people differ so much: some learn two languages from birth, others learn a second language as adults, and they use them in very different ways, which makes comparisons hard.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0007",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0007.mp3",
+    "script": "The Great Green Wall is one of the most ambitious environmental projects in the world. The original idea, agreed in two thousand and five, was a line of trees across the whole width of Africa, just south of the Sahara. The targets for twenty-thirty are huge: one hundred million hectares of restored land and millions of jobs. In practice, it's become less of a wall and more of a patchwork of local projects, which is probably a good thing. But progress has been slow. Funding promises haven't always been kept, and conflict in parts of the Sahel makes work there dangerous. One encouraging sign is a technique where farmers protect the roots of existing trees and let them regrow. It's cheap, it suits local conditions, and it has turned large areas green again.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0008",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0008.mp3",
+    "script": "Your body clock sits in a tiny region of the brain called the suprachiasmatic nucleus. It receives signals directly from special cells in your eyes, which is why morning light is so important for keeping you in sync. As evening comes, the clock signals the pineal gland to release melatonin, which helps prepare you for sleep. Problems arise when we fight this system. Long-term night-shift workers, for example, show higher rates of heart disease and diabetes. So the practical advice is simple: get daylight in the morning and keep your sleep times regular. Interestingly, teenagers' clocks naturally shift later, which is why some schools have experimented with later start times, with promising results for attendance and attention in class.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0009",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0009.mp3",
+    "script": "Glaciers have been retreating almost everywhere since the middle of the nineteenth century, and the pace has accelerated. Take Kilimanjaro: about eighty percent of its summit ice disappeared between 1912 and 2006. Why does this matter? Well, for one thing, melting glaciers add to sea-level rise. But for many communities the more immediate issue is water. In the Himalayas and the Andes, glaciers release meltwater during the dry season. As they shrink, rivers that hundreds of millions of people rely on will become less reliable in summer. There is also a risk of sudden floods, when lakes formed by meltwater burst through the loose rock that holds them back. In some valleys, early warning systems have already been installed for this reason.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-retell-lecture-0010",
+    "type": "speaking_retell_lecture",
+    "audio": "audio/speaking-retell-lecture-0010.mp3",
+    "script": "Gutenberg's press, developed around fourteen-forty, is often presented as a single invention, but it was really a combination. He adapted the screw press used for making wine, invented a mould for casting metal letters quickly, and developed an oil-based ink. The impact was enormous. By fifteen hundred, European presses had produced more than twenty million copies. Martin Luther's pamphlets sold in the hundreds of thousands, which helped spread the Reformation. Printing also encouraged the use of local languages instead of Latin. It's worth adding that Gutenberg himself didn't become rich from his invention. He lost control of his workshop in a lawsuit, and others profited from the industry he started.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0001",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0001.mp3",
+    "script": "What do we call the frozen form of water?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0002",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0002.mp3",
+    "script": "How many days are there in a leap year?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0003",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0003.mp3",
+    "script": "Which organ do humans use to breathe?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0004",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0004.mp3",
+    "script": "What instrument is used to measure temperature?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0005",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0005.mp3",
+    "script": "What is the name for a person who writes a book?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0006",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0006.mp3",
+    "script": "Which season comes after autumn?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0007",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0007.mp3",
+    "script": "What do we call a book that lists words and their meanings in alphabetical order?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0008",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0008.mp3",
+    "script": "What is the opposite of the word 'ancient'?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0009",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0009.mp3",
+    "script": "In a hospital, what do we call a doctor who performs operations?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-answer-short-question-0010",
+    "type": "speaking_answer_short_question",
+    "audio": "audio/speaking-answer-short-question-0010.mp3",
+    "script": "What do we call the line that divides the Earth into the northern and southern hemispheres?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0001",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0001.mp3",
+    "script": "Maya: I think nudges are a great tool for governments. Making pension saving the default, for example, costs almost nothing and helps people.\nDaniel: But isn't that a bit manipulative? People end up doing something because they didn't notice the choice, not because they agreed to it.\nProfessor Li: That's the central ethical debate. Supporters say every choice has to be presented somehow, so there's no neutral option. Critics, like Daniel, worry about autonomy.\nMaya: People can still opt out, though. Nothing is forbidden.\nProfessor Li: True, and that's what distinguishes a nudge from a ban. But I'd add that the evidence is mixed. Some reviews suggest the effects shrink once you account for unpublished studies.\nDaniel: Even so, I'd want people to be told clearly when a default has been set for them.\nMaya: I agree with that. Transparency would answer most of the ethical worries.\nProfessor Li: Many researchers would support that position. A nudge that still works when people know about it is much easier to defend than one that depends on people not noticing.",
+    "speakers": [
+      "Maya",
+      "Daniel",
+      "Professor Li"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0002",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0002.mp3",
+    "script": "Sara: Our city is running out of water. Building a desalination plant seems like the obvious solution.\nTom: It's expensive though, and it uses a lot of energy. Shouldn't we start by fixing leaking pipes and encouraging people to use less?\nDr Patel: Both points are fair. Energy use has fallen about tenfold since the 1970s, but it's still higher than for most other sources.\nSara: What about the environment?\nDr Patel: The main issue is brine. If it's discharged badly, it can harm sea life. Modern diffusers help. Honestly, most cities need both: conservation first, desalination as a backup.\nTom: And if we build a plant, we're still paying for the energy for decades.\nSara: Maybe solar power could help with that? We get plenty of sunshine.\nDr Patel: Several plants already do that. Renewable energy can reduce both costs and emissions, though it adds to the initial investment. Whatever you choose, public support matters, so explaining the costs openly is important.",
+    "speakers": [
+      "Sara",
+      "Tom",
+      "Dr Patel"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0003",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0003.mp3",
+    "script": "Leo: I always study late the night before an exam. It's when I concentrate best.\nAmina: But don't you feel tired during the test? I've read that sleep helps you remember things.\nMs Chen: Amina's right. Research shows people recall more after sleeping than after staying awake for the same time. The brain seems to replay and store what you learned.\nLeo: So should I study earlier?\nMs Chen: Ideally, study across several days and protect your sleep before the exam. Even a short nap can help with some kinds of learning.\nLeo: But I feel like I forget everything if I study too early.\nMs Chen: That's a common worry. Testing yourself on the material over several days actually makes it stick better than rereading it the night before.\nAmina: That's what I do. I make short quizzes for myself.\nMs Chen: Exactly. Combine that with regular sleep and you'll usually remember far more on the day.",
+    "speakers": [
+      "Leo",
+      "Amina",
+      "Ms Chen"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0004",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0004.mp3",
+    "script": "Nadia: Our neighbourhood gets unbearably hot in summer. Could the council plant more trees?\nChris: Trees take years to grow. Painting roofs white would work immediately.\nDr Okafor: You're both right. Cool roofs reflect sunlight straight away, while trees add shade and cooling through evaporation over time.\nNadia: Which is cheaper?\nDr Okafor: Cool roof coatings are cheaper per building, but trees bring other benefits like cleaner air. The best plans combine them and target the hottest streets first.\nChris: What about older people? They're the ones most at risk in heatwaves.\nNadia: True. My grandmother can't sleep when it's that hot.\nDr Okafor: That's a very good point. Cities often prioritise streets near care homes, schools and hospitals, and some open cooling centres during heatwaves. Long-term planning and short-term emergency measures both have a role.",
+    "speakers": [
+      "Nadia",
+      "Chris",
+      "Dr Okafor"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0005",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0005.mp3",
+    "script": "Jin: Banning microbeads in cosmetics was a big step. Problem solved, right?\nElena: Not really. I read that most microplastics come from things breaking down, like bottles and tyres.\nProfessor Hart: That's correct. Microbeads were a small and easy target. Larger sources include synthetic clothing fibres and tyre wear.\nJin: So what can we actually do?\nProfessor Hart: Filters on washing machines, better waste collection, and reducing single-use plastics. Local bans on single-use items have shown real results.\nElena: What about our clothes? I didn't know washing them released plastic.\nProfessor Hart: Synthetic fabrics like polyester shed fibres every wash. Washing at lower temperatures and full loads helps a little.\nJin: So individuals can do something, but the bigger changes need governments and industry?\nProfessor Hart: That's a fair summary. Personal choices help, but design and regulation matter most.",
+    "speakers": [
+      "Jin",
+      "Elena",
+      "Professor Hart"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0006",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0006.mp3",
+    "script": "Ravi: I always ask my doctor for antibiotics when I have a bad cold.\nGrace: But colds are caused by viruses. Antibiotics don't work on them.\nDr Moreno: Exactly, and unnecessary use helps resistant bacteria spread. Studies suggest a large share of outpatient prescriptions aren't needed.\nRavi: Is it really such a big problem?\nDr Moreno: Yes. Resistant infections already cause over a million deaths a year. Farming is a major factor too, since much of the world's antibiotic use is in livestock.\nGrace: What about farming? I didn't know animals were given antibiotics.\nDr Moreno: In many countries they were used for decades to make animals grow faster. Some regions have now banned that, which is an important step.\nRavi: So what should I do next time I have a cold?\nDr Moreno: Rest, drink fluids, and only take antibiotics if a doctor finds a bacterial infection.",
+    "speakers": [
+      "Ravi",
+      "Grace",
+      "Dr Moreno"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0007",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0007.mp3",
+    "script": "Kofi: The Great Green Wall sounds inspiring, but I've heard most of the trees died.\nHannah: Isn't that why they changed the approach?\nDr Diallo: Yes. Early planting often failed. Now projects work with local farmers, using methods like water-harvesting pits and protecting tree stumps so they regrow naturally.\nKofi: Is it working now?\nDr Diallo: Progress is real but slow. Roughly thirty percent of the land target has been restored. The biggest obstacles are funding and security.\nHannah: Why does security matter so much?\nDr Diallo: In some regions, armed groups make it impossible for workers and funders to reach project sites safely.\nKofi: So even good ideas can't be carried out there.\nDr Diallo: Exactly. Where it's safe, though, communities have seen real improvements in crops and grazing land.",
+    "speakers": [
+      "Kofi",
+      "Hannah",
+      "Dr Diallo"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0008",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0008.mp3",
+    "script": "Sofia: I want my children to grow up bilingual. I've heard it makes them smarter.\nMark: I've also heard that's been exaggerated.\nDr Ahmed: The evidence on general intelligence is mixed. Large studies often find no clear advantage in attention or problem-solving.\nSofia: So is there no benefit?\nDr Ahmed: There are obvious benefits: communicating with more people, cultural understanding, and job opportunities. Some studies also suggest dementia symptoms appear later. I just wouldn't promise that it raises intelligence.\nMark: Won't learning two languages confuse young children?\nDr Ahmed: That's a common myth. Children may mix languages at first, but that's a normal stage, and they soon learn to separate them.\nSofia: That's reassuring. So the main thing is consistent exposure?\nDr Ahmed: Yes. Regular, natural use of both languages at home and in the community makes the biggest difference.",
+    "speakers": [
+      "Sofia",
+      "Mark",
+      "Dr Ahmed"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0009",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0009.mp3",
+    "script": "Ella: Fleming discovered penicillin by accident, didn't he? It's a great story.\nSam: But I read that he couldn't actually produce it.\nProfessor Grant: That's right. Fleming made the observation in 1928, but it was Florey and Chain's team in Oxford who purified it around 1940.\nElla: And who made it in large amounts?\nProfessor Grant: Mostly American laboratories and companies during the war, using deep-tank fermentation. It's a good reminder that discoveries usually need teams, not lone geniuses.\nSam: So why does everyone remember only Fleming?\nProfessor Grant: Partly because his story was simple and dramatic, and newspapers loved it. Florey's team did slower, less glamorous work.\nElla: That seems a bit unfair.\nProfessor Grant: It is, but the Nobel committee recognised all three of them in 1945, which was a fairer reflection.",
+    "speakers": [
+      "Ella",
+      "Sam",
+      "Professor Grant"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-summarize-group-discussion-0010",
+    "type": "speaking_summarize_group_discussion",
+    "audio": "audio/speaking-summarize-group-discussion-0010.mp3",
+    "script": "Lucas: Our river has had more water than usual these past few summers. Doesn't that mean the glacier is fine?\nPriya: Or maybe it's melting faster?\nDr Novak: Priya's closer. When a glacier melts quickly, river flows can increase for a while. But once the ice thins, flows fall sharply.\nLucas: So we should plan now?\nDr Novak: Exactly. Water storage and more efficient irrigation take years to put in place, so communities should act while there's still extra water.\nPriya: Could we just build a reservoir to store the extra water?\nDr Novak: That's one option, but reservoirs are expensive and take years. Smaller steps like repairing irrigation channels can start immediately.\nLucas: So we need both quick fixes and long-term plans.\nDr Novak: Exactly. And communities should be involved in deciding which ones come first.",
+    "speakers": [
+      "Lucas",
+      "Priya",
+      "Dr Novak"
+    ],
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0001",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0001.mp3",
+    "script": "You borrowed a textbook from your classmate, Alex, and accidentally spilled coffee on it. Alex needs the book for an exam next week. What would you say to Alex?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0002",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0002.mp3",
+    "script": "You are sick and cannot attend a group project meeting this afternoon. Your group is expecting you to present your section. Call your group leader and explain.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0003",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0003.mp3",
+    "script": "Your neighbour plays loud music late every night, and you have important exams this month. You decide to speak to your neighbour politely. What would you say?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0004",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0004.mp3",
+    "script": "You ordered a laptop online, but it arrived with a cracked screen. You call the company's customer service. What would you say?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0005",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0005.mp3",
+    "script": "A new international student in your class seems lost on the first day and does not know where the library is. What would you say to help them?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0006",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0006.mp3",
+    "script": "Your manager has asked you to work this Saturday, but you have already booked a trip with your family. Explain the situation to your manager.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0007",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0007.mp3",
+    "script": "Your professor gave you a lower mark than you expected on an essay, and you do not understand why. You visit your professor during office hours. What would you say?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0008",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0008.mp3",
+    "script": "You are organising a farewell party for a colleague who is leaving. Invite another colleague and ask them to help with the preparations.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0009",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0009.mp3",
+    "script": "During a team meeting, a colleague presents an idea that you believe has a serious flaw. You want to raise your concern without offending them. What would you say?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "speaking-respond-to-situation-0010",
+    "type": "speaking_respond_to_situation",
+    "audio": "audio/speaking-respond-to-situation-0010.mp3",
+    "script": "You arrive at a restaurant where you booked a table for four, but the staff cannot find your reservation. What would you say to the manager?",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0001",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0001.mp3",
+    "script": "Let's talk about coral bleaching, which has become one of the clearest signs of ocean warming. Corals rely on tiny algae living in their tissues. The algae photosynthesise and give the coral most of its energy. When the water stays even about one degree above its normal summer maximum for several weeks, that partnership breaks down. The coral expels the algae and turns white. Now, a bleached coral isn't dead. If temperatures drop quickly, the algae can return. But if the heat lasts, the coral starves. The first global bleaching event was recognised in 1998, and since then they've become more frequent. The most recent one, starting in 2023, is the fourth. The worry is that reefs are no longer getting enough time to recover between events. To give a sense of scale, during the most recent event, bleaching-level heat stress was recorded on reefs in more than eighty countries. Some reefs do show signs of resilience, and scientists are studying heat-tolerant corals, but almost everyone agrees that the long-term answer depends on limiting ocean warming.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0002",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0002.mp3",
+    "script": "Traditional economics assumes people make rational choices. Behavioural economics challenges that. One of its most influential ideas is the nudge, introduced by Richard Thaler and Cass Sunstein in 2008. A nudge changes the way options are presented without removing any of them. The most powerful nudge is probably the default. If you are automatically enrolled in something and have to opt out, you are far more likely to stay in. Governments liked this because it's cheap, and Britain set up a dedicated unit in 2010. But there's been pushback. Some researchers argue the effects are smaller than reported, because studies that found nothing were never published. And there's an ethical question about whether governments should steer behaviour that people may not even notice. So where does that leave us? I think the fair conclusion is that nudges are a useful tool, but not a magic one. They work best for simple decisions, like signing up for a scheme, and much less well for complex habits like diet.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0003",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0003.mp3",
+    "script": "In 1844, Samuel Morse sent a message from Washington to Baltimore using electrical signals along a wire. It wasn't the first telegraph, British inventors had a working system on a railway a few years earlier, but it marked the start of a communications revolution. Within two decades, lines covered much of Europe and North America. The great challenge was crossing the ocean. Several transatlantic cables failed, one after only a few weeks. Success finally came in 1866, when the enormous steamship Great Eastern laid a durable cable. Suddenly, markets in London and New York could react to each other's news on the same day. Some historians call this the Victorian internet. It's worth remembering how physical all this was. Messages were tapped out by hand, received by trained operators, and written down or delivered by messenger boys. Even so, the change in speed was so dramatic that people at the time described it as the annihilation of distance.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0004",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0004.mp3",
+    "script": "Microplastics are pieces of plastic smaller than five millimetres, and they are now found almost everywhere, in the deep sea, in Antarctic sea ice, in the air above mountains, and in our food and water. Some are made deliberately small, like the microbeads that used to be added to face scrubs. Many countries have banned those. But the majority come from larger plastic breaking apart, or from everyday wear: synthetic clothes shed fibres in the wash, and car tyres shed particles on the road. What we don't yet know is how harmful they are to human health. We know we're swallowing them, and the smallest particles can enter cells, but the long-term effects are still being studied. In the meantime, researchers recommend some sensible precautions, such as reducing single-use plastics, fitting filters to washing machines, and improving waste collection, so that less plastic reaches rivers and the sea in the first place.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0005",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0005.mp3",
+    "script": "The Arctic tern weighs around a hundred grams, about the same as a bar of soap, yet it makes the longest migration of any animal. It breeds in the Arctic during the northern summer and then flies south to spend the southern summer near Antarctica. For a long time, scientists assumed the journey was about forty thousand kilometres a year. Then, in 2010, researchers fitted tiny tracking devices to birds in Greenland and Iceland. The results were astonishing: the average round trip was about seventy thousand kilometres, because the birds follow winding routes that make use of the winds. Over a lifetime of thirty years, that's like flying to the Moon and back three times. And this isn't just a curiosity. Because terns depend on fish near the ocean surface at both ends of their journey, changes in their routes and breeding success can tell scientists a great deal about the health of marine ecosystems across the whole Atlantic.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0006",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0006.mp3",
+    "script": "Desalination used to be seen as a last resort, because boiling seawater took enormous amounts of energy. Two things changed that. First, reverse osmosis, where water is pushed through a membrane that holds back the salt, replaced most thermal plants. Second, the membranes and pumps became far more efficient, so the energy needed per cubic metre has fallen by roughly ninety percent since 1970. Today there are tens of thousands of plants worldwide, concentrated in the Middle East but also in places like Singapore, Israel and California. The remaining problem is brine. For every litre of fresh water, plants produce more than a litre of very salty waste, and getting rid of it safely is now the industry's biggest environmental challenge. Engineers are working on several solutions, such as diffusers that mix the brine quickly into the surrounding water, and systems that recover useful minerals so that almost no liquid waste is left over at all.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0007",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0007.mp3",
+    "script": "The story of penicillin is often told as a lucky accident, and it's partly true. In 1928, Alexander Fleming noticed that mould on a culture plate had killed the bacteria around it. But Fleming couldn't purify the substance, and for about ten years little happened. The real breakthrough came at Oxford around 1940, when Howard Florey, Ernst Chain and their colleagues extracted enough to show it could cure infections in mice. Producing it at scale was another challenge, solved in the United States using deep fermentation tanks. By D-Day in 1944, there were millions of doses available. Fleming, Florey and Chain shared the Nobel Prize in 1945. The story also has a warning attached. As early as 1940, scientists noticed that some bacteria could destroy penicillin, and in his Nobel lecture Fleming himself warned that misuse could make bacteria resistant.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0008",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0008.mp3",
+    "script": "When people hear the phrase ocean acidification, they often imagine the sea turning into acid. That's not what's happening. Seawater is still alkaline, with a pH a little above eight. What's changing is the direction. Since the nineteen-fifties, average surface pH has fallen from about eight point one five to eight point oh five. That sounds tiny, but because the scale is logarithmic, it means around twenty-five percent more hydrogen ions. Those extra ions reduce the carbonate that corals, shellfish and some plankton need to build their skeletons. In one experiment on the Great Barrier Reef, conditions expected later this century reduced coral growth by about a third. These organisms matter far beyond the reef. Tiny shell-building plankton are food for fish, and oysters and mussels support coastal fisheries, so changes at the bottom of the food web can ripple upwards in ways that are still hard to predict.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0009",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0009.mp3",
+    "script": "Why do we remember things better after we've slept? For a long time the answer was simple: when you're asleep, nothing new happens to interfere with your memories. But the evidence now suggests sleep is doing something active. Recordings in animals show that patterns of brain activity from learning are replayed during deep sleep, almost like rehearsing. There seem to be different roles for different stages. Deep, slow-wave sleep is linked to remembering facts and events, while REM sleep may matter more for skills. Whatever the details, the practical message is the same: cutting sleep to study more is usually a bad trade. It also matters how you study before you sleep. Spreading revision over several days, with sleep in between, seems to give the brain more chances to strengthen what you've learned than cramming everything into a single long session.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-summarize-spoken-text-0010",
+    "type": "listening_summarize_spoken_text",
+    "audio": "audio/listening-summarize-spoken-text-0010.mp3",
+    "script": "When we picture the Silk Road, we often imagine a single caravan travelling from China to Rome. In reality, almost no one made that whole journey. The Silk Road was a web of routes, and goods moved in short stages, passed from one merchant to another in oasis towns. Each exchange added to the price, which is why silk was a luxury by the time it reached the Mediterranean. And what travelled furthest was often not goods at all, but ideas. Buddhism spread from India into China this way, and Chinese inventions like papermaking travelled west. Unfortunately, so did disease. The name itself, by the way, only dates from the nineteenth century. The routes eventually declined from the fifteenth century onwards, as sea trade became cheaper and safer and as political changes made overland travel more dangerous. But their influence on culture, religion and technology lasted long after the caravans had stopped.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0001",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0001.mp3",
+    "script": "On a hot summer night, the difference between a city centre and the surrounding countryside can be several degrees. Researchers call this the urban heat island effect, and it has been studied for about two hundred years. So why exactly are cities warmer? There are several causes working together. First, materials. Asphalt and concrete absorb a lot of sunlight and hold on to that heat, releasing it at night. Second, there's simply less vegetation, so we lose the cooling that comes from shade and from plants releasing water. Third, the shape of the city: tall buildings trap heat and block the wind. And finally, there's waste heat from cars, air conditioners and industry, although that's usually a smaller factor than the change in surfaces.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0002",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0002.mp3",
+    "script": "Antimicrobial resistance is one of the most serious threats to modern medicine, because so many routine treatments depend on antibiotics working. To tackle it, we first need to understand why it is spreading. Resistance spreads for a few main reasons. One is overuse in medicine: antibiotics prescribed for viral infections, where they can't help at all. Another is agriculture. Globally, more antibiotics are sold for animals than for people, often to make livestock grow faster. A third is self-medication, where people buy antibiotics without a prescription, which is common in many countries. And bacteria themselves help, because they can share resistance genes with one another, even across species.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0003",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0003.mp3",
+    "script": "Mangroves are trees that grow along tropical coastlines, in the zone that is flooded by the tide twice a day. Few trees can survive there, because seawater would normally dehydrate and poison them. Mangroves have some remarkable ways of coping with salt water. Some species, like the red mangrove, block most of the salt at their roots. Others take the salt in but then get rid of it through special glands on their leaves; you can sometimes see salt crystals on them. And because the mud they grow in has very little oxygen, some mangroves send up roots that stick out of the mud like pencils, so they can take in air directly.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0004",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0004.mp3",
+    "script": "Your body clock affects almost everything, from when you feel sleepy to how well you digest food. The good news is that small changes in daily habits can help keep it running smoothly. If you want to keep your body clock healthy, there are a few practical steps. Get outside in daylight early in the day, because morning light is the strongest signal for setting the clock. Try to go to bed and wake up at similar times, even at weekends. Reduce bright screens in the hour before bed, since light in the evening delays melatonin. And be careful with large meals late at night, because eating also sends timing signals to the body.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0005",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0005.mp3",
+    "script": "The Great Green Wall was launched with enormous ambition: to restore land across the whole width of Africa, just south of the Sahara. Nearly twenty years later, progress has been real but slow, and it's worth asking why. The Great Green Wall has faced a number of obstacles. Money is one: countries and donors pledged billions, but much of it has been slow to arrive. Coordination is another, with more than twenty countries involved, each with its own priorities. In parts of the Sahel, armed groups make it unsafe to work. And there have been natural setbacks too: swarms of locusts have destroyed young plants in some projects.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0006",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0006.mp3",
+    "script": "We often say that Gutenberg invented printing, but that's not quite accurate. Printing existed in East Asia centuries earlier, and even in Europe several parts of his system were already known. Gutenberg's genius was combining things. He took the screw press, which already existed for pressing grapes and olives. He invented a hand mould that could cast metal letters quickly and identically. He worked out an alloy of lead, tin and antimony that was durable but melted easily. And he developed an oil-based ink, because the water-based inks used for woodblocks wouldn't stick to metal.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0007",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0007.mp3",
+    "script": "Pollinators are under pressure across the world, and much of the land they live on is farmland. That means farmers are in a strong position to help, often at quite a low cost. Farmers can do quite a lot to support pollinators. Leaving strips of wildflowers along field edges gives insects food throughout the season. Keeping hedgerows provides nesting sites. Reducing pesticide use, or at least avoiding spraying when crops are in flower, protects bees directly. Some farms also put out nesting boxes for solitary bees, which are often better pollinators of certain crops than honey bees.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0008",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0008.mp3",
+    "script": "Since the middle of the nineteenth century, most of the world's mountain glaciers have been shrinking, and in recent decades the pace has increased. So what does this mean for people? Glacier retreat affects people in several ways. Most obviously, it adds to sea-level rise, which threatens coastal cities. In mountain regions, it changes water supply: rivers that relied on summer meltwater become less reliable. There are also hazards. As glaciers shrink, they can leave behind lakes held back by unstable piles of rock, and if those dams fail, the floods can be devastating. Tourism can suffer too, in places where glaciers are the attraction.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0009",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0009.mp3",
+    "script": "Placebos are essential in medical research, where they help scientists find out whether a new treatment really works. Using them in everyday medical care is a different matter, though. Using placebos outside research raises ethical issues. The main one is deception: if a doctor gives a sugar pill and says it's medicine, the patient hasn't given informed consent. There's also a risk of delaying treatment that actually works. And it can damage trust between patients and doctors if the deception is discovered. That's why there's interest in open-label placebos, where patients are told the truth.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-multiple-0010",
+    "type": "listening_mcq_multiple",
+    "audio": "audio/listening-mcq-multiple-0010.mp3",
+    "script": "When Alfred Wegener presented his theory of continental drift in 1912, most geologists dismissed it. Looking back, it's surprising how much evidence he had already gathered. Wegener's evidence for continental drift was actually quite strong. The coastlines of South America and Africa fit together like puzzle pieces. The same fossil species, including a freshwater reptile that couldn't have swum an ocean, appeared on both continents. Rock formations matched across the Atlantic. And there were signs of ancient glaciers in places that are now tropical. What he lacked was a mechanism.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0001",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0001.mp3",
+    "script": "Coral reefs support around a quarter of all marine species, even though they cover only a small part of the ocean floor. Corals get most of their {{b1}} from algae living inside them. When the water becomes too {{b2}}, the coral expels the algae and turns white. This is called {{b3}}. If conditions improve quickly, the coral can {{b4}}, but long periods of heat often kill it. Scientists now monitor sea temperatures from space to predict where it will happen next.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0002",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0002.mp3",
+    "script": "Today we take printed books for granted, but in the middle of the fifteenth century they were a revolutionary new technology. Before printing, books in Europe were copied by {{b1}}, which made them rare and expensive. Gutenberg's press made it possible to produce identical copies {{b2}}. Within fifty years, millions of books had been printed, and {{b3}} began to rise across the {{b4}}. The new technology also helped scholars share ideas much more widely.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0003",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0003.mp3",
+    "script": "Some animals travel remarkable distances every year, but one small seabird travels further than any other. The Arctic tern breeds in the far {{b1}} and spends the rest of the year near Antarctica. Scientists used small tracking {{b2}} to follow the birds and discovered that their journeys were much {{b3}} than expected. Some birds live for more than {{b4}} years. Over a lifetime, the total distance it flies is roughly equal to three return trips to the Moon.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0004",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0004.mp3",
+    "script": "Plastic pollution is not only a problem of bottles and bags floating in the sea. Microplastics are tiny {{b1}} of plastic. Many come from synthetic clothing, which releases fibres every time it is {{b2}}. Others come from car {{b3}}. Scientists are still trying to understand their {{b4}} on human health. Some countries have already banned tiny plastic beads in cosmetics, but that is only a small part of the problem.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0005",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0005.mp3",
+    "script": "Almost every living thing, from plants to people, follows daily patterns of activity and rest. Our internal clock follows a cycle of about twenty-four {{b1}}. It is reset each day mainly by {{b2}}. In the evening, the brain releases a hormone called {{b3}}, which helps us feel {{b4}}. That is why using bright screens late at night can make it harder to fall asleep.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0006",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0006.mp3",
+    "script": "Many dry coastal countries now rely on the sea for their drinking water. In reverse osmosis, seawater is pushed through a {{b1}} under high {{b2}}. Water passes through, but most of the salt is left {{b3}}. The salty waste, called {{b4}}, must be disposed of carefully. Even so, the energy needed for the process has fallen dramatically over the past fifty years.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0007",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0007.mp3",
+    "script": "The electrical telegraph was one of the most important inventions of the nineteenth century. In 1844, Samuel Morse sent a {{b1}} from Washington to Baltimore. The code he helped develop used short and long {{b2}}. Twenty-two years later, a cable across the Atlantic {{b3}} Europe and America, reducing communication time from weeks to {{b4}}. For the first time, news could travel faster than people.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0008",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0008.mp3",
+    "script": "Land degradation is a serious problem across the Sahel, the dry region south of the Sahara. The Great Green Wall aims to {{b1}} one hundred million hectares of land across Africa. At first, the plan focused on planting {{b2}}, but many did not survive. Today, projects work closely with local {{b3}} and use methods that help land {{b4}} naturally. Progress has been slow, but some areas are now visibly greener than they were twenty years ago.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0009",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0009.mp3",
+    "script": "Behavioural economists study how people actually make decisions, rather than how they ought to. A nudge changes how a choice is {{b1}} without taking any options away. A common example is a {{b2}}, the option people get if they do nothing. Critics question whether nudges are {{b3}}, and some argue that the {{b4}} for them is weaker than claimed. Even so, many governments now have teams that use these ideas in public policy.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-fib-0010",
+    "type": "listening_fib",
+    "audio": "audio/listening-fib-0010.mp3",
+    "script": "Penicillin was the first antibiotic to be widely used, and it changed medicine forever. Fleming {{b1}} in 1928 that a mould was killing bacteria. However, it took another team to {{b2}} the drug. During the Second World War, factories produced it in large {{b3}}, and it saved many {{b4}}. Today, however, many bacteria have become resistant to it.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0001",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0001.mp3",
+    "script": "For years, we heard that bilingual people have better attention and self-control because they're constantly switching between languages. Early studies seemed to confirm this. But as researchers ran larger and more careful experiments, the advantage often disappeared. Part of the problem may be that studies with exciting results were more likely to be published. That doesn't mean bilingualism has no benefits; it clearly does, socially and professionally. But the claim that it boosts general thinking skills is much less certain than it once seemed.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0002",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0002.mp3",
+    "script": "Kilimanjaro's ice cap is a striking example of glacier loss. Between 1912 and 2006, around eighty percent of the summit ice disappeared. Interestingly, the main cause there isn't only warmer air; reduced snowfall and drier conditions also play a role. But globally, the overwhelming driver of glacier retreat is rising temperatures caused by greenhouse gas emissions, and almost every glacier on Earth is now losing more ice than it gains.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0003",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0003.mp3",
+    "script": "Honey bees get most of the attention, but they're only part of the pollination story. There are around twenty thousand species of bees worldwide, most of them solitary, plus flies, beetles, butterflies, birds and bats. For some crops, wild pollinators are actually more effective than honey bees. So protecting pollination isn't just about keeping beehives healthy; it means protecting the habitats that wild species depend on. Farmers can help by planting flowers along field edges and leaving some areas undisturbed.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0004",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0004.mp3",
+    "script": "The urban heat island effect was first studied by Luke Howard in London in the early nineteenth century. He noticed that the city centre was noticeably warmer than the surrounding countryside, especially at night. Two hundred years later, the effect is more important than ever, because more than half the world's population lives in cities and heatwaves are becoming more frequent. Today, city planners use trees, reflective roofs and green spaces to try to reduce the problem.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0005",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0005.mp3",
+    "script": "Many students believe that pulling an all-nighter will help them pass an exam. Research suggests the opposite. In studies where people were kept awake all night, their ability to recall new material dropped significantly. Worse, they were often more confident in wrong answers. So the extra hours of study may be undone by poorer memory and judgement on the day. Teachers often advise students to plan their revision so they can sleep normally before an exam.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0006",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0006.mp3",
+    "script": "Most earthquakes happen along the boundaries between tectonic plates. At transform boundaries, like the San Andreas Fault in California, two plates slide past each other. They don't move smoothly; friction locks them together, and stress builds up over decades or centuries. When the rock finally gives way, the plates jump suddenly, releasing that energy as an earthquake. Scientists cannot yet predict exactly when this will happen, but they can map where the risk is highest.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0007",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0007.mp3",
+    "script": "The ocean has been a great help in slowing climate change. It has taken up roughly a quarter of the carbon dioxide humans have released. Without that, warming would be considerably worse. But the benefit has a price. The absorbed carbon dioxide is changing seawater chemistry, making it harder for many marine organisms to build shells and skeletons. Scientists are now studying how quickly these organisms might be able to adapt.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0008",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0008.mp3",
+    "script": "Historians increasingly argue that the most important things carried along the Silk Road were not goods but ideas. Religions like Buddhism, technologies like papermaking, and artistic styles all moved along these routes. Some of these exchanges shaped civilisations for centuries, long after the trade in silk itself had declined. Silk itself became less important once its production spread to other regions, but many of the ideas that travelled with it continued to shape the cultures that received them.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0009",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0009.mp3",
+    "script": "In 2024, world leaders at the United Nations agreed to reduce deaths associated with antimicrobial resistance by ten percent by 2030. That might sound modest, but meeting it will require action on several fronts: better prescribing in hospitals and clinics, reduced use in farming, improved sanitation, and new drugs, which have been slow to arrive because they're not very profitable for companies. Experts agree that progress will depend on cooperation between countries.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-correct-summary-0010",
+    "type": "listening_highlight_correct_summary",
+    "audio": "audio/listening-highlight-correct-summary-0010.mp3",
+    "script": "For decades, mangroves were seen as useless swamps and cleared for shrimp ponds and buildings. Attitudes have changed as scientists showed how much they protect coasts and store carbon. Many countries now protect and replant them, and while losses continue, the global rate of decline has slowed considerably. Restoration projects are now replanting mangroves in many countries, often with the help of local communities who depend on them for fishing.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0001",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0001.mp3",
+    "script": "The Arctic tern is famous for making the longest migration of any animal, travelling between the Arctic and the Antarctic every year. Earlier estimates of the Arctic tern's migration were based on a straight line between the Arctic and Antarctica. Tracking showed the birds take an S-shaped route over the Atlantic. That seems inefficient, but it lets them ride the prevailing winds, saving energy even though they fly further.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0002",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0002.mp3",
+    "script": "Desalination, turning seawater into fresh water, is now used in many countries, but a few nations dominate the industry. The world's largest desalination plant is at Ras Al-Khair in Saudi Arabia, producing over a million cubic metres of water a day. Saudi Arabia, the United Arab Emirates and Israel lead the world in desalination, largely because they have very little fresh water but long coastlines and, in some cases, cheap energy.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0003",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0003.mp3",
+    "script": "Scientists have known for centuries that plants and animals follow daily rhythms, but for a long time nobody understood how these rhythms were produced inside cells. In 2017, the Nobel Prize in Physiology or Medicine went to Jeffrey Hall, Michael Rosbash and Michael Young. Working with fruit flies, they identified a gene whose protein builds up in cells at night and breaks down during the day. This rise and fall forms a feedback loop that keeps time, and similar mechanisms were later found in humans.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0004",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0004.mp3",
+    "script": "When penicillin was first shown to cure infections, the problem was that only tiny amounts could be made. During the Second World War, finding a way to produce more became a priority. One reason penicillin production succeeded in the United States was a better strain of mould. Researchers in Peoria, Illinois, searched widely and found a high-yielding strain on a mouldy cantaloupe melon from a local market. Combined with deep-tank fermentation, it allowed output to increase enormously.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0005",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0005.mp3",
+    "script": "Researchers who study decision-making have shown that small changes in how options are presented can have large effects on what people choose. One study looked at electricity customers in Germany. When the green, renewable tariff was the default option, most people stayed with it. When the standard tariff was the default, few people chose the green one, even though the options and prices were the same.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0006",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0006.mp3",
+    "script": "We usually think of the telegraph as a way of sending news, but scientists found other uses for it too. The telegraph also changed how time was measured. Astronomers could send a time signal from one observatory to another and compare local clocks instantly. Because the difference in local time corresponds to a difference in longitude, this gave far more accurate maps.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0007",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0007.mp3",
+    "script": "Governments have tried several approaches to reduce plastic pollution, with mixed results. In 2015, the United States passed a law banning plastic microbeads in rinse-off cosmetics such as face washes and toothpaste. It was a popular measure, but some manufacturers simply switched to other small plastic ingredients, like glitter, which the law didn't cover.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0008",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0008.mp3",
+    "script": "Coral bleaching can now be predicted with reasonable accuracy, which gives reef managers time to prepare. Scientists monitor reefs using satellite measurements of sea surface temperature. They track how much heat has accumulated above the normal summer maximum over the past twelve weeks. When this accumulated heat passes certain thresholds, bleaching becomes likely, and above a higher threshold, widespread coral death is expected.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0009",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0009.mp3",
+    "script": "One of the most discussed claims about bilingualism is that it may delay the symptoms of dementia. A 2012 brain-imaging study compared bilingual and monolingual Alzheimer's patients with similar symptoms. The bilingual patients actually had more physical damage in their brains. The researchers concluded that bilingualism doesn't prevent the disease but may help the brain compensate for longer.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-mcq-single-0010",
+    "type": "listening_mcq_single",
+    "audio": "audio/listening-mcq-single-0010.mp3",
+    "script": "Early tree-planting efforts in the Sahel often failed, because many seedlings died during the long dry season. One of the most successful techniques in the Sahel is surprisingly simple. Farmers protect the stumps and roots of trees already in their fields, allowing them to regrow, instead of planting new seedlings. This approach is cheap, and the regrown trees survive much better than planted ones.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-select-missing-word-0001",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0001.mp3",
+    "script": "Many students believe that staying up late to study gives them an advantage, but the research suggests otherwise. Studies consistently show that people who sleep after learning remember more than those who stay awake. So, if you have an important exam tomorrow, the best thing you can do tonight is",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0002",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0002.mp3",
+    "script": "In the early twentieth century, Alfred Wegener noticed that the coastlines of South America and Africa seemed to fit together, and he found matching fossils on both continents. Wegener had strong evidence that the continents had once been joined. However, he could not explain what force could move them, and so for decades most geologists",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0003",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0003.mp3",
+    "script": "City centres are often much warmer than the surrounding countryside, especially on summer nights, and researchers have tested many ways of cooling them down. Trees provide shade and release water through their leaves, which cools the air around them. That is why planting more trees is one of the most effective ways to",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0004",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0004.mp3",
+    "script": "Doctors are often asked to prescribe antibiotics for coughs and colds, and many patients feel disappointed when they leave without them. Antibiotics only work against bacteria. Colds and flu are caused by viruses, so taking antibiotics for them doesn't help the patient and only gives resistant bacteria",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0005",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0005.mp3",
+    "script": "Glaciers are found on every continent except Australia, and they hold most of the world's fresh water. A glacier grows when snowfall exceeds melting, and shrinks when melting exceeds snowfall. Today, because of rising temperatures, almost every glacier in the world is",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0006",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0006.mp3",
+    "script": "Before the printing press, most serious books in Europe were written in Latin, which only educated people could read. Because printers wanted to sell as many copies as possible, they increasingly published in the languages ordinary people spoke. Over time, this weakened the dominance of",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0007",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0007.mp3",
+    "script": "Coastal communities in the tropics have long relied on mangrove forests for fish, firewood and building materials. Recently, scientists have studied another benefit. Mangrove roots slow down waves before they reach the shore. During tropical storms, villages protected by healthy mangrove forests often suffer",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0008",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0008.mp3",
+    "script": "When a new medicine is tested, researchers need to make sure that any improvement is caused by the drug itself, not by what patients or doctors expect. In a well-designed trial, neither the patients nor the doctors know who is receiving the real drug. This is known as a double-blind design, and its purpose is to",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0009",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0009.mp3",
+    "script": "Very few merchants ever travelled the whole length of the Silk Road. Instead, goods moved in short stages between trading cities. Goods on the Silk Road were passed from one merchant to the next, and each trader added a profit. So by the time Chinese silk reached Rome, it had become",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-select-missing-word-0010",
+    "type": "listening_select_missing_word",
+    "audio": "audio/listening-select-missing-word-0010.mp3",
+    "script": "The ocean has absorbed around a quarter of the carbon dioxide released by human activity, and this is changing its chemistry. When the ocean absorbs carbon dioxide, there are fewer carbonate ions available in the water. Corals and shellfish need these ions, so lower carbonate levels make it harder for them to",
+    "speakers": null,
+    "beep_at_end": true
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0001",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0001.mp3",
+    "script": "Coral reefs are among the most diverse ecosystems on Earth. When water temperatures remain high for several weeks, corals expel the algae that give them colour and food. Without these algae, the coral turns white and may eventually die. Protecting reefs therefore depends on keeping ocean temperatures under control.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0002",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0002.mp3",
+    "script": "Gutenberg's press combined several existing technologies. His metal type could be reused many times, which made printing much cheaper. Within a few decades, printing spread across Europe. This helped knowledge circulate far beyond universities and monasteries.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0003",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0003.mp3",
+    "script": "Our internal clock is reset every morning by daylight. When we travel across time zones, the clock takes several days to adjust, which is why travellers often feel tired during the day. Getting outside in the morning light can help speed up this process.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0004",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0004.mp3",
+    "script": "Reverse osmosis has become the most common method of desalination. It requires far less energy than boiling seawater. However, the brine it produces can harm marine life if it is not handled carefully. Engineers continue to look for safer ways of returning it to the sea.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0005",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0005.mp3",
+    "script": "The first transatlantic cable failed after just a few weeks. A durable cable was finally laid in 1866, allowing messages to cross the ocean in minutes. It was one of the great engineering achievements of the nineteenth century.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0006",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0006.mp3",
+    "script": "Many fruits and vegetables depend on insects for pollination. In recent years, the number of wild bees has fallen in many regions, which worries farmers and scientists alike. Planting wildflowers and reducing pesticide use are two ways of helping them.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0007",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0007.mp3",
+    "script": "A nudge is designed to influence behaviour without restricting choice. For example, placing healthy food at eye level makes people more likely to choose it, while still allowing them to pick something else. Supporters say this respects people's freedom while improving their decisions.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0008",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0008.mp3",
+    "script": "The Arctic tern is a small seabird that travels between the poles every year. Because it follows the summer, it experiences more daylight than any other animal. Tracking devices have shown that its journey is longer than scientists once thought.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0009",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0009.mp3",
+    "script": "The Great Green Wall was approved by African leaders in 2005. Its aim is to restore degraded land across the Sahel, but progress has been slower than originally planned. Today, projects work much more closely with the farmers who use the land.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-highlight-incorrect-words-0010",
+    "type": "listening_highlight_incorrect_words",
+    "audio": "audio/listening-highlight-incorrect-words-0010.mp3",
+    "script": "Fleming's discovery was partly a matter of luck. He noticed that a mould had killed the bacteria on a plate. Later, scientists in Oxford showed that the substance could cure infections. This work eventually led to mass production during the Second World War.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0001",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0001.mp3",
+    "script": "The assignment must be submitted through the online portal.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0002",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0002.mp3",
+    "script": "Students are encouraged to attend all scheduled tutorials.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0003",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0003.mp3",
+    "script": "The results of the experiment were published in a scientific journal.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0004",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0004.mp3",
+    "script": "Climate change is affecting agricultural production around the world.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0005",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0005.mp3",
+    "script": "Please read the first three chapters before next week's seminar.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0006",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0006.mp3",
+    "script": "The university library offers free access to thousands of academic databases.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0007",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0007.mp3",
+    "script": "Researchers analysed the data to identify long-term economic trends.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0008",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0008.mp3",
+    "script": "Many species depend on healthy wetlands for food and shelter.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0009",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0009.mp3",
+    "script": "The government introduced new policies to encourage renewable energy investment.",
+    "speakers": null,
+    "beep_at_end": false
+  },
+  {
+    "id": "listening-write-from-dictation-0010",
+    "type": "listening_write_from_dictation",
+    "audio": "audio/listening-write-from-dictation-0010.mp3",
+    "script": "International students should register with the student services office.",
+    "speakers": null,
+    "beep_at_end": false
+  }
+]

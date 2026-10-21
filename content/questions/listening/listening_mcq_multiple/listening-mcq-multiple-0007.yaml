@@ -1,0 +1,33 @@
+id: listening-mcq-multiple-0007
+type: listening_mcq_multiple
+tags:
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Pollinator_decline
+attribution: Facts drawn from the Wikipedia article "Pollinator decline" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-mcq-multiple-0007.mp3
+transcript: Pollinators are under pressure across the world, and much of the land they live on is farmland.
+  That means farmers are in a strong position to help, often at quite a low cost. Farmers can do quite
+  a lot to support pollinators. Leaving strips of wildflowers along field edges gives insects food throughout
+  the season. Keeping hedgerows provides nesting sites. Reducing pesticide use, or at least avoiding spraying
+  when crops are in flower, protects bees directly. Some farms also put out nesting boxes for solitary
+  bees, which are often better pollinators of certain crops than honey bees.
+question: What actions for farmers does the speaker suggest?
+options:
+- Planting wildflower strips
+- Removing hedgerows
+- Avoiding spraying during flowering
+- Providing nesting boxes for solitary bees
+- Replacing crops with grass
+answers:
+- 0
+- 2
+- 3

@@ -1,0 +1,17 @@
+id: speaking-read-aloud-0010
+type: speaking_read_aloud
+tags:
+- technology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+text: Desalination plants now supply drinking water to millions of people in dry coastal regions. Advances
+  in membrane technology have reduced their energy use dramatically, although the safe disposal of the
+  salty brine they produce remains a significant environmental concern.

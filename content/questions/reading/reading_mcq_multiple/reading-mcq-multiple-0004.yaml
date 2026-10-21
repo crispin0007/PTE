@@ -1,0 +1,32 @@
+id: reading-mcq-multiple-0004
+type: reading_mcq_multiple
+tags:
+- history
+- trade
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Silk_Road
+attribution: Facts drawn from the Wikipedia article "Silk Road" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'The routes later called the Silk Road began to take shape in the second century BCE, when the
+  Han dynasty sent envoys westward and extended its control into Central Asia. Few merchants travelled
+  the entire distance; instead, goods passed from trader to trader along a chain of oasis cities. Silk,
+  paper and porcelain moved west, while horses, glassware and precious metals moved east. Along the way
+  travelled missionaries, scholars and diseases. The term ''Silk Road'' itself is modern: it was popularised
+  by a German geographer in 1877, long after the routes had declined.'
+question: Which statements are supported by the passage?
+options:
+- Most merchants travelled the full length of the routes.
+- The Han dynasty's expansion helped the routes develop.
+- The name 'Silk Road' was used by traders at the time.
+- Diseases as well as goods spread along the routes.
+- Goods were often exchanged in oasis cities.
+answers:
+- 1
+- 3
+- 4

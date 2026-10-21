@@ -1,0 +1,48 @@
+id: reading-fib-dropdown-0005
+type: reading_fib_dropdown
+tags:
+- environment
+- biology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Mangrove
+attribution: Facts drawn from the Wikipedia article "Mangrove" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: 'Mangrove trees grow where few other plants can {{b1}}: in salty, waterlogged mud along tropical
+  coasts. Some species filter most of the salt out at their roots, while others grow special roots that
+  stick up into the air to {{b2}} oxygen. Although mangrove forests cover only a tiny share of the world''s
+  coastline, they hold a {{b3}} amount of coastal carbon, which makes their {{b4}} important for the climate.'
+blanks:
+- id: b1
+  options:
+  - vanish
+  - compete
+  - decline
+  - survive
+  answer: 3
+- id: b2
+  options:
+  - waste
+  - store
+  - block
+  - obtain
+  answer: 3
+- id: b3
+  options:
+  - declining
+  - temporary
+  - disproportionate
+  - negligible
+  answer: 2
+- id: b4
+  options:
+  - removal
+  - protection
+  - discovery
+  - division
+  answer: 1

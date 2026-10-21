@@ -1,0 +1,30 @@
+id: reading-fib-drag-drop-0010
+type: reading_fib_drag_drop
+tags:
+- linguistics
+- psychology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Cognitive_advantages_of_multilingualism
+attribution: Facts drawn from the Wikipedia article "Cognitive advantages of multilingualism" (CC BY-SA
+  4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Some studies suggest that people who speak two languages show the symptoms of dementia several
+  years {{b1}} than people who speak one. The disease itself does not seem to be {{b2}}; rather, bilingual
+  brains may cope with it for longer. Other researchers {{b3}} these findings, pointing to small samples.
+blanks:
+- id: b1
+  answer: later
+- id: b2
+  answer: prevented
+- id: b3
+  answer: question
+distractors:
+- prevents
+- proves
+- younger

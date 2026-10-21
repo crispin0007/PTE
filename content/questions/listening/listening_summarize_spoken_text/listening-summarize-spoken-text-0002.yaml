@@ -1,0 +1,29 @@
+id: listening-summarize-spoken-text-0002
+type: listening_summarize_spoken_text
+tags:
+- economics
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Nudge_theory
+attribution: Facts drawn from the Wikipedia article "Nudge theory" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0002.mp3
+transcript: Traditional economics assumes people make rational choices. Behavioural economics challenges
+  that. One of its most influential ideas is the nudge, introduced by Richard Thaler and Cass Sunstein
+  in 2008. A nudge changes the way options are presented without removing any of them. The most powerful
+  nudge is probably the default. If you are automatically enrolled in something and have to opt out, you
+  are far more likely to stay in. Governments liked this because it's cheap, and Britain set up a dedicated
+  unit in 2010. But there's been pushback. Some researchers argue the effects are smaller than reported,
+  because studies that found nothing were never published. And there's an ethical question about whether
+  governments should steer behaviour that people may not even notice. So where does that leave us? I think
+  the fair conclusion is that nudges are a useful tool, but not a magic one. They work best for simple
+  decisions, like signing up for a scheme, and much less well for complex habits like diet.
+sample_answer: The lecture introduced nudges, which change how choices are presented without removing
+  options, with defaults being especially powerful. Governments, including Britain's, adopted them because
+  they are cheap, but critics argue their effects may be overstated because studies finding nothing were
+  never published, and that steering behaviour people may not notice raises ethical concerns.

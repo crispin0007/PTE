@@ -1,0 +1,25 @@
+id: speaking-describe-image-0002
+type: speaking_describe_image
+tags:
+- line-chart
+- technology
+difficulty: 3
+status: in_review
+source: original
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+image: images/speaking-describe-image-0002.svg
+alt_text: Line chart of household internet access from 2000 to 2020. Urban rises from 30% to 94%; rural
+  from 12% to 78%. Illustrative data.
+key_points:
+- Both urban and rural access rose steadily
+- Urban from 30% to 94%
+- Rural from 12% to 78%
+- Gap widened to 29 points in 2010, then narrowed to 16 by 2020
+sample_answer: This line graph compares household internet access in urban and rural areas between 2000
+  and 2020. Both increased steadily. Urban access rose from thirty percent to ninety-four percent, while
+  rural access grew from twelve percent to seventy-eight percent. Although rural areas remained behind
+  throughout the period, they grew quickly after 2010, so the gap was narrowing by 2020.

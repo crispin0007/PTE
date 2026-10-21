@@ -1,0 +1,30 @@
+id: listening-fib-0008
+type: listening_fib
+tags:
+- africa
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Great_Green_Wall_(Africa)
+attribution: Facts drawn from the Wikipedia article "Great Green Wall (Africa)" (CC BY-SA 4.0); text written
+  for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0008.mp3
+transcript: Land degradation is a serious problem across the Sahel, the dry region south of the Sahara.
+  The Great Green Wall aims to {{b1}} one hundred million hectares of land across Africa. At first, the
+  plan focused on planting {{b2}}, but many did not survive. Today, projects work closely with local {{b3}}
+  and use methods that help land {{b4}} naturally. Progress has been slow, but some areas are now visibly
+  greener than they were twenty years ago.
+blanks:
+- id: b1
+  answer: restore
+- id: b2
+  answer: trees
+- id: b3
+  answer: farmers
+- id: b4
+  answer: recover

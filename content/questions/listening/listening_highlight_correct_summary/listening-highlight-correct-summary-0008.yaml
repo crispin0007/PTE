@@ -1,0 +1,28 @@
+id: listening-highlight-correct-summary-0008
+type: listening_highlight_correct_summary
+tags:
+- history
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Silk_Road
+attribution: Facts drawn from the Wikipedia article "Silk Road" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-highlight-correct-summary-0008.mp3
+transcript: Historians increasingly argue that the most important things carried along the Silk Road were
+  not goods but ideas. Religions like Buddhism, technologies like papermaking, and artistic styles all
+  moved along these routes. Some of these exchanges shaped civilisations for centuries, long after the
+  trade in silk itself had declined. Silk itself became less important once its production spread to other
+  regions, but many of the ideas that travelled with it continued to shape the cultures that received
+  them.
+options:
+- Silk remained the most important trade good for centuries.
+- The Silk Road mainly carried soldiers and armies.
+- Papermaking was invented on the Silk Road.
+- Ideas, religions and technologies carried along the Silk Road had longer-lasting effects than the trade
+  in goods.
+answer: 3

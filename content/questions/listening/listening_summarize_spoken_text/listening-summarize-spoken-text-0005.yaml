@@ -1,0 +1,29 @@
+id: listening-summarize-spoken-text-0005
+type: listening_summarize_spoken_text
+tags:
+- animals
+difficulty: 2
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Arctic_tern
+attribution: Facts drawn from the Wikipedia article "Arctic tern" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0005.mp3
+transcript: 'The Arctic tern weighs around a hundred grams, about the same as a bar of soap, yet it makes
+  the longest migration of any animal. It breeds in the Arctic during the northern summer and then flies
+  south to spend the southern summer near Antarctica. For a long time, scientists assumed the journey
+  was about forty thousand kilometres a year. Then, in 2010, researchers fitted tiny tracking devices
+  to birds in Greenland and Iceland. The results were astonishing: the average round trip was about seventy
+  thousand kilometres, because the birds follow winding routes that make use of the winds. Over a lifetime
+  of thirty years, that''s like flying to the Moon and back three times. And this isn''t just a curiosity.
+  Because terns depend on fish near the ocean surface at both ends of their journey, changes in their
+  routes and breeding success can tell scientists a great deal about the health of marine ecosystems across
+  the whole Atlantic.'
+sample_answer: The speaker described the Arctic tern, a small seabird that migrates between the Arctic
+  and Antarctica each year. Tracking studies in 2010 showed its winding, wind-assisted route averages
+  about seventy thousand kilometres, far more than the forty thousand kilometres previously estimated,
+  which over a thirty-year lifetime is equivalent to flying to the Moon and back three times.

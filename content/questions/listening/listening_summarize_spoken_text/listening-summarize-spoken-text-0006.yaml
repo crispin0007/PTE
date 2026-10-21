@@ -1,0 +1,30 @@
+id: listening-summarize-spoken-text-0006
+type: listening_summarize_spoken_text
+tags:
+- technology
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Desalination
+attribution: Facts drawn from the Wikipedia article "Desalination" (CC BY-SA 4.0); text written for openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-summarize-spoken-text-0006.mp3
+transcript: Desalination used to be seen as a last resort, because boiling seawater took enormous amounts
+  of energy. Two things changed that. First, reverse osmosis, where water is pushed through a membrane
+  that holds back the salt, replaced most thermal plants. Second, the membranes and pumps became far more
+  efficient, so the energy needed per cubic metre has fallen by roughly ninety percent since 1970. Today
+  there are tens of thousands of plants worldwide, concentrated in the Middle East but also in places
+  like Singapore, Israel and California. The remaining problem is brine. For every litre of fresh water,
+  plants produce more than a litre of very salty waste, and getting rid of it safely is now the industry's
+  biggest environmental challenge. Engineers are working on several solutions, such as diffusers that
+  mix the brine quickly into the surrounding water, and systems that recover useful minerals so that almost
+  no liquid waste is left over at all.
+sample_answer: The lecture explained that desalination became practical once reverse osmosis replaced
+  thermal methods and efficiency improvements cut energy use by around ninety percent since 1970. Thousands
+  of plants now operate worldwide, but safely disposing of the salty brine they produce remains the industry's
+  biggest environmental challenge, because plants produce more than a litre of brine for every litre of
+  fresh water.

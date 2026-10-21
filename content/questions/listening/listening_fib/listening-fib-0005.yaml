@@ -1,0 +1,29 @@
+id: listening-fib-0005
+type: listening_fib
+tags:
+- biology
+difficulty: 3
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+audio: audio/listening-fib-0005.mp3
+transcript: Almost every living thing, from plants to people, follows daily patterns of activity and rest.
+  Our internal clock follows a cycle of about twenty-four {{b1}}. It is reset each day mainly by {{b2}}.
+  In the evening, the brain releases a hormone called {{b3}}, which helps us feel {{b4}}. That is why
+  using bright screens late at night can make it harder to fall asleep.
+blanks:
+- id: b1
+  answer: hours
+- id: b2
+  answer: light
+- id: b3
+  answer: melatonin
+- id: b4
+  answer: sleepy

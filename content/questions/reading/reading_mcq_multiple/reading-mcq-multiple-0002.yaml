@@ -1,0 +1,34 @@
+id: reading-mcq-multiple-0002
+type: reading_mcq_multiple
+tags:
+- biology
+- health
+difficulty: 4
+status: in_review
+source: open-licensed
+source_url: https://en.wikipedia.org/wiki/Circadian_rhythm
+attribution: Facts drawn from the Wikipedia article "Circadian rhythm" (CC BY-SA 4.0); text written for
+  openpte.
+license: CC-BY-SA-4.0
+author: openpte-seed
+reviewed_by: []
+drafted_with: ai
+originality_confirmed: true
+passage: Scientists recognise a biological rhythm as circadian only if it meets three conditions. It must
+  continue with a period of about 24 hours even when the organism is kept in constant light or darkness,
+  showing that it is generated internally. It must be possible to reset it with external cues such as
+  light, so that it stays matched to the local day. And its period must remain roughly the same over a
+  range of temperatures, unlike most chemical reactions, which speed up as they warm. In 2017 three American
+  researchers received the Nobel Prize for identifying the genes and proteins that keep this clock ticking
+  inside cells.
+question: According to the passage, which conditions must a rhythm meet to be called circadian?
+options:
+- It persists without external time cues.
+- It can be reset by signals such as light.
+- It speeds up as temperature rises.
+- It lasts exactly 24 hours in all species.
+- Its period stays fairly stable across temperatures.
+answers:
+- 0
+- 1
+- 4
