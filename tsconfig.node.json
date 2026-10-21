@@ -18,6 +18,8 @@
   },
   "include": [
     "packages/*/src",
+    "apps/api/src",
+    "apps/api/drizzle.config.ts",
     "scripts",
     "apps/web/vite.config.ts",
     "apps/web/playwright.config.ts",

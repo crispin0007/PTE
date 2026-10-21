@@ -36,10 +36,21 @@ export function questionCount(id: QuestionType): number {
   return counts[id] ?? 0;
 }
 
-/** Loads one type's questions; each type is a separate chunk so phones only download what they open. */
-export function loadQuestions(id: QuestionType): Promise<Question[]> {
+/** Set at build time to read questions from the openpte API instead of the bundled bank. */
+const API_URL: string | undefined = import.meta.env.VITE_API_URL;
+
+/**
+ * Loads one type's questions. Without an API each type is a separate bundled chunk, so phones only
+ * download what they open; with VITE_API_URL set they come from GET /v1/questions.
+ */
+export async function loadQuestions(id: QuestionType): Promise<Question[]> {
+  if (API_URL) {
+    const res = await fetch(`${API_URL.replace(/\/$/, '')}/v1/questions?type=${id}`);
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    return ((await res.json()) as { questions: Question[] }).questions;
+  }
   const load = loaders[id];
-  return load ? load() : Promise.resolve([]);
+  return load ? load() : [];
 }
 
 const available = new Set(availableAssets);

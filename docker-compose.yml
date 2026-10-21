@@ -1,0 +1,47 @@
+# The whole stack on one machine: PostgreSQL, the API and the web app.
+#   docker compose up --build
+# Web: http://localhost:8080  API: http://localhost:3000/health
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: openpte
+      POSTGRES_PASSWORD: openpte
+      POSTGRES_DB: openpte
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U openpte']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      DATABASE_URL: postgres://openpte:openpte@db:5432/openpte
+      # The seed bank is still in review; show it locally like the demo site does.
+      INCLUDE_UNREVIEWED: '1'
+      CORS_ORIGIN: http://localhost:8080
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '3000:3000'
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:3000
+        OPENPTE_INCLUDE_UNREVIEWED: '1'
+    depends_on:
+      - api
+    ports:
+      - '8080:80'
+
+volumes:
+  db-data:

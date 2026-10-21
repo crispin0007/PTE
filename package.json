@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "npm run dev -w @openpte/web",
+    "dev:api": "npm run dev -w @openpte/api",
     "build": "npm run build -w @openpte/web",
     "preview": "npm run preview -w @openpte/web",
     "lint": "eslint . && prettier --check . && tsc -b",

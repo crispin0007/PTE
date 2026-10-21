@@ -8,3 +8,7 @@ declare module 'virtual:openpte/catalog' {
   export const availableAssets: string[];
   export const loaders: Record<QuestionType, () => Promise<Question[]>>;
 }
+
+interface ImportMetaEnv {
+  readonly VITE_API_URL?: string;
+}
