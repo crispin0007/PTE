@@ -121,7 +121,8 @@ Database changes are applied automatically when the API starts. Take a backup fi
 - Practice history stays in the learner's browser unless they sign in.
 - Speaking recordings are uploaded only when a learner ticks the consent box, and are deleted after
   30 days or when the learner deletes them.
-- Teachers see a student's answer counts and marks by skill, never their recordings.
+- Teachers see a student's answer counts and marks by skill. They see an answer or recording only
+  when the student sends it to them for marking.
 - openpte loads no third-party scripts, fonts or trackers. Institute logos are served by your API.
 
 ## Troubleshooting

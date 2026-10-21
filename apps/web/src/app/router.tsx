@@ -60,6 +60,10 @@ export const router = createHashRouter([
         lazy: async () => ({ Component: (await import('../institute/pages.tsx')).InstitutePage }),
       },
       {
+        path: '/institutes/:id/marking',
+        lazy: async () => ({ Component: (await import('../institute/Marking.tsx')).MarkingQueue }),
+      },
+      {
         path: '/institutes/:id/classes/:classId',
         lazy: async () => ({ Component: (await import('../institute/pages.tsx')).ClassPage }),
       },

@@ -78,3 +78,39 @@ export function DueThisWeek() {
     </section>
   );
 }
+
+/** Marks and comments teachers gave in the last two weeks. Signed in only. */
+export function TeacherFeedback() {
+  const now = useNow();
+  const { data } = useLoad(() => instituteApi.myMarking(), '');
+  const recent = (data?.requests ?? []).filter(
+    (r) => r.markedAt !== null && now - r.markedAt < 14 * DAY,
+  );
+  if (!recent.length) return null;
+  return (
+    <section
+      aria-labelledby="feedback-heading"
+      data-testid="teacher-feedback"
+      className="flex flex-col gap-3 rounded-token border border-line bg-surface p-5"
+    >
+      <h2 id="feedback-heading" className="text-xl font-semibold">
+        Feedback from your teacher
+      </h2>
+      <ul className="flex flex-col divide-y divide-line">
+        {recent.map((r) => (
+          <li key={r.id} className="flex flex-col gap-1 py-3">
+            <p className="flex flex-wrap items-baseline justify-between gap-2">
+              <Link to={`/practice/${r.type}/${r.questionId}`} className="font-semibold underline">
+                {typeLabel(r.type)}
+              </Link>
+              <span className="font-mono">
+                {r.teacherScore} / {r.max}
+              </span>
+            </p>
+            {r.comment && <p className="whitespace-pre-line">{r.comment}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}

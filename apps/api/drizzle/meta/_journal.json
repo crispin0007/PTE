@@ -57,6 +57,13 @@
       "when": 1792617596790,
       "tag": "0007_branding",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792618614110,
+      "tag": "0008_marking",
+      "breakpoints": true
     }
   ]
 }

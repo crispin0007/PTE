@@ -307,3 +307,36 @@ export const submissions = pgTable(
   },
   (t) => [primaryKey({ columns: [t.assignmentId, t.userId] })],
 );
+
+/**
+ * A student's Writing or Speaking answer sent to their institute's teachers for marking. The
+ * teacher's mark is also written as a new attempt, so the student's progress uses it.
+ */
+export const markingRequests = pgTable(
+  'marking_requests',
+  {
+    id: text('id').primaryKey(),
+    instituteId: text('institute_id')
+      .notNull()
+      .references(() => institutes.id, { onDelete: 'cascade' }),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    questionId: text('question_id').notNull(),
+    type: text('type').notNull(),
+    skill: text('skill').notNull(),
+    answerText: text('answer_text'),
+    recordingId: text('recording_id').references(() => recordings.id, { onDelete: 'set null' }),
+    autoScore: integer('auto_score').notNull(),
+    max: integer('max').notNull(),
+    teacherScore: integer('teacher_score'),
+    comment: text('comment'),
+    markedBy: text('marked_by').references(() => user.id, { onDelete: 'set null' }),
+    markedAt: timestamp('marked_at', { withTimezone: true }),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index('marking_institute_idx').on(t.instituteId, t.markedAt),
+    index('marking_user_idx').on(t.userId),
+  ],
+);

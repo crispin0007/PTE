@@ -8,7 +8,7 @@ Things only crispin can do or decide. The build keeps going around them; each it
    started because your account is locked due to a billing issue." Open GitHub > Settings > Billing
    and plans, clear the failed payment or spending limit, then re-run the latest workflow. Public
    repos get Actions free once the lock is gone. Blocks: CI checks and the Pages deploy. Everything
-   was tested here instead: 74 unit tests, 68 browser tests on phone and desktop, lint clean.
+   was tested here instead: 75 unit tests, 68 browser tests on phone and desktop, lint clean.
 2. **Turn on GitHub Pages.** Settings > Pages > Source: GitHub Actions. Blocks: the public demo link.
 3. **Hosting accounts.** Oracle Cloud Always Free signup and a Cloudflare account. Blocks: running the
    API and database anywhere but a laptop.
@@ -63,4 +63,4 @@ npm run dev
 New since last night, to click through: **Practice > Mock tests** (full, mini, sectional or your own
 mix, with a printable report), and with the API running **More > Institutes and classes** (start an
 institute, add a class, share its code or import a CSV, set assignments, brand it with a colour
-and logo, and see who needs help).
+and logo, mark answers students send, and see who needs help).

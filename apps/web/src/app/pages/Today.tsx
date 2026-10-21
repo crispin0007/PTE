@@ -12,6 +12,9 @@ import { useHistory, useNow } from '../../practice/history.ts';
 const DueThisWeek = lazy(async () => ({
   default: (await import('../../institute/Due.tsx')).DueThisWeek,
 }));
+const TeacherFeedback = lazy(async () => ({
+  default: (await import('../../institute/Due.tsx')).TeacherFeedback,
+}));
 
 const card = 'flex flex-col gap-3 rounded-token border border-line bg-surface p-5';
 
@@ -49,6 +52,7 @@ export function Today() {
       {signedIn && (
         <Suspense fallback={null}>
           <DueThisWeek />
+          <TeacherFeedback />
         </Suspense>
       )}
 

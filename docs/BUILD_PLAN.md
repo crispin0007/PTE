@@ -35,10 +35,10 @@ browser tests on phone and desktop with accessibility checks) and pushed to `mai
 | 3.1 Mock model             | Done        | Full, mini, three sectional and custom mocks                                                                                                    |
 | 3.2 Exam player            | Done        | Section and per-question clocks, no going back, pause and resume, time-outs skip the rest                                                       |
 | 3.3 Score report           | Done        | Skills on the 10-90 scale, by type, practise-next; print or save as PDF from the browser                                                        |
-| 3.4 Builder and re-marking | Partly      | Custom builder done; teacher re-marking moves to 4.4 with the marking queue                                                                     |
+| 3.4 Builder and re-marking | Done        | Custom builder; students send Writing or Speaking answers to their teachers, whose mark becomes the latest attempt                              |
 | 4.1 Tenancy                | Done        | Membership check on every institute route, 404 to outsiders; isolation tests; `SINGLE_INSTITUTE_NAME` for self-host                             |
 | 4.2 Classes and students   | Done        | Invite codes and links, CSV roster import; checked end to end on PostgreSQL                                                                     |
-| 4.4 Teacher dashboard      | Partly      | Class table by skill with 'who needs help'; marking queue not yet                                                                               |
+| 4.4 Teacher dashboard      | Done        | Class table by skill, 'who needs help', assignment progress and a marking queue with audio playback                                             |
 | 4.3 Assignments            | Done        | Practice sets and mocks with due dates; 'Set by your teacher' on Today; mock reports reach the class                                            |
 | 4.5 Branding               | Done        | Colour checked for 4.5:1 and lifted for dark mode; PNG, JPEG or WebP logo served by the API                                                     |
 | 4.6 Self-host package      | Done        | `selfhost-init.sh`, `.env.example`, Caddy HTTPS profile, `backup.sh`, docs/SELF_HOST.md. Not run here (no Docker)                               |
@@ -112,14 +112,14 @@ steps 1.8 to 1.10, and guest history then moves into the new account.
 
 ## Phase 4: institutes and students
 
-| Step                     | What ships                                                                  | Done when                                                     |
-| ------------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 4.1 Tenancy              | Institutes as tenants, data isolation on every query, institute admin role  | Tests prove one institute cannot read another's data          |
-| 4.2 Classes and students | Teachers, classes, invite codes, CSV import                                 | An institute onboards a class from a CSV file                 |
-| 4.3 Assignments          | Assign practice sets and mocks with due dates; "due this week" for students | A student sees and completes an assignment                    |
-| 4.4 Teacher dashboard    | Class dashboard, student progress, marking queue                            | A teacher finds who needs help and marks shared answers       |
-| 4.5 Branding             | Institute name, logo and colours; trademark notice and disclaimer stay      | An institute's space shows its branding                       |
-| 4.6 Self-host package    | One-command Docker deploy, backups, admin guide                             | A fresh server runs a single-institute install from the guide |
+| Step                     | What ships                                                                  | Done when                                                                                           |
+| ------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| 4.1 Tenancy              | Institutes as tenants, data isolation on every query, institute admin role  | Tests prove one institute cannot read another's data                                                |
+| 4.2 Classes and students | Teachers, classes, invite codes, CSV import                                 | An institute onboards a class from a CSV file                                                       |
+| 4.3 Assignments          | Assign practice sets and mocks with due dates; "due this week" for students | A student sees and completes an assignment                                                          |
+| 4.4 Teacher dashboard    | Done                                                                        | Class table by skill, 'who needs help', assignment progress and a marking queue with audio playback |
+| 4.5 Branding             | Institute name, logo and colours; trademark notice and disclaimer stay      | An institute's space shows its branding                                                             |
+| 4.6 Self-host package    | One-command Docker deploy, backups, admin guide                             | A fresh server runs a single-institute install from the guide                                       |
 
 ## Not decided yet
 

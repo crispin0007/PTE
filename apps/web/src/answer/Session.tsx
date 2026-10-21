@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import type { Question } from '@openpte/schema';
 import { SCORING_RULES, type ScoreResult, type WritingResult } from '@openpte/scoring';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
+import { AskTeacher } from './AskTeacher.tsx';
 import { GrammarMarks } from './GrammarMarks.tsx';
 import type { TypeDef } from '../content/catalog.ts';
 import { SKILL_META } from '../content/guide.ts';
@@ -23,7 +24,15 @@ function useSeconds(running: boolean) {
   return s;
 }
 
-function Result({ result, skill }: { result: ScoreResult; skill: TypeDef['skill'] }) {
+function Result({
+  result,
+  skill,
+  ask,
+}: {
+  result: ScoreResult;
+  skill: TypeDef['skill'];
+  ask?: ReactNode;
+}) {
   const pct = result.max ? (result.score / result.max) * 100 : 0;
   return (
     <section
@@ -75,6 +84,7 @@ function Result({ result, skill }: { result: ScoreResult; skill: TypeDef['skill'
         </ul>
       </div>
       <ScoreDisclaimer />
+      {ask}
     </section>
   );
 }
@@ -175,7 +185,26 @@ function Attempt({
 
       <View question={question} response={response} onChange={setResponse} review={!!result} />
 
-      {result && <Result result={result} skill={def.skill} />}
+      {result && (
+        <Result
+          result={result}
+          skill={def.skill}
+          ask={
+            'traits' in result &&
+            typeof response === 'string' &&
+            response.trim() && (
+              <AskTeacher
+                questionId={question.id}
+                type={def.id}
+                answerText={response}
+                score={result.score}
+                // Teachers mark every trait, including the ones the app cannot score yet.
+                max={(result as unknown as WritingResult).traits.reduce((n, t) => n + t.max, 0)}
+              />
+            )
+          }
+        />
+      )}
 
       <div className="flex flex-wrap gap-3">
         {unscored ? (

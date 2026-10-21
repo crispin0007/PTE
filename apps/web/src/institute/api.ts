@@ -45,6 +45,21 @@ export type ClassAssignment = Assignment & {
 };
 export type MyAssignment = Assignment & Progress & { className: string; instituteName: string };
 
+export type MarkingRequest = {
+  id: string;
+  questionId: string;
+  type: string;
+  answerText: string | null;
+  hasRecording: boolean;
+  autoScore: number;
+  max: number;
+  teacherScore: number | null;
+  comment: string | null;
+  markedAt: number | null;
+  createdAt: number;
+  student?: { name: string; email: string };
+};
+
 const base = (id: string) => `/v1/institutes/${id}`;
 
 export const instituteApi = {
@@ -111,6 +126,21 @@ export const instituteApi = {
   unassign: (id: string, classId: string, aid: string) =>
     call(`${base(id)}/classes/${classId}/assignments/${aid}`, { method: 'DELETE' }),
   myAssignments: () => call<{ assignments: MyAssignment[] }>('/v1/me/assignments'),
+  askTeacher: (body: {
+    instituteId: string;
+    questionId: string;
+    type: string;
+    answerText?: string;
+    recordingId?: string;
+    score: number;
+    max: number;
+  }) => call<{ id: string }>('/v1/me/marking', { method: 'POST', body }),
+  myMarking: () => call<{ requests: MarkingRequest[] }>('/v1/me/marking'),
+  queue: (id: string, status: 'waiting' | 'marked') =>
+    call<{ requests: MarkingRequest[] }>(`${base(id)}/marking?status=${status}`),
+  mark: (id: string, mid: string, score: number, comment: string) =>
+    call(`${base(id)}/marking/${mid}`, { method: 'PUT', body: { score, comment } }),
+  audioUrl: (id: string, mid: string) => `${API_URL}${base(id)}/marking/${mid}/audio`,
   submitMock: (aid: string, result: MockSummary) =>
     call(`/v1/me/assignments/${aid}/submit`, { method: 'POST', body: { result } }),
 };

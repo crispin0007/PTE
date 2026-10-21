@@ -7,7 +7,11 @@ import {
 } from '../practice/account.ts';
 import { recordAttempt } from '../practice/history.ts';
 import type { Recording } from './Recorder.tsx';
+import { AskTeacher } from './AskTeacher.tsx';
 import { SpeakingResult } from './SpeakingResult.tsx';
+
+/** A teacher marks an unscored speaking answer out of 5. */
+const TEACHER_MAX = 5;
 
 /** Opt-in upload of one recording, and server scoring where available. */
 export function SaveRecording({
@@ -24,6 +28,7 @@ export function SaveRecording({
   const [error, setError] = useState('');
   const [consent, setConsent] = useState(false);
   const [result, setResult] = useState<SpeakingScore | null>(null);
+  const [savedId, setSavedId] = useState<string | null>(null);
   if (account.status !== 'signed-in' || !account.recordings) {
     return (
       <p className="text-sm text-muted">
@@ -34,18 +39,37 @@ export function SaveRecording({
     );
   }
   const scoring = account.speechScoring;
-  if (result) return <SpeakingResult result={result} />;
+  const ask = savedId && (
+    <AskTeacher
+      questionId={questionId}
+      type={type}
+      recordingId={savedId}
+      score={result?.max ? result.score : 0}
+      max={result?.max || TEACHER_MAX}
+    />
+  );
+  if (result)
+    return (
+      <>
+        <SpeakingResult result={result} />
+        {ask}
+      </>
+    );
   if (state === 'saved')
     return (
-      <p role="status" className="text-sm text-good">
-        ✓ Saved to your account. It is deleted automatically after 30 days.
-      </p>
+      <>
+        <p role="status" className="text-sm text-good">
+          ✓ Saved to your account. It is deleted automatically after 30 days.
+        </p>
+        {ask}
+      </>
     );
   const go = async () => {
     setError('');
     setState('saving');
     try {
       const { id } = await saveRecording(recording.blob, questionId, type);
+      setSavedId(id);
       if (!scoring) return setState('saved');
       setState('scoring');
       const scored = await scoreRecording(id);
@@ -75,8 +99,8 @@ export function SaveRecording({
         />
         <span>
           {scoring
-            ? 'Send this recording to the openpte server to be scored. It is kept for 30 days in my account, and only I can play it.'
-            : 'Save this recording to my account so it can be scored when speaking scores arrive. It is kept for 30 days and only I can play it.'}
+            ? 'Send this recording to the openpte server to be scored. It is kept for 30 days in my account, and only I can play it unless I send it to my teacher.'
+            : 'Save this recording to my account so it can be scored when speaking scores arrive. It is kept for 30 days and only I can play it unless I send it to my teacher.'}
         </span>
       </label>
       <button

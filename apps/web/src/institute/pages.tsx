@@ -4,6 +4,7 @@ import { SKILL_META } from '../content/guide.ts';
 import { Assignments } from './Assignments.tsx';
 import { BrandingPanel, ShowThisLook } from './Branding.tsx';
 import { useAccount } from '../practice/account.ts';
+import { refreshBranding } from '../practice/branding.ts';
 import { useNow } from '../practice/history.ts';
 import {
   instituteApi,
@@ -159,6 +160,7 @@ function Home() {
           placeholder="ABCD-2345"
           onSubmit={async (code) => {
             const r = await instituteApi.join(code);
+            void refreshBranding();
             navigate(`/institutes/${r.institute.id}`);
           }}
         />
@@ -177,6 +179,7 @@ function Home() {
             button="Create"
             onSubmit={async (name) => {
               const i = await instituteApi.create(name);
+              void refreshBranding();
               navigate(`/institutes/${i.id}`);
             }}
           />
@@ -212,6 +215,15 @@ function InstituteScreen() {
         <h1 className="text-3xl font-bold">{inst.data.name}</h1>
         <p className="text-sm text-muted">You are {ROLE_LABEL[inst.data.role].toLowerCase()}.</p>
       </div>
+
+      {staff && (
+        <Link
+          to={`/institutes/${id}/marking`}
+          className="grid min-h-11 place-items-center self-start rounded-token border border-line bg-surface px-4 font-semibold"
+        >
+          Marking queue
+        </Link>
+      )}
 
       <section aria-labelledby="classes-heading" className={card}>
         <h2 id="classes-heading" className="text-xl font-semibold">
@@ -258,8 +270,8 @@ function InstituteScreen() {
 
       {!staff && (
         <p className="text-sm text-muted">
-          Your teachers see how many questions you answer and your marks by skill. They do not see
-          your recordings.
+          Your teachers see how many questions you answer and your marks by skill. They see an
+          answer or recording only when you send it to them for marking.
         </p>
       )}
     </div>
@@ -586,7 +598,10 @@ function Join() {
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     instituteApi.join(code).then(
-      (r) => navigate(`/institutes/${r.institute.id}`, { replace: true }),
+      (r) => {
+        void refreshBranding();
+        navigate(`/institutes/${r.institute.id}`, { replace: true });
+      },
       (e: Error) => setError(e.message),
     );
   }, [code, navigate]);

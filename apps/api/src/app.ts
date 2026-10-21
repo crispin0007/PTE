@@ -9,6 +9,7 @@ import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
 import { grammarRoutes, type GrammarClient } from './grammar.ts';
 import { instituteRoutes, type InstituteOptions } from './institutes.ts';
+import { markingRoutes } from './marking.ts';
 import { recordingRoutes, type ScoringOptions } from './recordings.ts';
 import type { Storage } from './storage.ts';
 
@@ -176,6 +177,7 @@ export async function buildApp({
     await app.register(adminRoutes(db, auth));
     await app.register(instituteRoutes(db, auth, institutes));
     await app.register(assignmentRoutes(db, auth));
+    await app.register(markingRoutes(db, auth, storage));
     if (storage) await app.register(recordingRoutes(db, auth, storage, scoring));
     const { attempts, userState } = schema;
 
