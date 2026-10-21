@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 
 /**
  * A guest's practice history, kept on the device. One record per answered question (the latest
@@ -15,14 +15,24 @@ export type Attempt = {
   at: number;
 };
 
+export type Settings = {
+  /** Questions per day. */
+  dailyGoal: number;
+  /** The overall score the learner is aiming for, on the 10-90 scale. */
+  target: number;
+};
+
+export const DEFAULT_SETTINGS: Settings = { dailyGoal: 20, target: 65 };
+
 type State = {
   version: 1;
   attempts: Attempt[];
   bookmarks: string[];
+  settings: Settings;
 };
 
 const KEY = 'openpte-history';
-const EMPTY: State = { version: 1, attempts: [], bookmarks: [] };
+const EMPTY: State = { version: 1, attempts: [], bookmarks: [], settings: DEFAULT_SETTINGS };
 
 function load(): State {
   try {
@@ -34,6 +44,7 @@ function load(): State {
       version: 1,
       attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
       bookmarks: Array.isArray(parsed.bookmarks) ? parsed.bookmarks : [],
+      settings: { ...DEFAULT_SETTINGS, ...parsed.settings },
     };
   } catch {
     return EMPTY;
@@ -86,8 +97,13 @@ export function toggleBookmark(questionId: string) {
   });
 }
 
+export function updateSettings(patch: Partial<Settings>) {
+  commit({ ...state, settings: { ...state.settings, ...patch } });
+}
+
+/** Removes attempts and bookmarks but keeps settings. */
 export function clearHistory() {
-  commit(EMPTY);
+  commit({ ...EMPTY, settings: state.settings });
 }
 
 export type QuestionStatus = 'new' | 'right' | 'partial' | 'wrong';
@@ -107,4 +123,10 @@ export function statusOf(a: Attempt | undefined): QuestionStatus {
   if (a.max > 0 && a.score >= a.max) return 'right';
   if (a.score > 0) return 'partial';
   return 'wrong';
+}
+
+/** The time the screen was opened, fixed for the render so the page stays pure. */
+export function useNow(): number {
+  const [now] = useState(Date.now);
+  return now;
 }

@@ -210,6 +210,58 @@ test.describe('writing answers get form and spelling feedback', () => {
   });
 });
 
+test('answers drive Today and Progress across reloads', async ({ page }) => {
+  await page.goto(q('reading_mcq_single'));
+  await page.getByRole('radio').first().check();
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.goto(q('reading_mcq_single', 2));
+  await page.getByRole('radio').first().check();
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.goto('/#/more');
+  await page.getByLabel('Daily goal').selectOption('5');
+  await page.reload();
+  await page.goto('/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Today');
+  await expect(page.getByTestId('daily-goal')).toContainText('2 of 5 questions today');
+  await expectAccessible(page);
+  await page.goto('/#/progress');
+  await expect(page.getByRole('meter', { name: 'Reading' })).toBeVisible();
+  await expect(page.getByTestId('estimate')).toContainText('Answer 18 more questions');
+  await expectAccessible(page);
+});
+
+test('progress shows an estimate after enough answers', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => {
+    const day = 86_400_000;
+    const attempts = Array.from({ length: 30 }, (_, i) => ({
+      questionId: `reading-mcq-single-${String(i).padStart(4, '0')}`,
+      type: 'reading_mcq_single',
+      skill: i % 2 ? 'reading' : 'listening',
+      score: i % 3 ? 1 : 0,
+      max: 1,
+      at: Date.now() - (i % 10) * day,
+    }));
+    localStorage.setItem(
+      'openpte-history',
+      JSON.stringify({
+        version: 1,
+        attempts,
+        bookmarks: [],
+        settings: { dailyGoal: 20, target: 65 },
+      }),
+    );
+  });
+  await page.goto('/#/progress');
+  await page.reload();
+  await expect(page.getByTestId('estimate')).toContainText('on the 10–90 scale');
+  await expect(page.getByTestId('score-disclaimer')).toBeVisible();
+  await expect(page.getByRole('img', { name: /Bar chart/ })).toBeVisible();
+  await expectAccessible(page);
+  await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'Mistakes to retry' })).toBeVisible();
+});
+
 test('describe-image chart loads', async ({ page }) => {
   await page.goto('/#/practice/speaking_describe_image/speaking-describe-image-0001');
   const img = page.getByTestId('question').getByRole('img');
