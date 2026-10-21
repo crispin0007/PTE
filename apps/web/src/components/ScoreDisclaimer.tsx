@@ -4,7 +4,7 @@ export function ScoreDisclaimer() {
     <p
       role="note"
       data-testid="score-disclaimer"
-      className="rounded-token bg-warn-bg px-3 py-2 text-sm text-warn-text"
+      className="rounded-token bg-warn-bg px-3 py-2 text-sm text-warn-ink"
     >
       Practice estimate only. This is not an official PTE score and may differ from your real test
       result.

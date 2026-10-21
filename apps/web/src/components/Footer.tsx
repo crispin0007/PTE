@@ -6,8 +6,8 @@ export const TRADEMARK_NOTICE =
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface px-4 py-6 text-sm text-muted">
-      <div className="mx-auto flex max-w-3xl flex-col gap-2">
+    <footer className="border-t border-line bg-surface px-4 py-6 text-sm text-muted">
+      <div className="mx-auto flex max-w-5xl flex-col gap-2">
         <p data-testid="trademark-notice">{TRADEMARK_NOTICE}</p>
         <p>
           Code under AGPL-3.0, questions and media under CC BY-SA 4.0.{' '}

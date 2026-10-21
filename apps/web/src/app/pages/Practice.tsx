@@ -19,7 +19,7 @@ export function Practice() {
               <li key={t.id}>
                 <Link
                   to={`/practice/${t.id}`}
-                  className="flex items-center justify-between gap-2 rounded-token border border-border bg-surface px-3 py-2 hover:border-accent"
+                  className="flex items-center justify-between gap-2 rounded-token border border-line bg-surface px-3 py-2 hover:border-brand"
                 >
                   <span>{t.label}</span>
                   <span className="text-sm text-muted">{questionCount(t.id)}</span>

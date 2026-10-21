@@ -34,14 +34,14 @@ export function QuestionPage() {
       </p>
       <h1 className="text-2xl font-bold">{def.label}</h1>
       {question.status !== 'published' && (
-        <p role="note" className="rounded-token bg-warn-bg px-3 py-2 text-sm text-warn-text">
+        <p role="note" className="rounded-token bg-warn-bg px-3 py-2 text-sm text-warn-ink">
           Draft question: not yet checked by two human reviewers. It may contain mistakes.
         </p>
       )}
       <QuestionPreview question={question} />
       <section
         aria-labelledby="score-heading"
-        className="flex flex-col gap-2 border-t border-border pt-4"
+        className="flex flex-col gap-2 border-t border-line pt-4"
       >
         <h2 id="score-heading" className="text-lg font-semibold">
           Your score

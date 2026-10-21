@@ -46,7 +46,7 @@ export function TypePage() {
             <li key={q.id}>
               <Link
                 to={`/practice/${def.id}/${q.id}`}
-                className="block rounded-token border border-border bg-surface px-3 py-2 hover:border-accent"
+                className="block rounded-token border border-line bg-surface px-3 py-2 hover:border-brand"
               >
                 Question {i + 1}
                 <span className="ml-2 text-sm text-muted">difficulty {q.difficulty} of 5</span>

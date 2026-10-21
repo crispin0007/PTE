@@ -76,7 +76,7 @@ export function QuestionPreview({ question: q }: { question: Question }) {
             <img
               src={url}
               alt={q.alt_text}
-              className="w-full rounded-token border border-border bg-white"
+              className="w-full rounded-token border border-line bg-white"
             />
           )}
         </Block>
@@ -133,7 +133,7 @@ export function QuestionPreview({ question: q }: { question: Question }) {
         <Block title="Paragraphs to put in order">
           <ul className="flex flex-col gap-2">
             {[...q.paragraphs].sort().map((p) => (
-              <li key={p} className="rounded-token border border-border bg-surface p-3">
+              <li key={p} className="rounded-token border border-line bg-surface p-3">
                 {p}
               </li>
             ))}

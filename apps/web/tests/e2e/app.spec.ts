@@ -68,9 +68,28 @@ test('describe-image chart loads', async ({ page }) => {
 });
 
 test('dark mode can be selected and is accessible', async ({ page }) => {
-  await page.goto('/#/practice/reading_mcq_single/reading-mcq-single-0001');
-  await page.getByRole('combobox', { name: 'Theme' }).selectOption('dark');
+  await page.goto('/#/more');
+  await page.getByRole('main').getByRole('combobox', { name: 'Theme' }).selectOption('dark');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expectAccessible(page);
+  await page.goto('/#/practice/reading_mcq_single/reading-mcq-single-0001');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expectAccessible(page);
+});
+
+test('main navigation reaches every tab', async ({ page }) => {
+  await page.goto('/');
+  const nav = page.getByRole('navigation', { name: 'Main' });
+  for (const [label, heading] of [
+    ['Practice', 'Practice by question type'],
+    ['Progress', 'Progress'],
+    ['More', 'More'],
+    ['Today', 'Free PTE Academic practice'],
+  ]) {
+    await nav.getByRole('link', { name: label }).click();
+    await expect(page.getByRole('heading', { level: 1, name: heading })).toBeVisible();
+    await expect(nav.getByRole('link', { name: label })).toHaveAttribute('aria-current', 'page');
+  }
   await expectAccessible(page);
 });
 

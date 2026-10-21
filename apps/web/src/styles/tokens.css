@@ -1,55 +1,83 @@
 /*
- * Design tokens. Every colour, radius and font used by the app comes from here, so dark mode
- * and white-label branding (Phase 4c) are a matter of redefining these variables.
+ * Design tokens from the UI plan. Every colour, radius and font used by the app comes from here,
+ * so dark mode and institute branding are a matter of redefining these variables.
+ * Skill colours are for bars, borders and icons. Text always uses ink or muted for contrast.
  */
 :root {
-  --bg: #f7f7f5;
+  --bg: #f3f5fa;
   --surface: #ffffff;
-  --surface-muted: #efefeb;
-  --text: #1c1c1a;
-  --text-muted: #5b5b56;
-  --border: #d9d9d3;
-  --accent: #1f5fbf;
-  --accent-text: #ffffff;
-  --accent-soft: #e3ecfa;
-  --warn-bg: #fff4d6;
-  --warn-text: #5c4300;
-  --focus: #1f5fbf;
-  --radius: 0.5rem;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --sunken: #e9edf5;
+  --ink: #161d2e;
+  --muted: #586379;
+  --line: #d9dfeb;
+  --brand: #3149d6;
+  --brand-ink: #ffffff;
+  --brand-soft: #e4e8fc;
+  --speak: #e0533c;
+  --write: #7c4ddb;
+  --read: #0b9480;
+  --listen: #d4930f;
+  --good: #16884a;
+  --good-soft: #dff3e7;
+  --bad: #c43d3d;
+  --bad-soft: #fbe3e3;
+  --warn-bg: #fff3d1;
+  --warn-ink: #5c4300;
+  --focus: #3149d6;
+  --radius: 0.75rem;
+  --font-sans:
+    'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', var(--font-sans);
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #141413;
-    --surface: #1e1e1c;
-    --surface-muted: #2a2a27;
-    --text: #ececea;
-    --text-muted: #a9a9a3;
-    --border: #3a3a36;
-    --accent: #7aa7ff;
-    --accent-text: #0d1a33;
-    --accent-soft: #1f2c45;
+    --bg: #0e131e;
+    --surface: #161d2b;
+    --sunken: #1d2536;
+    --ink: #e8ecf4;
+    --muted: #a3adc2;
+    --line: #2c3548;
+    --brand: #8496ff;
+    --brand-ink: #0e131e;
+    --brand-soft: #232c4d;
+    --speak: #ff8a73;
+    --write: #b496ff;
+    --read: #3fd0b8;
+    --listen: #f2c04d;
+    --good: #5fd48f;
+    --good-soft: #173526;
+    --bad: #ff8a8a;
+    --bad-soft: #3d1f22;
     --warn-bg: #3a2f12;
-    --warn-text: #f5dc9a;
-    --focus: #7aa7ff;
+    --warn-ink: #f5dc9a;
+    --focus: #8496ff;
     color-scheme: dark;
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #141413;
-  --surface: #1e1e1c;
-  --surface-muted: #2a2a27;
-  --text: #ececea;
-  --text-muted: #a9a9a3;
-  --border: #3a3a36;
-  --accent: #7aa7ff;
-  --accent-text: #0d1a33;
-  --accent-soft: #1f2c45;
+  --bg: #0e131e;
+  --surface: #161d2b;
+  --sunken: #1d2536;
+  --ink: #e8ecf4;
+  --muted: #a3adc2;
+  --line: #2c3548;
+  --brand: #8496ff;
+  --brand-ink: #0e131e;
+  --brand-soft: #232c4d;
+  --speak: #ff8a73;
+  --write: #b496ff;
+  --read: #3fd0b8;
+  --listen: #f2c04d;
+  --good: #5fd48f;
+  --good-soft: #173526;
+  --bad: #ff8a8a;
+  --bad-soft: #3d1f22;
   --warn-bg: #3a2f12;
-  --warn-text: #f5dc9a;
-  --focus: #7aa7ff;
+  --warn-ink: #f5dc9a;
+  --focus: #8496ff;
   color-scheme: dark;
 }

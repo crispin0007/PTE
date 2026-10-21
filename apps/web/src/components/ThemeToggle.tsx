@@ -4,10 +4,10 @@ import { applyTheme, readTheme, type Theme } from './theme.ts';
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(readTheme);
   return (
-    <label className="flex items-center gap-2 text-sm">
-      <span className="sr-only sm:not-sr-only">Theme</span>
+    <label className="flex min-h-11 items-center gap-2 text-sm">
+      <span>Theme</span>
       <select
-        className="rounded-token border border-border bg-surface px-2 py-1"
+        className="rounded-token border border-line bg-surface min-h-11 px-3"
         value={theme}
         onChange={(e) => {
           const t = e.target.value as Theme;
