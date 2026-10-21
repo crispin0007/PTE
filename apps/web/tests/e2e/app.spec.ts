@@ -22,7 +22,6 @@ const SAMPLES = [
     id: 'speaking-describe-image-0001',
     expectText: /Describe the image/,
   },
-  { skill: 'writing', type: 'writing_essay', id: 'writing-essay-0001', expectText: /Essay prompt/ },
 ];
 
 test('home page shows the trademark notice and is accessible', async ({ page }) => {
@@ -178,6 +177,36 @@ test.describe('listening questions can be answered and scored', () => {
       .fill('the assignment must be submited through the portal');
     // 9 words; "submitted" misspelled and "online" missing.
     await submitAndExpect(page, '7 / 9');
+  });
+});
+
+test.describe('writing answers get form and spelling feedback', () => {
+  test('summarize written text: one sentence', async ({ page }) => {
+    await page.goto(q('writing_summarize_written_text'));
+    const box = page.getByLabel('Your answer');
+    await box.fill('This passage explains a problem. It also offers a solution.');
+    await expect(page.getByTestId('question')).toContainText('2 sentences');
+    await box.fill('The passage explains a problem and suggests a practical solution to it.');
+    await expectAccessible(page);
+    await submitAndExpect(page, '1 / 1');
+    await expect(page.getByText('Sample answer', { exact: true })).toBeVisible();
+  });
+
+  test('essay: word count bands and spelling', async ({ page }) => {
+    await page.goto(q('writing_essay'));
+    const sentence = 'Technology has changed the way people study and work in many countries. ';
+    // 12 words x 13 = 156 words: form 1 of 2. One misspelling: spelling 1 of 2.
+    await page.getByLabel('Your answer').fill(sentence.repeat(13) + 'Thsi is wrong.');
+    await submitAndExpect(page, '2 / 4');
+    await expect(page.getByRole('table')).toContainText('Thsi');
+  });
+
+  test('summarize spoken text', async ({ page }) => {
+    await page.goto(q('listening_summarize_spoken_text'));
+    const text = 'The speaker describes how cities can plan for hotter summers. ';
+    // 10 words x 6 = 60 words, all spelled correctly: 2 + 2.
+    await page.getByLabel('Your answer').fill(text.repeat(6));
+    await submitAndExpect(page, '4 / 4');
   });
 });
 

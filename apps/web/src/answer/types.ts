@@ -13,7 +13,8 @@ export type AnswerViewProps<Q, R> = {
 /** Everything the exam frame needs to run one question type. */
 export type Answerable<K extends QuestionType, R> = {
   initial: (q: QuestionOf<K>) => R;
-  score: (q: QuestionOf<K>, r: R) => ScoreResult;
+  /** May be async, e.g. Writing loads the spelling dictionaries on first use. */
+  score: (q: QuestionOf<K>, r: R) => ScoreResult | Promise<ScoreResult>;
   View: ComponentType<AnswerViewProps<QuestionOf<K>, R>>;
 };
 

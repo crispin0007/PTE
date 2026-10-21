@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import type { Question } from '@openpte/schema';
-import { SCORING_RULES, type ScoreResult } from '@openpte/scoring';
+import { SCORING_RULES, type ScoreResult, type WritingResult } from '@openpte/scoring';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
 import type { TypeDef } from '../content/catalog.ts';
 import { SKILL_META } from '../content/guide.ts';
@@ -40,6 +40,24 @@ function Result({ result, skill }: { result: ScoreResult; skill: TypeDef['skill'
       <div aria-hidden="true" className="h-2 overflow-hidden rounded-full bg-sunken">
         <div className={`h-full ${SKILL_META[skill].color}`} style={{ width: `${pct}%` }} />
       </div>
+      {'traits' in result && (
+        <table className="w-full text-left text-sm">
+          <caption className="sr-only">Score by trait</caption>
+          <tbody className="divide-y divide-line">
+            {(result as WritingResult).traits.map((t) => (
+              <tr key={t.name}>
+                <th scope="row" className="py-1.5 pr-3 font-semibold">
+                  {t.name}
+                </th>
+                <td className="py-1.5 pr-3 font-mono whitespace-nowrap">
+                  {t.scored ? `${t.score} / ${t.max}` : '–'}
+                </td>
+                <td className="py-1.5 text-muted">{t.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
       <div className="text-sm">
         <p className="font-semibold">How this was scored</p>
         <p className="text-muted">{SCORING_RULES[result.rule]}.</p>
@@ -86,10 +104,14 @@ function Attempt({
   const next = questions[index + 1];
   const limit = def.timing.mode === 'per_item' ? def.timing.answer_s : null;
   const remaining = limit === null ? null : limit - elapsed;
-  const submitRef = useRef<() => void>(() => {});
+  const submitRef = useRef<() => Promise<void>>(async () => {});
 
-  const submit = () => {
-    const r = answerable.score(question, response);
+  const [checking, setChecking] = useState(false);
+  const submit = async () => {
+    if (checking) return;
+    setChecking(true);
+    const r = await answerable.score(question, response);
+    setChecking(false);
     setResult(r);
     recordAttempt({
       questionId: question.id,
@@ -105,7 +127,7 @@ function Attempt({
   });
 
   useEffect(() => {
-    if (remaining !== null && remaining <= 0 && result === null) submitRef.current();
+    if (remaining !== null && remaining <= 0 && result === null) void submitRef.current();
   }, [remaining, result]);
 
   const View = answerable.View;
@@ -148,10 +170,11 @@ function Attempt({
         {!result ? (
           <button
             type="button"
-            onClick={submit}
-            className="min-h-11 rounded-token bg-brand px-6 font-semibold text-brand-ink"
+            onClick={() => void submit()}
+            disabled={checking}
+            className="min-h-11 rounded-token bg-brand px-6 font-semibold text-brand-ink disabled:opacity-60"
           >
-            Submit
+            {checking ? 'Checking…' : 'Submit'}
           </button>
         ) : (
           <>
