@@ -2,7 +2,7 @@
 
 Save this file as `AGENTS.md` (and a copy as `CLAUDE.md`) in the repo root. It replaces the original build brief and merges in three reviewed documents: the Phase 0 proposal, the scoring strategy and the product plan. Where this file and an older document differ, this file wins.
 
-Status: Phase 0 built on 2026-10-21. Do not start Phase 1 until the Phase 0 review is done.
+Status: Phase 0 built on 2026-10-21. On the same day the project grew from a static practice site into a full PTE platform (accounts, server speech scoring, mock tests, institutes). **The build order and scope now live in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md), which wins where it differs from this file.** Sections 1, 2 (rules 1 and 6), 8 and 9 below are superseded by it; the content, schema, scoring rules and working rules still apply.
 
 ---
 
@@ -18,12 +18,12 @@ Three audiences:
 
 ## 2. Non-negotiables
 
-1. Free forever for learners. No paywall. No login for solo practice. Accounts exist only on the optional server.
+1. Free for everyone, no paywall and no payments. Guests can practise without an account; an account (email link or Google) saves progress and unlocks mocks and classes.
 2. Original content only. Never copy, scrape or reproduce questions, prediction files, audio, images or templates from APEUni, Alfa PTE, Gurully, PTE Success, PTE Magic, Language Academy or Pearson. Never import "recalled" or "predicted" exam questions.
 3. Never reverse-engineer or copy competitors' code or scoring engines.
 4. Honest scoring. Scores are practice estimates, never official PTE scores. A disclaimer appears on every score screen and cannot be turned off in config.
 5. Trademark footer on every page: "Independent open-source project. Not affiliated with, endorsed by, or connected to Pearson. PTE is a trademark of Pearson." No Pearson logos.
-6. Privacy by default. Recordings and essays are processed on the device. Nothing is uploaded unless the user opts in for that specific purpose (class sharing, data donation, sync). No third-party trackers.
+6. Privacy by default. Recordings are uploaded for scoring only after one-time consent, kept 30 days unless shared with a teacher, and deletable at any time; an on-device mode exists for people who opt out. No third-party trackers.
 7. Licences: code **AGPL-3.0**, content **CC BY-SA 4.0**, in separate folders with separate LICENSE files.
 
 ## 3. Decisions (settled defaults)
