@@ -47,6 +47,10 @@ const Env = z.object({
   SPEECH_TOKEN: z.string().optional(),
   /** Server speech scores per learner per 24 hours. */
   SPEECH_DAILY_LIMIT: z.coerce.number().int().min(0).default(30),
+  /** Who may create an institute: anyone signed in (hosted default) or platform admins only. */
+  INSTITUTE_CREATION: z.enum(['anyone', 'admin']).default('anyone'),
+  /** Set for a single-institute self-host: its name. Everyone who signs in joins it. */
+  SINGLE_INSTITUTE_NAME: z.string().min(1).optional(),
   CONTENT_ROOT: z.string().default(new URL('../../../', import.meta.url).pathname),
 });
 

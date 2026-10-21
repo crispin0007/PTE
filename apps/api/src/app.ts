@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { adminRoutes } from './admin.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
+import { instituteRoutes, type InstituteOptions } from './institutes.ts';
 import { recordingRoutes, type ScoringOptions } from './recordings.ts';
 import type { Storage } from './storage.ts';
 
@@ -22,6 +23,8 @@ export type AppOptions = {
   storage?: Storage;
   /** Speech scoring of saved recordings; off without it. */
   scoring?: ScoringOptions;
+  /** Institutes, classes and students. Defaults to anyone may create an institute. */
+  institutes?: InstituteOptions;
 };
 
 const AttemptIn = z.strictObject({
@@ -83,6 +86,7 @@ export async function buildApp({
   googleEnabled = false,
   storage,
   scoring,
+  institutes = { creation: 'anyone' },
 }: AppOptions) {
   const app = Fastify({ logger });
   const anyOrigin = corsOrigin === '*';
@@ -162,6 +166,7 @@ export async function buildApp({
   if (auth) {
     await app.register(authRoutes(auth));
     await app.register(adminRoutes(db, auth));
+    await app.register(instituteRoutes(db, auth, institutes));
     if (storage) await app.register(recordingRoutes(db, auth, storage, scoring));
     const { attempts, userState } = schema;
 

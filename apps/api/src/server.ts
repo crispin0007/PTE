@@ -62,6 +62,10 @@ const app = await buildApp({
         dailyLimit: config.SPEECH_DAILY_LIMIT,
       }
     : undefined,
+  institutes: {
+    creation: config.INSTITUTE_CREATION,
+    single: config.SINGLE_INSTITUTE_NAME ? { name: config.SINGLE_INSTITUTE_NAME } : undefined,
+  },
 });
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
   process.on(signal, () => {

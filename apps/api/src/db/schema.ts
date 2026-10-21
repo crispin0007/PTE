@@ -5,6 +5,7 @@ import {
   integer,
   jsonb,
   pgTable,
+  primaryKey,
   text,
   timestamp,
   uniqueIndex,
@@ -193,5 +194,69 @@ export const recordings = pgTable(
   (t) => [
     index('recordings_user_idx').on(t.userId),
     index('recordings_expiry_idx').on(t.expiresAt),
+  ],
+);
+
+/**
+ * Institutes are the tenants. A hosted openpte serves many; a self-hosted install usually has one.
+ * Every institute-scoped row carries `instituteId`, and every query on it filters by that id.
+ */
+export const institutes = pgTable('institutes', {
+  id: text('id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  name: text('name').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const MEMBER_ROLES = ['student', 'teacher', 'owner'] as const;
+export type MemberRole = (typeof MEMBER_ROLES)[number];
+
+export const memberships = pgTable(
+  'memberships',
+  {
+    instituteId: text('institute_id')
+      .notNull()
+      .references(() => institutes.id, { onDelete: 'cascade' }),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    role: text('role').$type<MemberRole>().notNull().default('student'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.instituteId, t.userId] }),
+    index('memberships_user_idx').on(t.userId),
+  ],
+);
+
+export const classes = pgTable(
+  'classes',
+  {
+    id: text('id').primaryKey(),
+    instituteId: text('institute_id')
+      .notNull()
+      .references(() => institutes.id, { onDelete: 'cascade' }),
+    name: text('name').notNull(),
+    /** Students join with this code; a teacher can replace it. */
+    inviteCode: text('invite_code').notNull().unique(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('classes_institute_idx').on(t.instituteId)],
+);
+
+export const classMembers = pgTable(
+  'class_members',
+  {
+    classId: text('class_id')
+      .notNull()
+      .references(() => classes.id, { onDelete: 'cascade' }),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.classId, t.userId] }),
+    index('class_members_user_idx').on(t.userId),
   ],
 );
