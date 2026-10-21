@@ -93,6 +93,36 @@ test('main navigation reaches every tab', async ({ page }) => {
   await expectAccessible(page);
 });
 
+test('skill tabs narrow the practice hub', async ({ page }) => {
+  await page.goto('/#/practice');
+  await page
+    .getByRole('navigation', { name: 'Skills' })
+    .getByRole('link', { name: 'Reading' })
+    .click();
+  await expect(page.getByTestId('type-card')).toHaveCount(5);
+  await page.getByTestId('type-card').first().click();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.locator('main ol li')).toHaveCount(10);
+  await expectAccessible(page);
+});
+
+test('a bookmarked question shows under the Bookmarked filter', async ({ page }) => {
+  await page.goto('/#/practice/reading_mcq_single/reading-mcq-single-0002');
+  await page.getByRole('button', { name: 'Bookmark' }).click();
+  await expect(page.getByRole('button', { name: 'Bookmark' })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+  await page.goto('/#/practice/reading_mcq_single');
+  await page.getByRole('button', { name: 'Bookmarked' }).click();
+  await expect(page.locator('main ol li')).toHaveCount(1);
+  await expect(page.locator('main ol li')).toContainText('Question 2');
+  await page.reload();
+  await expect(page.locator('main ol li')).toHaveCount(1);
+  await page.getByRole('button', { name: 'New' }).click();
+  await expect(page.locator('main ol li')).toHaveCount(10);
+});
+
 test('unknown pages show a not-found message', async ({ page }) => {
   await page.goto('/#/practice/not_a_type');
   await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();

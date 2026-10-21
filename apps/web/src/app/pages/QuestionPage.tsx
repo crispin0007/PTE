@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
+import { BookmarkButton } from '../../components/BookmarkButton.tsx';
 import { ScoreDisclaimer } from '../../components/ScoreDisclaimer.tsx';
 import { getType, loadQuestions } from '../../content/catalog.ts';
 import { QuestionPreview } from '../../items/QuestionPreview.tsx';
@@ -32,7 +33,10 @@ export function QuestionPage() {
           {def.label}
         </Link>
       </p>
-      <h1 className="text-2xl font-bold">{def.label}</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-2xl font-bold">{def.label}</h1>
+        <BookmarkButton questionId={question.id} />
+      </div>
       {question.status !== 'published' && (
         <p role="note" className="rounded-token bg-warn-bg px-3 py-2 text-sm text-warn-ink">
           Draft question: not yet checked by two human reviewers. It may contain mistakes.
