@@ -23,12 +23,6 @@ const SAMPLES = [
     expectText: /Describe the image/,
   },
   { skill: 'writing', type: 'writing_essay', id: 'writing-essay-0001', expectText: /Essay prompt/ },
-  {
-    skill: 'listening',
-    type: 'listening_mcq_single',
-    id: 'listening-mcq-single-0001',
-    expectText: /Options/,
-  },
 ];
 
 test('home page shows the trademark notice and is accessible', async ({ page }) => {
@@ -130,6 +124,60 @@ test.describe('reading questions can be answered and scored', () => {
     await expect(page.locator('main ol li').first()).toContainText('No marks');
     await page.getByRole('button', { name: 'Mistakes' }).click();
     await expect(page.locator('main ol li')).toHaveCount(1);
+  });
+});
+
+test.describe('listening questions can be answered and scored', () => {
+  test('audio falls back to the device voice and a transcript', async ({ page }) => {
+    await page.goto(q('listening_mcq_single'));
+    await expect(page.getByRole('button', { name: 'Play audio' })).toBeVisible();
+    await page.getByRole('button', { name: /Show the transcript/ }).click();
+    await expect(page.getByTestId('question')).toContainText('Hide transcript');
+    await page.getByRole('radio').nth(2).check();
+    await submitAndExpect(page, '1 / 1');
+  });
+
+  test('multiple answers', async ({ page }) => {
+    await page.goto(q('listening_mcq_multiple'));
+    for (const i of [0, 1, 4]) await page.getByRole('checkbox').nth(i).check();
+    await submitAndExpect(page, '1 / 3');
+  });
+
+  test('highlight correct summary and select missing word', async ({ page }) => {
+    await page.goto(q('listening_highlight_correct_summary'));
+    await page.getByRole('radio').nth(3).check();
+    await submitAndExpect(page, '1 / 1');
+    await page.goto(q('listening_select_missing_word'));
+    await page.getByRole('radio').nth(1).check();
+    await submitAndExpect(page, '0 / 1');
+  });
+
+  test('fill in the blanks needs exact spelling', async ({ page }) => {
+    await page.goto(q('listening_fib'));
+    await page.getByLabel('Blank 1').fill('Energy');
+    await page.getByLabel('Blank 2').fill('warm');
+    await page.getByLabel('Blank 3').fill('bleeching');
+    await submitAndExpect(page, '2 / 4');
+  });
+
+  test('highlight incorrect words', async ({ page }) => {
+    await page.goto(q('listening_highlight_incorrect_words'));
+    const text = page.getByRole('region', { name: /Click the words/ });
+    await text.getByRole('button', { name: 'dangerous', exact: true }).click();
+    await text.getByRole('button', { name: 'green', exact: true }).click();
+    await text.getByRole('button', { name: 'Coral', exact: true }).click();
+    await expectAccessible(page);
+    // 2 found, 1 wrong click: 2 - 1 = 1.
+    await submitAndExpect(page, '1 / 3');
+  });
+
+  test('write from dictation counts words', async ({ page }) => {
+    await page.goto(q('listening_write_from_dictation'));
+    await page
+      .getByLabel(/Type the sentence/)
+      .fill('the assignment must be submited through the portal');
+    // 9 words; "submitted" misspelled and "online" missing.
+    await submitAndExpect(page, '7 / 9');
   });
 });
 
