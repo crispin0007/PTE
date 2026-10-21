@@ -1,4 +1,4 @@
-import { sql } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 import type { ValidationResult } from '@openpte/schema';
 import { schema, type Db } from './db/index.ts';
 
@@ -44,6 +44,8 @@ export async function seed(db: Db, bank: ValidationResult) {
         .onConflictDoUpdate({
           target: schema.questions.id,
           set: { ...row, updatedAt: sql`now()` },
+          // Questions edited in the admin screens are not overwritten by the YAML copy.
+          setWhere: eq(schema.questions.origin, 'yaml'),
         });
     }
   });

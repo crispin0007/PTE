@@ -40,11 +40,30 @@ export const questions = pgTable(
     difficulty: integer('difficulty').notNull(),
     tags: text('tags').array().notNull(),
     data: jsonb('data').$type<Question>().notNull(),
+    /** 'yaml' rows are refreshed from content/ on every seed; 'admin' rows are edited in the app. */
+    origin: text('origin').$type<'yaml' | 'admin'>().notNull().default('yaml'),
+    authorId: text('author_id'),
     updatedAt: timestamp('updated_at', { withTimezone: true })
       .notNull()
       .default(sql`now()`),
   },
   (t) => [index('questions_type_status_idx').on(t.type, t.status)],
+);
+
+/** One review per reviewer per question. Editing a question clears its reviews. */
+export const reviews = pgTable(
+  'reviews',
+  {
+    questionId: text('question_id')
+      .notNull()
+      .references(() => questions.id, { onDelete: 'cascade' }),
+    reviewerId: text('reviewer_id').notNull(),
+    reviewerHandle: text('reviewer_handle').notNull(),
+    verdict: text('verdict').$type<'approve' | 'changes'>().notNull(),
+    comment: text('comment').notNull().default(''),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex('reviews_question_reviewer_idx').on(t.questionId, t.reviewerId)],
 );
 
 // ---- Accounts (tables used by Better Auth; field names follow its core schema) ----

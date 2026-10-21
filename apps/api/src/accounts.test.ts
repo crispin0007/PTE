@@ -1,14 +1,11 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { buildApp } from './app.ts';
-import { createAuth } from './auth.ts';
 import type { Db } from './db/index.ts';
-import type { Mail } from './mail.ts';
+import { appWithAuth } from './test/auth.ts';
 import { testDb } from './test/db.ts';
 
-const WEB = 'http://localhost:5173';
 let db: Db;
 let close: () => Promise<void>;
-const outbox: Mail[] = [];
 
 beforeAll(async () => {
   ({ db, close } = await testDb());
@@ -16,38 +13,10 @@ beforeAll(async () => {
 afterAll(() => close());
 
 async function app() {
-  const auth = createAuth({
-    db,
-    baseURL: 'http://localhost:3000',
-    secret: 'test-secret-test-secret-test-secret-00',
-    mailer: { send: async (m) => void outbox.push(m) },
-    trustedOrigins: [WEB],
-  });
-  return buildApp({ db, auth, corsOrigin: WEB });
+  const t = await appWithAuth(db);
+  return Object.assign(t.app, { signIn: t.signIn });
 }
-
-/** Signs in by email link and returns the session cookie. */
-async function signIn(a: Awaited<ReturnType<typeof app>>, email: string) {
-  const res = await a.inject({
-    method: 'POST',
-    url: '/api/auth/sign-in/magic-link',
-    headers: { origin: WEB, 'content-type': 'application/json' },
-    payload: JSON.stringify({ email, callbackURL: `${WEB}/#/more` }),
-  });
-  expect(res.statusCode).toBe(200);
-  const mail = outbox.at(-1)!;
-  expect(mail.to).toBe(email);
-  const link = new URL(mail.text.match(/https?:\/\/\S+/)![0]);
-  const verify = await a.inject({ method: 'GET', url: link.pathname + link.search });
-  expect(verify.statusCode).toBe(302);
-  expect(verify.headers.location).toContain(`${WEB}/#/more`);
-  const cookie = ([] as string[])
-    .concat(verify.headers['set-cookie'] ?? [])
-    .map((c) => c.split(';')[0])
-    .join('; ');
-  expect(cookie).toContain('session_token');
-  return cookie;
-}
+const signIn = (a: Awaited<ReturnType<typeof app>>, email: string) => a.signIn(email);
 
 const attempt = (clientId: string, score = 1) => ({
   clientId,

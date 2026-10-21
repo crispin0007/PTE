@@ -20,6 +20,16 @@ const Env = z.object({
   /** SMTP URL for sign-in emails. Without it, links are printed in the API log. */
   SMTP_URL: z.string().optional(),
   MAIL_FROM: z.string().default('openpte <no-reply@localhost>'),
+  /** Comma-separated emails that are admins (on first sign-in, and promoted on every start). */
+  ADMIN_EMAILS: z
+    .string()
+    .default('')
+    .transform((v) =>
+      v
+        .split(',')
+        .map((e) => e.trim().toLowerCase())
+        .filter(Boolean),
+    ),
   /** Serve questions still in review, as the demo site does. Off in production. */
   INCLUDE_UNREVIEWED: z
     .enum(['0', '1'])

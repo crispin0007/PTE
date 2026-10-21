@@ -1,7 +1,9 @@
+import { inArray } from 'drizzle-orm';
 import { loadContent } from '@openpte/schema/node';
 import { buildApp } from './app.ts';
 import { createAuth } from './auth.ts';
 import { loadConfig } from './config.ts';
+import { schema } from './db/index.ts';
 import { connect } from './db/postgres.ts';
 import { consoleMailer, smtpMailer } from './mail.ts';
 import { seed } from './seed.ts';
@@ -11,6 +13,12 @@ const { db, close } = await connect(config.DATABASE_URL);
 if (config.SEED_ON_START) {
   const result = await seed(db, loadContent(config.CONTENT_ROOT));
   console.log(`seeded ${result.questions} questions across ${result.itemTypes} types`);
+}
+if (config.ADMIN_EMAILS.length) {
+  await db
+    .update(schema.user)
+    .set({ role: 'admin' })
+    .where(inArray(schema.user.email, config.ADMIN_EMAILS));
 }
 const origins = config.CORS_ORIGIN.split(',').map((o) => o.trim());
 const google =
@@ -27,6 +35,7 @@ const auth =
         mailer: config.SMTP_URL ? smtpMailer(config.SMTP_URL, config.MAIL_FROM) : consoleMailer,
         trustedOrigins: origins,
         google,
+        adminEmails: config.ADMIN_EMAILS,
       });
 const app = await buildApp({
   db,

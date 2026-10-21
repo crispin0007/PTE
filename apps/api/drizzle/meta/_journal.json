@@ -15,6 +15,13 @@
       "when": 1792605306367,
       "tag": "0001_accounts",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792605775669,
+      "tag": "0002_question_review",
+      "breakpoints": true
     }
   ]
 }

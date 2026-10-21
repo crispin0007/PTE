@@ -13,6 +13,8 @@ export type AuthOptions = {
   /** Web app origins allowed to call auth and to be redirected to after sign-in. */
   trustedOrigins: string[];
   google?: { clientId: string; clientSecret: string };
+  /** People who become admins when they first sign in (ADMIN_EMAILS). */
+  adminEmails?: string[];
 };
 
 /**
@@ -37,6 +39,18 @@ export function createAuth(o: AuthOptions) {
     user: {
       additionalFields: {
         role: { type: 'string', defaultValue: 'learner', input: false },
+      },
+    },
+    databaseHooks: {
+      user: {
+        create: {
+          before: async (u) => ({
+            data: {
+              ...u,
+              role: o.adminEmails?.includes(u.email.toLowerCase()) ? 'admin' : 'learner',
+            },
+          }),
+        },
       },
     },
     session: { expiresIn: 60 * 60 * 24 * 30, updateAge: 60 * 60 * 24 },

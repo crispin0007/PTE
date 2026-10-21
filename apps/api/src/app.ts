@@ -3,6 +3,7 @@ import { fromNodeHeaders } from 'better-auth/node';
 import { and, asc, count, eq, inArray } from 'drizzle-orm';
 import Fastify, { type FastifyInstance, type FastifyRequest } from 'fastify';
 import { z } from 'zod';
+import { adminRoutes } from './admin.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
 
@@ -147,6 +148,7 @@ export async function buildApp({
 
   if (auth) {
     await app.register(authRoutes(auth));
+    await app.register(adminRoutes(db, auth));
     const { attempts, userState } = schema;
 
     const userOf = async (req: FastifyRequest) => {
