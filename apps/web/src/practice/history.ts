@@ -13,7 +13,12 @@ export type Attempt = {
   max: number;
   /** Epoch milliseconds. */
   at: number;
+  /** Made on the device that answered; lets the server drop duplicate uploads. */
+  clientId?: string;
 };
+
+/** Stable id of an attempt, also for attempts saved before ids existed. */
+export const clientIdOf = (a: Attempt) => a.clientId ?? `${a.questionId}@${a.at}`;
 
 export type Settings = {
   /** Questions per day. */
@@ -84,8 +89,29 @@ export function useHistory(): State {
 }
 
 export function recordAttempt(a: Attempt) {
-  commit({ ...state, attempts: [...state.attempts, a] });
+  const clientId = a.clientId ?? `${a.at.toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+  commit({ ...state, attempts: [...state.attempts, { ...a, clientId }] });
 }
+
+/** Adds attempts and bookmarks from the account that this device does not have yet. */
+export function mergeRemote(attempts: Attempt[], bookmarks: string[]) {
+  const have = new Set(state.attempts.map(clientIdOf));
+  const fresh = attempts.filter((a) => !have.has(clientIdOf(a)));
+  const marks = [...new Set([...state.bookmarks, ...bookmarks])];
+  if (!fresh.length && marks.length === state.bookmarks.length) return;
+  commit({
+    ...state,
+    attempts: [...state.attempts, ...fresh].sort((x, y) => x.at - y.at),
+    bookmarks: marks,
+  });
+}
+
+/** Current state, for code outside React such as sync. */
+export const snapshot = () => state;
+export const onHistoryChange = (listener: () => void) => {
+  listeners.add(listener);
+  return () => void listeners.delete(listener);
+};
 
 export function toggleBookmark(questionId: string) {
   const has = state.bookmarks.includes(questionId);

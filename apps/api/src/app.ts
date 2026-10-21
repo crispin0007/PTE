@@ -81,6 +81,7 @@ export async function buildApp({
     origin: anyOrigin ? true : corsOrigin.split(',').map((o) => o.trim()),
     // Cookies only travel to origins that are listed by name.
     credentials: !anyOrigin,
+    methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
   });
 
   const visible = includeUnreviewed ? ['published', 'in_review'] : ['published'];
@@ -205,6 +206,14 @@ export async function buildApp({
         inserted += done.length;
       }
       return { inserted };
+    });
+
+    app.delete('/v1/me/attempts', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      await db.delete(attempts).where(eq(attempts.userId, u.id));
+      await db.delete(userState).where(eq(userState.userId, u.id));
+      return { deleted: true };
     });
 
     app.get('/v1/me/state', async (req, reply) => {

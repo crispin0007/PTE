@@ -96,6 +96,9 @@ describe('accounts', () => {
     const theirs = (await a.inject({ url: '/v1/me/attempts', headers: { cookie: other } })).json();
     expect(theirs.attempts).toEqual([]);
     expect((await post([{ ...attempt('x'), skill: 'cooking' }])).statusCode).toBe(400);
+    await a.inject({ method: 'DELETE', url: '/v1/me/attempts', headers: { cookie } });
+    const after = (await a.inject({ url: '/v1/me/attempts', headers: { cookie } })).json();
+    expect(after.attempts).toEqual([]);
   });
 
   it('stores bookmarks and settings', async () => {

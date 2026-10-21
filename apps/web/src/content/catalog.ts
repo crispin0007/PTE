@@ -37,7 +37,7 @@ export function questionCount(id: QuestionType): number {
 }
 
 /** Set at build time to read questions from the openpte API instead of the bundled bank. */
-const API_URL: string | undefined = import.meta.env.VITE_API_URL;
+export const API_URL: string | undefined = import.meta.env.VITE_API_URL?.replace(/\/$/, '');
 
 /**
  * Loads one type's questions. Without an API each type is a separate bundled chunk, so phones only
@@ -45,7 +45,7 @@ const API_URL: string | undefined = import.meta.env.VITE_API_URL;
  */
 export async function loadQuestions(id: QuestionType): Promise<Question[]> {
   if (API_URL) {
-    const res = await fetch(`${API_URL.replace(/\/$/, '')}/v1/questions?type=${id}`);
+    const res = await fetch(`${API_URL}/v1/questions?type=${id}`);
     if (!res.ok) throw new Error(`API returned ${res.status}`);
     return ((await res.json()) as { questions: Question[] }).questions;
   }
