@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { assetUrl } from '../content/catalog.ts';
-import type { Question } from '../schema/questions.ts';
-import { transcriptTokens } from '../schema/text.ts';
+import type { Question } from '@openpte/schema';
+import { transcriptTokens } from '@openpte/schema/text';
 import { TextWithBlanks } from './RichText.tsx';
 
 function Block({ title, children }: { title: string; children: ReactNode }) {

@@ -1,6 +1,6 @@
 declare module 'virtual:openpte/catalog' {
-  import type { ItemTypeDef } from './schema/registry.ts';
-  import type { Question, QuestionType } from './schema/questions.ts';
+  import type { ItemTypeDef } from '@openpte/schema';
+  import type { Question, QuestionType } from '@openpte/schema';
   export const registry: (ItemTypeDef & { id: QuestionType })[];
   export const counts: Record<QuestionType, number>;
   export const includesUnreviewed: boolean;

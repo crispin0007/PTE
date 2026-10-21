@@ -26,7 +26,7 @@ On Windows, run the same commands in PowerShell or the VS Code terminal.
 | Command            | What it does                                                                               |
 | ------------------ | ------------------------------------------------------------------------------------------ |
 | `npm run dev`      | Start the app with hot reload                                                              |
-| `npm run build`    | Type-check and build the static site into `dist/`                                          |
+| `npm run build`    | Type-check and build the static site into `apps/web/dist/`                                 |
 | `npm run preview`  | Serve the built site                                                                       |
 | `npm run validate` | Check every question and asset against the schema                                          |
 | `npm test`         | Unit tests (schema, validator, scoring)                                                    |
@@ -36,7 +36,7 @@ On Windows, run the same commands in PowerShell or the VS Code terminal.
 
 ## Self-host
 
-`npm run build` produces a static site in `dist/`. Upload it to any static host (GitHub Pages, Cloudflare Pages,
+`npm run build` produces a static site in `apps/web/dist/`. Upload it to any static host (GitHub Pages, Cloudflare Pages,
 Netlify, or a plain web server). No server-side code is needed. Set `OPENPTE_INCLUDE_UNREVIEWED=1` when
 building if you also want questions that are still in review.
 
@@ -47,11 +47,14 @@ once under Settings, Pages, Source: GitHub Actions.
 
 | Folder                         | Contents                                           | Licence      |
 | ------------------------------ | -------------------------------------------------- | ------------ |
-| `src/`                         | The web app: routes, components, schema, scoring   | AGPL-3.0     |
-| `scripts/`, `tools/`, `tests/` | Validator, build helpers, audio generation, tests  | AGPL-3.0     |
+| `apps/web/`                    | The web app: routes, screens, components           | AGPL-3.0     |
+| `packages/schema/`             | Question schemas and the content validator         | AGPL-3.0     |
+| `packages/scoring/`            | Scoring rules                                      | AGPL-3.0     |
+| `scripts/`, `tools/`, `tests/` | Build helpers, audio generation, test fixtures     | AGPL-3.0     |
 | `content/`                     | Item-type registry and one YAML file per question  | CC BY-SA 4.0 |
 | `content-assets/`              | Images and audio, each with a `.meta.yaml` sidecar | CC BY-SA 4.0 |
-| `server/`                      | Reserved for the optional Phase 4 server           | AGPL-3.0     |
+
+The build plan is in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
 
 ## Contributing
 

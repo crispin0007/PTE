@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readYaml } from '../../scripts/lib/content-fs.ts';
+import { readYaml } from './node.ts';
 import { QUESTION_SCHEMAS } from './questions.ts';
 import { validateBank, type SourceFile } from './validate.ts';
 
@@ -7,7 +7,9 @@ const registry = readYaml('content/item-types.yaml');
 const noAssets = { exists: () => false, hasSidecar: () => false };
 const file = (name: string): SourceFile => ({
   path: `content/questions/reading/reading_mcq_single/${name}.yaml`,
-  data: readYaml(`tests/fixtures/${name.replace(/^reading-mcq-single-999[89]$/, (id) => (id.endsWith('9') ? 'bad-question' : 'good-question'))}.yaml`),
+  data: readYaml(
+    `tests/fixtures/${name.replace(/^reading-mcq-single-999[89]$/, (id) => (id.endsWith('9') ? 'bad-question' : 'good-question'))}.yaml`,
+  ),
 });
 
 describe('validateBank', () => {
@@ -26,7 +28,11 @@ describe('validateBank', () => {
   });
 
   it('reports cross-field errors once the shape is right', () => {
-    const data = { ...(readYaml('tests/fixtures/good-question.yaml') as object), answer: 5, source: 'open-licensed' };
+    const data = {
+      ...(readYaml('tests/fixtures/good-question.yaml') as object),
+      answer: 5,
+      source: 'open-licensed',
+    };
     const r = validateBank(registry, [{ ...file('reading-mcq-single-9998'), data }], noAssets);
     expect(r.errors.join('\n')).toMatch(/answer: index 5 is out of range/);
     expect(r.errors.join('\n')).toMatch(/source_url and attribution are required/);
@@ -34,7 +40,10 @@ describe('validateBank', () => {
 
   it('checks file location, id and duplicates', () => {
     const good = file('reading-mcq-single-9998');
-    const moved = { path: 'content/questions/listening/reading_mcq_single/other-name.yaml', data: good.data };
+    const moved = {
+      path: 'content/questions/listening/reading_mcq_single/other-name.yaml',
+      data: good.data,
+    };
     const r = validateBank(registry, [good, moved], noAssets);
     const text = r.errors.join('\n');
     expect(text).toContain('does not match the file name other-name');
@@ -45,8 +54,16 @@ describe('validateBank', () => {
   it('requires two reviewers other than the author to publish', () => {
     const base = readYaml('tests/fixtures/good-question.yaml') as object;
     const run = (reviewed_by: string[]) =>
-      validateBank(registry, [{ ...file('reading-mcq-single-9998'), data: { ...base, status: 'published', reviewed_by } }], noAssets)
-        .errors;
+      validateBank(
+        registry,
+        [
+          {
+            ...file('reading-mcq-single-9998'),
+            data: { ...base, status: 'published', reviewed_by },
+          },
+        ],
+        noAssets,
+      ).errors;
     expect(run(['alice']).join()).toMatch(/2 reviewers/);
     expect(run(['alice', 'openpte-seed']).join()).toMatch(/2 reviewers/);
     expect(run(['alice', 'bob'])).toEqual([]);
@@ -65,16 +82,25 @@ describe('validateBank', () => {
       audio: 'audio/listening-write-from-dictation-9999.mp3',
       sentence: 'Hand in the essay on Friday.',
     };
-    const path = 'content/questions/listening/listening_write_from_dictation/listening-write-from-dictation-9999.yaml';
+    const path =
+      'content/questions/listening/listening_write_from_dictation/listening-write-from-dictation-9999.yaml';
     const draft = validateBank(registry, [{ path, data: q }], noAssets);
     expect(draft.errors).toEqual([]);
     expect(draft.warnings.join()).toMatch(/audio not generated yet/);
-    const live = validateBank(registry, [{ path, data: { ...q, status: 'published', reviewed_by: ['a', 'b'] } }], noAssets);
+    const live = validateBank(
+      registry,
+      [{ path, data: { ...q, status: 'published', reviewed_by: ['a', 'b'] } }],
+      noAssets,
+    );
     expect(live.errors.join()).toMatch(/missing asset/);
   });
 
   it('rejects an unknown type', () => {
-    const r = validateBank(registry, [{ path: 'content/questions/x/y/z.yaml', data: { type: 'nope' } }], noAssets);
+    const r = validateBank(
+      registry,
+      [{ path: 'content/questions/x/y/z.yaml', data: { type: 'nope' } }],
+      noAssets,
+    );
     expect(r.errors).toEqual(['content/questions/x/y/z.yaml: unknown type "nope"']);
   });
 });
@@ -107,14 +133,26 @@ describe('type-specific rules', () => {
   });
 
   it('checks highlight-incorrect-words swaps against transcript tokens', () => {
-    const q = { id: 'listening-highlight-incorrect-words-0001', audio: 'audio/a.mp3', transcript: 'The cat sat down.' };
-    expect(errors('listening_highlight_incorrect_words', { ...q, swaps: [{ index: 4, shown: 'up' }] }).join()).toMatch(
-      /past the last word/,
-    );
-    expect(errors('listening_highlight_incorrect_words', { ...q, swaps: [{ index: 1, shown: 'cat' }] }).join()).toMatch(
-      /same as the spoken word/,
-    );
-    expect(errors('listening_highlight_incorrect_words', { ...q, swaps: [{ index: 1, shown: 'dog' }] })).toEqual([]);
+    const q = {
+      id: 'listening-highlight-incorrect-words-0001',
+      audio: 'audio/a.mp3',
+      transcript: 'The cat sat down.',
+    };
+    expect(
+      errors('listening_highlight_incorrect_words', {
+        ...q,
+        swaps: [{ index: 4, shown: 'up' }],
+      }).join(),
+    ).toMatch(/past the last word/);
+    expect(
+      errors('listening_highlight_incorrect_words', {
+        ...q,
+        swaps: [{ index: 1, shown: 'cat' }],
+      }).join(),
+    ).toMatch(/same as the spoken word/);
+    expect(
+      errors('listening_highlight_incorrect_words', { ...q, swaps: [{ index: 1, shown: 'dog' }] }),
+    ).toEqual([]);
   });
 
   it('needs at least one wrong option in multiple-answer items', () => {
@@ -136,14 +174,26 @@ describe('type-specific rules', () => {
       key_points: ['k'],
       sample_answer: 's',
     };
-    expect(errors('speaking_summarize_group_discussion', { ...q, transcript: 'Ann: hi\nBen: hello\nCy: hey' })).toEqual([]);
-    expect(errors('speaking_summarize_group_discussion', { ...q, transcript: 'Ann: hi\nDee: hello' }).join()).toMatch(
-      /line 2/,
-    );
+    expect(
+      errors('speaking_summarize_group_discussion', {
+        ...q,
+        transcript: 'Ann: hi\nBen: hello\nCy: hey',
+      }),
+    ).toEqual([]);
+    expect(
+      errors('speaking_summarize_group_discussion', {
+        ...q,
+        transcript: 'Ann: hi\nDee: hello',
+      }).join(),
+    ).toMatch(/line 2/);
   });
 
   it('rejects unknown fields, which catches typos', () => {
-    const e = errors('speaking_read_aloud', { id: 'speaking-read-aloud-0001', text: 't', txet: 't' });
+    const e = errors('speaking_read_aloud', {
+      id: 'speaking-read-aloud-0001',
+      text: 't',
+      txet: 't',
+    });
     expect(e.join()).toMatch(/txet/);
   });
 });

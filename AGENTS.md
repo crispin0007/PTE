@@ -34,7 +34,7 @@ Three audiences:
 | Content licence              | CC BY-SA 4.0                                                                                                                                                                              | Compatible with Wikipedia-sourced passages.                                                                                      |
 | Framework                    | React + TypeScript + Vite, static build                                                                                                                                                   | No SSR needed; smaller than a Next.js static export.                                                                             |
 | Routing                      | React Router, hash routes                                                                                                                                                                 | Works on GitHub Pages and any static host with no rewrites.                                                                      |
-| Styling                      | Tailwind v4 + CSS variables in `src/styles/tokens.css`                                                                                                                                    | Dark mode is a variable swap.                                                                                                    |
+| Styling                      | Tailwind v4 + CSS variables in `apps/web/src/styles/tokens.css`                                                                                                                           | Dark mode is a variable swap.                                                                                                    |
 | Local storage                | Dexie (IndexedDB), added in Phase 1                                                                                                                                                       | Phase 0 stores nothing.                                                                                                          |
 | Schema                       | Zod is the single source; JSON Schema generated from it                                                                                                                                   | Validates in the app and CI; gives contributors YAML autocomplete.                                                               |
 | Content format               | YAML, one file per question, compiled to JSON at build time                                                                                                                               | Easy to write and review.                                                                                                        |
@@ -51,43 +51,24 @@ Ask before adding paid services, telemetry, or any dependency with a GPL, AGPL, 
 
 ## 4. Repo layout
 
+An npm workspaces monorepo (since build step 1.1):
+
 ```
 openpte/
-├─ LICENSE                    # AGPL-3.0 (code)
-├─ README.md                  # what it is, disclaimer, run locally, self-host
-├─ CONTRIBUTING.md            # code + question contribution, review checklist
-├─ CODE_OF_CONDUCT.md
-├─ AGENTS.md / CLAUDE.md      # this file
-├─ .github/
-│  ├─ workflows/ci.yml        # lint, test, content, build, e2e
-│  ├─ workflows/deploy.yml    # GitHub Pages on push to main
-│  ├─ ISSUE_TEMPLATE/new-question.yml
-│  ├─ pull_request_template.md
-│  └─ dependabot.yml
-├─ src/
-│  ├─ app/                    # routes, layout, Footer (trademark notice)
-│  ├─ components/             # ScoreDisclaimer, Timer, ThemeToggle
-│  ├─ items/                  # one renderer folder per item type (Phase 1+)
-│  ├─ scoring/                # every scoring rule + tests, each citing its source
-│  ├─ schema/                 # Zod: base + one schema per item type
-│  ├─ content/                # loader for compiled question bundles
-│  └─ styles/tokens.css
-├─ content/                   # CC BY-SA 4.0
-│  ├─ LICENSE
-│  ├─ item-types.yaml         # data-driven registry of item types
-│  └─ questions/<skill>/<type>/<id>.yaml
-├─ content-assets/            # CC BY-SA 4.0
-│  ├─ LICENSE
-│  ├─ audio/<id>.mp3 + <id>.meta.yaml
-│  └─ images/<id>.svg + <id>.meta.yaml
-├─ server/                    # reserved for Phase 4 (README only in Phase 0)
-├─ scripts/
-│  ├─ validate-content.ts     # CI and `npm run validate`
-│  └─ build-schema.ts         # writes JSON Schema for editors
-├─ tests/
-│  ├─ e2e/
-│  └─ fixtures/bad-question.yaml
-└─ public/
+├─ apps/
+│  ├─ web/                    # React + Vite app: src/, index.html, e2e tests, Vite content plugin
+│  └─ api/                    # Fastify API (from build step 1.8)
+├─ packages/
+│  ├─ schema/                 # Zod schemas, validator, text helpers (`@openpte/schema`, `/node`, `/text`, `/constants`)
+│  └─ scoring/                # scoring rules shared by web and API (`@openpte/scoring`)
+├─ services/speech/           # Python speech scoring (from build step 2.2)
+├─ content/                   # CC BY-SA 4.0: item-types.yaml, questions/<skill>/<type>/<id>.yaml
+├─ content-assets/            # CC BY-SA 4.0: audio/, images/, each file with a .meta.yaml sidecar
+├─ scripts/                   # validate-content, build-schema, check-size, check-licenses
+├─ tools/                     # generate_audio.py (Piper TTS)
+├─ tests/fixtures/            # shared test fixtures
+├─ docs/BUILD_PLAN.md         # the step-by-step build plan
+└─ server/                    # placeholder, replaced by apps/api
 ```
 
 Every media file has a `.meta.yaml` sidecar: `source`, `license`, `author`, `voice: tts | human` (audio), `attribution` where needed.
@@ -169,7 +150,7 @@ Institutes may keep private questions on their own server; those stay out of the
 
 ## 6. Scoring
 
-All rules live in `src/scoring/`, one function per rule, each with unit tests against hand-computed cases and a comment citing Pearson's published score guide. Verify each rule against the current guide before coding it.
+All rules live in `packages/scoring/src/`, one function per rule, each with unit tests against hand-computed cases and a comment citing Pearson's published score guide. Verify each rule against the current guide before coding it.
 
 ### 6.1 Reading and Listening (exact)
 
@@ -275,7 +256,7 @@ Plus: `deploy.yml` to GitHub Pages on push to main; Dependabot weekly for npm an
 - Simplest thing that works: reuse the repo, then platform features (HTML inputs, Web APIs), then the standard library, then an existing dependency, then new code.
 - Never cut validation, error handling, security or accessibility to save lines.
 - Anything with branches, parsing or scoring gets a small test.
-- Every scoring rule in `src/scoring/`, with a comment citing its source.
+- Every scoring rule in `packages/scoring/src/`, with a comment citing its source.
 - End each task with what changed, what was skipped or not verified, and any risk.
 - Ask before adding paid services, telemetry or a restrictively licensed dependency.
 - Do not mark seed questions `published`; only human reviewers do that.

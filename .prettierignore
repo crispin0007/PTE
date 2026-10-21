@@ -3,6 +3,6 @@ node_modules
 playwright-report
 test-results
 package-lock.json
-schema
-content
-content-assets
+/schema
+/content
+/content-assets

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readYaml } from '../../scripts/lib/content-fs.ts';
+import { readYaml } from '@openpte/schema/node';
 import { SCORING_RULES } from './rules.ts';
 
 describe('scoring rules', () => {

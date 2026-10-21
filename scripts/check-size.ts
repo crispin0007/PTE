@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
 
 const BUDGET_KB = 150;
-const html = readFileSync('dist/index.html', 'utf8');
+const html = readFileSync('apps/web/dist/index.html', 'utf8');
 const entries = [
   ...html.matchAll(/<script[^>]+src="\.?\/?([^"]+\.js)"/g),
   ...html.matchAll(/<link[^>]+rel="modulepreload"[^>]+href="\.?\/?([^"]+\.js)"/g),
@@ -14,8 +14,10 @@ if (!entries.length) {
   process.exit(1);
 }
 const kb =
-  entries.reduce((sum, f) => sum + gzipSync(readFileSync(join('dist', f))).length, 0) / 1024;
-const lazy = readdirSync('dist/assets').filter((f) => f.endsWith('.js')).length - entries.length;
+  entries.reduce((sum, f) => sum + gzipSync(readFileSync(join('apps/web/dist', f))).length, 0) /
+  1024;
+const lazy =
+  readdirSync('apps/web/dist/assets').filter((f) => f.endsWith('.js')).length - entries.length;
 console.log(
   `Initial JS: ${kb.toFixed(1)} KB gzipped (budget ${BUDGET_KB} KB); ${lazy} lazy chunks`,
 );

@@ -1,8 +1,8 @@
 import { createReadStream, existsSync, readFileSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 import type { Plugin } from 'vite';
-import type { Question } from '../src/schema/questions.ts';
-import { loadContent } from './lib/content-fs.ts';
+import type { Question } from '@openpte/schema';
+import { loadContent } from '@openpte/schema/node';
 
 const CATALOG = 'virtual:openpte/catalog';
 const TYPE_PREFIX = 'virtual:openpte/type/';
@@ -19,9 +19,9 @@ const MIME: Record<string, string> = {
  * - `virtual:openpte/type/<type>`: that type's questions, so each type is its own small chunk
  * Invalid content fails the build. Only `published` questions ship, unless
  * OPENPTE_INCLUDE_UNREVIEWED=1 is set (always on in dev), which adds `in_review` ones.
+ * `root` is the repo root, where content/ and content-assets/ live.
  */
-export function contentPlugin(): Plugin {
-  const root = process.cwd();
+export function contentPlugin(root: string): Plugin {
   let includeUnreviewed = process.env.OPENPTE_INCLUDE_UNREVIEWED === '1';
   let byType = new Map<string, Question[]>();
   let registryJson = '[]';

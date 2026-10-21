@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { parse } from 'yaml';
-import { validateBank, type SourceFile, type ValidationResult } from '../../src/schema/validate.ts';
+import { validateBank, type SourceFile, type ValidationResult } from './validate.ts';
 
 function walk(dir: string): string[] {
   if (!existsSync(dir)) return [];

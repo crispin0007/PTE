@@ -2,8 +2,8 @@
 // question files. Generated from the Zod schemas, which stay the single source of truth.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { z } from 'zod';
-import { QUESTION_SCHEMAS } from '../src/schema/questions.ts';
-import { Registry } from '../src/schema/registry.ts';
+import { QUESTION_SCHEMAS } from '@openpte/schema';
+import { Registry } from '@openpte/schema';
 
 mkdirSync('schema', { recursive: true });
 const write = (name: string, schema: z.ZodType) =>

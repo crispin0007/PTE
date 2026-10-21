@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { loadContent } from './lib/content-fs.ts';
+import { loadContent } from './node.ts';
 
 describe('question bank in content/', () => {
   it('passes validation', () => {

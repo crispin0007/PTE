@@ -1,6 +1,6 @@
 // Validates every question and asset. Used by CI and `npm run validate`.
 // Exits 1 on any error. Warnings (such as audio not generated yet) do not fail the run.
-import { loadContent } from './lib/content-fs.ts';
+import { loadContent } from '@openpte/schema/node';
 
 const verbose = process.argv.includes('--verbose');
 const { errors, warnings, questions, registry } = loadContent(process.cwd());

@@ -1,7 +1,13 @@
-import { availableAssets, counts, includesUnreviewed, loaders, registry } from 'virtual:openpte/catalog';
-import type { Question, QuestionType } from '../schema/questions.ts';
-import { SECTIONS } from '../schema/constants.ts';
-import type { ItemTypeDef, Section } from '../schema/registry.ts';
+import {
+  availableAssets,
+  counts,
+  includesUnreviewed,
+  loaders,
+  registry,
+} from 'virtual:openpte/catalog';
+import type { Question, QuestionType } from '@openpte/schema';
+import { SECTIONS } from '@openpte/schema/constants';
+import type { ItemTypeDef, Section } from '@openpte/schema';
 
 export { includesUnreviewed };
 
@@ -16,7 +22,10 @@ export type TypeDef = ItemTypeDef & { id: QuestionType };
 export const itemTypes: TypeDef[] = registry;
 
 export function typesBySection(): { section: Section; types: TypeDef[] }[] {
-  return SECTIONS.map((section) => ({ section, types: itemTypes.filter((t) => t.section === section) }));
+  return SECTIONS.map((section) => ({
+    section,
+    types: itemTypes.filter((t) => t.section === section),
+  }));
 }
 
 export function getType(id: string | undefined): TypeDef | undefined {

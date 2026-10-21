@@ -16,7 +16,7 @@ Thank you for helping. There are three ways to contribute: write questions, revi
 
 1. Copy an existing file of the same type from `content/questions/<skill>/<type>/` and give it the next free id,
    for example `reading-mcq-single-0011.yaml`. The file name must equal the id.
-2. Fill in the fields. The schema for every type is in `src/schema/questions.ts`, and `npm run schema` writes JSON
+2. Fill in the fields. The schema for every type is in `packages/schema/src/questions.ts`, and `npm run schema` writes JSON
    Schema files for editor autocomplete. Blanks are `{{b1}}` markers; option answers are zero-based indexes.
 3. Set the source fields honestly:
    - `source: original` if you wrote it from scratch.
@@ -47,7 +47,7 @@ When you approve, add your handle to `reviewed_by`. The second reviewer also cha
 2. `npm install`, then `npm run dev`.
 3. Keep it simple: platform features before libraries, and ask in an issue before adding a dependency. Dependencies
    with GPL, AGPL, non-commercial or missing licences fail CI.
-4. Every scoring rule lives in `src/scoring/` with tests and a comment citing its source.
+4. Every scoring rule lives in `packages/scoring/src/` with tests and a comment citing its source.
 5. Never trade away validation, error handling, security or accessibility to save lines.
 6. Before you open a pull request, run `npm run lint`, `npm test`, `npm run validate` and `npm run build`.
 

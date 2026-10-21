@@ -5,7 +5,12 @@ import { baseShape, checkBase, nonEmpty, type BaseFields } from './base.ts';
 export { blankMarkers, transcriptTokens, wordCount };
 
 const assetPath = (folder: 'audio' | 'images') =>
-  z.string().regex(new RegExp(`^${folder}/[a-z0-9-]+\\.[a-z0-9]+$`), `must be a path like ${folder}/<id>.<ext>`);
+  z
+    .string()
+    .regex(
+      new RegExp(`^${folder}/[a-z0-9-]+\\.[a-z0-9]+$`),
+      `must be a path like ${folder}/<id>.<ext>`,
+    );
 const audio = assetPath('audio');
 const image = assetPath('images');
 const options = z.array(nonEmpty).min(2);
@@ -19,18 +24,24 @@ function issue(ctx: Ctx, path: (string | number)[], message: string) {
 }
 
 function checkIndex(ctx: Ctx, path: (string | number)[], index: number, opts: unknown[]) {
-  if (index < 0 || index >= opts.length) issue(ctx, path, `index ${index} is out of range (0-${opts.length - 1})`);
+  if (index < 0 || index >= opts.length)
+    issue(ctx, path, `index ${index} is out of range (0-${opts.length - 1})`);
 }
 
 function checkUnique(ctx: Ctx, path: (string | number)[], values: unknown[], what: string) {
-  if (new Set(values).size !== values.length) issue(ctx, path, `${what} must not contain duplicates`);
+  if (new Set(values).size !== values.length)
+    issue(ctx, path, `${what} must not contain duplicates`);
 }
 
 function checkMarkers(ctx: Ctx, field: string, text: string, blanks: { id: string }[]) {
   const markers = blankMarkers(text);
   const ids = blanks.map((b) => b.id);
   if (markers.join() !== ids.join()) {
-    issue(ctx, [field], `blank markers [${markers}] do not match blanks [${ids}] (same ids, same order)`);
+    issue(
+      ctx,
+      [field],
+      `blank markers [${markers}] do not match blanks [${ids}] (same ids, same order)`,
+    );
   }
 }
 
@@ -38,7 +49,8 @@ function checkMultiple(q: { options: string[]; answers: number[] }, ctx: Ctx) {
   checkUnique(ctx, ['options'], q.options, 'options');
   checkUnique(ctx, ['answers'], q.answers, 'answers');
   q.answers.forEach((a, i) => checkIndex(ctx, ['answers', i], a, q.options));
-  if (q.answers.length >= q.options.length) issue(ctx, ['answers'], 'at least one option must be wrong');
+  if (q.answers.length >= q.options.length)
+    issue(ctx, ['answers'], 'at least one option must be wrong');
 }
 
 function checkSingle(q: { options: string[]; answer: number }, ctx: Ctx) {
@@ -112,7 +124,11 @@ export const SummarizeGroupDiscussion = question(
       .forEach((line, i) => {
         const name = line.split(':')[0]?.trim();
         if (!name || !q.speakers.includes(name)) {
-          issue(ctx, ['transcript'], `line ${i + 1} does not start with a listed speaker ("Name: text")`);
+          issue(
+            ctx,
+            ['transcript'],
+            `line ${i + 1} does not start with a listed speaker ("Name: text")`,
+          );
         }
       });
   },
@@ -122,7 +138,8 @@ export const RespondToSituation = question(
   'speaking_respond_to_situation',
   { situation_text: nonEmpty, audio, key_points: keyPoints, sample_answer: nonEmpty },
   (q, ctx) => {
-    if (wordCount(q.situation_text) > 60) issue(ctx, ['situation_text'], 'situation_text must be at most 60 words');
+    if (wordCount(q.situation_text) > 60)
+      issue(ctx, ['situation_text'], 'situation_text must be at most 60 words');
   },
 );
 
@@ -171,7 +188,12 @@ export const ReadingFibDragDrop = question(
   },
   (q, ctx) => {
     checkMarkers(ctx, 'passage', q.passage, q.blanks);
-    checkUnique(ctx, ['distractors'], [...q.blanks.map((b) => b.answer), ...q.distractors], 'the word bank');
+    checkUnique(
+      ctx,
+      ['distractors'],
+      [...q.blanks.map((b) => b.answer), ...q.distractors],
+      'the word bank',
+    );
   },
 );
 
@@ -239,13 +261,18 @@ export const HighlightIncorrectWords = question(
       'swap indexes',
     );
     q.swaps.forEach((s, i) => {
-      if (s.index >= tokens.length) issue(ctx, ['swaps', i, 'index'], `index ${s.index} is past the last word`);
-      else if (tokens[s.index] === s.shown) issue(ctx, ['swaps', i, 'shown'], 'shown word is the same as the spoken word');
+      if (s.index >= tokens.length)
+        issue(ctx, ['swaps', i, 'index'], `index ${s.index} is past the last word`);
+      else if (tokens[s.index] === s.shown)
+        issue(ctx, ['swaps', i, 'shown'], 'shown word is the same as the spoken word');
     });
   },
 );
 
-export const WriteFromDictation = question('listening_write_from_dictation', { audio, sentence: nonEmpty });
+export const WriteFromDictation = question('listening_write_from_dictation', {
+  audio,
+  sentence: nonEmpty,
+});
 
 export const QUESTION_SCHEMAS = {
   speaking_read_aloud: ReadAloud,

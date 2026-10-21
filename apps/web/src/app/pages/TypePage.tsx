@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { getType, loadQuestions } from '../../content/catalog.ts';
-import type { Question } from '../../schema/questions.ts';
+import type { Question } from '@openpte/schema';
 import { NotFound } from './NotFound.tsx';
 
 export function TypePage() {

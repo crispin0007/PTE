@@ -36,7 +36,8 @@ export const ItemTypeDef = z.strictObject({
 export const Registry = z.array(ItemTypeDef).superRefine((defs, ctx) => {
   const seen = new Set<string>();
   defs.forEach((d, i) => {
-    if (seen.has(d.id)) ctx.addIssue({ code: 'custom', path: [i, 'id'], message: `duplicate type id ${d.id}` });
+    if (seen.has(d.id))
+      ctx.addIssue({ code: 'custom', path: [i, 'id'], message: `duplicate type id ${d.id}` });
     seen.add(d.id);
   });
 });

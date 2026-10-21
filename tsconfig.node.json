@@ -16,5 +16,13 @@
     "noEmit": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["vite.config.ts", "playwright.config.ts", "scripts", "tests", "src/**/*.test.ts"]
+  "include": [
+    "packages/*/src",
+    "scripts",
+    "apps/web/vite.config.ts",
+    "apps/web/playwright.config.ts",
+    "apps/web/scripts",
+    "apps/web/tests",
+    "vitest.config.ts"
+  ]
 }

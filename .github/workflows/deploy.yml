@@ -33,6 +33,6 @@ jobs:
           OPENPTE_INCLUDE_UNREVIEWED: '1'
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
-        with: { path: dist }
+        with: { path: apps/web/dist }
       - id: deployment
         uses: actions/deploy-pages@v4

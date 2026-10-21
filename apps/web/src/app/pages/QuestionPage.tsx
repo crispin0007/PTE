@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router';
 import { ScoreDisclaimer } from '../../components/ScoreDisclaimer.tsx';
 import { getType, loadQuestions } from '../../content/catalog.ts';
 import { QuestionPreview } from '../../items/QuestionPreview.tsx';
-import type { Question } from '../../schema/questions.ts';
+import type { Question } from '@openpte/schema';
 import { NotFound } from './NotFound.tsx';
 
 export function QuestionPage() {

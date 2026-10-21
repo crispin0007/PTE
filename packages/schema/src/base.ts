@@ -21,7 +21,8 @@ export const baseShape = {
   reviewed_by: z.array(handle).default([]),
   drafted_with: z.literal('ai').optional(),
   originality_confirmed: z.literal(true, {
-    error: 'originality_confirmed must be true: content may not be copied from any exam, prediction file or paid platform',
+    error:
+      'originality_confirmed must be true: content may not be copied from any exam, prediction file or paid platform',
   }),
   explanation: nonEmpty.optional(),
 };
