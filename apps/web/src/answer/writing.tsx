@@ -1,11 +1,13 @@
 import { useId } from 'react';
 import {
   scoreWriting,
+  type GrammarIssue,
   sentenceCount,
   type WritingResult,
   type WritingRule,
 } from '@openpte/scoring';
 import { wordCount } from '@openpte/schema/text';
+import { API_URL } from '../content/catalog.ts';
 import { Listen } from './Listen.tsx';
 import { Passage, Section } from './parts.tsx';
 import { misspellings } from './spelling.ts';
@@ -17,17 +19,45 @@ const LIMITS: Record<WritingRule, { min: number; max: number; rows: number; hint
   writing_essay: { min: 200, max: 300, rows: 14, hint: '200 to 300 words' },
 };
 
+let grammarOff = !API_URL;
+
+/** Grammar issues from the API's LanguageTool, or null when there is no checker. */
+async function grammarIssues(text: string): Promise<GrammarIssue[] | null | 'failed'> {
+  if (grammarOff) return null;
+  try {
+    const res = await fetch(`${API_URL}/v1/writing/check`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ text }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (res.status === 404) {
+      grammarOff = true;
+      return null;
+    }
+    if (!res.ok) return 'failed';
+    return ((await res.json()) as { issues: GrammarIssue[] }).issues;
+  } catch {
+    return 'failed';
+  }
+}
+
 async function check(rule: WritingRule, text: string): Promise<WritingResult> {
   let wrong: string[] = [];
   let offline = false;
-  try {
-    wrong = await misspellings(text);
-  } catch {
-    offline = true;
-  }
-  const r = scoreWriting(rule, text, wrong);
+  const [spelling, grammar] = await Promise.all([
+    misspellings(text).catch(() => null),
+    text.trim() ? grammarIssues(text) : Promise.resolve(null),
+  ]);
+  if (spelling) wrong = spelling;
+  else offline = true;
+  const issues = Array.isArray(grammar) ? grammar : undefined;
+  const r: WritingResult & { text?: string } = scoreWriting(rule, text, wrong, issues);
+  if (issues) r.text = text;
   if (offline && rule !== 'writing_swt')
     r.working.push('Spelling could not be checked: the dictionary did not load');
+  if (grammar === 'failed')
+    r.working.push('Grammar could not be checked: the checker did not answer');
   return r;
 }
 

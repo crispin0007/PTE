@@ -29,7 +29,7 @@ browser tests on phone and desktop with accessibility checks) and pushed to `mai
 | 2.3 Content and fluency    | Done        | Word alignment, key points, pace, pauses and fillers in `packages/scoring`                                                                      |
 | 2.4 Pronunciation          | Not started | Needs the wav2vec2 model; whisper word confidence stands in for now                                                                             |
 | 2.5 Speaking results       | Done        | Traits, coloured words, key points, pace; all 7 Speaking types                                                                                  |
-| 2.6 Writing scoring        | Not started | Needs a LanguageTool server                                                                                                                     |
+| 2.6 Writing scoring        | Done        | Grammar from self-hosted LanguageTool, marked in place with suggestions; content and range still compare with the sample                        |
 | 2.7 Listening audio        | Not started | Waits for the voice licence decision; the device voice reads until then                                                                         |
 | 2.8 Limits and fallback    | Partly      | Daily limit, 30-day retention and delete done; on-device fallback is the self-check                                                             |
 | 3.1 Mock model             | Done        | Full, mini, three sectional and custom mocks                                                                                                    |
@@ -90,16 +90,16 @@ steps 1.8 to 1.10, and guest history then moves into the new account.
 
 ## Phase 2: speaking and writing scoring
 
-| Step                    | What ships                                                                                                           | Done when                                                          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| 2.1 Recorder            | Exam-style status box (countdown, Recording, Completed), level check, Opus encoding, upload with consent             | A recording reaches storage and can be replayed                    |
-| 2.2 Speech service      | `services/speech` (Python, FastAPI), job queue (Valkey + BullMQ), faster-whisper transcription with word time stamps | A recording comes back as a timed transcript                       |
-| 2.3 Content and fluency | Alignment to the expected text, key-point coverage, speech rate, pauses and hesitations                              | Read Aloud and Repeat Sentence get content and fluency scores      |
-| 2.4 Pronunciation       | wav2vec2 phoneme model, goodness of pronunciation per phoneme, word colours and sound hints                          | Words are coloured good, average or poor with named sounds         |
-| 2.5 Speaking results    | Result screen: coloured transcript, waveform with pauses, side-by-side playback, tips; all 7 Speaking types          | Every Speaking type returns an explained result within 15 seconds  |
-| 2.6 Writing scoring     | Self-hosted LanguageTool for grammar, vocabulary range, template-overuse check, errors marked inline                 | Essays and summaries show grammar errors in place                  |
-| 2.7 Listening audio     | Text-to-speech for the 130 listening items, with sidecar metadata                                                    | Every Listening and Speaking item has audio                        |
-| 2.8 Limits and fallback | Fair daily limit on server scoring, on-device fallback, 30-day audio retention and delete                            | Over the limit, scoring switches to on-device with a clear message |
+| Step                    | What ships                                                                                                           | Done when                                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 2.1 Recorder            | Exam-style status box (countdown, Recording, Completed), level check, Opus encoding, upload with consent             | A recording reaches storage and can be replayed                                                                          |
+| 2.2 Speech service      | `services/speech` (Python, FastAPI), job queue (Valkey + BullMQ), faster-whisper transcription with word time stamps | A recording comes back as a timed transcript                                                                             |
+| 2.3 Content and fluency | Alignment to the expected text, key-point coverage, speech rate, pauses and hesitations                              | Read Aloud and Repeat Sentence get content and fluency scores                                                            |
+| 2.4 Pronunciation       | wav2vec2 phoneme model, goodness of pronunciation per phoneme, word colours and sound hints                          | Words are coloured good, average or poor with named sounds                                                               |
+| 2.5 Speaking results    | Result screen: coloured transcript, waveform with pauses, side-by-side playback, tips; all 7 Speaking types          | Every Speaking type returns an explained result within 15 seconds                                                        |
+| 2.6 Writing scoring     | Done                                                                                                                 | Grammar from self-hosted LanguageTool, marked in place with suggestions; content and range still compare with the sample |
+| 2.7 Listening audio     | Text-to-speech for the 130 listening items, with sidecar metadata                                                    | Every Listening and Speaking item has audio                                                                              |
+| 2.8 Limits and fallback | Fair daily limit on server scoring, on-device fallback, 30-day audio retention and delete                            | Over the limit, scoring switches to on-device with a clear message                                                       |
 
 ## Phase 3: mock tests
 

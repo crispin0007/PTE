@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import type { Question } from '@openpte/schema';
 import { SCORING_RULES, type ScoreResult, type WritingResult } from '@openpte/scoring';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
+import { GrammarMarks } from './GrammarMarks.tsx';
 import type { TypeDef } from '../content/catalog.ts';
 import { SKILL_META } from '../content/guide.ts';
 import { recordAttempt } from '../practice/history.ts';
@@ -57,6 +58,12 @@ function Result({ result, skill }: { result: ScoreResult; skill: TypeDef['skill'
             ))}
           </tbody>
         </table>
+      )}
+      {'grammar' in result && 'text' in result && (
+        <GrammarMarks
+          text={(result as unknown as { text: string }).text}
+          issues={(result as unknown as WritingResult).grammar!}
+        />
       )}
       <div className="text-sm">
         <p className="font-semibold">How this was scored</p>

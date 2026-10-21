@@ -7,6 +7,7 @@ import { adminRoutes } from './admin.ts';
 import { assignmentRoutes } from './assignments.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
+import { grammarRoutes, type GrammarClient } from './grammar.ts';
 import { instituteRoutes, type InstituteOptions } from './institutes.ts';
 import { recordingRoutes, type ScoringOptions } from './recordings.ts';
 import type { Storage } from './storage.ts';
@@ -26,6 +27,8 @@ export type AppOptions = {
   scoring?: ScoringOptions;
   /** Institutes, classes and students. Defaults to anyone may create an institute. */
   institutes?: InstituteOptions;
+  /** Grammar checking of Writing answers; off without it. */
+  grammar?: GrammarClient;
 };
 
 const AttemptIn = z.strictObject({
@@ -88,6 +91,7 @@ export async function buildApp({
   storage,
   scoring,
   institutes = { creation: 'anyone' },
+  grammar,
 }: AppOptions) {
   const app = Fastify({ logger });
   const anyOrigin = corsOrigin === '*';
@@ -157,11 +161,14 @@ export async function buildApp({
     return row.data;
   });
 
+  if (grammar) await app.register(grammarRoutes(grammar));
+
   app.get('/v1/auth/config', async () => ({
     accounts: !!auth,
     google: !!auth && googleEnabled,
     recordings: !!auth && !!storage,
     speechScoring: !!auth && !!storage && !!scoring,
+    grammar: !!grammar,
   }));
 
   if (auth) {

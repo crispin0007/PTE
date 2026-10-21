@@ -36,6 +36,7 @@ describe('accounts', () => {
       google: false,
       recordings: false,
       speechScoring: false,
+      grammar: false,
     });
   });
 

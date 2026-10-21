@@ -8,7 +8,7 @@ Things only crispin can do or decide. The build keeps going around them; each it
    started because your account is locked due to a billing issue." Open GitHub > Settings > Billing
    and plans, clear the failed payment or spending limit, then re-run the latest workflow. Public
    repos get Actions free once the lock is gone. Blocks: CI checks and the Pages deploy. Everything
-   was tested here instead: 70 unit tests, 68 browser tests on phone and desktop, lint clean.
+   was tested here instead: 74 unit tests, 68 browser tests on phone and desktop, lint clean.
 2. **Turn on GitHub Pages.** Settings > Pages > Source: GitHub Actions. Blocks: the public demo link.
 3. **Hosting accounts.** Oracle Cloud Always Free signup and a Cloudflare account. Blocks: running the
    API and database anywhere but a laptop.
@@ -26,8 +26,9 @@ Things only crispin can do or decide. The build keeps going around them; each it
    blocked in the build machine), so it was tested with a fake engine. On your machine or server,
    `docker compose up speech` downloads the model on first start. It needs about 2 GB of RAM for the
    `small` model. Blocks: real speaking scores.
-9. **Grammar checking (2.6).** Needs a LanguageTool server (free, self-hosted, about 1 GB RAM).
-   Say yes and it goes into Docker Compose next.
+9. **Grammar checking (2.6).** Built and tested against a stand-in; Docker Compose now includes a
+   LanguageTool container (about 1 GB of memory). Nothing to do unless the server is small, in
+   which case remove the `languagetool` service.
 
 ## To decide
 

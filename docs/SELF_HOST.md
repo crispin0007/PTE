@@ -1,13 +1,15 @@
 # Self-hosting openpte
 
 This guide sets up openpte on one server for a coaching centre or for many institutes. Everything
-runs in Docker: PostgreSQL, the API, the speech scoring service, the web app and (optionally)
-Caddy for HTTPS.
+runs in Docker: PostgreSQL, the API, the speech scoring service, LanguageTool for grammar, the web
+app and (optionally) Caddy for HTTPS.
 
 ## What you need
 
 - A Linux server with Docker and the Compose plugin. 2 CPU cores and 4 GB of RAM run everything,
-  including speech scoring. Without speech scoring, 1 GB is enough.
+  including speech scoring and grammar checking; 8 GB gives room to grow. To run on 1 GB, remove
+  the `speech` and `languagetool` services: speaking is then self-checked and writing is scored
+  for form and spelling only.
 - About 5 GB of disk to start: the app, the Whisper model (about 250 MB) and room for recordings.
 - For a public site: two DNS names pointing at the server, for example `pte.example.com` for the
   app and `api.pte.example.com` for the API.

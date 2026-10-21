@@ -1,7 +1,8 @@
 /**
  * Writing checks that can be scored without a language model: form (length, one sentence, layout)
- * and spelling, following the trait bands in Pearson's Score Guide. Content, grammar, vocabulary
- * and the other traits need the language checker and are reported as not scored yet.
+ * and spelling, following the trait bands in Pearson's Score Guide. Grammar is scored when a
+ * grammar checker (LanguageTool) is available. Content, vocabulary and the other traits need a
+ * language model and are reported as not scored yet.
  */
 import { wordCount } from '@openpte/schema/text';
 import type { ScoreResult } from './objective.ts';
@@ -17,7 +18,21 @@ export type Trait = {
   note: string;
 };
 
-export type WritingResult = ScoreResult & { traits: Trait[]; words: number };
+export type WritingResult = ScoreResult & {
+  traits: Trait[];
+  words: number;
+  /** Grammar issues found, when a grammar checker ran. */
+  grammar?: GrammarIssue[];
+};
+
+/** One problem a grammar checker reported, as character offsets into the answer. */
+export type GrammarIssue = {
+  offset: number;
+  length: number;
+  message: string;
+  replacements: string[];
+  category: string;
+};
 
 /** Counts sentences by their end punctuation. A trailing fragment without a full stop counts too. */
 export function sentenceCount(text: string): number {
@@ -83,6 +98,35 @@ function spellingTrait(misspelled: string[]): Trait {
   };
 }
 
+/**
+ * Grammar band: 2 for no errors, 1 for a few, 0 for many. "A few" scales with length: one error
+ * in a one-sentence summary, up to 2 in a spoken-text summary and up to 4 in an essay.
+ */
+const FEW_ERRORS: Record<WritingRule, number> = {
+  writing_swt: 1,
+  writing_sst: 2,
+  writing_essay: 4,
+};
+
+export function grammarTrait(rule: WritingRule, issues: GrammarIssue[]): Trait {
+  const n = issues.length;
+  const score = n === 0 ? 2 : n <= FEW_ERRORS[rule] ? 1 : 0;
+  const list = issues
+    .slice(0, 3)
+    .map((i) => i.message.replace(/\.$/, ''))
+    .join('; ');
+  return {
+    name: 'Grammar',
+    score,
+    max: 2,
+    scored: true,
+    note:
+      n === 0
+        ? 'no grammar errors found'
+        : `${n} possible error${n === 1 ? '' : 's'}: ${list}${n > 3 ? '; …' : ''}`,
+  };
+}
+
 const LATER: Record<WritingRule, [string, number][]> = {
   writing_swt: [
     ['Content', 4],
@@ -103,14 +147,21 @@ const LATER: Record<WritingRule, [string, number][]> = {
   ],
 };
 
-export function scoreWriting(rule: WritingRule, text: string, misspelled: string[]): WritingResult {
+export function scoreWriting(
+  rule: WritingRule,
+  text: string,
+  misspelled: string[],
+  grammar?: GrammarIssue[],
+): WritingResult {
   const words = wordCount(text);
   const form = formTrait(rule, text, words);
   const traits: Trait[] = [form];
   if (rule !== 'writing_swt') traits.push(spellingTrait(misspelled));
+  if (grammar) traits.push(grammarTrait(rule, grammar));
   // Pearson does not score the other traits when form is 0; neither do we.
   if (form.score === 0) for (const t of traits.slice(1)) Object.assign(t, { score: 0 });
   for (const [name, max] of LATER[rule]) {
+    if (grammar && name === 'Grammar') continue;
     traits.push({
       name,
       score: 0,
@@ -130,5 +181,6 @@ export function scoreWriting(rule: WritingRule, text: string, misspelled: string
     working,
     traits,
     words,
+    ...(grammar ? { grammar } : {}),
   };
 }

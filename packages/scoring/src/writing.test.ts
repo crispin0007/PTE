@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { layoutProblem, scoreWriting, sentenceCount } from './writing.ts';
+import { grammarTrait, layoutProblem, scoreWriting, sentenceCount } from './writing.ts';
 
 const words = (n: number) => Array.from({ length: n }, () => 'word').join(' ') + '.';
 
@@ -46,5 +46,37 @@ describe('writing form and spelling', () => {
       /punctuation/,
     );
     expect(layoutProblem('A normal sentence, written well.')).toBeNull();
+  });
+});
+
+describe('grammar trait', () => {
+  const issue = (message: string) => ({
+    offset: 0,
+    length: 2,
+    message,
+    replacements: [],
+    category: 'GRAMMAR',
+  });
+  const essay = Array.from({ length: 230 }, (_, i) => (i % 12 === 11 ? 'end.' : 'word')).join(' ');
+
+  it('is scored only when the checker ran, replacing the not-yet-scored line', () => {
+    const without = scoreWriting('writing_essay', essay, []);
+    expect(without.traits.find((t) => t.name === 'Grammar')).toMatchObject({ scored: false });
+    const clean = scoreWriting('writing_essay', essay, [], []);
+    expect(clean.traits.filter((t) => t.name === 'Grammar')).toEqual([
+      expect.objectContaining({ scored: true, score: 2, max: 2 }),
+    ]);
+    expect(clean.max).toBe(without.max + 2);
+  });
+
+  it('bands by number of errors, scaled to the task', () => {
+    expect(grammarTrait('writing_swt', [issue('a')]).score).toBe(1);
+    expect(grammarTrait('writing_swt', [issue('a'), issue('b')]).score).toBe(0);
+    expect(
+      grammarTrait('writing_essay', [issue('a'), issue('b'), issue('c'), issue('d')]).score,
+    ).toBe(1);
+    const many = grammarTrait('writing_essay', ['a', 'b', 'c', 'd', 'e'].map(issue));
+    expect(many.score).toBe(0);
+    expect(many.note).toBe('5 possible errors: a; b; c; …');
   });
 });

@@ -8,6 +8,7 @@ import { connect } from './db/postgres.ts';
 import { consoleMailer, smtpMailer } from './mail.ts';
 import { purgeExpired } from './recordings.ts';
 import { seed } from './seed.ts';
+import { httpLanguageTool } from './grammar.ts';
 import { httpSpeech } from './speech.ts';
 import { diskStorage } from './storage.ts';
 
@@ -62,6 +63,7 @@ const app = await buildApp({
         dailyLimit: config.SPEECH_DAILY_LIMIT,
       }
     : undefined,
+  grammar: config.LANGUAGETOOL_URL ? httpLanguageTool(config.LANGUAGETOOL_URL) : undefined,
   institutes: {
     creation: config.INSTITUTE_CREATION,
     single: config.SINGLE_INSTITUTE_NAME ? { name: config.SINGLE_INSTITUTE_NAME } : undefined,
