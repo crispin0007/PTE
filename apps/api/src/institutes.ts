@@ -341,6 +341,14 @@ export function instituteRoutes(db: Db, auth: Auth, opts: InstituteOptions) {
         if (!self) return;
         const m = await guard(req, reply, self === req.params.userId ? 'student' : 'owner');
         if (!m) return;
+        // An institute always keeps at least one owner.
+        if ((await roleIn(req.params.id, req.params.userId)) === 'owner') {
+          const [{ n } = { n: 0 }] = await db
+            .select({ n: sql<number>`count(*)::int` })
+            .from(memberships)
+            .where(and(eq(memberships.instituteId, req.params.id), eq(memberships.role, 'owner')));
+          if (n <= 1) return reply.code(400).send({ error: 'make someone else an owner first' });
+        }
         const ids = db
           .select({ id: classes.id })
           .from(classes)

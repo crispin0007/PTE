@@ -56,6 +56,8 @@ export function grammarRoutes(grammar: GrammarClient, perHour = 120) {
       if (text.length > MAX_GRAMMAR_CHARS)
         return reply.code(413).send({ error: `at most ${MAX_GRAMMAR_CHARS} characters` });
       const now = Date.now();
+      if (seen.size > 10_000)
+        for (const [ip, w] of seen) if (now - w.since >= 3_600_000) seen.delete(ip);
       const hit = seen.get(req.ip);
       const window = hit && now - hit.since < 3_600_000 ? hit : { n: 0, since: now };
       if (window.n >= perHour)

@@ -56,11 +56,13 @@ describe('institutes', () => {
       await call(ownerB, 'POST', '/v1/institutes', { name: 'Kathmandu English Centre' })
     ).json();
     expect(again.slug).toBe('kathmandu-english-centre-2');
-    await call(
+    // Its only owner cannot leave it ownerless.
+    const left = await call(
       ownerB,
       'DELETE',
       `/v1/institutes/${again.id}/members/${(await call(ownerB, 'GET', '/v1/me')).json().id}`,
     );
+    expect(left.json().error).toBe('make someone else an owner first');
 
     const cls = await call(ownerA, 'POST', `/v1/institutes/${a.id}/classes`, {
       name: 'Morning batch',
@@ -130,16 +132,16 @@ describe('institutes', () => {
     ).toBe(403);
 
     // Lists only ever show the caller's own institutes.
-    expect((await call(ownerB, 'GET', '/v1/me/institutes')).json().institutes).toEqual([
-      {
-        id: b.id,
-        slug: 'pokhara-pte',
-        name: 'Pokhara PTE',
-        role: 'owner',
-        brandColor: null,
-        logoVersion: null,
-      },
-    ]);
+    const listed = (await call(ownerB, 'GET', '/v1/me/institutes')).json().institutes;
+    expect(listed.map((x: { id: string }) => x.id).sort()).toEqual([b.id, again.id].sort());
+    expect(listed).toContainEqual({
+      id: b.id,
+      slug: 'pokhara-pte',
+      name: 'Pokhara PTE',
+      role: 'owner',
+      brandColor: null,
+      logoVersion: null,
+    });
   });
 
   it('owners manage roles; teachers import rosters; members can leave', async () => {
