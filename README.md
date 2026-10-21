@@ -10,15 +10,18 @@ processed on your own device.
 
 Working today:
 
-- **Practice** for all 22 question types. Reading, Listening and Writing are scored with the rule and
-  arithmetic shown; Speaking is recorded with exam timing, then self-checked or scored by the speech service.
+- **Practice** for all 22 question types. Reading and Listening are scored with the rule and arithmetic
+  shown; Writing is scored for form, spelling and grammar (LanguageTool), with issues marked in place;
+  Speaking is recorded with exam timing, then self-checked or scored by the speech service.
 - **Mock tests**: full, mini, sectional or custom, timed in test order with no going back, and a printable
   score report.
 - **Today and Progress** from your history on the device, synced to an account when you sign in.
-- **Accounts** by email link or Google, a **question bank admin** with two-reviewer publishing, and
-  **institutes** with classes, invite codes, CSV rosters and a class progress table.
+- **Accounts** by email link or Google, and a **question bank admin** with two-reviewer publishing.
+- **Institutes**: classes with invite codes and CSV rosters, assignments with due dates, a class progress
+  table, a marking queue where teachers mark answers students send, and the institute's own colour and logo.
+- **Self-hosting** with Docker Compose, HTTPS and backups ([docs/SELF_HOST.md](docs/SELF_HOST.md)).
 
-Next: pronunciation scoring, grammar checking, generated listening audio, assignments and institute branding.
+Next: pronunciation scoring with a phoneme model and generated listening audio.
 The step-by-step plan and progress are in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
 
 ## Run it locally
