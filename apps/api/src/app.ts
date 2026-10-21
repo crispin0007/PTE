@@ -1,14 +1,67 @@
 import cors from '@fastify/cors';
+import { fromNodeHeaders } from 'better-auth/node';
 import { and, asc, count, eq, inArray } from 'drizzle-orm';
-import Fastify from 'fastify';
+import Fastify, { type FastifyInstance, type FastifyRequest } from 'fastify';
+import { z } from 'zod';
+import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
 
 export type AppOptions = {
   db: Db;
   includeUnreviewed?: boolean;
+  /** Comma-separated origins, or * for read-only public access without cookies. */
   corsOrigin?: string;
   logger?: boolean;
+  /** Accounts are on when an auth instance is given. */
+  auth?: Auth;
+  googleEnabled?: boolean;
 };
+
+const AttemptIn = z.strictObject({
+  clientId: z.string().min(1).max(100),
+  questionId: z.string().min(1).max(200),
+  type: z.string().regex(/^[a-z_]+$/),
+  skill: z.enum(['speaking', 'writing', 'reading', 'listening']),
+  score: z.number().int().min(0).max(1000),
+  max: z.number().int().min(0).max(1000),
+  at: z.number().int().positive(),
+});
+const AttemptsIn = z.strictObject({ attempts: z.array(AttemptIn).max(5000) });
+const StateIn = z.strictObject({
+  bookmarks: z.array(z.string().min(1).max(200)).max(5000),
+  settings: z.record(z.string(), z.unknown()),
+});
+
+/** Forwards /api/auth/* to Better Auth, which speaks the web Fetch API. */
+function authRoutes(auth: Auth) {
+  return async (app: FastifyInstance) => {
+    // Better Auth parses bodies itself, so keep them as raw strings in this scope.
+    app.addContentTypeParser('application/json', { parseAs: 'string' }, (_req, body, done) =>
+      done(null, body),
+    );
+    app.route({
+      method: ['GET', 'POST'],
+      url: '/api/auth/*',
+      handler: async (req, reply) => {
+        const url = new URL(req.url, `http://${req.headers.host ?? 'localhost'}`);
+        const response = await auth.handler(
+          new Request(url, {
+            method: req.method,
+            headers: fromNodeHeaders(req.headers),
+            body: req.method === 'POST' && typeof req.body === 'string' ? req.body : undefined,
+          }),
+        );
+        reply.status(response.status);
+        response.headers.forEach((value, key) => {
+          if (key !== 'set-cookie') reply.header(key, value);
+        });
+        const cookies = response.headers.getSetCookie();
+        if (cookies.length) reply.header('set-cookie', cookies);
+        return reply.send(response.body ? await response.text() : null);
+      },
+    });
+  };
+}
 
 /**
  * The HTTP API. Version 1 serves the question bank read-only; accounts and attempts are added in
@@ -19,10 +72,15 @@ export async function buildApp({
   includeUnreviewed = false,
   corsOrigin = '*',
   logger = false,
+  auth,
+  googleEnabled = false,
 }: AppOptions) {
   const app = Fastify({ logger });
+  const anyOrigin = corsOrigin === '*';
   await app.register(cors, {
-    origin: corsOrigin === '*' ? true : corsOrigin.split(',').map((o) => o.trim()),
+    origin: anyOrigin ? true : corsOrigin.split(',').map((o) => o.trim()),
+    // Cookies only travel to origins that are listed by name.
+    credentials: !anyOrigin,
   });
 
   const visible = includeUnreviewed ? ['published', 'in_review'] : ['published'];
@@ -83,6 +141,92 @@ export async function buildApp({
     if (!row) return reply.code(404).send({ error: 'question not found' });
     return row.data;
   });
+
+  app.get('/v1/auth/config', async () => ({ accounts: !!auth, google: !!auth && googleEnabled }));
+
+  if (auth) {
+    await app.register(authRoutes(auth));
+    const { attempts, userState } = schema;
+
+    const userOf = async (req: FastifyRequest) => {
+      const s = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) });
+      return s?.user ?? null;
+    };
+
+    app.get('/v1/me', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      return { id: u.id, name: u.name, email: u.email, role: (u as { role?: string }).role };
+    });
+
+    app.get('/v1/me/attempts', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      const rows = await db
+        .select()
+        .from(attempts)
+        .where(eq(attempts.userId, u.id))
+        .orderBy(asc(attempts.answeredAt));
+      return {
+        attempts: rows.map((r) => ({
+          clientId: r.clientId,
+          questionId: r.questionId,
+          type: r.type,
+          skill: r.skill,
+          score: r.score,
+          max: r.max,
+          at: r.answeredAt.getTime(),
+        })),
+      };
+    });
+
+    app.post('/v1/me/attempts', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      const parsed = AttemptsIn.safeParse(req.body);
+      if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues[0]?.message });
+      const rows = parsed.data.attempts.map((a) => ({
+        userId: u.id,
+        clientId: a.clientId,
+        questionId: a.questionId,
+        type: a.type,
+        skill: a.skill,
+        score: Math.min(a.score, a.max),
+        max: a.max,
+        answeredAt: new Date(a.at),
+      }));
+      let inserted = 0;
+      for (let i = 0; i < rows.length; i += 500) {
+        const done = await db
+          .insert(attempts)
+          .values(rows.slice(i, i + 500))
+          .onConflictDoNothing()
+          .returning({ id: attempts.id });
+        inserted += done.length;
+      }
+      return { inserted };
+    });
+
+    app.get('/v1/me/state', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      const [row] = await db.select().from(userState).where(eq(userState.userId, u.id));
+      return { bookmarks: row?.bookmarks ?? [], settings: row?.settings ?? {} };
+    });
+
+    app.put('/v1/me/state', async (req, reply) => {
+      const u = await userOf(req);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      const parsed = StateIn.safeParse(req.body);
+      if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues[0]?.message });
+      const row = { userId: u.id, ...parsed.data, updatedAt: new Date() };
+      await db
+        .insert(userState)
+        .values(row)
+        .onConflictDoUpdate({ target: userState.userId, set: row });
+      return parsed.data;
+    });
+  }
 
   return app;
 }
