@@ -30,15 +30,19 @@ Things only crispin can do or decide. The build keeps going around them; each it
    LanguageTool container (about 1 GB of memory). Nothing to do unless the server is small, in
    which case remove the `languagetool` service.
 
+10. **Pronunciation scoring (2.4).** Needs a wav2vec2 phoneme model (about 1.2 GB) that cannot be
+    downloaded in the build machine, and a server with about 2 GB more memory. Until then Whisper's
+    word confidence stands in. Say whether the server can carry it.
+
 ## To decide
 
-10. **Which countries are the first students in?** Default until you say otherwise: Nepal first, data
+11. **Which countries are the first students in?** Default until you say otherwise: Nepal first, data
     stored in Mumbai or Hyderabad.
-11. **Keep the Phase 0 code?** Assumed yes; everything since builds on it.
-12. **Streaks, or only a daily goal?** Built with a daily goal only, no streak (gentler, no guilt).
-13. **Text-to-speech voices.** Check the licences of the Piper or Kokoro voices before audio is
+12. **Keep the Phase 0 code?** Assumed yes; everything since builds on it.
+13. **Streaks, or only a daily goal?** Built with a daily goal only, no streak (gentler, no guilt).
+14. **Text-to-speech voices.** Check the licences of the Piper or Kokoro voices before audio is
     generated for real. Until then the browser's own voice reads listening questions.
-14. **Who may start an institute on the hosted site?** Default: anyone signed in (it is free). Set
+15. **Who may start an institute on the hosted site?** Default: anyone signed in (it is free). Set
     `INSTITUTE_CREATION=admin` to allow only admins. A self-hosted coaching centre sets
     `SINGLE_INSTITUTE_NAME` instead.
 
