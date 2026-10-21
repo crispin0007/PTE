@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ANSWERABLE } from '../../answer/registry.ts';
+import { isScored } from '../../answer/registry.ts';
 import { includesUnreviewed, itemTypes, questionCount } from '../../content/catalog.ts';
 import { SKILL_META, TYPE_GUIDE } from '../../content/guide.ts';
 import { questionLabel, typeLabel } from '../../content/labels.ts';
@@ -15,7 +15,7 @@ export function Today() {
   const today = answeredOn(attempts, now);
   const goal = settings.dailyGoal;
   const done = today >= goal;
-  const answerable = itemTypes.filter((t) => ANSWERABLE[t.id] && questionCount(t.id) > 0);
+  const answerable = itemTypes.filter((t) => isScored(t.id) && questionCount(t.id) > 0);
   const suggested = suggestTypes(
     attempts,
     answerable.map((t) => t.id),

@@ -14,16 +14,6 @@ async function expectAccessible(page: Page) {
   ).toEqual([]);
 }
 
-// One sample question per skill.
-const SAMPLES = [
-  {
-    skill: 'speaking',
-    type: 'speaking_describe_image',
-    id: 'speaking-describe-image-0001',
-    expectText: /Describe the image/,
-  },
-];
-
 test('home page shows the trademark notice and is accessible', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
@@ -37,18 +27,6 @@ test('practice menu lists all 22 question types', async ({ page }) => {
   await expect(page.locator('main li a')).toHaveCount(22);
   await expectAccessible(page);
 });
-
-for (const s of SAMPLES) {
-  test(`a ${s.skill} question renders with footer and score disclaimer`, async ({ page }) => {
-    await page.goto(`/#/practice/${s.type}/${s.id}`);
-    const question = page.getByTestId('question');
-    await expect(question).toBeVisible();
-    await expect(question).toContainText(s.expectText);
-    await expect(page.getByTestId('score-disclaimer')).toContainText('not an official PTE score');
-    await expect(page.getByTestId('trademark-notice')).toContainText(TRADEMARK);
-    await expectAccessible(page);
-  });
-}
 
 const q = (type: string, n = 1) => `/#/practice/${type}/${type.replaceAll('_', '-')}-000${n}`;
 
@@ -260,6 +238,38 @@ test('progress shows an estimate after enough answers', async ({ page }) => {
   await expectAccessible(page);
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Mistakes to retry' })).toBeVisible();
+});
+
+test.describe('speaking questions can be recorded and self-checked', () => {
+  test('describe image: prepare, record, replay, key points', async ({ page }) => {
+    await page.goto(q('speaking_describe_image'));
+    await expect(page.getByTestId('question')).toContainText('Describe the image');
+    const recorder = page.getByTestId('recorder');
+    await page.getByRole('button', { name: 'Start', exact: true }).click();
+    await expect(recorder).toHaveAttribute('data-phase', 'prep');
+    await page.getByRole('button', { name: 'Skip preparation' }).click();
+    await expect(recorder).toHaveAttribute('data-phase', 'recording');
+    await expectAccessible(page);
+    await page.waitForTimeout(1200);
+    await page.getByRole('button', { name: 'Finish' }).click();
+    await expect(recorder).toHaveAttribute('data-phase', 'done');
+    const check = page.getByTestId('self-check');
+    await expect(check.getByLabel('Your recording')).toBeVisible();
+    await check.getByRole('checkbox').first().check();
+    await expect(check).toContainText(/1 of \d+ covered/);
+    await expect(check).toContainText('stays on this device');
+    await expect(page.getByTestId('trademark-notice')).toContainText(TRADEMARK);
+    await expectAccessible(page);
+  });
+
+  test('repeat sentence records straight away and stops at the time limit', async ({ page }) => {
+    await page.goto(q('speaking_repeat_sentence'));
+    await page.getByRole('button', { name: 'Start recording' }).click();
+    await expect(page.getByTestId('recorder')).toHaveAttribute('data-phase', 'done', {
+      timeout: 20_000,
+    });
+    await expect(page.getByTestId('self-check')).toContainText('The sentence');
+  });
 });
 
 test('describe-image chart loads', async ({ page }) => {

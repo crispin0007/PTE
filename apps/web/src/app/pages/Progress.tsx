@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { SKILLS } from '@openpte/schema/constants';
-import { ANSWERABLE } from '../../answer/registry.ts';
+import { isScored } from '../../answer/registry.ts';
 import { DailyChart } from '../../components/DailyChart.tsx';
 import { Meter } from '../../components/Meter.tsx';
 import { ScoreDisclaimer } from '../../components/ScoreDisclaimer.tsx';
@@ -81,7 +81,7 @@ export function Progress() {
         </h2>
         {SKILLS.map((s) => {
           const a = bySkill.get(s);
-          const ready = itemTypes.some((t) => t.skill === s && ANSWERABLE[t.id]);
+          const ready = itemTypes.some((t) => t.skill === s && isScored(t.id));
           return (
             <Meter
               key={s}
@@ -121,7 +121,7 @@ export function Progress() {
             </thead>
             <tbody className="divide-y divide-line">
               {itemTypes
-                .filter((t) => ANSWERABLE[t.id])
+                .filter((t) => isScored(t.id))
                 .map((t) => {
                   const a = byType.get(t.id);
                   return (

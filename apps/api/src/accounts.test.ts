@@ -31,7 +31,11 @@ const attempt = (clientId: string, score = 1) => ({
 describe('accounts', () => {
   it('reports that accounts are on', async () => {
     const a = await app();
-    expect((await a.inject('/v1/auth/config')).json()).toEqual({ accounts: true, google: false });
+    expect((await a.inject('/v1/auth/config')).json()).toEqual({
+      accounts: true,
+      google: false,
+      recordings: false,
+    });
   });
 
   it('signs in by email link and returns the user as a learner', async () => {

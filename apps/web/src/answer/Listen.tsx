@@ -5,7 +5,7 @@ import { Section } from './parts.tsx';
 const canSpeak = () => typeof window !== 'undefined' && 'speechSynthesis' in window;
 
 /** A short beep, like the one that replaces the last word in Select Missing Word. */
-function beep() {
+export function beep() {
   try {
     const ctx = new AudioContext();
     const osc = ctx.createOscillator();

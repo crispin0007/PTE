@@ -12,6 +12,8 @@ export type AnswerViewProps<Q, R> = {
 
 /** Everything the exam frame needs to run one question type. */
 export type Answerable<K extends QuestionType, R> = {
+  /** Answered and self-checked, not scored yet (Speaking until the speech service). */
+  unscored?: boolean;
   initial: (q: QuestionOf<K>) => R;
   /** May be async, e.g. Writing loads the spelling dictionaries on first use. */
   score: (q: QuestionOf<K>, r: R) => ScoreResult | Promise<ScoreResult>;

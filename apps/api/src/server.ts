@@ -6,7 +6,9 @@ import { loadConfig } from './config.ts';
 import { schema } from './db/index.ts';
 import { connect } from './db/postgres.ts';
 import { consoleMailer, smtpMailer } from './mail.ts';
+import { purgeExpired } from './recordings.ts';
 import { seed } from './seed.ts';
+import { diskStorage } from './storage.ts';
 
 const config = loadConfig();
 const { db, close } = await connect(config.DATABASE_URL);
@@ -37,6 +39,14 @@ const auth =
         google,
         adminEmails: config.ADMIN_EMAILS,
       });
+const storage = diskStorage(config.RECORDINGS_DIR);
+const purge = () =>
+  purgeExpired(db, storage).then(
+    (n) => n && console.log(`deleted ${n} expired recordings`),
+    (e: Error) => console.error(`purging recordings failed: ${e.message}`),
+  );
+await purge();
+setInterval(() => void purge(), 60 * 60 * 1000).unref();
 const app = await buildApp({
   db,
   includeUnreviewed: config.INCLUDE_UNREVIEWED,
@@ -44,6 +54,7 @@ const app = await buildApp({
   logger: true,
   auth,
   googleEnabled: !!google,
+  storage,
 });
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
   process.on(signal, () => {

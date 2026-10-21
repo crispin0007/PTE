@@ -99,10 +99,12 @@ function Attempt({
   const navigate = useNavigate();
   const [response, setResponse] = useState<unknown>(() => answerable.initial(question));
   const [result, setResult] = useState<ScoreResult | null>(null);
-  const elapsed = useSeconds(result === null);
+  const unscored = !!answerable.unscored;
+  const elapsed = useSeconds(result === null && !unscored);
   const index = questions.findIndex((q) => q.id === question.id);
   const next = questions[index + 1];
-  const limit = def.timing.mode === 'per_item' ? def.timing.answer_s : null;
+  // Speaking has its own recorder clock, so the frame does not count down.
+  const limit = def.timing.mode === 'per_item' && !unscored ? def.timing.answer_s : null;
   const remaining = limit === null ? null : limit - elapsed;
   const submitRef = useRef<() => Promise<void>>(async () => {});
 
@@ -151,15 +153,17 @@ function Attempt({
             ))}
           </select>
         </label>
-        <p
-          role="timer"
-          aria-label={remaining === null ? 'Time spent' : 'Time left'}
-          className={`font-mono text-lg font-semibold tabular-nums ${
-            remaining !== null && remaining <= 10 && !result ? 'text-bad' : ''
-          }`}
-        >
-          {clock(remaining ?? elapsed)}
-        </p>
+        {!unscored && (
+          <p
+            role="timer"
+            aria-label={remaining === null ? 'Time spent' : 'Time left'}
+            className={`font-mono text-lg font-semibold tabular-nums ${
+              remaining !== null && remaining <= 10 && !result ? 'text-bad' : ''
+            }`}
+          >
+            {clock(remaining ?? elapsed)}
+          </p>
+        )}
       </div>
 
       <View question={question} response={response} onChange={setResponse} review={!!result} />
@@ -167,7 +171,17 @@ function Attempt({
       {result && <Result result={result} skill={def.skill} />}
 
       <div className="flex flex-wrap gap-3">
-        {!result ? (
+        {unscored ? (
+          next && (
+            <button
+              type="button"
+              onClick={() => navigate(`/practice/${def.id}/${next.id}`)}
+              className="min-h-11 rounded-token bg-brand px-6 font-semibold text-brand-ink"
+            >
+              Next question
+            </button>
+          )
+        ) : !result ? (
           <button
             type="button"
             onClick={() => void submit()}

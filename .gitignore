@@ -5,3 +5,6 @@ test-results
 *.tsbuildinfo
 .DS_Store
 /schema
+
+# Saved recordings in local development
+/apps/api/data/

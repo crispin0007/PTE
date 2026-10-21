@@ -170,3 +170,25 @@ export const userState = pgTable('user_state', {
   settings: jsonb('settings').$type<Record<string, unknown>>().notNull().default({}),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
+
+/** Speaking answers a learner chose to save. Deleted after 30 days. */
+export const recordings = pgTable(
+  'recordings',
+  {
+    id: text('id').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    questionId: text('question_id').notNull(),
+    type: text('type').notNull(),
+    mime: text('mime').notNull(),
+    bytes: integer('bytes').notNull(),
+    storageKey: text('storage_key').notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+  },
+  (t) => [
+    index('recordings_user_idx').on(t.userId),
+    index('recordings_expiry_idx').on(t.expiresAt),
+  ],
+);

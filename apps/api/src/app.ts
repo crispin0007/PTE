@@ -6,6 +6,8 @@ import { z } from 'zod';
 import { adminRoutes } from './admin.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
+import { recordingRoutes } from './recordings.ts';
+import type { Storage } from './storage.ts';
 
 export type AppOptions = {
   db: Db;
@@ -16,6 +18,8 @@ export type AppOptions = {
   /** Accounts are on when an auth instance is given. */
   auth?: Auth;
   googleEnabled?: boolean;
+  /** Where saved recordings go; recordings are off without it. */
+  storage?: Storage;
 };
 
 const AttemptIn = z.strictObject({
@@ -75,6 +79,7 @@ export async function buildApp({
   logger = false,
   auth,
   googleEnabled = false,
+  storage,
 }: AppOptions) {
   const app = Fastify({ logger });
   const anyOrigin = corsOrigin === '*';
@@ -144,11 +149,16 @@ export async function buildApp({
     return row.data;
   });
 
-  app.get('/v1/auth/config', async () => ({ accounts: !!auth, google: !!auth && googleEnabled }));
+  app.get('/v1/auth/config', async () => ({
+    accounts: !!auth,
+    google: !!auth && googleEnabled,
+    recordings: !!auth && !!storage,
+  }));
 
   if (auth) {
     await app.register(authRoutes(auth));
     await app.register(adminRoutes(db, auth));
+    if (storage) await app.register(recordingRoutes(db, auth, storage));
     const { attempts, userState } = schema;
 
     const userOf = async (req: FastifyRequest) => {

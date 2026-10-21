@@ -40,6 +40,8 @@ const Env = z.object({
     .enum(['0', '1'])
     .default('1')
     .transform((v) => v === '1'),
+  /** Folder for saved speaking recordings. */
+  RECORDINGS_DIR: z.string().default('./data'),
   CONTENT_ROOT: z.string().default(new URL('../../../', import.meta.url).pathname),
 });
 

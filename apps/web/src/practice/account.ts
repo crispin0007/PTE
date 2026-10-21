@@ -7,7 +7,15 @@ export type AccountState =
   | { status: 'off' }
   | { status: 'loading' }
   | { status: 'guest'; google: boolean }
-  | { status: 'signed-in'; user: User; google: boolean; syncedAt: number | null; error?: string };
+  | {
+      status: 'signed-in';
+      user: User;
+      google: boolean;
+      /** Whether the server can store speaking recordings. */
+      recordings: boolean;
+      syncedAt: number | null;
+      error?: string;
+    };
 
 let account: AccountState = API_URL ? { status: 'loading' } : { status: 'off' };
 const listeners = new Set<() => void>();
@@ -52,6 +60,21 @@ export async function signInWithGoogle(): Promise<void> {
   const body = (await res.json()) as { url?: string };
   if (!res.ok || !body.url) throw new Error('Google sign-in is not available right now.');
   location.href = body.url;
+}
+
+/** Saves a speaking recording to the account, kept for 30 days. */
+export async function saveRecording(blob: Blob, questionId: string, type: string) {
+  const res = await fetch(
+    `${API_URL}/v1/me/recordings?questionId=${encodeURIComponent(questionId)}&type=${type}`,
+    {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'content-type': blob.type.split(';')[0] || 'audio/webm' },
+      body: blob,
+    },
+  );
+  if (!res.ok) throw new Error('Could not save the recording.');
+  return (await res.json()) as { id: string; expiresAt: number };
 }
 
 export async function signOut(): Promise<void> {
@@ -128,6 +151,7 @@ export async function startAccount() {
     const config = (await (await api('/v1/auth/config')).json()) as {
       accounts: boolean;
       google: boolean;
+      recordings?: boolean;
     };
     if (!config.accounts) return set({ status: 'off' });
     const me = await api('/v1/me');
@@ -136,6 +160,7 @@ export async function startAccount() {
       status: 'signed-in',
       user: (await me.json()) as User,
       google: config.google,
+      recordings: !!config.recordings,
       syncedAt: null,
     });
     await syncNow();
