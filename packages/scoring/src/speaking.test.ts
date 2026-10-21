@@ -94,6 +94,23 @@ describe('speaking scores', () => {
     expect(scoreSpeaking(ref, speech('a barometer')).score).toBe(0);
   });
 
+  it('fluent speech off the task does not earn fluency or pronunciation', () => {
+    const r = scoreSpeaking(
+      {
+        rule: 'speaking_read_aloud',
+        text: 'Coral reefs support a quarter of all marine species today.',
+      },
+      speech('nothing here matches any given words'),
+    );
+    expect(r.traits.map((t) => t.score)).toEqual([0, 0, 0]);
+    const partial = scoreSpeaking(
+      { rule: 'speaking_read_aloud', text: 'one two three four five six seven eight nine ten' },
+      speech('one two three four'),
+    );
+    // 4 of 10 words: fluency and pronunciation capped at 4.
+    expect(partial.traits.map((t) => t.score)).toEqual([4, 4, 4]);
+  });
+
   it('silence scores zero', () => {
     const r = scoreSpeaking(
       { rule: 'speaking_read_aloud', text: 'Hello there.' },

@@ -13,6 +13,8 @@ export type AccountState =
       google: boolean;
       /** Whether the server can store speaking recordings. */
       recordings: boolean;
+      /** Whether saved recordings can be scored by the speech service. */
+      speechScoring: boolean;
       syncedAt: number | null;
       error?: string;
     };
@@ -76,6 +78,21 @@ export async function saveRecording(blob: Blob, questionId: string, type: string
   if (!res.ok) throw new Error('Could not save the recording.');
   return (await res.json()) as { id: string; expiresAt: number };
 }
+
+/** Asks the server to score a saved recording. */
+export async function scoreRecording(id: string): Promise<SpeakingScore> {
+  const res = await fetch(`${API_URL}/v1/me/recordings/${id}/score`, {
+    method: 'POST',
+    credentials: 'include',
+  });
+  const body = (await res.json()) as { result?: SpeakingScore; error?: string };
+  if (!res.ok || !body.result) throw new Error(body.error ?? 'Scoring failed.');
+  return body.result;
+}
+
+export type SpeakingScore = import('@openpte/scoring').SpeakingResult & {
+  transcript: { word: string; start: number; end: number }[];
+};
 
 export async function signOut(): Promise<void> {
   await api('/api/auth/sign-out', { method: 'POST', body: '{}' });
@@ -152,6 +169,7 @@ export async function startAccount() {
       accounts: boolean;
       google: boolean;
       recordings?: boolean;
+      speechScoring?: boolean;
     };
     if (!config.accounts) return set({ status: 'off' });
     const me = await api('/v1/me');
@@ -161,6 +179,7 @@ export async function startAccount() {
       user: (await me.json()) as User,
       google: config.google,
       recordings: !!config.recordings,
+      speechScoring: !!config.speechScoring,
       syncedAt: null,
     });
     await syncNow();

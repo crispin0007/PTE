@@ -241,14 +241,27 @@ export function scoreSpeaking(ref: Reference, t: TimedTranscript): SpeakingResul
         note: `${said} of ${reference.length} words said correctly, in order`,
       });
     }
-    traits.push(pronunciationTrait(t));
-    traits.push({
+    const pron = pronunciationTrait(t);
+    const flu: Trait = {
       name: 'Oral fluency',
       score: fluency.score,
       max: 5,
       scored: true,
       note: fluency.note,
-    });
+    };
+    // Fluent, clear speech only counts when it answers the task: Pearson scores the other traits
+    // 0 when content is 0, and we scale them down when less than half the content is there.
+    const c = traits[0]!;
+    const share = c.max ? c.score / c.max : 0;
+    if (share < 0.5) {
+      const cap = c.score === 0 ? 0 : Math.floor(share * 10);
+      for (const x of [pron, flu])
+        if (x.scored && x.score > cap) {
+          x.score = cap;
+          x.note += '; limited because less than half of the content was there';
+        }
+    }
+    traits.push(pron, flu);
   }
 
   const counted = traits.filter((x) => x.scored);

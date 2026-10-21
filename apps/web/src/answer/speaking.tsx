@@ -62,10 +62,6 @@ function SelfCheck({
       <audio controls src={recording.url} className="w-full" aria-label="Your recording" />
       <p className="text-sm text-muted">{recording.seconds} seconds recorded.</p>
       {children}
-      <p className="rounded-token bg-sunken px-3 py-2 text-sm">
-        Automatic speaking scores (content, fluency and pronunciation, word by word) are being
-        built. Until then, compare your answer with the reference above.
-      </p>
       <SaveRecording recording={recording} questionId={questionId} type={type} />
     </section>
   );
