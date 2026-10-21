@@ -1,9 +1,11 @@
 import { randomUUID } from 'node:crypto';
 import { fromNodeHeaders } from 'better-auth/node';
-import { and, desc, eq, lt } from 'drizzle-orm';
+import { and, desc, eq, gte, isNotNull, lt, sql } from 'drizzle-orm';
+import type { Question } from '@openpte/schema';
 import type { FastifyInstance } from 'fastify';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
+import { scoreAnswer, type SpeechClient } from './speech.ts';
 import type { Storage } from './storage.ts';
 
 export const MAX_RECORDING_BYTES = 5 * 1024 * 1024;
@@ -18,7 +20,9 @@ const EXT: Record<string, string> = {
  * Saved speaking recordings. A learner opts in per recording; recordings expire after 30 days
  * and can be deleted at any time. Scoring jobs (step 2.2) read them from here.
  */
-export function recordingRoutes(db: Db, auth: Auth, storage: Storage) {
+export type ScoringOptions = { speech: SpeechClient; dailyLimit: number };
+
+export function recordingRoutes(db: Db, auth: Auth, storage: Storage, scoring?: ScoringOptions) {
   const { recordings } = schema;
   return async (app: FastifyInstance) => {
     app.addContentTypeParser(
@@ -101,6 +105,58 @@ export function recordingRoutes(db: Db, auth: Auth, storage: Storage) {
       const data = row && (await storage.get(row.storageKey));
       if (!row || !data) return reply.code(404).send({ error: 'recording not found' });
       return reply.type(row.mime).header('cache-control', 'private, max-age=3600').send(data);
+    });
+
+    /**
+     * Scores a saved recording: transcribe with the speech service, then score against the
+     * question. Each learner has a fair daily limit so the free server stays usable for all.
+     */
+    app.post<{ Params: { id: string } }>('/v1/me/recordings/:id/score', async (req, reply) => {
+      const u = await userOf(req.headers);
+      if (!u) return reply.code(401).send({ error: 'not signed in' });
+      if (!scoring) return reply.code(503).send({ error: 'speech scoring is not set up' });
+      const row = await own(u.id, req.params.id);
+      if (!row) return reply.code(404).send({ error: 'recording not found' });
+      if (row.result) return { result: row.result, cached: true };
+      const since = new Date(Date.now() - 86_400_000);
+      const [used] = await db
+        .select({ n: sql<number>`count(*)` })
+        .from(recordings)
+        .where(
+          and(
+            eq(recordings.userId, u.id),
+            isNotNull(recordings.scoredAt),
+            gte(recordings.scoredAt, since),
+          ),
+        );
+      if (Number(used?.n ?? 0) >= scoring.dailyLimit)
+        return reply.code(429).send({
+          error: `You have used today's ${scoring.dailyLimit} server scores. They refill over the next 24 hours.`,
+        });
+      const [q] = await db
+        .select({ data: schema.questions.data })
+        .from(schema.questions)
+        .where(eq(schema.questions.id, row.questionId));
+      if (!q) return reply.code(404).send({ error: 'question not found' });
+      const audio = await storage.get(row.storageKey);
+      if (!audio) return reply.code(404).send({ error: 'recording not found' });
+      let transcript;
+      try {
+        transcript = await scoring.speech.transcribe(audio, row.mime);
+      } catch (e) {
+        req.log.error(e);
+        return reply
+          .code(502)
+          .send({ error: 'The speech service is busy. Try again in a minute.' });
+      }
+      const result = scoreAnswer(q.data as Question, transcript);
+      if (!result) return reply.code(400).send({ error: 'not a speaking question' });
+      const stored = { ...result, transcript: transcript.words, engine: transcript.engine };
+      await db
+        .update(recordings)
+        .set({ result: stored, scoredAt: new Date() })
+        .where(eq(recordings.id, row.id));
+      return { result: stored, cached: false };
     });
 
     app.delete<{ Params: { id: string } }>('/v1/me/recordings/:id', async (req, reply) => {

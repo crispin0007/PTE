@@ -184,6 +184,9 @@ export const recordings = pgTable(
     mime: text('mime').notNull(),
     bytes: integer('bytes').notNull(),
     storageKey: text('storage_key').notNull(),
+    /** Scores from the speech service, once requested. */
+    result: jsonb('result').$type<Record<string, unknown>>(),
+    scoredAt: timestamp('scored_at', { withTimezone: true }),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
     expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
   },

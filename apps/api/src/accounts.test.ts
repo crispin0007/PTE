@@ -35,6 +35,7 @@ describe('accounts', () => {
       accounts: true,
       google: false,
       recordings: false,
+      speechScoring: false,
     });
   });
 

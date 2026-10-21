@@ -42,6 +42,11 @@ const Env = z.object({
     .transform((v) => v === '1'),
   /** Folder for saved speaking recordings. */
   RECORDINGS_DIR: z.string().default('./data'),
+  /** URL of services/speech. Without it, speaking answers are self-checked only. */
+  SPEECH_URL: z.string().url().optional(),
+  SPEECH_TOKEN: z.string().optional(),
+  /** Server speech scores per learner per 24 hours. */
+  SPEECH_DAILY_LIMIT: z.coerce.number().int().min(0).default(30),
   CONTENT_ROOT: z.string().default(new URL('../../../', import.meta.url).pathname),
 });
 

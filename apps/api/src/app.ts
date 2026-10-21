@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { adminRoutes } from './admin.ts';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
-import { recordingRoutes } from './recordings.ts';
+import { recordingRoutes, type ScoringOptions } from './recordings.ts';
 import type { Storage } from './storage.ts';
 
 export type AppOptions = {
@@ -20,6 +20,8 @@ export type AppOptions = {
   googleEnabled?: boolean;
   /** Where saved recordings go; recordings are off without it. */
   storage?: Storage;
+  /** Speech scoring of saved recordings; off without it. */
+  scoring?: ScoringOptions;
 };
 
 const AttemptIn = z.strictObject({
@@ -80,6 +82,7 @@ export async function buildApp({
   auth,
   googleEnabled = false,
   storage,
+  scoring,
 }: AppOptions) {
   const app = Fastify({ logger });
   const anyOrigin = corsOrigin === '*';
@@ -153,12 +156,13 @@ export async function buildApp({
     accounts: !!auth,
     google: !!auth && googleEnabled,
     recordings: !!auth && !!storage,
+    speechScoring: !!auth && !!storage && !!scoring,
   }));
 
   if (auth) {
     await app.register(authRoutes(auth));
     await app.register(adminRoutes(db, auth));
-    if (storage) await app.register(recordingRoutes(db, auth, storage));
+    if (storage) await app.register(recordingRoutes(db, auth, storage, scoring));
     const { attempts, userState } = schema;
 
     const userOf = async (req: FastifyRequest) => {

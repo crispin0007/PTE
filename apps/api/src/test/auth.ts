@@ -3,13 +3,14 @@ import { buildApp } from '../app.ts';
 import { createAuth } from '../auth.ts';
 import type { Db } from '../db/index.ts';
 import type { Mail } from '../mail.ts';
+import type { ScoringOptions } from '../recordings.ts';
 import type { Storage } from '../storage.ts';
 
 export const WEB = 'http://localhost:5173';
 
 export async function appWithAuth(
   db: Db,
-  opts: { adminEmails?: string[]; storage?: Storage } = {},
+  opts: { adminEmails?: string[]; storage?: Storage; scoring?: ScoringOptions } = {},
 ) {
   const outbox: Mail[] = [];
   const auth = createAuth({
@@ -20,7 +21,13 @@ export async function appWithAuth(
     trustedOrigins: [WEB],
     adminEmails: opts.adminEmails,
   });
-  const app = await buildApp({ db, auth, corsOrigin: WEB, storage: opts.storage });
+  const app = await buildApp({
+    db,
+    auth,
+    corsOrigin: WEB,
+    storage: opts.storage,
+    scoring: opts.scoring,
+  });
 
   /** Signs in by email link and returns the session cookie. */
   async function signIn(email: string) {

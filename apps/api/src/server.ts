@@ -8,6 +8,7 @@ import { connect } from './db/postgres.ts';
 import { consoleMailer, smtpMailer } from './mail.ts';
 import { purgeExpired } from './recordings.ts';
 import { seed } from './seed.ts';
+import { httpSpeech } from './speech.ts';
 import { diskStorage } from './storage.ts';
 
 const config = loadConfig();
@@ -55,6 +56,12 @@ const app = await buildApp({
   auth,
   googleEnabled: !!google,
   storage,
+  scoring: config.SPEECH_URL
+    ? {
+        speech: httpSpeech(config.SPEECH_URL, config.SPEECH_TOKEN),
+        dailyLimit: config.SPEECH_DAILY_LIMIT,
+      }
+    : undefined,
 });
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
   process.on(signal, () => {

@@ -25,11 +25,24 @@ services:
       # The seed bank is still in review; show it locally like the demo site does.
       INCLUDE_UNREVIEWED: '1'
       CORS_ORIGIN: http://localhost:8080
+      SPEECH_URL: http://speech:8000
+      RECORDINGS_DIR: /data
+    volumes:
+      - recordings:/data
     depends_on:
       db:
         condition: service_healthy
+      speech:
+        condition: service_started
     ports:
       - '3000:3000'
+
+  # Speech recognition for scoring speaking answers. The first scoring request downloads the
+  # Whisper model (about 250 MB) into the models volume.
+  speech:
+    build: services/speech
+    volumes:
+      - models:/models
 
   web:
     build:
@@ -45,3 +58,5 @@ services:
 
 volumes:
   db-data:
+  recordings:
+  models:
