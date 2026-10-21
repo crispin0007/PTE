@@ -61,6 +61,11 @@ export function SaveRecording({
         <p role="status" className="text-sm text-good">
           ✓ Saved to your account. It is deleted automatically after 30 days.
         </p>
+        {error && (
+          <p className="text-sm text-muted">
+            Not scored: {error} Use the self-check above for now.
+          </p>
+        )}
         {ask}
       </>
     );
@@ -72,7 +77,13 @@ export function SaveRecording({
       setSavedId(id);
       if (!scoring) return setState('saved');
       setState('scoring');
-      const scored = await scoreRecording(id);
+      const scored = await scoreRecording(id).catch((e: Error) => {
+        // Saved but not scored (daily limit, service down): the self-check above still works.
+        setError(e.message);
+        setState('saved');
+        return null;
+      });
+      if (!scored) return;
       setResult(scored);
       // A server score counts in history like any other answer, so Speaking shows on Progress.
       recordAttempt({

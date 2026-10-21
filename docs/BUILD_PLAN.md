@@ -31,7 +31,7 @@ browser tests on phone and desktop with accessibility checks) and pushed to `mai
 | 2.5 Speaking results       | Done        | Traits, coloured words, key points, pace; all 7 Speaking types                                                                                  |
 | 2.6 Writing scoring        | Done        | Grammar from self-hosted LanguageTool, marked in place with suggestions; content and range still compare with the sample                        |
 | 2.7 Listening audio        | Not started | Waits for the voice licence decision; the device voice reads until then                                                                         |
-| 2.8 Limits and fallback    | Partly      | Daily limit, 30-day retention and delete done; on-device fallback is the self-check                                                             |
+| 2.8 Limits and fallback    | Done        | Daily limit, 30-day retention and delete; over the limit the recording stays saved and the self-check is offered                                |
 | 3.1 Mock model             | Done        | Full, mini, three sectional and custom mocks                                                                                                    |
 | 3.2 Exam player            | Done        | Section and per-question clocks, no going back, pause and resume, time-outs skip the rest                                                       |
 | 3.3 Score report           | Done        | Skills on the 10-90 scale, by type, practise-next; print or save as PDF from the browser                                                        |
@@ -99,7 +99,7 @@ steps 1.8 to 1.10, and guest history then moves into the new account.
 | 2.5 Speaking results    | Result screen: coloured transcript, waveform with pauses, side-by-side playback, tips; all 7 Speaking types          | Every Speaking type returns an explained result within 15 seconds                                                        |
 | 2.6 Writing scoring     | Done                                                                                                                 | Grammar from self-hosted LanguageTool, marked in place with suggestions; content and range still compare with the sample |
 | 2.7 Listening audio     | Text-to-speech for the 130 listening items, with sidecar metadata                                                    | Every Listening and Speaking item has audio                                                                              |
-| 2.8 Limits and fallback | Fair daily limit on server scoring, on-device fallback, 30-day audio retention and delete                            | Over the limit, scoring switches to on-device with a clear message                                                       |
+| 2.8 Limits and fallback | Done                                                                                                                 | Daily limit, 30-day retention and delete; over the limit the recording stays saved and the self-check is offered         |
 
 ## Phase 3: mock tests
 
