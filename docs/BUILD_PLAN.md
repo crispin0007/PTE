@@ -7,6 +7,26 @@ Where this file and AGENTS.md differ, this file wins.
 
 Agreed on 2026-10-21.
 
+## Progress
+
+Updated 2026-10-21 (overnight build). Each step was tested (lint, unit tests, content check, build,
+browser tests on phone and desktop with accessibility checks) and pushed to `main`.
+
+| Step                     | State       | Notes                                                                                               |
+| ------------------------ | ----------- | --------------------------------------------------------------------------------------------------- |
+| 1.1 Monorepo             | Done        |                                                                                                     |
+| 1.2 Look and app shell   | Done        | `good` and `bad` colours one shade darker than the UI plan, for 4.5:1 text contrast                 |
+| 1.3 Practice hub         | Done        |                                                                                                     |
+| 1.4 Reading              | Done        | All 5 types                                                                                         |
+| 1.5 Listening            | Done        | All 8 types (SST with Writing). Device text-to-speech plays until recordings exist                  |
+| 1.6 Writing              | Done        | Form and spelling scored; content, grammar and vocabulary wait for 2.6                              |
+| 1.7 Today and Progress   | Done        | History in localStorage rather than IndexedDB: it is small, and accounts sync it                    |
+| 1.8 Backend              | Done        | Tests run on PGlite; checked by hand on PostgreSQL 16. Docker files not run here (no Docker daemon) |
+| 1.9 Accounts             | Done        | Email link and Google; checked end to end with two browsers                                         |
+| 1.10 Question bank admin | Done        | YAML editor with live preview rather than 22 forms; checked end to end with three accounts          |
+| 2.1 Recorder             | Done        | Recordings saved to local disk behind a Storage interface; R2 or MinIO later                        |
+| 2.2 onward               | Not started |                                                                                                     |
+
 ## Scope: only what PTE preparation needs
 
 | In                                                                                | Out (cut or deferred)                         |
