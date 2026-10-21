@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { MOCKS, buildPaper } from './definitions.ts';
+import { MOCKS, buildPaper, customMock } from './definitions.ts';
 import { SKILL_CONTRIBUTIONS, buildReport } from './report.ts';
 import { QUESTION_TYPES } from '@openpte/schema';
 import { advance, restOfSection } from './flow.ts';
@@ -88,5 +88,24 @@ describe('mock sitting flow', () => {
     expect(rest[0]).toBe(firstReading + 1);
     expect(rest.every((i) => items[i]!.section === 1)).toBe(true);
     expect(items[rest.at(-1)! + 1]?.section).toBe(2);
+  });
+});
+
+describe('custom mocks', () => {
+  it('keeps test order, drops empty sections and scales shared time', () => {
+    const def = customMock({
+      listening_write_from_dictation: 2,
+      listening_summarize_spoken_text: 1,
+      reading_mcq_single: 3,
+      speaking_read_aloud: 0,
+    });
+    expect(def.sections.map((s) => s.id)).toEqual(['reading', 'listening']);
+    expect(def.sections[0]).toMatchObject({ sharedTimeS: 360 });
+    // Summarize Spoken Text has its own clock, so only the two dictations add time.
+    expect(def.sections[1]).toMatchObject({ sharedTimeS: 200 });
+    expect(def.sections[1]!.items.map((i) => i.type)).toEqual([
+      'listening_summarize_spoken_text',
+      'listening_write_from_dictation',
+    ]);
   });
 });

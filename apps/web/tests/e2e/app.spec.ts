@@ -405,6 +405,26 @@ test.describe('mock tests', () => {
     await expect(page.getByText(/13 questions were not reached in time/)).toBeVisible();
   });
 
+  test('a custom mock runs only the chosen types', async ({ page }) => {
+    await page.goto('/#/mock');
+    await page.getByRole('spinbutton', { name: 'Write from Dictation' }).fill('2');
+    await page
+      .getByRole('spinbutton', { name: 'Reading: Multiple Choice, Single Answer' })
+      .fill('1');
+    await expectAccessible(page);
+    await page.getByRole('button', { name: 'Start custom mock (3 questions)' }).click();
+    await page.getByRole('button', { name: 'Start part 1' }).click();
+    await expect(page.getByTestId('mock-item')).toHaveAttribute('data-type', 'reading_mcq_single');
+    await expect(page.getByRole('timer', { name: 'Time left in Reading' })).toHaveText('2:00');
+    await page.getByRole('button', { name: 'Next' }).click();
+    await expect(page.getByRole('heading', { name: 'Part 2: Listening' })).toBeVisible();
+    await page.getByRole('button', { name: 'Start part 2' }).click();
+    await expect(page.getByTestId('mock-item')).toHaveAttribute(
+      'data-type',
+      'listening_write_from_dictation',
+    );
+  });
+
   test('speaking items record without listening back', async ({ page }) => {
     await page.goto('/#/mock');
     await page.getByRole('button', { name: 'Start Speaking and Writing' }).click();

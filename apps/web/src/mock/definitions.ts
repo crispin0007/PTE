@@ -104,6 +104,48 @@ export const MOCKS: MockDef[] = [
   },
 ];
 
+/** Shared seconds per untimed question in a custom mock, from the full test's section times. */
+const SHARED_PER_ITEM_S: Record<SectionDef['id'], number> = {
+  speaking_writing: 0,
+  reading: 120,
+  listening: 100,
+};
+
+/** Question types that run on their own clock, so they add no shared section time. */
+const OWN_CLOCK = new Set<QuestionType>([
+  ...SW.items.map((i) => i.type),
+  'listening_summarize_spoken_text',
+]);
+
+/**
+ * A learner-built mock: chosen question types and counts, in test order, with section time scaled
+ * to the number of untimed questions.
+ */
+export function customMock(counts: Partial<Record<QuestionType, number>>): MockDef {
+  const sections = [SW, READING, LISTENING]
+    .map((s) => {
+      const items = s.items
+        .map((i) => ({ type: i.type, count: Math.max(0, Math.floor(counts[i.type] ?? 0)) }))
+        .filter((i) => i.count > 0);
+      const shared = items.filter((i) => !OWN_CLOCK.has(i.type)).reduce((n, i) => n + i.count, 0);
+      return { ...s, items, sharedTimeS: shared * SHARED_PER_ITEM_S[s.id] };
+    })
+    .filter((s) => s.items.length > 0);
+  return {
+    id: 'custom',
+    label: 'Custom mock test',
+    description: 'Your own mix of question types.',
+    sections,
+  };
+}
+
+/** The full test's question counts, the starting point for building a custom mock. */
+export const FULL_COUNTS = Object.fromEntries(
+  [SW, READING, LISTENING].flatMap((s) => s.items.map((i) => [i.type, i.count])),
+) as Record<QuestionType, number>;
+
+export const MOCK_SECTIONS = [SW, READING, LISTENING];
+
 export type PaperItem = { type: QuestionType; questionId: string };
 export type Paper = {
   id: string;

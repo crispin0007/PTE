@@ -2,9 +2,16 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import type { QuestionType } from '@openpte/schema';
 import { ScoreDisclaimer } from '../components/ScoreDisclaimer.tsx';
-import { loadQuestions } from '../content/catalog.ts';
+import { getType, loadQuestions } from '../content/catalog.ts';
 import { snapshot } from '../practice/history.ts';
-import { buildPaper, MOCKS, paperTypes, type MockDef } from './definitions.ts';
+import {
+  buildPaper,
+  customMock,
+  MOCK_SECTIONS,
+  MOCKS,
+  paperTypes,
+  type MockDef,
+} from './definitions.ts';
 import { deleteSitting, paperItems, startSitting, useSittings } from './store.ts';
 
 const newId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
@@ -127,6 +134,8 @@ export function MockHome() {
         </p>
       </section>
 
+      <CustomBuilder disabled={starting !== null} onStart={(def) => void start(def)} />
+
       {finished.length > 0 && (
         <section aria-labelledby="past-heading" className="flex flex-col gap-3">
           <h2 id="past-heading" className="text-lg font-semibold">
@@ -154,5 +163,64 @@ export function MockHome() {
         </section>
       )}
     </div>
+  );
+}
+
+function CustomBuilder({
+  disabled,
+  onStart,
+}: {
+  disabled: boolean;
+  onStart: (def: MockDef) => void;
+}) {
+  const [counts, setCounts] = useState<Partial<Record<QuestionType, number>>>({});
+  const total = Object.values(counts).reduce((n, c) => n + (c ?? 0), 0);
+  return (
+    <section
+      aria-labelledby="custom-heading"
+      className="flex flex-col gap-3 rounded-token border border-line bg-surface p-4"
+    >
+      <h2 id="custom-heading" className="text-lg font-semibold">
+        Build your own
+      </h2>
+      <p className="text-sm text-muted">
+        Choose how many of each question type. They run in test order, and the Reading and Listening
+        clocks scale with the number of questions.
+      </p>
+      {MOCK_SECTIONS.map((section) => (
+        <fieldset key={section.id} className="flex flex-col gap-2">
+          <legend className="font-semibold">{section.label}</legend>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {section.items.map(({ type }) => (
+              <label key={type} className="flex items-center justify-between gap-3 text-sm">
+                <span>{getType(type)?.label ?? type}</span>
+                <input
+                  type="number"
+                  min={0}
+                  max={10}
+                  inputMode="numeric"
+                  value={counts[type] ?? 0}
+                  onChange={(e) =>
+                    setCounts((c) => ({
+                      ...c,
+                      [type]: Math.min(10, Math.max(0, Number(e.target.value) || 0)),
+                    }))
+                  }
+                  className="min-h-11 w-20 rounded-token border border-line bg-bg px-2"
+                />
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      <button
+        type="button"
+        disabled={disabled || total === 0}
+        onClick={() => onStart(customMock(counts))}
+        className="min-h-11 self-start rounded-token bg-brand px-5 font-semibold text-brand-ink disabled:opacity-60"
+      >
+        Start custom mock ({total} question{total === 1 ? '' : 's'})
+      </button>
+    </section>
   );
 }
