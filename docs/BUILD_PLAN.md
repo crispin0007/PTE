@@ -39,7 +39,9 @@ browser tests on phone and desktop with accessibility checks) and pushed to `mai
 | 4.1 Tenancy                | Done        | Membership check on every institute route, 404 to outsiders; isolation tests; `SINGLE_INSTITUTE_NAME` for self-host                             |
 | 4.2 Classes and students   | Done        | Invite codes and links, CSV roster import; checked end to end on PostgreSQL                                                                     |
 | 4.4 Teacher dashboard      | Partly      | Class table by skill with 'who needs help'; marking queue not yet                                                                               |
-| 4.3, 4.5, 4.6              | Not started |                                                                                                                                                 |
+| 4.3 Assignments            | Done        | Practice sets and mocks with due dates; 'Set by your teacher' on Today; mock reports reach the class                                            |
+| 4.5 Branding               | Done        | Colour checked for 4.5:1 and lifted for dark mode; PNG, JPEG or WebP logo served by the API                                                     |
+| 4.6 Self-host package      | Done        | `selfhost-init.sh`, `.env.example`, Caddy HTTPS profile, `backup.sh`, docs/SELF_HOST.md. Not run here (no Docker)                               |
 
 ## Scope: only what PTE preparation needs
 

@@ -1,12 +1,18 @@
-# The whole stack on one machine: PostgreSQL, the API and the web app.
-#   docker compose up --build
+# The whole stack on one machine: PostgreSQL, the API, speech scoring and the web app.
+#
+#   ./scripts/selfhost-init.sh   # once: writes .env with fresh secrets
+#   docker compose up -d --build
+#
 # Web: http://localhost:8080  API: http://localhost:3000/health
+# For a public server with HTTPS, set the domains in .env and add --profile https.
+# The full guide is docs/SELF_HOST.md.
 services:
   db:
     image: postgres:16-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_USER: openpte
-      POSTGRES_PASSWORD: openpte
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-openpte}
       POSTGRES_DB: openpte
     volumes:
       - db-data:/var/lib/postgresql/data
@@ -20,12 +26,23 @@ services:
     build:
       context: .
       dockerfile: apps/api/Dockerfile
+    restart: unless-stopped
     environment:
-      DATABASE_URL: postgres://openpte:openpte@db:5432/openpte
-      # The seed bank is still in review; show it locally like the demo site does.
-      INCLUDE_UNREVIEWED: '1'
-      CORS_ORIGIN: http://localhost:8080
+      DATABASE_URL: postgres://openpte:${POSTGRES_PASSWORD:-openpte}@db:5432/openpte
+      PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost:3000}
+      CORS_ORIGIN: ${PUBLIC_WEB_URL:-http://localhost:8080}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?Run ./scripts/selfhost-init.sh first, or set BETTER_AUTH_SECRET in .env}
+      ADMIN_EMAILS: ${ADMIN_EMAILS:-}
+      SMTP_URL: ${SMTP_URL:-}
+      MAIL_FROM: ${MAIL_FROM:-openpte <no-reply@localhost>}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      INCLUDE_UNREVIEWED: ${INCLUDE_UNREVIEWED:-1}
+      INSTITUTE_CREATION: ${INSTITUTE_CREATION:-anyone}
+      SINGLE_INSTITUTE_NAME: ${SINGLE_INSTITUTE_NAME:-}
       SPEECH_URL: http://speech:8000
+      SPEECH_TOKEN: ${SPEECH_TOKEN:-}
+      SPEECH_DAILY_LIMIT: ${SPEECH_DAILY_LIMIT:-30}
       RECORDINGS_DIR: /data
     volumes:
       - recordings:/data
@@ -41,6 +58,10 @@ services:
   # Whisper model (about 250 MB) into the models volume.
   speech:
     build: services/speech
+    restart: unless-stopped
+    environment:
+      SPEECH_TOKEN: ${SPEECH_TOKEN:-}
+      WHISPER_MODEL: ${WHISPER_MODEL:-small.en}
     volumes:
       - models:/models
 
@@ -49,14 +70,34 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
       args:
-        VITE_API_URL: http://localhost:3000
-        OPENPTE_INCLUDE_UNREVIEWED: '1'
+        VITE_API_URL: ${PUBLIC_API_URL:-http://localhost:3000}
+        OPENPTE_INCLUDE_UNREVIEWED: ${INCLUDE_UNREVIEWED:-1}
+    restart: unless-stopped
     depends_on:
       - api
     ports:
       - '8080:80'
 
+  # HTTPS for a public server: Caddy gets and renews certificates for both domains.
+  caddy:
+    image: caddy:2-alpine
+    profiles: ['https']
+    restart: unless-stopped
+    environment:
+      WEB_DOMAIN: ${WEB_DOMAIN:-}
+      API_DOMAIN: ${API_DOMAIN:-}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - web
+      - api
+
 volumes:
   db-data:
   recordings:
   models:
+  caddy-data:

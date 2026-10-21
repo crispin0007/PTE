@@ -47,6 +47,7 @@ On Windows, run the same commands in PowerShell or the VS Code terminal.
 To run everything (PostgreSQL, the API and the web app) with Docker:
 
 ```sh
+./scripts/selfhost-init.sh  # once: writes .env with fresh secrets
 docker compose up --build   # web http://localhost:8080, API http://localhost:3000/health
 ```
 
@@ -57,7 +58,8 @@ There are two ways to run openpte.
 - **Static site only.** `npm run build` produces a static site in `apps/web/dist/`. Upload it to any static host
   (GitHub Pages, Cloudflare Pages, Netlify, or a plain web server). Questions are bundled into the site. Set
   `OPENPTE_INCLUDE_UNREVIEWED=1` when building if you also want questions that are still in review.
-- **With the API.** `docker compose up --build` runs PostgreSQL, the API and the web app on one machine. Build the
+- **With the API.** `docker compose up --build` runs PostgreSQL, the API, speech scoring and the web app on one
+  machine; [docs/SELF_HOST.md](docs/SELF_HOST.md) is the full guide, with HTTPS, backups and updates. Build the
   web app with `VITE_API_URL` pointing at the API and it reads questions from there. Accounts, the admin,
   speaking scores and institutes need this mode. For one coaching centre, set `SINGLE_INSTITUTE_NAME` and
   everyone who signs in joins it.

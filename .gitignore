@@ -10,3 +10,7 @@ test-results
 /apps/api/data/
 __pycache__/
 .pytest_cache/
+
+# Self-host secrets and backups
+.env
+/backups/

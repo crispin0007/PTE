@@ -8,7 +8,7 @@ Things only crispin can do or decide. The build keeps going around them; each it
    started because your account is locked due to a billing issue." Open GitHub > Settings > Billing
    and plans, clear the failed payment or spending limit, then re-run the latest workflow. Public
    repos get Actions free once the lock is gone. Blocks: CI checks and the Pages deploy. Everything
-   was tested here instead: 66 unit tests, 68 browser tests on phone and desktop, lint clean.
+   was tested here instead: 70 unit tests, 68 browser tests on phone and desktop, lint clean.
 2. **Turn on GitHub Pages.** Settings > Pages > Source: GitHub Actions. Blocks: the public demo link.
 3. **Hosting accounts.** Oracle Cloud Always Free signup and a Cloudflare account. Blocks: running the
    API and database anywhere but a laptop.
@@ -19,8 +19,9 @@ Things only crispin can do or decide. The build keeps going around them; each it
    `GOOGLE_CLIENT_SECRET`). Email links work without it.
 6. **Your admin email.** Put it in `ADMIN_EMAILS` so your account becomes the first admin. Then you can
    make teachers under More > Question bank admin > People and roles.
-7. **Try Docker once.** `docker compose up --build` is written but could not be run here (no Docker
-   daemon in the build machine). The API install and start were checked without Docker.
+7. **Try Docker once.** The self-host package (docs/SELF_HOST.md: `./scripts/selfhost-init.sh`, then
+   `docker compose up -d --build`) is written but could not be run here (no Docker daemon in the
+   build machine). Each part was checked on its own without Docker.
 8. **Speech scoring model.** The speech service could not download Whisper here (huggingface.co is
    blocked in the build machine), so it was tested with a fake engine. On your machine or server,
    `docker compose up speech` downloads the model on first start. It needs about 2 GB of RAM for the
@@ -60,4 +61,5 @@ npm run dev
 
 New since last night, to click through: **Practice > Mock tests** (full, mini, sectional or your own
 mix, with a printable report), and with the API running **More > Institutes and classes** (start an
-institute, add a class, share its code or import a CSV, and see who needs help).
+institute, add a class, share its code or import a CSV, set assignments, brand it with a colour
+and logo, and see who needs help).

@@ -1,0 +1,11 @@
+# Used by the "https" profile in docker-compose.yml. Set WEB_DOMAIN and API_DOMAIN in .env and
+# point both DNS names at this server; Caddy fetches the certificates on first start.
+{$WEB_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy web:80
+}
+
+{$API_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy api:3000
+}
