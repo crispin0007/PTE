@@ -330,6 +330,13 @@ test('a bookmarked question shows under the Bookmarked filter', async ({ page })
   await expect(page.locator('main ol li')).toHaveCount(10);
 });
 
+test('the admin explains it needs the API on a static build', async ({ page }) => {
+  await page.goto('/#/admin');
+  await expect(page.getByText('The question bank admin needs the openpte API.')).toBeVisible();
+  await page.goto('/#/more');
+  await expect(page.getByText(/runs without a server, so there are no accounts/)).toBeVisible();
+});
+
 test('unknown pages show a not-found message', async ({ page }) => {
   await page.goto('/#/practice/not_a_type');
   await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();

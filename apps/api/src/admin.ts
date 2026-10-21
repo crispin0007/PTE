@@ -21,6 +21,12 @@ export function handleOf(u: { id: string; email: string }): string {
 
 const REQUIRED_APPROVALS = 2;
 
+/** Puts keys back in schema order (PostgreSQL jsonb does not keep it), for readable YAML. */
+function canonical(data: unknown) {
+  const v = validate(data);
+  return v.ok ? v.question : data;
+}
+
 const ReviewIn = z.strictObject({
   verdict: z.enum(['approve', 'changes']),
   comment: z.string().max(2000).default(''),
@@ -126,7 +132,7 @@ export function adminRoutes(db: Db, auth: Auth) {
       const row = await load(req.params.id);
       if (!row) return reply.code(404).send({ error: 'question not found' });
       return {
-        question: row.data,
+        question: canonical(row.data),
         origin: row.origin,
         canEdit: canEdit(staff, row),
         canReview: row.authorId !== staff.id && row.status === 'in_review',
@@ -155,7 +161,7 @@ export function adminRoutes(db: Db, auth: Auth) {
       const template = { ...(row.data as Record<string, unknown>) };
       for (const k of ['source_url', 'attribution', 'drafted_with', 'explanation'])
         delete template[k];
-      return {
+      return canonical({
         ...template,
         id: await nextId(req.params.type),
         status: 'draft',
@@ -163,7 +169,7 @@ export function adminRoutes(db: Db, auth: Auth) {
         author: staff.handle,
         reviewed_by: [],
         tags: [],
-      };
+      });
     });
 
     app.post<{ Body: { question: unknown } }>('/v1/admin/questions', async (req, reply) => {
@@ -305,7 +311,7 @@ export function adminRoutes(db: Db, auth: Auth) {
       return reply
         .type('text/yaml; charset=utf-8')
         .header('content-disposition', `attachment; filename="${row.id}.yaml"`)
-        .send(stringify(row.data, { lineWidth: 100 }));
+        .send(stringify(canonical(row.data), { lineWidth: 100 }));
     });
 
     app.get('/v1/admin/users', async (req, reply) => {

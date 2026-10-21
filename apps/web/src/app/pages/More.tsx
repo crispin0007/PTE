@@ -10,7 +10,9 @@ const TARGETS = [36, 42, 50, 58, 65, 73, 79, 85];
 
 export function More() {
   const { settings, attempts } = useHistory();
-  const signedIn = useAccount().status === 'signed-in';
+  const account = useAccount();
+  const signedIn = account.status === 'signed-in';
+  const staff = signedIn && (account.user.role === 'teacher' || account.user.role === 'admin');
   const goalId = useId();
   const targetId = useId();
   const select = 'min-h-11 rounded-token border border-line bg-surface px-3';
@@ -94,6 +96,13 @@ export function More() {
         </button>
       </section>
       <ul className="flex flex-col divide-y divide-line rounded-token border border-line bg-surface">
+        {staff && (
+          <li>
+            <Link to="/admin" className="flex min-h-12 items-center px-5 font-semibold">
+              Question bank admin
+            </Link>
+          </li>
+        )}
         <li>
           <Link to="/about" className="flex min-h-12 items-center px-5 font-semibold">
             About, licences and trademark

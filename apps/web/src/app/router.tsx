@@ -21,6 +21,23 @@ export const router = createHashRouter([
       { path: '/practice/:type', element: <TypePage /> },
       { path: '/practice/:type/:id', element: <QuestionPage /> },
       { path: '/about', element: <About /> },
+      // The admin is lazy-loaded: learners never download it or the schema library it uses.
+      {
+        path: '/admin',
+        lazy: async () => ({ Component: (await import('../admin/AdminHome.tsx')).AdminHome }),
+      },
+      {
+        path: '/admin/users',
+        lazy: async () => ({ Component: (await import('../admin/Users.tsx')).Users }),
+      },
+      {
+        path: '/admin/new/:type',
+        lazy: async () => ({ Component: (await import('../admin/Editor.tsx')).Editor }),
+      },
+      {
+        path: '/admin/q/:id',
+        lazy: async () => ({ Component: (await import('../admin/Editor.tsx')).Editor }),
+      },
       { path: '*', element: <NotFound /> },
     ],
   },
