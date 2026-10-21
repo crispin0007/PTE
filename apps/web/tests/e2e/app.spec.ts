@@ -351,3 +351,66 @@ test('unknown pages show a not-found message', async ({ page }) => {
   await page.goto('/#/practice/not_a_type');
   await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
 });
+
+test.describe('mock tests', () => {
+  const startReading = async (page: Page) => {
+    await page.goto('/#/mock');
+    await page.getByRole('button', { name: 'Start Reading' }).click();
+    await expect(page.getByRole('heading', { name: 'Part 1: Reading' })).toBeVisible();
+    await expectAccessible(page);
+    await page.getByRole('button', { name: 'Start part 1' }).click();
+  };
+
+  test('a reading mock runs in order with no going back and ends in a report', async ({ page }) => {
+    await startReading(page);
+    await expect(page.getByText('Question 1 of 15')).toBeVisible();
+    await expect(page.getByRole('timer', { name: 'Time left in Reading' })).toBeVisible();
+    await expect(page.getByLabel('Go to question')).toHaveCount(0);
+    await expectAccessible(page);
+    for (let i = 1; i < 15; i++) {
+      await page.getByRole('button', { name: 'Next' }).click();
+      await expect(page.getByText(`Question ${i + 1} of 15`)).toBeVisible();
+    }
+    await page.getByRole('button', { name: 'Finish test' }).click();
+    const report = page.getByTestId('mock-report');
+    await expect(report).toBeVisible();
+    await expect(page.getByTestId('mock-overall')).toContainText('/ 90');
+    await expect(report.getByRole('meter', { name: 'Reading' })).toBeVisible();
+    await expect(report.getByText('Not scored in this mock')).toHaveCount(2);
+    await expect(page.getByTestId('score-disclaimer')).toContainText('not an official PTE score');
+    await expect(page.getByTestId('trademark-notice')).toContainText(TRADEMARK);
+    await expect(page.getByRole('button', { name: 'Print or save as PDF' })).toBeVisible();
+    await expectAccessible(page);
+    await page.goto('/#/mock');
+    await expect(page.getByRole('heading', { name: 'Past reports' })).toBeVisible();
+  });
+
+  test('pausing keeps the place and the section clock', async ({ page }) => {
+    await startReading(page);
+    await page.getByRole('button', { name: 'Next' }).click();
+    await page.getByRole('link', { name: 'Pause' }).click();
+    await expect(page.getByText('Question 2 of 15')).toBeVisible();
+    await page.getByRole('link', { name: 'Continue' }).click();
+    await expect(page.getByText(/Paused at question 2/)).toBeVisible();
+    await page.getByRole('button', { name: 'Continue' }).click();
+    await expect(page.getByText('Question 2 of 15')).toBeVisible();
+  });
+
+  test('when section time runs out the rest is skipped', async ({ page }) => {
+    await page.clock.install();
+    await startReading(page);
+    await page.getByRole('button', { name: 'Next' }).click();
+    await page.clock.fastForward('31:00');
+    await expect(page.getByTestId('mock-report')).toBeVisible();
+    await expect(page.getByText(/13 questions were not reached in time/)).toBeVisible();
+  });
+
+  test('speaking items record without listening back', async ({ page }) => {
+    await page.goto('/#/mock');
+    await page.getByRole('button', { name: 'Start Speaking and Writing' }).click();
+    await page.getByRole('button', { name: 'Start part 1' }).click();
+    await expect(page.getByTestId('mock-item')).toHaveAttribute('data-type', 'speaking_read_aloud');
+    await expect(page.getByTestId('recorder')).toBeVisible();
+    await expect(page.getByTestId('self-check')).toHaveCount(0);
+  });
+});

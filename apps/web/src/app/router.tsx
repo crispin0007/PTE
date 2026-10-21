@@ -38,6 +38,19 @@ export const router = createHashRouter([
         path: '/admin/q/:id',
         lazy: async () => ({ Component: (await import('../admin/Editor.tsx')).Editor }),
       },
+      // Mock tests load on first use, like the admin.
+      {
+        path: '/mock',
+        lazy: async () => ({ Component: (await import('../mock/MockHome.tsx')).MockHome }),
+      },
+      {
+        path: '/mock/run/:id',
+        lazy: async () => ({ Component: (await import('../mock/MockRun.tsx')).MockRun }),
+      },
+      {
+        path: '/mock/report/:id',
+        lazy: async () => ({ Component: (await import('../mock/MockReport.tsx')).MockReport }),
+      },
       { path: '*', element: <NotFound /> },
     ],
   },

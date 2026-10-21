@@ -38,7 +38,7 @@ export function Layout() {
         Skip to content
       </a>
 
-      <aside className="hidden shrink-0 border-r border-line bg-surface md:sticky md:top-0 md:flex md:h-screen md:w-56 md:flex-col md:gap-6 md:p-4">
+      <aside className="hidden shrink-0 print:hidden border-r border-line bg-surface md:sticky md:top-0 md:flex md:h-screen md:w-56 md:flex-col md:gap-6 md:p-4">
         <Logo />
         <nav aria-label="Main" className="flex flex-col gap-1">
           {TABS.map((t) => (
@@ -63,7 +63,7 @@ export function Layout() {
       </aside>
 
       <div className="flex min-h-screen min-w-0 flex-1 flex-col">
-        <header className="flex items-center border-b border-line bg-surface px-4 py-2 md:hidden">
+        <header className="flex items-center print:hidden border-b border-line bg-surface px-4 py-2 md:hidden">
           <Logo />
         </header>
         <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-6 md:px-8">
@@ -76,7 +76,7 @@ export function Layout() {
 
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 grid print:hidden grid-cols-4 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] md:hidden"
       >
         {TABS.map((t) => (
           <NavLink

@@ -102,6 +102,21 @@ export function Today() {
         </ul>
       </section>
 
+      <section aria-labelledby="mock-heading" className={card}>
+        <h2 id="mock-heading" className="text-xl font-semibold">
+          Ready for a full run?
+        </h2>
+        <p className="text-muted">
+          A timed mock test in test order, with a score report for each skill.
+        </p>
+        <Link
+          to="/mock"
+          className="grid min-h-11 place-items-center self-start rounded-token bg-brand px-5 font-semibold text-brand-ink"
+        >
+          Mock tests
+        </Link>
+      </section>
+
       {mistakes.length > 0 && (
         <section aria-labelledby="mistakes-heading" className={card}>
           <h2 id="mistakes-heading" className="text-xl font-semibold">

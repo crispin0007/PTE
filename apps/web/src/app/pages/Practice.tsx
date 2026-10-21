@@ -26,7 +26,15 @@ export function Practice() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl font-bold">Practice by question type</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-3xl font-bold">Practice by question type</h1>
+        <Link
+          to="/mock"
+          className="grid min-h-11 place-items-center rounded-token border border-line bg-surface px-4 font-semibold"
+        >
+          Mock tests
+        </Link>
+      </div>
       <nav aria-label="Skills" className="-mx-4 overflow-x-auto px-4">
         <div className="flex gap-2">
           {tabs.map((t) => (

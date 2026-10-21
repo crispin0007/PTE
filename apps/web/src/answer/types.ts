@@ -8,6 +8,8 @@ export type AnswerViewProps<Q, R> = {
   onChange: (r: R) => void;
   /** After submitting: the view shows the response marked, read-only. */
   review: boolean;
+  /** In a mock test: no listening back, no sample answers, no second take. */
+  exam?: boolean;
 };
 
 /** Everything the exam frame needs to run one question type. */

@@ -73,15 +73,15 @@ function speaking<K extends SpeakingType>(
   stimulus: (q: QuestionOf<K>, recorded: boolean) => ReactNode,
   reference: (q: QuestionOf<K>) => ReactNode,
 ): Answerable<K, R> {
-  function View({ question: q, response, onChange }: AnswerViewProps<QuestionOf<K>, R>) {
+  function View({ question: q, response, onChange, exam }: AnswerViewProps<QuestionOf<K>, R>) {
     const { prep, answer } = timing(q.type as SpeakingType);
     // Each take gets a fresh recorder; keying by the response would reset it on finishing.
     const [take, setTake] = useState(0);
     return (
       <>
-        {stimulus(q, !!response)}
+        {stimulus(q, !!response && !exam)}
         <Recorder key={take} prepS={prep} answerS={answer} onRecorded={onChange} />
-        {response && (
+        {response && !exam && (
           <>
             <button
               type="button"

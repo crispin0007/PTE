@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { MOCKS, buildPaper } from './definitions.ts';
 import { SKILL_CONTRIBUTIONS, buildReport } from './report.ts';
 import { QUESTION_TYPES } from '@openpte/schema';
+import { advance, restOfSection } from './flow.ts';
+import { paperItems, type Sitting } from './store.ts';
 
 const pool = Object.fromEntries(
   QUESTION_TYPES.map((t) => [t, Array.from({ length: 10 }, (_, i) => `${t}-${i}`)]),
@@ -54,5 +56,37 @@ describe('mock tests', () => {
     expect(report.overall).toBe(82);
     expect(report.unscored).toBe(1);
     expect(report.weakest).toEqual(['reading_mcq_single']);
+  });
+});
+
+describe('mock sitting flow', () => {
+  const paper = buildPaper(
+    MOCKS.find((m) => m.id === 'mini')!,
+    pool,
+    new Set(),
+    'p',
+    0,
+  );
+  const items = paperItems(paper);
+  const sitting: Sitting = { paper, position: 0, sectionUsedS: 0, itemStartedAt: 1, results: [] };
+  const result = (i: number) => ({ ...items[i]!, score: 1, max: 1 });
+  const firstReading = items.findIndex((i) => i.section === 1);
+
+  it('moves to the next item and keeps the shared clock within a section', () => {
+    const next = advance({ ...sitting, sectionUsedS: 5 }, [result(0)], 7, 100);
+    expect(next).toMatchObject({ position: 1, sectionUsedS: 12, itemStartedAt: 100 });
+  });
+
+  it('shows the intro and resets the clock when a new section starts', () => {
+    const last = { ...sitting, position: firstReading - 1, sectionUsedS: 9 };
+    const next = advance(last, [result(firstReading - 1)], 0, 100);
+    expect(next).toMatchObject({ position: firstReading, sectionUsedS: 0, itemStartedAt: null });
+  });
+
+  it('lists the rest of the section for skipping when time runs out', () => {
+    const rest = restOfSection({ ...sitting, position: firstReading });
+    expect(rest[0]).toBe(firstReading + 1);
+    expect(rest.every((i) => items[i]!.section === 1)).toBe(true);
+    expect(items[rest.at(-1)! + 1]?.section).toBe(2);
   });
 });
