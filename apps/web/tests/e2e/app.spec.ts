@@ -450,3 +450,12 @@ test.describe('mock tests', () => {
     await expect(page.getByTestId('self-check')).toHaveCount(0);
   });
 });
+
+test('the privacy page is linked from every page', async ({ page }) => {
+  await page.goto('./#/practice');
+  await page.getByRole('link', { name: 'Privacy' }).click();
+  await expect(page.getByRole('heading', { name: 'Privacy', level: 1 })).toBeVisible();
+  await expect(page.getByText('no trackers')).toBeVisible();
+  await expect(page.getByTestId('trademark-notice')).toContainText(TRADEMARK);
+  await expectAccessible(page);
+});

@@ -4,6 +4,7 @@ import { About } from './pages/About.tsx';
 import { More } from './pages/More.tsx';
 import { NotFound } from './pages/NotFound.tsx';
 import { Practice } from './pages/Practice.tsx';
+import { Privacy } from './pages/Privacy.tsx';
 import { Progress } from './pages/Progress.tsx';
 import { QuestionPage } from './pages/QuestionPage.tsx';
 import { Today } from './pages/Today.tsx';
@@ -21,6 +22,7 @@ export const router = createHashRouter([
       { path: '/practice/:type', element: <TypePage /> },
       { path: '/practice/:type/:id', element: <QuestionPage /> },
       { path: '/about', element: <About /> },
+      { path: '/privacy', element: <Privacy /> },
       // The admin is lazy-loaded: learners never download it or the schema library it uses.
       {
         path: '/admin',

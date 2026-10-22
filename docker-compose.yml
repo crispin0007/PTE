@@ -107,6 +107,7 @@ services:
       args:
         VITE_API_URL: ${PUBLIC_API_URL:-http://localhost:3000}
         OPENPTE_INCLUDE_UNREVIEWED: ${INCLUDE_UNREVIEWED:-1}
+        VITE_CONTACT_EMAIL: ${CONTACT_EMAIL:-}
     restart: unless-stopped
     depends_on:
       - api

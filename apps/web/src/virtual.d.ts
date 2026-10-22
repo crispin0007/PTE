@@ -19,4 +19,6 @@ interface ImportMetaEnv {
   readonly VITE_API_URL?: string;
   /** Folder of the in-browser phoneme model (model.onnx, phonemes.json). Default ./phonemes/ */
   readonly VITE_PHONEME_MODEL_URL?: string;
+  /** Who to contact about data, shown on the privacy page. */
+  readonly VITE_CONTACT_EMAIL?: string;
 }

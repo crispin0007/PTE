@@ -53,23 +53,24 @@ Close ports 3000 and 8080 in the firewall once HTTPS works; only 80 and 443 need
 All settings live in `.env`. After changing it, run `docker compose up -d --build` again (the web
 app is rebuilt when `PUBLIC_API_URL` changes).
 
-| Setting                                    | What it does                                                                                  |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------- |
-| `PUBLIC_WEB_URL`                           | Where people open the app. Sign-in links return here, and only this site may use accounts.    |
-| `PUBLIC_API_URL`                           | Where the app reaches the API. Built into the web app.                                        |
-| `BETTER_AUTH_SECRET`                       | Signs sessions. Made by the init script; changing it signs everyone out.                      |
-| `POSTGRES_PASSWORD`                        | Database password. Made by the init script; set it before the first start.                    |
-| `ADMIN_EMAILS`                             | Comma-separated emails of platform admins. They can make teachers in the question bank admin. |
-| `SINGLE_INSTITUTE_NAME`                    | For one coaching centre: its name. Everyone who signs in joins it; admins become its owners.  |
-| `INSTITUTE_CREATION`                       | With many institutes: `anyone` signed in may start one, or only an `admin`.                   |
-| `SMTP_URL`, `MAIL_FROM`                    | Sign-in email, for example `smtps://user:password@smtp.example.com:465`.                      |
-| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Optional Google sign-in. The redirect URL is `PUBLIC_API_URL/api/auth/callback/google`.       |
-| `INCLUDE_UNREVIEWED`                       | `1` shows questions still waiting for two human reviews. The bundled bank is still in review. |
-| `SPEECH_DAILY_LIMIT`                       | Server speech scores per learner per day.                                                     |
-| `WHISPER_MODEL`                            | `small.en` (default), or `base.en` on a small server. Larger models are slower on CPU.        |
-| `PRONUNCIATION`                            | `on` (default) scores each sound of each word; `off` saves about 1.5 GB of memory.            |
-| `SPEECH_THREADS`                           | CPU threads for speech scoring. Set it to the number of cores you can spare.                  |
-| `BROWSER_MODEL`                            | `on` (default) exports a 330 MB model that browsers run for the on-device check. See below.   |
+| Setting                                    | What it does                                                                                         |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| `PUBLIC_WEB_URL`                           | Where people open the app. Sign-in links return here, and only this site may use accounts.           |
+| `PUBLIC_API_URL`                           | Where the app reaches the API. Built into the web app.                                               |
+| `BETTER_AUTH_SECRET`                       | Signs sessions. Made by the init script; changing it signs everyone out.                             |
+| `POSTGRES_PASSWORD`                        | Database password. Made by the init script; set it before the first start.                           |
+| `ADMIN_EMAILS`                             | Comma-separated emails of platform admins. They can make teachers in the question bank admin.        |
+| `CONTACT_EMAIL`                            | Shown on the privacy page for questions about data and account deletion. Set it before going public. |
+| `SINGLE_INSTITUTE_NAME`                    | For one coaching centre: its name. Everyone who signs in joins it; admins become its owners.         |
+| `INSTITUTE_CREATION`                       | With many institutes: `anyone` signed in may start one, or only an `admin`.                          |
+| `SMTP_URL`, `MAIL_FROM`                    | Sign-in email, for example `smtps://user:password@smtp.example.com:465`.                             |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Optional Google sign-in. The redirect URL is `PUBLIC_API_URL/api/auth/callback/google`.              |
+| `INCLUDE_UNREVIEWED`                       | `1` shows questions still waiting for two human reviews. The bundled bank is still in review.        |
+| `SPEECH_DAILY_LIMIT`                       | Server speech scores per learner per day.                                                            |
+| `WHISPER_MODEL`                            | `small.en` (default), or `base.en` on a small server. Larger models are slower on CPU.               |
+| `PRONUNCIATION`                            | `on` (default) scores each sound of each word; `off` saves about 1.5 GB of memory.                   |
+| `SPEECH_THREADS`                           | CPU threads for speech scoring. Set it to the number of cores you can spare.                         |
+| `BROWSER_MODEL`                            | `on` (default) exports a 330 MB model that browsers run for the on-device check. See below.          |
 
 Without `SMTP_URL`, sign-in links are printed in the API log, which is handy for a first test:
 

@@ -13,6 +13,10 @@ export function Footer() {
           Code under AGPL-3.0, questions and media under CC BY-SA 4.0.{' '}
           <Link className="underline" to="/about">
             About and licences
+          </Link>{' '}
+          ·{' '}
+          <Link className="underline" to="/privacy">
+            Privacy
           </Link>
         </p>
       </div>
