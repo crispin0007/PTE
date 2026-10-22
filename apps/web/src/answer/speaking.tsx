@@ -4,6 +4,7 @@ import { assetUrl, getType } from '../content/catalog.ts';
 import { Listen } from './Listen.tsx';
 import { Passage, Section } from './parts.tsx';
 import { Recorder, type Recording } from './Recorder.tsx';
+import { DeviceSounds } from './DeviceSounds.tsx';
 import { SaveRecording } from './SaveRecording.tsx';
 import type { Answerable, AnswerViewProps } from './types.ts';
 
@@ -43,11 +44,14 @@ function SelfCheck({
   recording,
   questionId,
   type,
+  spoken,
   children,
 }: {
   recording: Recording;
   questionId: string;
   type: SpeakingType;
+  /** The words the answer should be, when they are fixed. */
+  spoken?: string;
   children: ReactNode;
 }) {
   return (
@@ -62,6 +66,7 @@ function SelfCheck({
       <audio controls src={recording.url} className="w-full" aria-label="Your recording" />
       <p className="text-sm text-muted">{recording.seconds} seconds recorded.</p>
       {children}
+      {spoken && <DeviceSounds recording={recording} questionId={questionId} text={spoken} />}
       <SaveRecording recording={recording} questionId={questionId} type={type} />
     </section>
   );
@@ -72,6 +77,7 @@ type R = Recording | null;
 function speaking<K extends SpeakingType>(
   stimulus: (q: QuestionOf<K>, recorded: boolean) => ReactNode,
   reference: (q: QuestionOf<K>) => ReactNode,
+  spoken?: (q: QuestionOf<K>) => string,
 ): Answerable<K, R> {
   function View({ question: q, response, onChange, exam }: AnswerViewProps<QuestionOf<K>, R>) {
     const { prep, answer } = timing(q.type as SpeakingType);
@@ -93,7 +99,12 @@ function speaking<K extends SpeakingType>(
             >
               Record again
             </button>
-            <SelfCheck recording={response} questionId={q.id} type={q.type as SpeakingType}>
+            <SelfCheck
+              recording={response}
+              questionId={q.id}
+              type={q.type as SpeakingType}
+              spoken={spoken?.(q)}
+            >
               {reference(q)}
             </SelfCheck>
           </>
@@ -138,11 +149,13 @@ export const readAloud = speaking<'speaking_read_aloud'>(
       Check: did you read every word, keep a steady pace, and pause only at punctuation?
     </p>
   ),
+  (q) => q.text,
 );
 
 export const repeatSentence = speaking<'speaking_repeat_sentence'>(
   (q, recorded) => <Listen path={q.audio} script={q.transcript} review={recorded} />,
   (q) => <Transcript text={q.transcript} title="The sentence" />,
+  (q) => q.transcript,
 );
 
 export const describeImage = speaking<'speaking_describe_image'>(

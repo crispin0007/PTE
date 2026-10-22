@@ -119,41 +119,48 @@ const WEAK_SOUND = 50;
 
 /**
  * Pronunciation from the sounds of the words that were said (a reference word that was missed is
- * content, not pronunciation). Without the phoneme model, estimated from recognition confidence.
+ * content, not pronunciation), with the unclear words. Null when no sound was scored.
  */
+export function soundsTrait(
+  report: PronunciationReport | null | undefined,
+  marks?: WordMark[],
+): { trait: Trait; weakWords: WeakWord[] } | null {
+  if (!report?.words.length) return null;
+  const aligned = marks && marks.length === report.words.length;
+  const counted = report.words.filter(
+    (w, i) => w.phones.length && (!aligned || marks[i]!.status !== 'missed'),
+  );
+  if (!counted.length) return null;
+  const mean = Math.round(counted.reduce((n, w) => n + w.score, 0) / counted.length);
+  const weakWords = counted
+    .filter((w) => w.score < WEAK_WORD)
+    .sort((a, b) => a.score - b.score)
+    .map((w) => ({
+      word: w.word,
+      score: w.score,
+      sounds: w.phones.filter((p) => p.score < WEAK_SOUND).map((p) => p.phone),
+    }));
+  const n = weakWords.length;
+  return {
+    trait: {
+      name: 'Pronunciation',
+      score: pronunciationScore(mean),
+      max: 5,
+      scored: true,
+      note: `${mean}% of sounds matched the expected sound${n ? `; ${n} word${n === 1 ? '' : 's'} unclear` : ''}`,
+    },
+    weakWords,
+  };
+}
+
+/** Pronunciation by sound where the speech service gave it; otherwise estimated from recognition
+ * confidence. */
 function pronunciationTrait(
   t: TimedTranscript,
   marks?: WordMark[],
 ): { trait: Trait; weakWords?: WeakWord[] } {
-  const report = t.pronunciation;
-  if (report?.words.length) {
-    const aligned = marks && marks.length === report.words.length;
-    const counted = report.words.filter(
-      (w, i) => w.phones.length && (!aligned || marks[i]!.status !== 'missed'),
-    );
-    if (counted.length) {
-      const mean = Math.round(counted.reduce((n, w) => n + w.score, 0) / counted.length);
-      const weakWords = counted
-        .filter((w) => w.score < WEAK_WORD)
-        .sort((a, b) => a.score - b.score)
-        .map((w) => ({
-          word: w.word,
-          score: w.score,
-          sounds: w.phones.filter((p) => p.score < WEAK_SOUND).map((p) => p.phone),
-        }));
-      const n = weakWords.length;
-      return {
-        trait: {
-          name: 'Pronunciation',
-          score: pronunciationScore(mean),
-          max: 5,
-          scored: true,
-          note: `${mean}% of sounds matched the expected sound${n ? `; ${n} word${n === 1 ? '' : 's'} unclear` : ''}`,
-        },
-        weakWords,
-      };
-    }
-  }
+  const sounds = soundsTrait(t.pronunciation, marks);
+  if (sounds) return sounds;
   const probs = t.words.map((w) => w.probability).filter((p): p is number => p !== undefined);
   if (!probs.length)
     return {

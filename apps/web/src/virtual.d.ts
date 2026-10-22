@@ -9,6 +9,14 @@ declare module 'virtual:openpte/catalog' {
   export const loaders: Record<QuestionType, () => Promise<Question[]>>;
 }
 
+declare module 'virtual:openpte/phones' {
+  /** Question id to the expected sounds of each word (IPA phones, space separated). */
+  const phones: Record<string, string[]>;
+  export default phones;
+}
+
 interface ImportMetaEnv {
   readonly VITE_API_URL?: string;
+  /** Folder of the in-browser phoneme model (model.onnx, phonemes.json). Default ./phonemes/ */
+  readonly VITE_PHONEME_MODEL_URL?: string;
 }

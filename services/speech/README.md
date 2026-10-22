@@ -17,7 +17,16 @@ call it directly.
    of pronunciation score from 0 to 100: how strong the expected phone was near where it belongs,
    compared with the strongest sound heard there. A word's score is the mean of its phones.
 
-The code is in `pronounce.py`. A trained scorer such as GOPT (trained on speechocean762) could
+The code is in `pronounce.py`. `packages/scoring/src/pronounce.ts` is the same maths for the
+in-browser check (a test checks both give the same answer).
+
+## In-browser check
+
+`export_browser_model.py` writes an ONNX copy of the phoneme model with int8 weights (about 330 MB)
+and its vocabulary to `/browser-model`, which the web app serves at `./phonemes/`. The browser runs
+it with onnxruntime-web in a worker. As browsers have no espeak-ng, the expected sounds of the bank's
+Read Aloud and Repeat Sentence questions are in `content/phones.json`; after changing those
+questions, run `python services/speech/make_phones.py` (CI checks it is up to date). A trained scorer such as GOPT (trained on speechocean762) could
 replace the last step later for scores closer to human raters.
 
 ```sh
@@ -42,6 +51,7 @@ the audio is too short to align).
 | `PHONEME_DEVICE`   | `cpu`                                    | `cuda` or `auto`                                                    |
 | `PHONEME_QUANTIZE` | `1`                                      | int8 linear layers on CPU (less memory, faster)                     |
 | `PHONEME_ACCENT`   | `en-us`                                  | espeak-ng voice for the expected sounds, such as `en-gb`            |
+| `BROWSER_MODEL`    | `off` (`on` in Compose)                  | Export the in-browser model once at start                           |
 | `WARM_UP`          | `1` in Docker                            | Load (and download) the models at start, not on first use           |
 | `SPEECH_TOKEN`     | empty                                    | If set, callers must send `Authorization: Bearer ...`               |
 | `SPEECH_ENGINE`    | `whisper`                                | `fake` returns a fixed transcript                                   |

@@ -70,8 +70,11 @@ services:
       WHISPER_THREADS: ${SPEECH_THREADS:-2}
       PHONEME_THREADS: ${SPEECH_THREADS:-2}
       PRONUNCIATION: ${PRONUNCIATION:-on}
+      BROWSER_MODEL: ${BROWSER_MODEL:-on}
     volumes:
       - models:/models
+      # A small copy of the phoneme model that the web app serves for the in-browser check.
+      - browser-model:/browser-model
 
   # Grammar checking for Writing answers (LanguageTool, LGPL). About 1 GB of memory.
   languagetool:
@@ -91,6 +94,8 @@ services:
     restart: unless-stopped
     depends_on:
       - api
+    volumes:
+      - browser-model:/usr/share/nginx/html/phonemes:ro
     ports:
       - '8080:80'
 
@@ -116,4 +121,5 @@ volumes:
   db-data:
   recordings:
   models:
+  browser-model:
   caddy-data:

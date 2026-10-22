@@ -105,3 +105,15 @@ def test_a_small_wav2vec2_model_runs_end_to_end(tmp_path) -> None:
     assert p is not None
     assert [w.word for w in p.words] == ["this", "is", "a", "test"]
     assert all(0 <= ph.score <= 100 for w in p.words for ph in w.phones)
+
+    # The browser copy gives the same probabilities as the model it came from.
+    ort = pytest.importorskip("onnxruntime")
+    from export_browser_model import export
+
+    out = export(str(tmp_path), tmp_path / "browser")
+    meta = json.loads((tmp_path / "browser" / "phonemes.json").read_text())
+    assert meta["blank"] == 0 and meta["vocab"]["ð"] == vocab["ð"] and meta["normalize"] is True
+    x = (audio - audio.mean()) / np.sqrt(audio.var() + 1e-7)
+    logits = ort.InferenceSession(str(out)).run(None, {"input_values": x[None]})[0][0]
+    e = np.exp(logits - logits.max(axis=1, keepdims=True))
+    assert np.abs(e / e.sum(axis=1, keepdims=True) - probs).max() < 0.02

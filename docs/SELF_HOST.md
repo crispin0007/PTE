@@ -69,6 +69,7 @@ app is rebuilt when `PUBLIC_API_URL` changes).
 | `WHISPER_MODEL`                            | `small.en` (default), or `base.en` on a small server. Larger models are slower on CPU.        |
 | `PRONUNCIATION`                            | `on` (default) scores each sound of each word; `off` saves about 1.5 GB of memory.            |
 | `SPEECH_THREADS`                           | CPU threads for speech scoring. Set it to the number of cores you can spare.                  |
+| `BROWSER_MODEL`                            | `on` (default) exports a 330 MB model that browsers run for the on-device check. See below.   |
 
 Without `SMTP_URL`, sign-in links are printed in the API log, which is handy for a first test:
 
@@ -91,6 +92,15 @@ The speech service downloads its models into the `models` volume on first start,
 minutes; `docker compose logs -f speech` says `models ready` when it is done. To put the models in
 the image instead (for a server without internet access later), build with
 `docker compose build --build-arg PRELOAD_MODELS=1 speech`.
+
+### Pronunciation on the learner's device
+
+Learners who are not signed in, or whose daily server scores are used up, can check Read Aloud and
+Repeat Sentence pronunciation in their own browser; the recording never leaves the device. With
+`BROWSER_MODEL=on`, the speech service exports a small copy of the phoneme model once, in the
+background, after the first start (this needs about 4 GB of free memory for a few minutes), and the
+web app serves it at `/phonemes/`. Learners download it once, on their first check. If the export
+was cut short, the speech log says so; delete the marker it names to try again.
 
 ## First steps after install
 

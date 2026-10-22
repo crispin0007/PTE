@@ -78,5 +78,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: sudo apt-get update && sudo apt-get install -y espeak-ng ffmpeg
-      - run: pip install fastapi==0.115.12 python-multipart==0.0.20 pytest==8.3.5 httpx==0.28.1 phonemizer==3.3.0 numpy
+      - run: pip install fastapi==0.115.12 python-multipart==0.0.20 pytest==8.3.5 httpx==0.28.1 phonemizer==3.3.0 numpy pyyaml==6.0.3
       - run: pytest -q
+      - name: content/phones.json is up to date (python services/speech/make_phones.py)
+        run: python make_phones.py && git diff --exit-code ../../content/phones.json

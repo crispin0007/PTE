@@ -6,3 +6,6 @@ faster-whisper==1.1.1
 transformers==4.57.1
 phonemizer==3.3.0
 numpy>=1.26,<3
+# For exporting the in-browser model (export_browser_model.py).
+onnx==1.19.1
+onnxruntime==1.23.2

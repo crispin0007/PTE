@@ -18,6 +18,8 @@ export default defineConfig({
     alias: {
       '@dict/en-us': dictDir('dictionary-en'),
       '@dict/en-gb': dictDir('dictionary-en-gb'),
+      // onnxruntime-web's WebAssembly, served with the app (never from a CDN).
+      '@ort-dist': dirname(fileURLToPath(import.meta.resolve('onnxruntime-web/wasm'))),
     },
   },
 });

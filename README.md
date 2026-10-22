@@ -12,7 +12,9 @@ Working today:
 
 - **Practice** for all 22 question types. Reading and Listening are scored with the rule and arithmetic
   shown; Writing is scored for form, spelling and grammar (LanguageTool), with issues marked in place;
-  Speaking is recorded with exam timing, then self-checked or scored by the speech service.
+  Speaking is recorded with exam timing, then self-checked or scored by the speech service, which
+  scores every sound of every word. Without the server, Read Aloud and Repeat Sentence pronunciation
+  can be checked on the learner's own device.
 - **Mock tests**: full, mini, sectional or custom, timed in test order with no going back, and a printable
   score report.
 - **Today and Progress** from your history on the device, synced to an account when you sign in.
@@ -21,7 +23,7 @@ Working today:
   table, a marking queue where teachers mark answers students send, and the institute's own colour and logo.
 - **Self-hosting** with Docker Compose, HTTPS and backups ([docs/SELF_HOST.md](docs/SELF_HOST.md)).
 
-Next: pronunciation scoring with a phoneme model and generated listening audio.
+Next: generated listening audio.
 The step-by-step plan and progress are in [docs/BUILD_PLAN.md](docs/BUILD_PLAN.md).
 
 ## Run it locally

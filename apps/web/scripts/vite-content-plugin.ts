@@ -6,6 +6,7 @@ import { loadContent } from '@openpte/schema/node';
 
 const CATALOG = 'virtual:openpte/catalog';
 const TYPE_PREFIX = 'virtual:openpte/type/';
+const PHONES = 'virtual:openpte/phones';
 const MIME: Record<string, string> = {
   '.svg': 'image/svg+xml',
   '.mp3': 'audio/mpeg',
@@ -17,6 +18,8 @@ const MIME: Record<string, string> = {
  * Compiles content/ YAML into virtual modules at build time:
  * - `virtual:openpte/catalog`: the item-type registry, question counts and one lazy loader per type
  * - `virtual:openpte/type/<type>`: that type's questions, so each type is its own small chunk
+ * - `virtual:openpte/phones`: expected sounds per word for the in-browser pronunciation check
+ *   (content/phones.json, made by services/speech/make_phones.py), loaded only when used
  * Invalid content fails the build. Only `published` questions ship, unless
  * OPENPTE_INCLUDE_UNREVIEWED=1 is set (always on in dev), which adds `in_review` ones.
  * `root` is the repo root, where content/ and content-assets/ live.
@@ -48,7 +51,7 @@ export function contentPlugin(root: string): Plugin {
         this.addWatchFile(join(root, path));
     },
     resolveId(id) {
-      if (id === CATALOG || id.startsWith(TYPE_PREFIX)) return '\0' + id;
+      if (id === CATALOG || id === PHONES || id.startsWith(TYPE_PREFIX)) return '\0' + id;
     },
     load(id) {
       if (id === '\0' + CATALOG) {
@@ -70,6 +73,11 @@ export function contentPlugin(root: string): Plugin {
           `export const includesUnreviewed = ${includeUnreviewed};`,
           `export const loaders = {\n${loaders}\n};`,
         ].join('\n');
+      }
+      if (id === '\0' + PHONES) {
+        // All of them, not only shipped questions: with an API, questions come from the database.
+        const file = join(root, 'content/phones.json');
+        return `export default ${existsSync(file) ? readFileSync(file, 'utf8') : '{}'};`;
       }
       if (id.startsWith('\0' + TYPE_PREFIX)) {
         const type = id.slice(TYPE_PREFIX.length + 1);

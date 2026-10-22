@@ -36,7 +36,9 @@ Things only crispin can do or decide. The build keeps going around them; each it
     model. The speech service then needs about 2 GB of memory (the Oracle free ARM server has 24 GB).
     Please run one real Read Aloud after the first start and tell me if the scores feel too strict
     or too kind; the thresholds are a first guess until we can calibrate them. `PRONUNCIATION=off`
-    in `.env` turns it off.
+    in `.env` turns it off. The speech service also exports a 330 MB copy that learners' browsers
+    run when the server cannot score (the export needs about 4 GB free once; `BROWSER_MODEL=off`
+    skips it).
 
 ## To decide
 

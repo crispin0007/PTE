@@ -10,13 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg espeak-n
 RUN pip install --no-cache-dir torch==2.9.1 --index-url "$TORCH_INDEX"
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY engine.py pronounce.py app.py download_models.py start.sh ./
+COPY engine.py pronounce.py app.py download_models.py export_browser_model.py start.sh ./
 ENV WHISPER_MODEL=small.en HF_HOME=/models WARM_UP=1
 # The models (about 250 MB for Whisper small.en, 1.2 GB for the phoneme model) download into
 # /models on first start, or into the image here with PRELOAD_MODELS=1.
-RUN mkdir -p /models && if [ "$PRELOAD_MODELS" = "1" ]; then python download_models.py; fi \
-  && chown -R nobody /models
-VOLUME /models
+RUN mkdir -p /models /browser-model && if [ "$PRELOAD_MODELS" = "1" ]; then python download_models.py; fi \
+  && chown -R nobody /models /browser-model
+VOLUME /models /browser-model
 EXPOSE 8000
 USER nobody
 CMD ["./start.sh"]
