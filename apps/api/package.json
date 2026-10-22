@@ -15,7 +15,7 @@
     "@fastify/cors": "^11.3.1",
     "@openpte/schema": "*",
     "@openpte/scoring": "*",
-    "better-auth": "1.7.5",
+    "better-auth": "1.7.11",
     "drizzle-orm": "^0.45.4",
     "fastify": "^5.12.7",
     "nodemailer": "^7.0.13",
