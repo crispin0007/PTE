@@ -58,14 +58,18 @@ services:
     ports:
       - '3000:3000'
 
-  # Speech recognition for scoring speaking answers. The first scoring request downloads the
-  # Whisper model (about 250 MB) into the models volume.
+  # Speech recognition and pronunciation scoring for speaking answers, on CPU. On first start it
+  # downloads Whisper (about 250 MB) and the phoneme model (about 1.2 GB) into the models volume.
+  # For a GPU, add -f docker-compose.gpu.yml.
   speech:
     build: services/speech
     restart: unless-stopped
     environment:
       SPEECH_TOKEN: ${SPEECH_TOKEN:-}
       WHISPER_MODEL: ${WHISPER_MODEL:-small.en}
+      WHISPER_THREADS: ${SPEECH_THREADS:-2}
+      PHONEME_THREADS: ${SPEECH_THREADS:-2}
+      PRONUNCIATION: ${PRONUNCIATION:-on}
     volumes:
       - models:/models
 

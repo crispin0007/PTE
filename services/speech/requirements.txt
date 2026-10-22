@@ -1,4 +1,8 @@
+# torch is installed first in the Dockerfile, from the CPU (or CUDA) wheel index.
 fastapi==0.115.12
 uvicorn[standard]==0.34.2
 python-multipart==0.0.20
 faster-whisper==1.1.1
+transformers==4.57.1
+phonemizer==3.3.0
+numpy>=1.26,<3

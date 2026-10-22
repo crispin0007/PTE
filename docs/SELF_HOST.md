@@ -6,11 +6,13 @@ app and (optionally) Caddy for HTTPS.
 
 ## What you need
 
-- A Linux server with Docker and the Compose plugin. 2 CPU cores and 4 GB of RAM run everything,
-  including speech scoring and grammar checking; 8 GB gives room to grow. To run on 1 GB, remove
-  the `speech` and `languagetool` services: speaking is then self-checked and writing is scored
-  for form and spelling only.
-- About 5 GB of disk to start: the app, the Whisper model (about 250 MB) and room for recordings.
+- A Linux server with Docker and the Compose plugin. 4 CPU cores and 8 GB of RAM run everything,
+  including speech, pronunciation and grammar scoring. On 4 GB, set `PRONUNCIATION=off` (speaking
+  pronunciation is then estimated from recognition confidence). To run on 1 GB, remove the
+  `speech` and `languagetool` services: speaking is then self-checked and writing is scored for
+  form and spelling only. An NVIDIA GPU is optional; see "Speech on a GPU" below.
+- About 8 GB of disk to start: the app, the Whisper model (about 250 MB), the phoneme model (about
+  1.2 GB) and room for recordings.
 - For a public site: two DNS names pointing at the server, for example `pte.example.com` for the
   app and `api.pte.example.com` for the API.
 - An email account that can send by SMTP, for sign-in links. Any provider works.
@@ -65,12 +67,30 @@ app is rebuilt when `PUBLIC_API_URL` changes).
 | `INCLUDE_UNREVIEWED`                       | `1` shows questions still waiting for two human reviews. The bundled bank is still in review. |
 | `SPEECH_DAILY_LIMIT`                       | Server speech scores per learner per day.                                                     |
 | `WHISPER_MODEL`                            | `small.en` (default), or `base.en` on a small server. Larger models are slower on CPU.        |
+| `PRONUNCIATION`                            | `on` (default) scores each sound of each word; `off` saves about 1.5 GB of memory.            |
+| `SPEECH_THREADS`                           | CPU threads for speech scoring. Set it to the number of cores you can spare.                  |
 
 Without `SMTP_URL`, sign-in links are printed in the API log, which is handy for a first test:
 
 ```sh
 docker compose logs -f api
 ```
+
+### Speech on a GPU
+
+With an NVIDIA GPU and the NVIDIA Container Toolkit, add the GPU file. It also switches Whisper to
+the more accurate `large-v3-turbo` model.
+
+```sh
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+```
+
+### Models
+
+The speech service downloads its models into the `models` volume on first start, which takes a few
+minutes; `docker compose logs -f speech` says `models ready` when it is done. To put the models in
+the image instead (for a server without internet access later), build with
+`docker compose build --build-arg PRELOAD_MODELS=1 speech`.
 
 ## First steps after install
 
@@ -132,5 +152,6 @@ Database changes are applied automatically when the API starts. Take a backup fi
 | `Run ./scripts/selfhost-init.sh first` error | `.env` is missing or has no `BETTER_AUTH_SECRET`.                                    |
 | Sign-in link opens but you are not signed in | `PUBLIC_WEB_URL` must match the address in the browser exactly, including `https`.   |
 | No sign-in email arrives                     | `docker compose logs api` shows the link and any SMTP error.                         |
-| Speaking scores fail                         | `docker compose logs speech`. The first score downloads the model; give it a minute. |
+| Speaking scores fail                         | `docker compose logs speech`. The first start downloads the models; give it minutes. |
+| No "Sounds to practise" after a score        | `PRONUNCIATION` is `off`, or the phoneme model failed to load: see the speech log.   |
 | The app shows no accounts                    | `PUBLIC_API_URL` was empty or wrong when the web app was built. Fix it and rebuild.  |

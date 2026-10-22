@@ -106,4 +106,53 @@ describe('speech scoring', () => {
     });
     expect(res.statusCode).toBe(503);
   });
+  it('sends the reference text and scores pronunciation from the sounds', async () => {
+    let sent: string | undefined;
+    const speech = perfectReader(() => readAloudText);
+    const client: SpeechClient = {
+      transcribe: async (a, m, reference) => {
+        sent = reference;
+        const t = await speech.transcribe(a, m);
+        const ws = reference!.split(/\s+/);
+        return {
+          ...t,
+          pronunciation: {
+            engine: 'wav2vec2:test',
+            score: 0,
+            words: ws.map((word, i) => ({
+              word,
+              score: i === 0 ? 30 : 95,
+              phones: [{ phone: 'x', score: i === 0 ? 30 : 95 }],
+            })),
+          },
+        };
+      },
+    };
+    const { app, signIn } = await appWithAuth(db, {
+      storage: memoryStorage(),
+      scoring: { speech: client, dailyLimit: 5 },
+    });
+    const cookie = await signIn('sounds@example.com');
+    const { id } = (
+      await app.inject({
+        method: 'POST',
+        url: '/v1/me/recordings?questionId=speaking-read-aloud-0001&type=speaking_read_aloud',
+        headers: { cookie, 'content-type': 'audio/webm' },
+        payload: Buffer.from('audio'),
+      })
+    ).json();
+    const { result } = (
+      await app.inject({
+        method: 'POST',
+        url: `/v1/me/recordings/${id}/score`,
+        headers: { cookie },
+      })
+    ).json();
+    expect(sent).toBe(readAloudText);
+    expect(result.engine).toBe('fake + wav2vec2:test');
+    const pron = result.traits.find((t: { name: string }) => t.name === 'Pronunciation');
+    expect(pron.note).toMatch(/of sounds matched the expected sound; 1 word unclear/);
+    expect(result.weakWords).toHaveLength(1);
+    expect(result.weakWords[0]).toMatchObject({ score: 30, sounds: ['x'] });
+  });
 });

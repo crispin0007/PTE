@@ -1,0 +1,20 @@
+# Speech scoring on an NVIDIA GPU (needs the NVIDIA Container Toolkit):
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+# With a GPU, the more accurate large-v3-turbo Whisper model is quick enough.
+services:
+  speech:
+    build:
+      context: services/speech
+      args:
+        TORCH_INDEX: https://download.pytorch.org/whl/cu128
+    environment:
+      WHISPER_DEVICE: cuda
+      PHONEME_DEVICE: cuda
+      WHISPER_MODEL: ${WHISPER_MODEL:-large-v3-turbo}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

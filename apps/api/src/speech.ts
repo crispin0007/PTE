@@ -3,24 +3,39 @@ import { scoreSpeaking, type SpeakingResult, type TimedTranscript } from '@openp
 
 /** Talks to services/speech. */
 export type SpeechClient = {
-  transcribe: (audio: Buffer, mime: string) => Promise<TimedTranscript & { engine: string }>;
+  /** `reference` is the text the learner should say; pronunciation is scored against it. */
+  transcribe: (
+    audio: Buffer,
+    mime: string,
+    reference?: string,
+  ) => Promise<TimedTranscript & { engine: string }>;
 };
 
 export function httpSpeech(url: string, token?: string): SpeechClient {
   return {
-    async transcribe(audio, mime) {
+    async transcribe(audio, mime, reference) {
       const form = new FormData();
       form.append('audio', new Blob([new Uint8Array(audio)], { type: mime }), 'answer');
+      if (reference) form.append('reference', reference);
       const res = await fetch(`${url.replace(/\/$/, '')}/transcribe`, {
         method: 'POST',
         body: form,
         headers: token ? { authorization: `Bearer ${token}` } : undefined,
-        signal: AbortSignal.timeout(60_000),
+        // Pronunciation adds a few seconds on CPU for a 40-second answer.
+        signal: AbortSignal.timeout(90_000),
       });
       if (!res.ok) throw new Error(`speech service returned ${res.status}`);
       return (await res.json()) as TimedTranscript & { engine: string };
     },
   };
+}
+
+/** The words a Speaking answer should contain, when they are fixed. Open answers have none, and
+ * their pronunciation is scored against what was recognised. */
+export function referenceText(q: Question): string | undefined {
+  if (q.type === 'speaking_read_aloud') return q.text;
+  if (q.type === 'speaking_repeat_sentence') return q.transcript;
+  return undefined;
 }
 
 /** What a Speaking question is scored against. */

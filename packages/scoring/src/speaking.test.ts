@@ -111,6 +111,40 @@ describe('speaking scores', () => {
     expect(partial.traits.map((t) => t.score)).toEqual([4, 4, 4]);
   });
 
+  it('pronunciation comes from the sounds of the words that were said', () => {
+    const text = 'Coral reefs support marine life.';
+    const t = speech('coral reefs support marine', 140, {}, 0.5);
+    const phones = (score: number) => [
+      { phone: 'k', score },
+      { phone: 'ɔː', score },
+    ];
+    t.pronunciation = {
+      engine: 'test',
+      score: 0,
+      words: [
+        { word: 'coral', score: 95, phones: phones(95) },
+        {
+          word: 'reefs',
+          score: 40,
+          phones: [
+            { phone: 'ɹ', score: 20 },
+            { phone: 'iː', score: 60 },
+          ],
+        },
+        { word: 'support', score: 95, phones: phones(95) },
+        { word: 'marine', score: 90, phones: phones(90) },
+        // Missed, so it counts against content only.
+        { word: 'life', score: 0, phones: phones(0) },
+      ],
+    };
+    const r = scoreSpeaking({ rule: 'speaking_read_aloud', text }, t);
+    const pron = r.traits.find((x) => x.name === 'Pronunciation')!;
+    // (95 + 40 + 95 + 90) / 4 = 80
+    expect(pron).toMatchObject({ score: 4, scored: true });
+    expect(pron.note).toBe('80% of sounds matched the expected sound; 1 word unclear');
+    expect(r.weakWords).toEqual([{ word: 'reefs', score: 40, sounds: ['ɹ'] }]);
+  });
+
   it('silence scores zero', () => {
     const r = scoreSpeaking(
       { rule: 'speaking_read_aloud', text: 'Hello there.' },

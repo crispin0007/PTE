@@ -1,15 +1,29 @@
 /**
  * Speaking scores from a timed transcript (words with start and end times, from the speech
  * service). Content follows Pearson's published trait descriptions; fluency is estimated from
- * speech rate, long pauses, fillers and repeats. Pronunciation needs the phoneme model (step 2.4);
- * until then it is estimated from how confidently the words were recognised.
+ * speech rate, long pauses, fillers and repeats. Pronunciation comes from the phoneme model in the
+ * speech service (a score for each sound of each word); without it, it is estimated from how
+ * confidently the words were recognised.
  */
 import { words } from './objective.ts';
 import type { ScoreResult } from './objective.ts';
 import type { Trait } from './writing.ts';
 
 export type TimedWord = { word: string; start: number; end: number; probability?: number };
-export type TimedTranscript = { words: TimedWord[]; duration: number };
+/** From the speech service: each sound of each word scored 0-100 against the expected sound. */
+export type PronunciationReport = {
+  engine: string;
+  score: number;
+  words: { word: string; score: number; phones: { phone: string; score: number }[] }[];
+};
+export type TimedTranscript = {
+  words: TimedWord[];
+  duration: number;
+  pronunciation?: PronunciationReport | null;
+};
+
+/** A word whose sounds were unclear, with the sounds (IPA) that were furthest off. */
+export type WeakWord = { word: string; score: number; sounds: string[] };
 
 export type SpeakingRule =
   | 'speaking_read_aloud'
@@ -25,6 +39,8 @@ export type SpeakingResult = ScoreResult & {
   marks?: WordMark[];
   /** Key points with whether the answer covered them (open responses). */
   points?: { point: string; covered: boolean }[];
+  /** Words whose sounds were unclear, weakest first (with the phoneme model only). */
+  weakWords?: WeakWord[];
   fluency: FluencyStats;
 };
 
@@ -96,26 +112,68 @@ export function fluencyScore(s: FluencyStats, wordCount: number): { score: numbe
   return { score: Math.max(0, score), note: notes.join(', ') };
 }
 
-/** Estimated from recognition confidence until the phoneme model is in place. */
-function pronunciationTrait(t: TimedTranscript): Trait {
+const pronunciationScore = (pct: number) =>
+  pct >= 90 ? 5 : pct >= 80 ? 4 : pct >= 70 ? 3 : pct >= 55 ? 2 : pct >= 40 ? 1 : 0;
+export const WEAK_WORD = 70;
+const WEAK_SOUND = 50;
+
+/**
+ * Pronunciation from the sounds of the words that were said (a reference word that was missed is
+ * content, not pronunciation). Without the phoneme model, estimated from recognition confidence.
+ */
+function pronunciationTrait(
+  t: TimedTranscript,
+  marks?: WordMark[],
+): { trait: Trait; weakWords?: WeakWord[] } {
+  const report = t.pronunciation;
+  if (report?.words.length) {
+    const aligned = marks && marks.length === report.words.length;
+    const counted = report.words.filter(
+      (w, i) => w.phones.length && (!aligned || marks[i]!.status !== 'missed'),
+    );
+    if (counted.length) {
+      const mean = Math.round(counted.reduce((n, w) => n + w.score, 0) / counted.length);
+      const weakWords = counted
+        .filter((w) => w.score < WEAK_WORD)
+        .sort((a, b) => a.score - b.score)
+        .map((w) => ({
+          word: w.word,
+          score: w.score,
+          sounds: w.phones.filter((p) => p.score < WEAK_SOUND).map((p) => p.phone),
+        }));
+      const n = weakWords.length;
+      return {
+        trait: {
+          name: 'Pronunciation',
+          score: pronunciationScore(mean),
+          max: 5,
+          scored: true,
+          note: `${mean}% of sounds matched the expected sound${n ? `; ${n} word${n === 1 ? '' : 's'} unclear` : ''}`,
+        },
+        weakWords,
+      };
+    }
+  }
   const probs = t.words.map((w) => w.probability).filter((p): p is number => p !== undefined);
   if (!probs.length)
     return {
-      name: 'Pronunciation',
-      score: 0,
-      max: 5,
-      scored: false,
-      note: 'needs the speech service',
+      trait: {
+        name: 'Pronunciation',
+        score: 0,
+        max: 5,
+        scored: false,
+        note: 'needs the speech service',
+      },
     };
   const mean = probs.reduce((a, b) => a + b, 0) / probs.length;
-  const score =
-    mean >= 0.9 ? 5 : mean >= 0.8 ? 4 : mean >= 0.7 ? 3 : mean >= 0.55 ? 2 : mean >= 0.4 ? 1 : 0;
   return {
-    name: 'Pronunciation',
-    score,
-    max: 5,
-    scored: true,
-    note: `estimated from how clearly words were recognised (${Math.round(mean * 100)}%)`,
+    trait: {
+      name: 'Pronunciation',
+      score: pronunciationScore(mean * 100),
+      max: 5,
+      scored: true,
+      note: `estimated from how clearly words were recognised (${Math.round(mean * 100)}%)`,
+    },
   };
 }
 
@@ -202,6 +260,7 @@ export function scoreSpeaking(ref: Reference, t: TimedTranscript): SpeakingResul
   const traits: Trait[] = [];
   let marks: WordMark[] | undefined;
   let points: SpeakingResult['points'];
+  let weakWords: WeakWord[] | undefined;
 
   if (ref.rule === 'speaking_short_answer') {
     const said = ` ${spoken.join(' ')} `;
@@ -241,7 +300,9 @@ export function scoreSpeaking(ref: Reference, t: TimedTranscript): SpeakingResul
         note: `${said} of ${reference.length} words said correctly, in order`,
       });
     }
-    const pron = pronunciationTrait(t);
+    const sounds = pronunciationTrait(t, marks);
+    const pron = sounds.trait;
+    weakWords = sounds.weakWords;
     const flu: Trait = {
       name: 'Oral fluency',
       score: fluency.score,
@@ -273,6 +334,7 @@ export function scoreSpeaking(ref: Reference, t: TimedTranscript): SpeakingResul
     traits,
     marks,
     points,
+    weakWords,
     fluency: stats,
   };
 }

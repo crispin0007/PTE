@@ -30,9 +30,13 @@ Things only crispin can do or decide. The build keeps going around them; each it
    LanguageTool container (about 1 GB of memory). Nothing to do unless the server is small, in
    which case remove the `languagetool` service.
 
-10. **Pronunciation scoring (2.4).** Needs a wav2vec2 phoneme model (about 1.2 GB) that cannot be
-    downloaded in the build machine, and a server with about 2 GB more memory. Until then Whisper's
-    word confidence stands in. Say whether the server can carry it.
+10. **Pronunciation scoring (2.4).** Built into the speech service: it scores every sound of every
+    word with a wav2vec2 phoneme model. The model (about 1.2 GB) downloads on the first start of
+    `docker compose up`; it could not be downloaded here, so it was tested with a fake and a tiny
+    model. The speech service then needs about 2 GB of memory (the Oracle free ARM server has 24 GB).
+    Please run one real Read Aloud after the first start and tell me if the scores feel too strict
+    or too kind; the thresholds are a first guess until we can calibrate them. `PRONUNCIATION=off`
+    in `.env` turns it off.
 
 ## To decide
 

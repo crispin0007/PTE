@@ -29,9 +29,11 @@ class Engine(Protocol):
 
 
 class WhisperEngine:
-    """faster-whisper on CPU with int8 weights: runs on a free-tier ARM or x86 machine.
+    """faster-whisper, on CPU with int8 weights by default: runs on a free-tier ARM or x86 machine.
+    WHISPER_DEVICE=cuda runs on a GPU (float16 unless WHISPER_COMPUTE says otherwise).
 
-    The model is downloaded on first use (WHISPER_MODEL, default small.en, about 250 MB).
+    The model is downloaded on first use (WHISPER_MODEL, default small.en, about 250 MB; with a
+    GPU or 8 GB of RAM, large-v3-turbo is more accurate).
     No prompt is given, so recognition is not nudged towards the expected answer.
     """
 
@@ -39,10 +41,11 @@ class WhisperEngine:
         from faster_whisper import WhisperModel  # imported here so tests need no model
 
         self.name = f"faster-whisper:{model or os.environ.get('WHISPER_MODEL', 'small.en')}"
+        device = os.environ.get("WHISPER_DEVICE", "cpu")
         self._model = WhisperModel(
             model or os.environ.get("WHISPER_MODEL", "small.en"),
-            device="cpu",
-            compute_type=os.environ.get("WHISPER_COMPUTE", "int8"),
+            device=device,
+            compute_type=os.environ.get("WHISPER_COMPUTE", "float16" if device == "cuda" else "int8"),
             cpu_threads=int(os.environ.get("WHISPER_THREADS", "2")),
         )
 

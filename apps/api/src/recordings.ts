@@ -5,7 +5,7 @@ import type { Question } from '@openpte/schema';
 import type { FastifyInstance } from 'fastify';
 import type { Auth } from './auth.ts';
 import { schema, type Db } from './db/index.ts';
-import { scoreAnswer, type SpeechClient } from './speech.ts';
+import { referenceText, scoreAnswer, type SpeechClient } from './speech.ts';
 import type { Storage } from './storage.ts';
 
 export const MAX_RECORDING_BYTES = 5 * 1024 * 1024;
@@ -142,7 +142,11 @@ export function recordingRoutes(db: Db, auth: Auth, storage: Storage, scoring?: 
       if (!audio) return reply.code(404).send({ error: 'recording not found' });
       let transcript;
       try {
-        transcript = await scoring.speech.transcribe(audio, row.mime);
+        transcript = await scoring.speech.transcribe(
+          audio,
+          row.mime,
+          referenceText(q.data as Question),
+        );
       } catch (e) {
         req.log.error(e);
         return reply
@@ -151,7 +155,13 @@ export function recordingRoutes(db: Db, auth: Auth, storage: Storage, scoring?: 
       }
       const result = scoreAnswer(q.data as Question, transcript);
       if (!result) return reply.code(400).send({ error: 'not a speaking question' });
-      const stored = { ...result, transcript: transcript.words, engine: transcript.engine };
+      const stored = {
+        ...result,
+        transcript: transcript.words,
+        engine: transcript.pronunciation
+          ? `${transcript.engine} + ${transcript.pronunciation.engine}`
+          : transcript.engine,
+      };
       await db
         .update(recordings)
         .set({ result: stored, scoredAt: new Date() })
