@@ -32,7 +32,7 @@ jobs:
           # Set to 0 once enough questions are published.
           OPENPTE_INCLUDE_UNREVIEWED: '1'
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with: { path: apps/web/dist }
       - id: deployment
         uses: actions/deploy-pages@v4
