@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { beep } from './Listen.tsx';
+import { micError } from './micError.ts';
 
 type Phase = 'idle' | 'prep' | 'recording' | 'done' | 'error';
 
@@ -114,11 +115,9 @@ export function Recorder({
       stream.current = await navigator.mediaDevices.getUserMedia({
         audio: { echoCancellation: true, noiseSuppression: true },
       });
-    } catch {
+    } catch (e) {
       setPhase('error');
-      setError(
-        'Allow microphone access in your browser to answer speaking questions. Nothing is uploaded unless you choose to save a recording.',
-      );
+      setError(micError(e));
       return;
     }
     if (prepS > 0) {
