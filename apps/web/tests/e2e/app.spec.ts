@@ -255,6 +255,15 @@ test.describe('speaking questions can be recorded and self-checked', () => {
     await expect(recorder).toHaveAttribute('data-phase', 'done');
     const check = page.getByTestId('self-check');
     await expect(check.getByLabel('Your recording')).toBeVisible();
+    // Chrome's WebM has no duration until the player is nudged; then it can be moved through.
+    await expect
+      .poll(() =>
+        check.getByLabel('Your recording').evaluate((a: HTMLAudioElement) => ({
+          duration: Number.isFinite(a.duration) && a.duration > 0.5,
+          at: a.currentTime,
+        })),
+      )
+      .toEqual({ duration: true, at: 0 });
     await check.getByRole('checkbox').first().check();
     await expect(check).toContainText(/1 of \d+ covered/);
     await expect(check).toContainText('stays on this device');

@@ -12,6 +12,8 @@ COPY apps/api apps/api
 COPY content content
 COPY content-assets content-assets
 ENV NODE_ENV=production
+# The recordings volume is created from this folder, so it must belong to the user the API runs as.
+RUN mkdir -p /data && chown node:node /data
 EXPOSE 3000
 USER node
 CMD ["npm", "start", "-w", "@openpte/api"]

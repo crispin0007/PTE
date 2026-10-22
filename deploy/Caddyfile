@@ -1,11 +1,26 @@
 # Used by the "https" profile in docker-compose.yml. Set WEB_DOMAIN and API_DOMAIN in .env and
 # point both DNS names at this server; Caddy fetches the certificates on first start.
+(security) {
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}
+
 {$WEB_DOMAIN} {
+	import security
+	header {
+		X-Frame-Options DENY
+		Permissions-Policy "microphone=(self), camera=(), geolocation=()"
+	}
 	encode zstd gzip
 	reverse_proxy web:80
 }
 
 {$API_DOMAIN} {
+	import security
 	encode zstd gzip
 	reverse_proxy api:3000
 }

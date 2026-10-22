@@ -94,7 +94,9 @@ export async function buildApp({
   institutes = { creation: 'anyone' },
   grammar,
 }: AppOptions) {
-  const app = Fastify({ logger });
+  // Behind Caddy (or another proxy on a private network) the learner's address is in
+  // X-Forwarded-For; per-address limits would otherwise see one address for everyone.
+  const app = Fastify({ logger, trustProxy: 'loopback,linklocal,uniquelocal' });
   const anyOrigin = corsOrigin === '*';
   await app.register(cors, {
     origin: anyOrigin ? true : corsOrigin.split(',').map((o) => o.trim()),

@@ -6,6 +6,7 @@ import { Passage, Section } from './parts.tsx';
 import { Recorder, type Recording } from './Recorder.tsx';
 import { DeviceSounds } from './DeviceSounds.tsx';
 import { SaveRecording } from './SaveRecording.tsx';
+import { fixWebmDuration } from './webmDuration.ts';
 import type { Answerable, AnswerViewProps } from './types.ts';
 
 type SpeakingType = Extract<QuestionType, `speaking_${string}`>;
@@ -63,7 +64,13 @@ function SelfCheck({
       <h2 id="selfcheck-heading" className="text-xl font-semibold">
         Listen back and check
       </h2>
-      <audio controls src={recording.url} className="w-full" aria-label="Your recording" />
+      <audio
+        controls
+        src={recording.url}
+        onLoadedMetadata={fixWebmDuration}
+        className="w-full"
+        aria-label="Your recording"
+      />
       <p className="text-sm text-muted">{recording.seconds} seconds recorded.</p>
       {children}
       {spoken && <DeviceSounds recording={recording} questionId={questionId} text={spoken} />}

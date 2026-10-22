@@ -102,6 +102,14 @@ export function Recorder({
 
   const start = async () => {
     setError('');
+    if (!window.isSecureContext || !navigator.mediaDevices) {
+      // Browsers only offer the microphone to https:// pages and to localhost.
+      setPhase('error');
+      setError(
+        `The microphone only works on a secure page. Open this app with https:// (or as http://localhost on the computer that runs it); this page is ${location.origin}.`,
+      );
+      return;
+    }
     try {
       stream.current = await navigator.mediaDevices.getUserMedia({
         audio: { echoCancellation: true, noiseSuppression: true },

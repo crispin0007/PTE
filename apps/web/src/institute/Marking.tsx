@@ -2,6 +2,7 @@ import { useId, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { typeLabel, questionLabel } from '../content/labels.ts';
 import { displayName, instituteApi, useLoad, type MarkingRequest } from './api.ts';
+import { fixWebmDuration } from '../answer/webmDuration.ts';
 
 /** The institute's marking queue: answers students sent, oldest first, and recent marks. */
 export function MarkingQueue() {
@@ -91,6 +92,7 @@ function Item({
           controls
           preload="none"
           src={instituteApi.audioUrl(instituteId, r.id)}
+          onLoadedMetadata={fixWebmDuration}
           className="w-full"
           aria-label="Student’s recording"
         />
