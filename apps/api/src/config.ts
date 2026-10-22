@@ -59,7 +59,9 @@ const Env = z.object({
 export type Config = z.infer<typeof Env>;
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
-  const config = Env.parse(env);
+  // Docker Compose passes `SETTING: ${SETTING:-}` as an empty string; treat that as unset.
+  const set = Object.fromEntries(Object.entries(env).filter(([, v]) => v !== ''));
+  const config = Env.parse(set);
   if (env.NODE_ENV === 'production' && config.BETTER_AUTH_SECRET.startsWith('dev-only'))
     throw new Error('Set BETTER_AUTH_SECRET in production (openssl rand -base64 32)');
   return config;

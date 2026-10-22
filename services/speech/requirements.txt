@@ -3,6 +3,8 @@ fastapi==0.115.12
 uvicorn[standard]==0.34.2
 python-multipart==0.0.20
 faster-whisper==1.1.1
+# PyAV 19 dropped av.open(metadata_errors=...), which faster-whisper 1.1.1 uses to read audio.
+av==18.1.0
 transformers==4.57.1
 phonemizer==3.3.0
 numpy>=1.26,<3
